@@ -277,3 +277,8 @@ Arguments:
 Returns:
 
     A list of lists of floats representing the inverted matrix of A.
+
+
+
+# Constant Class
+This is a Python class that implements various
