@@ -657,6 +657,227 @@ class Algorithm:
                     A_augmented[j][k] -= factor * A_augmented[i][k]
         A_inverse = [[A_augmented[i][j] / A_augmented[i][i + n] for j in range(n)] for i in range(n)]
         return A_inverse
+    
+    def newton_method(self, f, f_prime, x0, epsilon):
+        """
+        Use Newton's method to find the root of a function f.
+
+        Args:
+        - f (function): The function for which to find the root.
+        - f_prime (function): The derivative of f.
+        - x0 (float): The initial guess for the root.
+        - epsilon (float): The desired level of accuracy.
+
+        Returns:
+        - root (float): The estimated root of the function.
+        """
+
+        x = x0
+        while abs(f(x)) > epsilon:
+            x = x - f(x)/f_prime(x)
+
+        return x
+    
+    def gradient_descent(self, f, f_prime, x0, alpha, max_iters):
+        """
+        Use gradient descent to find the minimum of a function f.
+
+        Args:
+        - f (function): The function to minimize.
+        - f_prime (function): The derivative of f.
+        - x0 (float): The initial guess for the minimum.
+        - alpha (float): The step size.
+        - max_iters (int): The maximum number of iterations.
+
+        Returns:
+        - minimum (float): The estimated minimum of the function.
+        """
+
+        x = x0
+        for i in range(max_iters):
+            x = x - alpha * f_prime(x)
+
+        return x
+    
+    def monte_carlo_simulation(self, n, f):
+        """
+        Use Monte Carlo simulation to estimate the probability of an event.
+
+        Args:
+        - n (int): The number of simulations to run.
+        - f (function): A function that returns True or False for a given sample.
+
+        Returns:
+        - probability (float): The estimated probability of the event.
+        """
+
+        count = 0
+        for i in range(n):
+            if f():
+                count += 1
+
+        probability = count / n
+        return probability
+    
+    def distance(point1, point2):
+        return ((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)**0.5
+
+    def random_seed(seed):
+        """
+        A simple pseudorandom number generator based on the linear congruential method.
+
+        Args:
+        - seed (int): The seed value used to initialize the generator.
+
+        Returns:
+        - A float between 0 and 1.
+        """
+        a = 1103515245
+        c = 12345
+        m = 2**31
+        x = seed
+        while True:
+            x = (a*x + c) % m
+            yield x / m
+    
+    def k_means_clustering(self, data, k):
+        """
+        Use k-means clustering to group data points into k clusters.
+
+        Args:
+        - data (list): A list of data points.
+        - k (int): The number of clusters to form.
+
+        Returns:
+        - clusters (list): A list of k clusters, each containing the data points assigned to that cluster.
+        """
+
+        # Initialize cluster centers randomly
+        centers = alg.random_seed.sample(data, k)
+
+        while True:
+            # Assign each data point to the nearest center
+            clusters = [[] for i in range(k)]
+            for point in data:
+                distances = [alg.distance(point, center) for center in centers]
+                min_index = distances.index(min(distances))
+                clusters[min_index].append(point)
+
+            # Update cluster centers
+            new_centers = []
+            for cluster in clusters:
+                if len(cluster) == 0:
+                    new_centers.append(alg.random.choice(data))
+                else:
+                    center = [sum(coords)/len(coords) for coords in zip(*cluster)]
+                    new_centers.append(center)
+
+            # Check for convergence
+            if new_centers == centers:
+                break
+            else:
+                centers = new_centers
+
+        return clusters
+
+   
+    def exp(self, num: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the exponential value of a number.
+
+        Args:
+        - num: a number whose exponential value is to be calculated
+
+        Returns:
+        The exponential value of the input number
+        """
+        result = 1
+        for i in range(num):
+            result *= 2.71828
+        return result
+
+    def absolute(self, num: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the absolute value of a number.
+
+        Args:
+        - num: a number whose absolute value is to be calculated
+
+        Returns:
+        The absolute value of the input number
+        """
+        if num < 0:
+            return -num
+        else:
+            return num
+
+
+    def modulo(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the remainder of dividing the dividend by the divisor.
+
+        Args:
+        - dividend: the number to be divided
+        - divisor: the number to divide by
+
+        Returns:
+        The remainder of dividing the dividend by the divisor
+        """
+        return dividend % divisor
+
+
+    def sin(self, num: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the sine value of a number.
+
+        Args:
+        - num: a number in radians whose sine value is to be calculated
+
+        Returns:
+        The sine value of the input number
+        """
+        n = 10  # number of terms to calculate in Taylor series
+        x = num % (2*con.pi)  # reduce to the range [0, 2*pi)
+        result = 0
+        for i in range(n):
+            term = (-1)**i * x**(2*i+1) / alg.factorial(2*i+1)
+            result += term
+        return result
+
+
+    def cos(self, num: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the cosine value of a number.
+
+        Args:
+        - num: a number in radians whose cosine value is to be calculated
+
+        Returns:
+        The cosine value of the input number
+        """
+        n = 10  # number of terms to calculate in Taylor series
+        x = num % (2*con.pi)  # reduce to the range [0, 2*pi)
+        result = 0
+        for i in range(n):
+            term = (-1)**i * x**(2*i) / alg.factorial(2*i)
+            result += term
+        return result
+
+
+    def tan(self, num: Union[int, float]) -> Union[int, float]:
+        """
+        Returns the tangent value of a number.
+
+        Args:
+        - num: a number in radians whose tangent value is to be calculated
+
+        Returns:
+        The tangent value of the input number
+        """
+        sin_val = self.sin(num)
+        cos_val = self.cos(num)
+        return sin_val / cos_val
+
 
 
 
@@ -1152,13 +1373,6 @@ class MathFunctions:
             x - x ** 3 / 6 + x ** 5 / 120 - x ** 7 / 5040 + x ** 9 / 362880
         )
 
-
-
 alg = Algorithm()
 con = Constants()
 fun = MathFunctions()
-
-print(con.speed_of_light()*con.pi())
-print(alg.division_float(10,20))
-print(fun.surface_area_of_cylinder(50, 1324))
-print(fun.area_of_circle(20))
