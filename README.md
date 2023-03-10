@@ -196,40 +196,40 @@ Returns the result of dividing one fraction by another.
     This function returns the fourth proportional number given three proportional numbers. The function can be used in three different ways. First, if c and d are both None, then a and b are assumed to be the first two proportional numbers, and c and d are set to b and a respectively. Second, if d is None, then a and b are assumed to be the first two proportional numbers, and d is calculated from c using the formula d = (b * c) / a. Third, if c and d are both specified, then a and b are assumed to be the first two proportional numbers, and the function calculates the fourth proportional number x using the formula x = (b * d) / c.
 ---
 ### `percentage_to_fraction(x: float) -> float`
+This function converts a percantage `x` to a fraction.
 
-This function converts a percentage `x` to a fraction.
 ---
 ### `fraction_to_percentage(numerator: int, denominator: int) -> float`
-
 This function converts a fraction given by `numerator` and `denominator` to a percentage.
+
 ---
 ### `linear_search(lst, target)`
-
 This function searches for the `target` element in the given list `lst` and returns the index if found, otherwise returns -1.
+
 ---
 ### `binary_search(lst, target)`
-
 This function searches for the `target` element in the given list `lst` using binary search and returns the index if found, otherwise returns -1.
+
 ---
 ### `bubble_sort(lst)`
-
 This function sorts the given list `lst` in ascending order using bubble sort and returns the sorted list.
+
 ---
 ### `insertion_sort(lst)`
-
 This function sorts the given list `lst` in ascending order using insertion sort and returns the sorted list.
+
 ---
 ### `merge_sort(lst)`
-
 This function sorts the given list `lst` in ascending order using merge sort and returns the sorted list.
+
 ---
 ### `square_root(num)`
-
 This function computes the square root of a given number `num` using the Babylonian method.
+
 ---
 ### `factorial(num)`
-
 This function computes the factorial of a given number `num`.
+
 ---
 ### `fibonacci(n)`
 
@@ -649,3 +649,242 @@ Returns:
 
         K': to the 20th decimal
         0.114_942_044_853_296_200_70
+---
+### `def wallis_constant(self):`
+Returns Wallis's constant.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      Value to the 20th decimal
+      2.094_551_481_542_326_591_48
+---
+### `eulers_number(self):`
+A mathematical constant approximately equal to 2.71828 that can be characterized in many ways.
+It is the base of the natural logarithms.
+It is the limit of (1 + 1/n)n as n approaches infinity, an expression that arises in the study of compound interest.
+It can also be calculated as the sum of the infinite series
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      e: Value to the 20th decimal. math.e
+      2.718_281_828_459_045_235_36
+---
+### `natural_log(self):`
+Natural logarithm of 2.
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      ln 2: Value to the 30th decimal. math.log(2)
+      0.693_147_180_559_945_309_417_232_121_458
+---
+### `lemniscate_constant(self):`
+The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      ϖ: Value to the 20th decimal. math.sqrt(2)
+      2.622_057_554_292_119_810_46 
+---
+### `eulers_constant(self):`
+Not to be confused with Euler's Number.
+Defined as the limiting difference between the harmonic series and the natural logarithm
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      γ: Value to the 50th decimal
+      0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
+---
+### `Erdős_Borwein_constant(self):`
+The sum of the reciprocals of the Mersenne numbers
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      E: Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
+      1.606_695_152_415_291_763_78
+---
+### `omega_constant(self):`
+Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      Ω: Value to the 30th decimal
+      0.567_143_290_409_783_872_999_968_662_210
+---
+### `Apérys_constant(self):`
+The sum of the reciprocals of the positive cubes.
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      ζ(3): Value to the 45th decimal
+      1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
+---
+### `laplace_limit(self):`
+The maximum value of the eccentricity for which a solution to Kepler's equation, in terms of a power series in the eccentricity, converges.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      Value to the 35th decimal
+      0.662_743_419_349_181_580_974_742_097_109_252_90
+---
+### `ramanujan_soldner_constant(self):`
+A mathematical constant defined as the unique positive zero of the logarithmic integral function.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      μ ≈: Value to the 45th decimal
+      1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
+---
+### `gauss_constant(self):`
+Transcendental mathematical constant that is the ratio of the perimeter of
+Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      G == ϖ /π ≈ 0.8346268: Value to the 7th decimal
+      0.834_626_8
+---
+### `second_hermite_constant(self):`
+_summary_
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      γ2 : Value to the 20th decimal
+      1.154_700_538_379_251_529_01
+---
+### `liouvilles_constant(self):`
+A real number x with the property that, for every positive integer n,
+there exists a pair of integers (p,q) with q>1.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      L: Value to the 119th decimal
+      0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
+---
+### `first_continued_fraction(self):`
+_summary_
+
+Arguments:
+
+        - None
+        
+Returns:
+        
+      C_{1}: _description_
+      0.697_774_657_964_007_982_01
+---
+### `ramanujans_constant(self):`
+The transcendental number, which is an almost integer, in that it is very close to an integer.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      e**{{\pi {\sqrt {163}}}}: Value to the 18th decimal
+      262_537_412_640_768_743.999_999_999_999_250_073
+---
+### `glaisher_kinkelin_constant(self):`
+A mathematical constant, related to the K-function and the Barnes G-function.
+
+Arguments:
+
+        - None
+        
+Returns:
+
+      A: Value to the 20th decimal
+      1.282_427_129_100_622_636_87
+---
+### `catalans_constant(self):`
+_summary_
+
+Returns:
+        
+      G: Value to the 39th decimal
+      0.915_965_594_177_219_015_054_603_514_932_384_110_774
+---
+### `dottie_number(self):`
+A constant that is the unique real root of the equation 
+
+Returns:
+
+      Unique real root of cos x=x: value to the 20th decimal
+      return 0.739_085_133_215_160_641_65
+---
+### `meissel_mertens_constant(self):`
+_summary_
+
+Returns:
+
+      M: Value to the 40th value
+      return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
+    
+### `universal_parabolic_constant(self):
+The ratio, for any parabola, of the arc length of the parabolic segment
+        formed by the latus rectum to the focal parameter.
+
+Returns:
+
+      P: Value to the 20th decimal
+      2.295_587_149_392_638_074_03
+---
+### `cahens_constant(self):`
+The value of an infinite series of unit fractions with alternating signs.
+
+Returns:
+
+      C: Value to the 20th decimal
+      0.643_410_546_288_338_026_18
