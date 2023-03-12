@@ -851,6 +851,10 @@ Returns:
 ### `catalans_constant(self):`
 _summary_
 
+Arguments:
+
+        - None
+        
 Returns:
         
       G: Value to the 39th decimal
@@ -859,6 +863,10 @@ Returns:
 ### `dottie_number(self):`
 A constant that is the unique real root of the equation 
 
+Arguments:
+
+        - None
+        
 Returns:
 
       Unique real root of cos x=x: value to the 20th decimal
@@ -867,15 +875,22 @@ Returns:
 ### `meissel_mertens_constant(self):`
 _summary_
 
+Arguments:
+
+        - None
+        
 Returns:
 
       M: Value to the 40th value
       return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
     
 ### `universal_parabolic_constant(self):
-The ratio, for any parabola, of the arc length of the parabolic segment
-        formed by the latus rectum to the focal parameter.
+The ratio, for any parabola, of the arc length of the parabolic segment formed by the latus rectum to the focal parameter.
 
+Arguments:
+
+        - None
+        
 Returns:
 
       P: Value to the 20th decimal
@@ -884,7 +899,256 @@ Returns:
 ### `cahens_constant(self):`
 The value of an infinite series of unit fractions with alternating signs.
 
+Arguments:
+
+        - None
+        
 Returns:
 
       C: Value to the 20th decimal
       0.643_410_546_288_338_026_18
+
+
+
+# Functions Class
+A class containing various mathematical functions.
+
+
+### `area_of_circle(self, r: float) -> float:`
+Calculates the area of a circle given its radius.
+
+Arguments:
+
+        r: The radius of the circle.
+
+Returns:
+
+        The area of the circle.
+        return 3.141592653589793238 * r ** 2
+
+### `volume_of_sphere(self, r: float) -> float:`
+Calculates the volume of a sphere given its radius.
+
+Arguments:
+
+        r: The radius of the sphere.
+
+Returns:
+
+        The volume of the sphere.
+        return 4 / 3 * 3.141592653589793238 * r ** 3
+
+### `perimeter_of_rectangle(self, l: float, b: float) -> float:`
+Calculates the perimeter of a rectangle given its length and breadth.
+
+Arguments:
+
+        l: The length of the rectangle.
+        b: The breadth of the rectangle.
+
+Returns:
+
+        The perimeter of the rectangle.
+        return 2 * (l + b)
+
+### `pythagoras_theorem_length(self, a: float, b: float) -> float:`
+Calculates the length of the hypotenuse of a right-angled triangle given the lengths of its two other sides.
+
+Arguments:
+
+        a: The length of one of the sides of the triangle.
+        b: The length of the other side of the triangle.
+
+Returns:
+
+        The length of the hypotenuse of the triangle.
+        return (a ** 2 + b ** 2) ** 0.5
+
+### `square_root(self, x: float) -> float:`
+Calculates the square root of a given number.
+
+Arguments:
+
+        x: The number to take the square root of.
+
+Returns:
+
+        The square root of x.
+        return x ** 0.5
+
+### `factorial(self, n: int) -> int:`
+Calculates the factorial of a given number.
+
+Arguments:
+
+        n: The number to calculate the factorial of.
+
+Returns:
+
+        The factorial of n.
+
+        fact = 1
+        for i in range(1, n+1):
+            fact *= i
+        return fact
+
+### `gcd(self, a: int, b: int) -> int:`
+Calculates the greatest common divisor of two numbers.
+
+Arguments:
+
+        a: The first number.
+        b: The second number.
+
+Returns:
+
+        The greatest common divisor of a and b.
+        
+        while(b):
+            a, b = b, a % b
+        return a
+
+### `lcm(self, a: int, b: int) -> int:`
+Calculates the least common multiple of two numbers.
+
+Arguments:
+
+        a: The first number.
+        b: The second number.
+
+Returns:
+
+        The least common multiple of a and b.
+
+        return a * b // self.gcd(a, b)
+
+### `exponential(self, x: float) -> float:`
+Calculates the value of e raised to a given power.
+
+Arguments:
+
+        x: The exponent.
+
+Returns:
+
+        The value of e raised to x.
+
+        e = 2.718281828459045235
+        return e ** x
+    
+### `logarithm(self, x: float, base: float) -> float:`
+Calculates the logarithm of a given number to a given base.
+
+Arguments:
+
+        x: The number to take the logarithm of.
+        base: The base of the logarithm.
+
+Returns:
+
+        The logarithm of x to the base.
+
+        return (Functions.log(x) / Functions.log(base))
+
+### `log(x):`
+Calculates the natural logarithm of a given number.
+
+Arguments:
+
+        x: The number to take the natural logarithm of.
+
+Returns:
+
+        The natural logarithm of x.
+
+        if x <= 0:
+            return float('nan')
+        elif x == 1:
+            return 0.0
+        else:
+            return Functions.integrate(1/x, 1, x)
+
+### `integrate(f, a, b):`
+Approximates the definite integral of a function over a given interval using the trapezoidal rule.
+
+Arguments:
+
+        f: The function to integrate.
+        a: The lower limit of the interval.
+        b: The upper limit of the interval.
+
+Returns:
+
+        The approximate value of the definite integral of f over the interval [a, b].
+
+        n = 1000 # Number of trapezoids to use
+        dx = (b - a) / n
+        x_values = [a + i * dx for i in range(n+1)]
+        y_values = [f(x) for x in x_values]
+        return (dx/2) * (y_values[0] + y_values[-1] + 2*sum(y_values[1:-1]))
+
+### `surface_area_of_cylinder(self, r: float, h: float) -> float:`
+Calculates the surface area of a cylinder given its radius and height.
+
+Arguments:
+
+        r: The radius of the cylinder.
+        h: The height of the cylinder.
+
+Returns:
+
+        The surface area of the cylinder.
+
+        return 2 * 3.14159265358979323846 * r * (r + h)
+
+
+### `volume_of_cylinder(self, r: float, h: float) -> float:`
+Calculates the volume of a cylinder given its radius and height.
+
+Arguments:
+
+        r: The radius of the cylinder.
+        h: The height of the cylinder.
+
+Returns:
+
+        The volume of the cylinder.
+
+        return 3.14159265358979323846 * r ** 2 * h
+
+
+### `area_of_triangle(self, b: float, h: float) -> float:`
+Calculates the area of a triangle given its base and height.
+
+Arguments:
+
+        b: The base of the triangle.
+        h: The height of the triangle.
+
+Returns:
+
+        The area of the triangle.
+
+        return 0.5 * b * h
+
+
+### `sine(self, x: float) -> float:`
+Calculates the sine of a given angle in radians.
+
+Arguments:
+
+        x: The angle in radians.
+
+Returns:
+
+        The sine of the angle.
+
+        x = x % (2 * 3.141592653589793238)
+        sign = 1 if x > 0 else -1
+        x *= sign
+        if x > 3.141592653589793238:
+            x -= 2 * 3.141592653589793238
+            sign *= -1
+        return sign * (
+            x - x ** 3 / 6 + x ** 5 / 120 - x ** 7 / 5040 + x ** 9 / 362880
+        )
