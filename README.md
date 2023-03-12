@@ -117,77 +117,93 @@ Returns:
 
 Returns the natural logarithm of x (base e)
 
-    Args:
+Arguments:
+
         x (int/float): The value for which to compute the natural logarithm
 
-    Returns:
+Returns:
+
         The natural logarithm of x
 ---
 ### `__log10(self, x)`
 
 Returns the logarithm of x (base 10)
 
-    Args:
+Arguments:
+
         x (int/float): The value for which to compute the logarithm
 
-    Returns:
+Returns:
+
         The logarithm of x (base 10)
 ---
 ### `adding_fractions(self, *args)`
 
 Returns the sum of multiple fractions
 
-    Args:
+Arguments:
+
         *args (tuples): Multiple fractions represented as tuples of the form (numerator, denominator)
 
-    Returns:
+Returns:
+
         A tuple representing the sum of all fractions in reduced form (numerator, denominator)
 ---
 ### `find_gcd(self, a, b)`
 
 Finds the greatest common divisor of two numbers using Euclid's algorithm.
 
-    Args:
+Arguments:
+
         a: An integer
         b: Another integer
 
-    Returns:
+Returns:
+
         The greatest common divisor of a and b
 ---
 ### `count_words(text)`
 
 Returns a dictionary containing the count of each word in the given text.
 
-    Args:
+Arguments:
+
         text (str): The text to count the words in.
 
-    Returns:
+Returns:
+
         A dictionary where the keys are the unique words in the text and the values are the count of each word.
 ---
 ### `multiplying_fractions(self, *args)`
 
 Returns the product of multiple fractions.
 
-    Args:
+Arguments:
+
         *args: An arbitrary number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
 
-    Returns:
+Returns:
+
         A tuple containing the numerator and denominator of the product of the fractions.
 
-    Raises:
+Raises:
+
         ValueError: If any of the arguments are not tuples of length 2 or if any of the denominators are 0.
 ---
 ### `divide_fractions(self, *args: tuple[int, int]) -> tuple[int, int]`
 
 Returns the result of dividing one fraction by another.
 
-    Args:
+Arguments:
+
         *args: Two tuples, each with two values, representing the numerator and denominator of the two fractions.
 
-    Returns:
+Returns:
+
         A tuple containing the numerator and denominator of the quotient of the two fractions.
 
-    Raises:
+Raises:
+
         ValueError: If any of the arguments are not tuples of length 2.
         ZeroDivisionError: If the denominator of the second fraction is zero.
 ---        
@@ -198,13 +214,32 @@ Returns the result of dividing one fraction by another.
 ### `percentage_to_fraction(x: float) -> float`
 This function converts a percantage `x` to a fraction.
 
+Args:
+
+      x (float): percentage
+            
+Returns:
+
+      The fraction form of a percentage
+
 ---
 ### `fraction_to_percentage(numerator: int, denominator: int) -> float`
 This function converts a fraction given by `numerator` and `denominator` to a percentage.
 
+Arguments:
+
+      numerator: The numerator of the fraction.
+      denominator: The denominator of the fraction.
+
+Returns:
+
+      The fraction as a percentage.
+            
 ---
 ### `linear_search(lst, target)`
 This function searches for the `target` element in the given list `lst` and returns the index if found, otherwise returns -1.
+
+
 
 ---
 ### `binary_search(lst, target)`
@@ -226,10 +261,26 @@ This function sorts the given list `lst` in ascending order using merge sort and
 ### `square_root(num)`
 This function computes the square root of a given number `num` using the Babylonian method.
 
+Arguments:
+
+      num (float): The number to find the square root of.
+
+Returns:
+
+      float: The square root of the given number.
+
 ---
 ### `factorial(num)`
 This function computes the factorial of a given number `num`.
 
+Arguments:
+      
+      num (int): The number to find the factorial of.
+
+Returns:
+
+      int: The factorial of the given number.
+        
 ---
 ### `fibonacci(n)`
 
@@ -370,7 +421,7 @@ Returns:
         list[list[float]]: The matrix product of A and B.
 
 ---
-### `matrix_inversion(A):'
+### `matrix_inversion(A):`
 
 Inverts a matrix A and returns the resulting matrix.
 
@@ -926,6 +977,7 @@ Returns:
         The area of the circle.
         return 3.141592653589793238 * r ** 2
 
+---
 ### `volume_of_sphere(self, r: float) -> float:`
 Calculates the volume of a sphere given its radius.
 
@@ -938,6 +990,7 @@ Returns:
         The volume of the sphere.
         return 4 / 3 * 3.141592653589793238 * r ** 3
 
+---
 ### `perimeter_of_rectangle(self, l: float, b: float) -> float:`
 Calculates the perimeter of a rectangle given its length and breadth.
 
@@ -951,6 +1004,7 @@ Returns:
         The perimeter of the rectangle.
         return 2 * (l + b)
 
+---
 ### `pythagoras_theorem_length(self, a: float, b: float) -> float:`
 Calculates the length of the hypotenuse of a right-angled triangle given the lengths of its two other sides.
 
@@ -964,6 +1018,7 @@ Returns:
         The length of the hypotenuse of the triangle.
         return (a ** 2 + b ** 2) ** 0.5
 
+---
 ### `square_root(self, x: float) -> float:`
 Calculates the square root of a given number.
 
@@ -976,6 +1031,7 @@ Returns:
         The square root of x.
         return x ** 0.5
 
+---
 ### `factorial(self, n: int) -> int:`
 Calculates the factorial of a given number.
 
@@ -992,6 +1048,7 @@ Returns:
             fact *= i
         return fact
 
+---
 ### `gcd(self, a: int, b: int) -> int:`
 Calculates the greatest common divisor of two numbers.
 
@@ -1008,6 +1065,7 @@ Returns:
             a, b = b, a % b
         return a
 
+---
 ### `lcm(self, a: int, b: int) -> int:`
 Calculates the least common multiple of two numbers.
 
@@ -1022,6 +1080,7 @@ Returns:
 
         return a * b // self.gcd(a, b)
 
+---
 ### `exponential(self, x: float) -> float:`
 Calculates the value of e raised to a given power.
 
@@ -1035,7 +1094,8 @@ Returns:
 
         e = 2.718281828459045235
         return e ** x
-    
+
+---
 ### `logarithm(self, x: float, base: float) -> float:`
 Calculates the logarithm of a given number to a given base.
 
@@ -1050,6 +1110,7 @@ Returns:
 
         return (Functions.log(x) / Functions.log(base))
 
+---
 ### `log(x):`
 Calculates the natural logarithm of a given number.
 
@@ -1068,6 +1129,7 @@ Returns:
         else:
             return Functions.integrate(1/x, 1, x)
 
+---
 ### `integrate(f, a, b):`
 Approximates the definite integral of a function over a given interval using the trapezoidal rule.
 
@@ -1087,6 +1149,7 @@ Returns:
         y_values = [f(x) for x in x_values]
         return (dx/2) * (y_values[0] + y_values[-1] + 2*sum(y_values[1:-1]))
 
+---
 ### `surface_area_of_cylinder(self, r: float, h: float) -> float:`
 Calculates the surface area of a cylinder given its radius and height.
 
@@ -1101,7 +1164,7 @@ Returns:
 
         return 2 * 3.14159265358979323846 * r * (r + h)
 
-
+---
 ### `volume_of_cylinder(self, r: float, h: float) -> float:`
 Calculates the volume of a cylinder given its radius and height.
 
@@ -1116,7 +1179,7 @@ Returns:
 
         return 3.14159265358979323846 * r ** 2 * h
 
-
+---
 ### `area_of_triangle(self, b: float, h: float) -> float:`
 Calculates the area of a triangle given its base and height.
 
@@ -1131,7 +1194,7 @@ Returns:
 
         return 0.5 * b * h
 
-
+---
 ### `sine(self, x: float) -> float:`
 Calculates the sine of a given angle in radians.
 
