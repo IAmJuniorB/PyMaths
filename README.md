@@ -1060,7 +1060,11 @@ A constant that is the unique real root of the equation
 ---
 ### `meissel_mertens_constant(self):`
 
-_summary_
+Returns the Meissel-Mertens constant M to the 40th decimal place.
+
+The Meissel-Mertens constant M is defined as the sum of the reciprocal of the primes up to n, where n is an arbitrary positive integer. It has important connections to prime number theory and the Riemann hypothesis.
+
+This function uses a precomputed value of M to return the constant to the 40th decimal place.
 
 ##### **Arguments:**
 
@@ -1068,8 +1072,13 @@ _summary_
         
 ##### **Returns:**
 
-      M: Value to the 40th value
+      M (float): The Meissel-Mertens constant M to the 40th decimal place.
       return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
+
+##### **Example:**
+
+        meissel_mertens_constant()
+        0.2614972128476427837554268386086958590516
 
 ---
 ### `universal_parabolic_constant(self):
