@@ -240,7 +240,25 @@ class Algorithm:
         return (numerator, denominator)
 
     def proportion_rule(self, a: int, b: int, c: int = None, d: int = None) -> int:
-        """Returns the fourth proportional number given three proportional numbers"""
+        """
+    Returns the fourth proportional number given three proportional numbers.
+    
+    Args:
+        a (int): The first proportional number.
+        b (int): The second proportional number.
+        c (int, optional): The third proportional number. Defaults to None.
+        d (int, optional): The fourth proportional number. Defaults to None.
+        
+    Returns:
+        int: The fourth proportional number calculated from the input.
+    
+    If both `c` and `d` are None, `a` and `b` are assumed to be the first two proportional numbers, 
+    and `c` and `d` are set to `b` and `a` respectively. If `d` is None, `a` and `b` are assumed 
+    to be the first two proportional numbers, and `d` is calculated from `c` using the formula 
+    `d = (b * c) / a`. If `c` and `d` are both specified, `a` and `b` are assumed to be the first 
+    two proportional numbers, and the function calculates the fourth proportional number `x` using 
+    the formula `x = (b * d) / c`.
+    """
         if c is None and d is None:
             # a:b = c:x
             c, d = b, a
