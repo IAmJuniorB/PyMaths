@@ -11,7 +11,7 @@ Returns the sum of integers and/or floats.
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
 
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The sum of the integers and/or floats in *args
 
@@ -24,7 +24,7 @@ Returns integers or float of given numbers after being subtracted.
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
 
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The result of subtracting the integers and/or floats in *args from the first argument
 
@@ -37,7 +37,7 @@ Returns an integer or float of given numbers multiplied.
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
     
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The product of the integers and/or floats in *args
 
@@ -52,7 +52,7 @@ Returns a float of dividend divided by divisor.
 
     divisor (Union[int, float]): The number to divide by (divisor)
     
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The result of dividing the dividend by the divisor, as a float
 
@@ -67,7 +67,7 @@ Returns an integer of dividend divided by divisor.
     dividend (Union[int, float]): The number to be divided (dividend)
     divisor (Union[int, float]): The number to divide by (divisor)
 
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The result of dividing the dividend by the divisor, rounded down to the nearest integer
 
@@ -81,7 +81,7 @@ Returns the remainder of dividend divided by divisor.
     dividend (Union[int, float]): The number to be divided (dividend)
     divisor (Union[int, float]): The number to divide by (divisor)
 
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The remainder of dividing the dividend by the divisor
 
@@ -95,7 +95,7 @@ Returns base to the power of exponent.
     base (Union[int, float]): The base of the power operation
     exponent (Union[int, float]): The exponent of the power operation
 
-##### **Returns:****
+##### **Returns:**
 
     Union[int, float]: The result of raising the base to the power of the exponent
 
