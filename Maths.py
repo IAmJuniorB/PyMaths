@@ -1121,10 +1121,20 @@ class Constants:
         return 0.915_965_594_177_219_015_054_603_514_932_384_110_774
     
     def dottie_number(self):
-        """A constant that is the unique real root of the equation 
+        """
+            Calculates the unique real root of the equation cos(x) = x, known as the Dottie number, to the 20th decimal place.
+
+            The Dottie number is a constant that arises in the study of iterative methods and has connections to chaos theory.
 
         Returns:
-            Unique real root of cos x=x: value to the 20th decimal
+            float: The Dottie number, i.e., the unique real root of the equation cos(x) = x, to the 20th decimal place.
+    
+        Example:
+            >>> dottie_number()
+            0.73908513321516064165
+
+        Arguments:
+            None
         """
         return 0.739_085_133_215_160_641_65
     
