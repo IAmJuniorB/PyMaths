@@ -211,7 +211,21 @@ Returns the result of dividing one fraction by another.
 ---        
 ### `proportion_rule(a: int, b: int, c: int = None, d: int = None) -> int`
 
-    This function returns the fourth proportional number given three proportional numbers. The function can be used in three different ways. First, if c and d are both None, then a and b are assumed to be the first two proportional numbers, and c and d are set to b and a respectively. Second, if d is None, then a and b are assumed to be the first two proportional numbers, and d is calculated from c using the formula d = (b * c) / a. Third, if c and d are both specified, then a and b are assumed to be the first two proportional numbers, and the function calculates the fourth proportional number x using the formula x = (b * d) / c.
+Returns the fourth proportional number given three proportional numbers.
+    
+##### **Arguments:**
+
+        a (int): The first proportional number.
+        b (int): The second proportional number.
+        c (int, optional): The third proportional number. Defaults to None.
+        d (int, optional): The fourth proportional number. Defaults to None.
+        
+##### **Returns:**
+
+        int: The fourth proportional number calculated from the input.
+        
+        If both `c` and `d` are None, `a` and `b` are assumed to be the first two proportional numbers, and `c` and `d` are set to `b` and `a` respectively. If `d` is None, `a` and `b` are assumed to be the first two proportional numbers, and `d` is calculated from `c` using the formula `d = (b * c) / a`. If `c` and `d` are both specified, `a` and `b` are assumed to be the first two proportional numbers, and the function calculates the fourth proportional number `x` using the formula `x = (b * d) / c`.
+        
 ---
 ### `percentage_to_fraction(x: float) -> float`
 This function converts a percantage `x` to a fraction.
