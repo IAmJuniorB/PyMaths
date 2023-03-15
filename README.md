@@ -1,7 +1,7 @@
 # Math Module
 A work in progress, incomplete, library full of mathematical algorithms, constants, and functions.
 
-# Algorithm Class
+## **Algorithm Class**
 This is a Python class that implements various algorithms, including finding the greatest common divisor using Euclid's algorithm, computing logarithms with a specified base, counting the occurrences of words in a text, and performing operations with fractions.
 
 ### `addition(*args: Union[int, float]) -> Union[int, float]`
@@ -15,7 +15,6 @@ Returns the sum of integers and/or floats.
 
     Union[int, float]: The sum of the integers and/or floats in *args
 
-    Returns the sum of integers and/or floats.
 ---
 ### `subtract(*args: Union[int, float]) -> Union[int, float]`
 Returns integers or float of given numbers after being subtracted.
@@ -28,7 +27,6 @@ Returns integers or float of given numbers after being subtracted.
 
     Union[int, float]: The result of subtracting the integers and/or floats in *args from the first argument
 
-    Returns integers or float of given numbers after being subtracted.
 ---
 ### `multiply(*args: Union[int, float]) -> Union[int, float]`
 Returns an integer or float of given numbers multiplied.
@@ -41,7 +39,6 @@ Returns an integer or float of given numbers multiplied.
 
     Union[int, float]: The product of the integers and/or floats in *args
 
-    Returns an integer or float of given numbers multiplied.
 ---
 ### `division_float(dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]`
 Returns a float of dividend divided by divisor.
@@ -56,7 +53,6 @@ Returns a float of dividend divided by divisor.
 
     Union[int, float]: The result of dividing the dividend by the divisor, as a float
 
-    Returns a float of dividend divided by divisor.
 ---
 ### `division_int(dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]`
 
@@ -71,7 +67,6 @@ Returns an integer of dividend divided by divisor.
 
     Union[int, float]: The result of dividing the dividend by the divisor, rounded down to the nearest integer
 
-    Returns an integer of dividend divided by divisor.
 ---
 ### `division_remainder(dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]`
 Returns the remainder of dividend divided by divisor.
@@ -85,7 +80,6 @@ Returns the remainder of dividend divided by divisor.
 
     Union[int, float]: The remainder of dividing the dividend by the divisor
 
-    Returns the remainder of dividend divided by divisor.
 ---
 ### `power(base: Union[int, float], exponent: Union[int, float]) -> Union[int, float]`
 Returns base to the power of exponent.
@@ -99,7 +93,6 @@ Returns base to the power of exponent.
 
     Union[int, float]: The result of raising the base to the power of the exponent
 
-    Returns base to the power of exponent.
 ---
 ### `log(self, x, base=10)`
 
@@ -113,7 +106,7 @@ Returns the logarithm of x with a specified base (default is 10)
 ##### **Returns:**
 
         Union[int, float]: The logarithm of x with the specified base
-        The logarithm of x with the specified base
+
 ---
 ### `__ln(self, x)`
 
@@ -138,6 +131,7 @@ Returns the logarithm of x (base 10)
 ##### **Returns:**
 
         The logarithm of x (base 10)
+        
 ---
 ### `adding_fractions(self, *args)`
 
@@ -150,6 +144,7 @@ Returns the sum of multiple fractions
 ##### **Returns:**
 
         A tuple representing the sum of all fractions in reduced form (numerator, denominator)
+        
 ---
 ### `find_gcd(self, a, b)`
 
@@ -163,6 +158,7 @@ Finds the greatest common divisor of two numbers using Euclid's algorithm.
 ##### **Returns:**
 
         The greatest common divisor of a and b
+        
 ---
 ### `count_words(text)`
 
@@ -175,6 +171,7 @@ Returns a dictionary containing the count of each word in the given text.
 ##### **Returns:**
 
         A dictionary where the keys are the unique words in the text and the values are the count of each word.
+
 ---
 ### `multiplying_fractions(self, *args)`
 
@@ -191,6 +188,7 @@ Returns the product of multiple fractions.
 ##### **Raises:**
 
         ValueError: If any of the arguments are not tuples of length 2 or if any of the denominators are 0.
+
 ---
 ### `divide_fractions(self, *args: tuple[int, int]) -> tuple[int, int]`
 
@@ -208,6 +206,7 @@ Returns the result of dividing one fraction by another.
 
         ValueError: If any of the arguments are not tuples of length 2.
         ZeroDivisionError: If the denominator of the second fraction is zero.
+        
 ---        
 ### `proportion_rule(a: int, b: int, c: int = None, d: int = None) -> int`
 
@@ -228,6 +227,7 @@ Returns the fourth proportional number given three proportional numbers.
         
 ---
 ### `percentage_to_fraction(x: float) -> float`
+
 This function converts a percantage `x` to a fraction.
 
 ##### **Arguments:**
@@ -240,6 +240,7 @@ This function converts a percantage `x` to a fraction.
 
 ---
 ### `fraction_to_percentage(numerator: int, denominator: int) -> float`
+
 This function converts a fraction given by `numerator` and `denominator` to a percentage.
 
 ##### **Arguments:**
@@ -253,6 +254,7 @@ This function converts a fraction given by `numerator` and `denominator` to a pe
             
 ---
 ### `linear_search(lst, target)`
+
 This function searches for the `target` element in the given list `lst` and returns the index if found, otherwise returns -1.
 
 ##### **Arguments:**
@@ -265,6 +267,7 @@ This function searches for the `target` element in the given list `lst` and retu
 
 ---
 ### `binary_search(lst, target)`
+
 This function searches for the `target` element in the given list `lst` using binary search and returns the index if found, otherwise returns -1.
 
 ##### **Arguments:**
@@ -277,6 +280,7 @@ This function searches for the `target` element in the given list `lst` using bi
 
 ---
 ### `bubble_sort(lst)`
+
 This function sorts the given list `lst` in ascending order using bubble sort and returns the sorted list.
 
 ##### **Arguments:**
@@ -286,8 +290,10 @@ This function sorts the given list `lst` in ascending order using bubble sort an
 ##### **Returns:**
 
         - Sorted list
+        
 ---
 ### `insertion_sort(lst)`
+
 This function sorts the given list `lst` in ascending order using insertion sort and returns the sorted list.
 
 ##### **Arguments:**
@@ -300,6 +306,7 @@ This function sorts the given list `lst` in ascending order using insertion sort
 
 ---
 ### `merge_sort(lst)`
+
 This function sorts the given list `lst` in ascending order using merge sort and returns the sorted list.
 
 ##### **Arguments:**
@@ -312,6 +319,7 @@ This function sorts the given list `lst` in ascending order using merge sort and
 
 ---
 ### `square_root(num)`
+
 This function computes the square root of a given number `num` using the Babylonian method.
 
 ##### **Arguments:**
@@ -324,6 +332,7 @@ This function computes the square root of a given number `num` using the Babylon
 
 ---
 ### `factorial(num)`
+
 This function computes the factorial of a given number `num`.
 
 ##### **Arguments:**
@@ -346,6 +355,7 @@ Compute the nth number in the Fibonacci sequence.
 ##### **Returns:**
 
     int: The nth number in the Fibonacci sequence.
+    
 ---
 ### `is_prime(num)`
 
@@ -358,6 +368,7 @@ Check whether a given number is prime.
 ##### **Returns:**
 
     bool: True if the number is prime, False otherwise.
+    
 ---
 ### `gcd(*args)`
 
@@ -370,6 +381,7 @@ Compute the greatest common divisor of two or more numbers.
 ##### **Returns:**
 
     int: The greatest common divisor of the given numbers.
+    
 ---
 ### `lcm(*args)`
 
@@ -382,6 +394,7 @@ Compute the least common multiple of two or more numbers.
 ##### **Returns:**
 
     int: The least common multiple of the given numbers.
+    
 ---
 ### `sort_numbers(numbers: List[Union[int, float]], reverse: bool = False) -> List[Union[int, float]]`
 
@@ -395,6 +408,7 @@ This function takes a list of numbers and returns a sorted list in ascending or 
 ##### **Returns:**
 
     List[Union[int, float]]: A sorted list in ascending or descending order.
+    
 ---
 ### `binary_search(numbers: List[Union[int, float]], target: Union[int, float]) -> int`
 
@@ -408,6 +422,7 @@ This function takes a sorted list of numbers and a target number and returns the
 ##### **Returns:**
 
     int: The index of the target number in the list, or -1 if it is not found.
+    
 ---
 ### `linear_regression(x, y)`
 
@@ -421,6 +436,7 @@ Calculates the equation of the line of best fit (y = mx + b) for the given x and
 ##### **Returns:**
 
     tuple: A tuple containing the slope (m) and y-intercept (b) of the line of best fit.
+    
 ---    
 ### `matrix_addition`
 
@@ -434,6 +450,7 @@ This function takes in two matrices A and B of the same size, and returns their 
 ##### **Returns:**
 
     A list of lists of floats representing the sum of the matrices.
+    
 ---
 ### `matrix_multiplication`
 
@@ -447,6 +464,7 @@ This function multiplies two matrices A and B and returns the resulting matrix.
 ##### **Returns:**
 
     A list of lists of floats representing the product of matrices A and B.
+    
 ---
 ### `matrix_inversion`
 
@@ -459,6 +477,7 @@ This function inverts a matrix A and returns the resulting matrix.
 ##### **Returns:**
 
     A list of lists of floats representing the inverted matrix of A.
+    
 ---
 ### `matrix_multiplication(A, B):`
 
@@ -501,6 +520,7 @@ Use Newton's method to find the root of a function f.
 ##### **Returns:**
         
         - root (float): The estimated root of the function.
+        
  ---   
 ### `gradient_descent(self, f, f_prime, x0, alpha, max_iters):`
 
@@ -531,6 +551,7 @@ Use Monte Carlo simulation to estimate the probability of an event.
 ##### **Returns:**
         
         - probability (float): The estimated probability of the event.
+        
 ---
 ### `distance(point1, point2):`
 
@@ -542,6 +563,7 @@ Use Monte Carlo simulation to estimate the probability of an event.
 ##### **Returns:**
 
         The distance between the two points
+        
 ---
 ### `random_seed(seed):`
 
@@ -554,6 +576,7 @@ A simple pseudorandom number generator based on the linear congruential method.
 ##### **Returns:**
 
         - A float between 0 and 1.
+        
 ---
 ### `k_means_clustering(self, data, k):`
 
@@ -567,6 +590,7 @@ Use k-means clustering to group data points into k clusters.
 ##### **Returns:**
 
         - clusters (list): A list of k clusters, each containing the data points assigned to that cluster.
+        
 ---
 ### `exp(self, num: Union[int, float]) -> Union[int, float]:`
 
@@ -579,6 +603,7 @@ Returns the exponential value of a number.
 ##### **Returns:**
 
         The exponential value of the input number
+        
 ---
 ### `absolute(self, num: Union[int, float]) -> Union[int, float]:`
 
@@ -591,6 +616,7 @@ Returns the absolute value of a number.
 ##### **Returns:**
 
         The absolute value of the input number
+        
 ---
 ### `modulo(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:`
 
@@ -604,6 +630,7 @@ Returns the remainder of dividing the dividend by the divisor.
 ##### **Returns:**
         
         The remainder of dividing the dividend by the divisor
+        
 ---
 ### `sin(self, num: Union[int, float]) -> Union[int, float]:`
 
@@ -616,6 +643,7 @@ Returns the sine value of a number.
 ##### **Returns:**
 
         The sine value of the input number
+        
 ---
 ### `cos(self, num: Union[int, float]) -> Union[int, float]:`
 
@@ -645,10 +673,12 @@ Returns the tangent value of a number.
 
 
 
-# Constants Class
+## **Constants Class**
+
 This is a Python class full of mathematical constants such a Pi or the speed of light.
 
 ### `speed_of_light(self):`
+
 Returns the speed of light in meters per second
 
 ##### **Arguments:**
@@ -658,11 +688,13 @@ Returns the speed of light in meters per second
 ##### **Returns:**
 
         The speed of light in meters/second at 299_792_458
+        
 ---
 ### `planck_constant(self):`
         pass
     
 ### `pi(self):`
+
 The ratio of a circle's circumference to its diameter.
 
 ##### **Arguments:**
@@ -672,8 +704,10 @@ The ratio of a circle's circumference to its diameter.
 ##### **Returns:**
         Pi, π, to the 20th decimal
         3.141_592_653_589_793_238_46
+        
 ---
 ### `tau(self):`
+
 the 19th letter of the Greek alphabet,
 representing the voiceless dental or alveolar plosive IPA: [t].
 In the system of Greek numerals, it has a value of 300.
@@ -685,8 +719,10 @@ In the system of Greek numerals, it has a value of 300.
 ##### **Returns:**
         tau, uppercase Τ, lowercase τ, or τ, to the 20th decimal
         6.283_185_307_179_586_476_92
+        
 ---
 ### `phi(self):`
+
 "The Golden Ratio"
 In mathematics, two quantities are in the golden ratio
 if their ratio is the same as the ratio of their sum
@@ -700,8 +736,10 @@ to the larger of the two quantities.
 
         Uppercase Φ lowercase φ or ϕ: Value to the 20th decimal
         1.618_033_988_749_894_848_20
+        
 ---
 ### `silver_ratio(self):`
+
 "The Silver Ratio". Two quantities are in the silver ratio (or silver mean)
 if the ratio of the smaller of those two quantities to the larger quantity
 is the same as the ratio of the larger quantity to the sum of the
@@ -715,8 +753,10 @@ smaller quantity and twice the larger quantity
 
         δS: Value to the 20th decimal
         2.414_213_562_373_095_048_80
+        
 ---
 ### `supergolden_ratio(self):`
+
 Returns the mathematical constant psi (the supergolden ratio).
 
 ##### **Arguments:**
@@ -727,8 +767,10 @@ Returns the mathematical constant psi (the supergolden ratio).
         
         ψ to the 25th decimal
         return 1.465_571_231_876_768_026_656_731_2
+        
 ---
 ### `connective_constant(self):`
+
 Returns the connective constant for the hexagonal lattice.
 
 ##### **Arguments:**
@@ -739,8 +781,10 @@ Returns the connective constant for the hexagonal lattice.
 
         μ to the 4th decimal
         1.687_5
+        
 ---
 ### `kepler_bouwkamp_constant(self):`
+
 In plane geometry, the Kepler–Bouwkamp constant (or polygon inscribing constant)
 is obtained as a limit of the following sequence.
 Take a circle of radius 1. Inscribe a regular triangle in this circle.
@@ -755,8 +799,10 @@ Inscribe a circle, regular pentagon, circle, regular hexagon and so forth.
 
         K': to the 20th decimal
         0.114_942_044_853_296_200_70
+        
 ---
 ### `def wallis_constant(self):`
+
 Returns Wallis's constant.
 
 ##### **Arguments:**
@@ -767,8 +813,10 @@ Returns Wallis's constant.
 
       Value to the 20th decimal
       2.094_551_481_542_326_591_48
+      
 ---
 ### `eulers_number(self):`
+
 A mathematical constant approximately equal to 2.71828 that can be characterized in many ways.
 It is the base of the natural logarithms.
 It is the limit of (1 + 1/n)n as n approaches infinity, an expression that arises in the study of compound interest.
@@ -782,8 +830,10 @@ It can also be calculated as the sum of the infinite series
 
       e: Value to the 20th decimal. math.e
       2.718_281_828_459_045_235_36
+      
 ---
 ### `natural_log(self):`
+
 Natural logarithm of 2.
 
 ##### **Arguments:**
@@ -794,8 +844,10 @@ Natural logarithm of 2.
         
       ln 2: Value to the 30th decimal. math.log(2)
       0.693_147_180_559_945_309_417_232_121_458
+      
 ---
 ### `lemniscate_constant(self):`
+
 The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
 ##### **Arguments:**
@@ -806,8 +858,10 @@ The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous 
         
       ϖ: Value to the 20th decimal. math.sqrt(2)
       2.622_057_554_292_119_810_46 
+      
 ---
 ### `eulers_constant(self):`
+
 Not to be confused with Euler's Number.
 Defined as the limiting difference between the harmonic series and the natural logarithm
 
@@ -819,8 +873,10 @@ Defined as the limiting difference between the harmonic series and the natural l
 
       γ: Value to the 50th decimal
       0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
+      
 ---
 ### `Erdős_Borwein_constant(self):`
+
 The sum of the reciprocals of the Mersenne numbers
 
 ##### **Arguments:**
@@ -831,8 +887,10 @@ The sum of the reciprocals of the Mersenne numbers
         
       E: Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
       1.606_695_152_415_291_763_78
+      
 ---
 ### `omega_constant(self):`
+
 Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
 
 ##### **Arguments:**
@@ -843,8 +901,10 @@ Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
         
       Ω: Value to the 30th decimal
       0.567_143_290_409_783_872_999_968_662_210
+      
 ---
 ### `Apérys_constant(self):`
+
 The sum of the reciprocals of the positive cubes.
 
 ##### **Arguments:**
@@ -855,8 +915,10 @@ The sum of the reciprocals of the positive cubes.
         
       ζ(3): Value to the 45th decimal
       1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
+      
 ---
 ### `laplace_limit(self):`
+
 The maximum value of the eccentricity for which a solution to Kepler's equation, in terms of a power series in the eccentricity, converges.
 
 ##### **Arguments:**
@@ -867,8 +929,10 @@ The maximum value of the eccentricity for which a solution to Kepler's equation,
 
       Value to the 35th decimal
       0.662_743_419_349_181_580_974_742_097_109_252_90
+      
 ---
 ### `ramanujan_soldner_constant(self):`
+
 A mathematical constant defined as the unique positive zero of the logarithmic integral function.
 
 ##### **Arguments:**
@@ -879,8 +943,10 @@ A mathematical constant defined as the unique positive zero of the logarithmic i
 
       μ ≈: Value to the 45th decimal
       1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
+      
 ---
 ### `gauss_constant(self):`
+
 Transcendental mathematical constant that is the ratio of the perimeter of
 Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
@@ -892,8 +958,10 @@ Bernoulli's lemniscate to its diameter, analogous to the definition of π for th
         
       G == ϖ /π ≈ 0.8346268: Value to the 7th decimal
       0.834_626_8
+      
 ---
 ### `second_hermite_constant(self):`
+
 _summary_
 
 ##### **Arguments:**
@@ -906,6 +974,7 @@ _summary_
       1.154_700_538_379_251_529_01
 ---
 ### `liouvilles_constant(self):`
+
 A real number x with the property that, for every positive integer n,
 there exists a pair of integers (p,q) with q>1.
 
@@ -917,8 +986,10 @@ there exists a pair of integers (p,q) with q>1.
 
       L: Value to the 119th decimal
       0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
+
 ---
 ### `first_continued_fraction(self):`
+
 _summary_
 
 ##### **Arguments:**
@@ -929,8 +1000,10 @@ _summary_
         
       C_{1}: _description_
       0.697_774_657_964_007_982_01
+      
 ---
 ### `ramanujans_constant(self):`
+
 The transcendental number, which is an almost integer, in that it is very close to an integer.
 
 ##### **Arguments:**
@@ -941,8 +1014,10 @@ The transcendental number, which is an almost integer, in that it is very close 
 
       e**{{\pi {\sqrt {163}}}}: Value to the 18th decimal
       262_537_412_640_768_743.999_999_999_999_250_073
+      
 ---
 ### `glaisher_kinkelin_constant(self):`
+
 A mathematical constant, related to the K-function and the Barnes G-function.
 
 ##### **Arguments:**
@@ -953,8 +1028,10 @@ A mathematical constant, related to the K-function and the Barnes G-function.
 
       A: Value to the 20th decimal
       1.282_427_129_100_622_636_87
+      
 ---
 ### `catalans_constant(self):`
+
 _summary_
 
 ##### **Arguments:**
@@ -965,8 +1042,10 @@ _summary_
         
       G: Value to the 39th decimal
       0.915_965_594_177_219_015_054_603_514_932_384_110_774
+      
 ---
 ### `dottie_number(self):`
+
 A constant that is the unique real root of the equation 
 
 ##### **Arguments:**
@@ -977,8 +1056,10 @@ A constant that is the unique real root of the equation
 
       Unique real root of cos x=x: value to the 20th decimal
       return 0.739_085_133_215_160_641_65
+      
 ---
 ### `meissel_mertens_constant(self):`
+
 _summary_
 
 ##### **Arguments:**
@@ -989,8 +1070,10 @@ _summary_
 
       M: Value to the 40th value
       return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
-    
+
+---
 ### `universal_parabolic_constant(self):
+
 The ratio, for any parabola, of the arc length of the parabolic segment formed by the latus rectum to the focal parameter.
 
 ##### **Arguments:**
@@ -1001,8 +1084,10 @@ The ratio, for any parabola, of the arc length of the parabolic segment formed b
 
       P: Value to the 20th decimal
       2.295_587_149_392_638_074_03
+      
 ---
 ### `cahens_constant(self):`
+
 The value of an infinite series of unit fractions with alternating signs.
 
 ##### **Arguments:**
@@ -1016,11 +1101,13 @@ The value of an infinite series of unit fractions with alternating signs.
 
 
 
-# Functions Class
+## **Functions Class**
+
 A class containing various mathematical functions.
 
 
 ### `area_of_circle(self, r: float) -> float:`
+
 Calculates the area of a circle given its radius.
 
 ##### **Arguments:**
@@ -1034,6 +1121,7 @@ Calculates the area of a circle given its radius.
 
 ---
 ### `volume_of_sphere(self, r: float) -> float:`
+
 Calculates the volume of a sphere given its radius.
 
 ##### **Arguments:**
@@ -1047,6 +1135,7 @@ Calculates the volume of a sphere given its radius.
 
 ---
 ### `perimeter_of_rectangle(self, l: float, b: float) -> float:`
+
 Calculates the perimeter of a rectangle given its length and breadth.
 
 ##### **Arguments:**
@@ -1061,6 +1150,7 @@ Calculates the perimeter of a rectangle given its length and breadth.
 
 ---
 ### `pythagoras_theorem_length(self, a: float, b: float) -> float:`
+
 Calculates the length of the hypotenuse of a right-angled triangle given the lengths of its two other sides.
 
 ##### **Arguments:**
@@ -1075,6 +1165,7 @@ Calculates the length of the hypotenuse of a right-angled triangle given the len
 
 ---
 ### `square_root(self, x: float) -> float:`
+
 Calculates the square root of a given number.
 
 ##### **Arguments:**
@@ -1088,6 +1179,7 @@ Calculates the square root of a given number.
 
 ---
 ### `factorial(self, n: int) -> int:`
+
 Calculates the factorial of a given number.
 
 ##### **Arguments:**
@@ -1105,6 +1197,7 @@ Calculates the factorial of a given number.
 
 ---
 ### `gcd(self, a: int, b: int) -> int:`
+
 Calculates the greatest common divisor of two numbers.
 
 ##### **Arguments:**
@@ -1122,6 +1215,7 @@ Calculates the greatest common divisor of two numbers.
 
 ---
 ### `lcm(self, a: int, b: int) -> int:`
+
 Calculates the least common multiple of two numbers.
 
 ##### **Arguments:**
@@ -1137,6 +1231,7 @@ Calculates the least common multiple of two numbers.
 
 ---
 ### `exponential(self, x: float) -> float:`
+
 Calculates the value of e raised to a given power.
 
 ##### **Arguments:**
@@ -1152,6 +1247,7 @@ Calculates the value of e raised to a given power.
 
 ---
 ### `logarithm(self, x: float, base: float) -> float:`
+
 Calculates the logarithm of a given number to a given base.
 
 ##### **Arguments:**
@@ -1167,6 +1263,7 @@ Calculates the logarithm of a given number to a given base.
 
 ---
 ### `log(x):`
+
 Calculates the natural logarithm of a given number.
 
 ##### **Arguments:**
@@ -1186,6 +1283,7 @@ Calculates the natural logarithm of a given number.
 
 ---
 ### `integrate(f, a, b):`
+
 Approximates the definite integral of a function over a given interval using the trapezoidal rule.
 
 ##### **Arguments:**
@@ -1206,6 +1304,7 @@ Approximates the definite integral of a function over a given interval using the
 
 ---
 ### `surface_area_of_cylinder(self, r: float, h: float) -> float:`
+
 Calculates the surface area of a cylinder given its radius and height.
 
 ##### **Arguments:**
@@ -1221,6 +1320,7 @@ Calculates the surface area of a cylinder given its radius and height.
 
 ---
 ### `volume_of_cylinder(self, r: float, h: float) -> float:`
+
 Calculates the volume of a cylinder given its radius and height.
 
 ##### **Arguments:**
@@ -1236,6 +1336,7 @@ Calculates the volume of a cylinder given its radius and height.
 
 ---
 ### `area_of_triangle(self, b: float, h: float) -> float:`
+
 Calculates the area of a triangle given its base and height.
 
 ##### **Arguments:**
@@ -1251,6 +1352,7 @@ Calculates the area of a triangle given its base and height.
 
 ---
 ### `sine(self, x: float) -> float:`
+
 Calculates the sine of a given angle in radians.
 
 ##### **Arguments:**
