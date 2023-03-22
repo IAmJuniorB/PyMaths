@@ -1039,7 +1039,20 @@ A mathematical constant, related to the K-function and the Barnes G-function.
 ---
 ### `catalans_constant(self):`
 
-_summary_
+Computes the Catalan's constant to the specified number of decimal places using the formula:
+
+##### **Parameters:**
+
+      n (int): The number of terms to sum to approximate the constant.
+
+##### **Returns:**
+
+      float: The computed value of the Catalan's constant.
+
+##### **Example:**
+
+      >>> catalan_constant(1000000)
+      0.915965594177219
 
 ##### **Arguments:**
 
