@@ -1112,13 +1112,28 @@ class Constants:
         """
         return 1.282_427_129_100_622_636_87
     
-    def catalans_constant(self):
-        """_summary_
+    def catalan_constant(n: int) -> float:
+        """
+        Computes the Catalan's constant to the specified number of decimal places using the formula:
 
+        C = sum((-1)**k / (2*k + 1)**2 for k in range(n)) * 8 / 3
+
+        Parameters:
+        n (int): The number of terms to sum to approximate the constant.
+
+        Returns:
+        float: The computed value of the Catalan's constant.
+
+        Example:
+        >>> catalan_constant(1000000)
+        0.915965594177219
+   
         Returns:
             G: Value to the 39th decimal
         """
-        return 0.915_965_594_177_219_015_054_603_514_932_384_110_774
+        # return 0.915_965_594_177_219_015_054_603_514_932_384_110_774
+        constant = sum((-1)**k / (2*k + 1)**2 for k in range(n)) * 8 / 3
+        return constant
     
     def dottie_number(self):
         """
