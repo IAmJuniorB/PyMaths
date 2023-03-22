@@ -1041,7 +1041,7 @@ A mathematical constant, related to the K-function and the Barnes G-function.
 
 Computes the Catalan's constant to the specified number of decimal places using the formula:
 
-##### **Parameters:**
+##### **Arguments:**
 
       n (int): The number of terms to sum to approximate the constant.
 
@@ -1054,15 +1054,6 @@ Computes the Catalan's constant to the specified number of decimal places using 
       >>> catalan_constant(1000000)
       0.915965594177219
 
-##### **Arguments:**
-
-        - None
-        
-##### **Returns:**
-        
-      G: Value to the 39th decimal
-      0.915_965_594_177_219_015_054_603_514_932_384_110_774
-      
 ---
 ### `dottie_number(self):`
 
