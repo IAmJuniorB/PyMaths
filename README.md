@@ -1,6 +1,13 @@
 # Math Module
 A work in progress, incomplete, library full of mathematical algorithms, constants, and functions.
 
+## Table of Contents
+
+- [Algorithms](#algorithm-class)
+- [Constants](#constants-class)
+- [Functions](#functions-class)
+
+
 ## **Algorithm Class**
 This is a Python class that implements various algorithms, including finding the greatest common divisor using Euclid's algorithm, computing logarithms with a specified base, counting the occurrences of words in a text, and performing operations with fractions.
 
