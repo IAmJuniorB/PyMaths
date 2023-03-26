@@ -1745,32 +1745,296 @@ class Constants:
         while not Algorithm.is_prime(int(self.floor(self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))))): 
             i += 1
         return self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))
-#    def artins_constant(self):
-#        pass
-#    
-#    def porters_constant(self):
-#        pass
-    
-#    def lochs_constant(self):
-#        pass
-    
-#    def deviccis_tesseract_constant(self):
-#        pass
-    
-#    def liebs_square_ice_constant(self):
-#        pass
-    
-#    def nivens_constant(self):
-#        pass
 
-#    def stephens_constant(self):
-#        pass
+    def artins_constant(self):
+        pass
+    
+    def porters_constant(self):
+        pass
+    
+    def lochs_constant(self):
+        pass
+    
+    def deviccis_tesseract_constant(self):
+        pass
+    
+    def liebs_square_ice_constant(self):
+        pass
+    
+    def nivens_constant(self):
+        pass
 
-#    def regular_paperfolding_sequence(self):
-#        pass
+    def stephens_constant(self):
+        pass
 
-#    def reciprocal_fibonacci_constant(self):
-#        pass
+    def regular_paperfolding_sequence(self):
+        pass
+
+    def reciprocal_fibonacci_constant(self):
+        pass
+    
+    def chvatal_sankoff_constant(self):
+        """For the binary alphabet
+        
+        \gamma _{2}
+        """
+        pass
+    
+    def Feigenbaum_constant(self):
+        """Feigenbaum constant δ
+        
+        Symbol:
+             \delta
+        """
+        pass
+    
+    def chaitins_constant(self):
+        """_summary_
+        
+        Symbol:
+            \Omega 
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def robbins_constant(self):
+        """Summary
+        
+        Symbol:
+        \Delta (3)
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def weierstrass_constant(self):
+        pass
+    
+    def fransen_robinson_constant(self):
+        """_summary_
+        
+        Symbol:
+            F
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def feigenbaum_constant(self):
+        """feigenbaum constant α
+
+        Symbol:
+            \alpha 
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def second_du_bois_reymond_constant(self):
+        """Second du Bois-Reymond constant
+
+        Symbol:
+             C_{2}
+             
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def erdos_tenenbaum_ford_constant(self):
+        """_summary_
+
+        Symbol:
+            \delta
+            
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def conways_constant(Self):
+        """_summary_
+
+        Symbol:
+            \lambda
+            
+        Args:
+            Self (_type_): _description_
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def hafner_sarnak_mccurley_constant(self):
+        """_summary_
+
+        Symbol:
+            \sigma
+        
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def backhouses_constant(self):
+        """_summary_
+
+        Symbol:
+            B
+            
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def viswanath_constant(self):
+        pass
+    
+    def komornik_loreti_constant(self):
+        """_summary_
+
+        Symbol:
+            q
+            
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def embree_trefethen_constant(self):
+        """_summary_
+
+        Symbol:
+            {\displaystyle \beta ^{\star }}
+            
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def heath_brown_moroz_constant(self):
+        """_summary_
+
+        Symbol:
+            C
+            
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def mrb_constant(self):
+        """_summary_
+
+        Symbol:
+            S
+        
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def prime_constant(self):
+        """_summary_
+
+        Symbol:
+            \rho 
+        
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def somos_quadratic_recurrence_constant(self):
+        """_summary_
+
+        Symbol:
+            \sigma
+        
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def foias_constant(self):
+        """_summary_
+
+        Symbol:
+            \alpha
+        
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def logarithmic_capacity(self):
+        """Logarathmic capacity of the unit disk
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
+        pass
+    
+    def taniguchi_constant(self):
+        pass
+    
 
 class MathFunctions:
     """
@@ -2042,8 +2306,63 @@ class MathFunctions:
             raise ValueError("acos(x) is defined only for -1 <= x <= 1")
         return Constants.pi / 2 - Algorithm.atan(x / Algorithm.square_root(1 - x ** 2))
 
+class Sequences:
+    def __init__(self) -> None:
+        pass
+    
+    def harmonic_number(self):
+        pass
+    
+    def gregory_coefficients(self):
+        pass
+    
+    def bernoulli_number(self):
+        pass
+    
+    def hermite_constants(self):
+        pass
+    
+    def hafner_sarnak_mccurley_constant(self):
+        pass
+    
+    def stieltjes_constants(self):
+        pass
+    
+    def favard_constants(self):
+        pass
+    
+    def generalized_bruns_constant(self):
+        pass
+    
+    def champernowne_constants(self):
+        pass
+    
+    def lagrange_number(self):
+        pass
+    
+    def fellers_coin_tossing_constants(self):
+        pass
+    
+    def stoneham_number(self):
+        pass
+    
+    def beraha_constants(self):
+        pass
+    
+    def chvatal_sankoff_constants(self):
+        pass
+    
+    def hyperharmonic_number(self):
+        pass
+    
+    def gregory_number(self):
+        pass
+    
+    def metallic_mean(self):
+        pass
 
 alg = Algorithm()
 con = Constants()
 fun = MathFunctions()
+seq = Sequences()
 
