@@ -1,7 +1,4 @@
-#from fractions import Fraction
 from typing import List, Tuple, Union
-#import math
-#import random
 
 
 class Algorithm:
@@ -490,7 +487,7 @@ class Algorithm:
             raise ValueError("At least two numbers are required to find the LCM")
         result = args[0]
         for num in args[1:]:
-            result = result * num // gcd(result, num)
+            result = result * num // Algorithm.gcd(result, num)
         return result
 
     def sort_numbers(numbers: List[Union[int, float]], reverse: bool = False) -> List[Union[int, float]]:
@@ -855,10 +852,10 @@ class Algorithm:
         The sine value of the input number
         """
         n = 10  # number of terms to calculate in Taylor series
-        x = num % (2*con.pi)  # reduce to the range [0, 2*pi)
+        x = num % (2*Constants.pi)  # reduce to the range [0, 2*pi)
         result = 0
         for i in range(n):
-            term = (-1)**i * x**(2*i+1) / alg.factorial(2*i+1)
+            term = (-1)**i * x**(2*i+1) / Algorithm.factorial(2*i+1)
             result += term
         return result
 
@@ -874,10 +871,10 @@ class Algorithm:
         The cosine value of the input number
         """
         n = 10  # number of terms to calculate in Taylor series
-        x = num % (2*con.pi)  # reduce to the range [0, 2*pi)
+        x = num % (2*Constants.pi)  # reduce to the range [0, 2*pi)
         result = 0
         for i in range(n):
-            term = (-1)**i * x**(2*i) / alg.factorial(2*i)
+            term = (-1)**i * x**(2*i) / Algorithm.factorial(2*i)
             result += term
         return result
 
@@ -896,7 +893,73 @@ class Algorithm:
         cos_val = self.cos(num)
         return sin_val / cos_val
 
+    @staticmethod
+    def next_prime(n):
+        """
+        Finds the smallest prime number greater than n.
 
+        Args:
+            n (int): A positive integer.
+
+        Returns:
+            int: The smallest prime number greater than n.
+        """
+        if n < 2:
+            return 2
+        i = n + 1
+        while True:
+            is_prime = True
+            for j in range(2, int(i**0.5) + 1):
+                if i % j == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                return i
+            i += 1
+            
+    @staticmethod
+    def atan(x):
+        """
+        Return the arc tangent of x, in radians.
+
+        Symbol:
+            None
+
+        Args:
+            x (float): The value whose arc tangent is to be returned.
+
+        Returns:
+            float: The arc tangent of x, in radians.
+        """
+        if x == 0:
+            return 0.0
+        elif x == float('inf'):
+            return Constants.pi / 2.0
+        elif x == float('-inf'):
+            return -Constants.pi / 2.0
+        elif x > 0:
+            return Algorithm.atan_helper(x)
+        else:
+            return -Algorithm.atan_helper(-x)
+
+    @staticmethod
+    def atan_helper(x):
+        """
+        Helper function for atan. Computes the arc tangent of x in the interval [0, 1].
+
+        Args:
+            x (float): The value whose arc tangent is to be returned.
+
+        Returns:
+            float: The arc tangent of x, in radians.
+        """
+        assert 0 <= x <= 1
+
+        result = 0.0
+        for n in range(1, 1000):
+            term = (-1) ** (n - 1) * x ** (2 * n - 1) / (2 * n - 1)
+            result += term
+        return result
 
 
 class Constants:
@@ -1177,9 +1240,538 @@ class Constants:
             C: Value to the 20th decimal
         """
         return  0.643_410_546_288_338_026_18
+
+# Everything below needs to be updated in Markdown    
+    def gelfonds_constant(self):
+        """Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
+
+        Returns:
+            float: The value of Gelfond's Constant, which is approximately 23.1406926327792690057292.
+        """
+        return self.eulers_constant**self.pi
     
+    def gelfond_schneider_constant(self):
+        """
+        Returns the Gelfond-Schneider constant, which is a transcendental number defined as the value of 
+        2^(1/2) raised to the power of itself, or approximately 2.6651441426902251886502972498731.
+
+        Returns:
+            float: The value of the Gelfond-Schneider constant.
+        """
+        pass
+
+    def second_favard_constant(self):
+        """
+        Returns the Second Favard constant, which is a mathematical constant defined as the limit of the 
+        arithmetic mean of the reciprocal of consecutive odd numbers, or approximately 0.661707182...
+        
+        Returns:
+            float: The value of the Second Favard constant.
+        """
+        pass
+
+    def golden_angle(self):
+        """
+        Returns the golden angle constant, which is the angle subtended by the smaller of the two angles 
+        formed by dividing the circumference of a circle in the golden ratio. It is equal to 
+        (3 - sqrt(5)) * 180 degrees / pi, or approximately 137.5077640500378546463487 degrees.
+
+        Returns:
+            float: The value of the golden angle constant in degrees.
+        """
+        pass
+
+    def sierpinskis_constant(self):
+        """
+        Returns Sierpiński's constant, which is the fractal dimension of the Sierpiński triangle, a 
+        self-similar fractal shape. It is equal to log(3)/log(2), or approximately 1.585.
+
+        Returns:
+            float: The value of Sierpiński's constant.
+        """
+        pass
+
+    def landau_ramanujan_constant(self):
+        """
+        Returns the Landau-Ramanujan constant, which is a mathematical constant that appears in the 
+        asymptotic expansion of the partition function. It is equal to e^(pi * sqrt(163)), or approximately
+        2.2932021438344677e+17.
+
+        Returns:
+            float: The value of the Landau-Ramanujan constant.
+        """
+        pass
+
+    def first_nielsen_ramanujan_constant(self):
+        """
+        Returns the First Nielsen-Ramanujan constant, which is a mathematical constant that appears in 
+        certain partition identities. It is equal to the product of a series involving the gamma function, 
+        or approximately 0.866081804933.
+
+        Returns:
+            float: The value of the First Nielsen-Ramanujan constant.
+        """
+        pass
+
+    def gieseking_constant(self):
+        """
+        Returns Gieseking's constant, which is a mathematical constant that appears in the theory of 
+        harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.7511255444649425.
+
+        Returns:
+            float: The value of Gieseking's constant.
+        """
+        pass
+
+    def bernsteins_constant(self):
+        """
+        Returns Bernstein's constant, which is a mathematical constant that appears in the theory of 
+        Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
+
+        Returns:
+            float: The value of Bernstein's constant.
+        """
+        pass
+
+    def tribonacci_constant(self):
+        """
+        Returns the Tribonacci constant, which is a mathematical constant defined as the unique real root 
+        of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
+
+        Returns:
+            float: The value of the Tribonacci constant.
+        """
+        pass
+
     
+    def bruns_constant(self):
+        """Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
+        where prime(k) is the kth prime number.
+
+        Returns:
+            float: The value of Bruns constant, accurate to 42 decimal places.
+        """
+        pass
+
+    def twin_primes_constant(self):
+        """Returns the limiting value of the sequence of twin primes (pairs of prime
+        numbers that differ by 2).
+
+        Returns:
+            float: The value of the twin primes constant, accurate to 36 decimal places.
+        """
+        pass
+
+    def plastic_number(self):
+        """Returns the unique positive real root of x^3 = x + 1.
+
+        Returns:
+            float: The value of the plastic number, accurate to 32 decimal places.
+        """
+        pass
+
+    def blochs_constant(self):
+        """Returns the limiting value of the sequence of numbers that represent the
+        Bloch wall widths in ferromagnets.
+
+        Returns:
+            float: The value of Bloch's constant, accurate to 34 decimal places.
+        """
+        pass
+
+    def z_score_975_percentile(self):
+        """Returns the value that has 97.5% of the area under a standard normal distribution
+        to the left of it.
+
+        Returns:
+            float: The value of the z-score at the 97.5th percentile, accurate to 9 decimal places.
+        """
+        pass
+
+    def landaus_constant(self):
+        """Returns the limiting value of the sequence of numbers that represent the
+        probability that a random permutation of n elements will have no cycle of length
+        greater than log(n).
+
+        Returns:
+            float: The value of Landau's constant, accurate to 19 decimal places.
+        """
+        pass
+
+    def landaus_third_constant(self):
+        """Returns the limiting value of the sequence of numbers that represent the
+        probability that a random permutation of n elements will have no cycle of length
+        greater than sqrt(n) * log(n).
+
+        Returns:
+            float: The value of Landau's third constant, accurate to 20 decimal places.
+        """
+        pass
+
+    def prouhet_thue_morse_constant(self):
+        """Returns the limiting value of the sequence of numbers that represent the
+        differences in density between the 0's and 1's in the Prouhet-Thue-Morse
+        sequence.
+
+        Returns:
+            float: The value of the Prouhet-Thue-Morse constant, accurate to 20 decimal places.
+        """
+        pass
     
+    def golomb_dickman_constant(self):
+        """The Golomb-Dickman constant represents the limiting distribution of the ratio of the k-th smallest
+        number in a sample of n random numbers to n^(1/k) as n approaches infinity. It is denoted by G.
+
+        Returns:
+            float: The value of the Golomb-Dickman constant G, approximately 0.6243299885435508.
+        """
+        return 0.6243299885435508
+
+    def lebesgue_asymptotic_behavior_constant(self):
+        """The Lebesgue asymptotic behavior constant describes the average size of the level sets
+        of a random walk in d dimensions. It is denoted by L(d).
+
+        Returns:
+            float: The value of the Lebesgue asymptotic behavior constant L(3), approximately 3.912023005428146.
+        """
+        return 3.912023005428146
+
+    def feller_tornier_constant(self):
+        """The Feller-Tornier constant is the probability that a random walk on the integers
+        returns to the origin infinitely often. It is denoted by F.
+
+        Returns:
+            float: The value of the Feller-Tornier constant F, approximately 0.259183.
+        """
+        return 0.259183
+
+    def base_10_champernowne_constant(self):
+        """The Champernowne constant is formed by concatenating the base 10 representations of
+        successive integers, and is represented by C_10. 
+
+        Returns:
+            float: The value of the base 10 Champernowne constant C_10, approximately 0.12345678910111213...
+        """
+        n = 1
+        s = '0'
+        while len(s) < 1000:
+            s += str(n)
+            n += 1
+        return float(s[0] + '.' + s[1:])
+
+    def salem_constant(self):
+        """The Salem number is a complex number that is a root of a certain polynomial
+        with integer coefficients. It is denoted by s.
+
+        Returns:
+            complex: The value of the Salem constant s, approximately (1+sqrt(2)) * e^(pi*sqrt(2)/4).
+        """
+        return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
+    
+    def khinchins_constant(self):
+        """The Khinchin constant is a number that appears in the theory of continued fractions. 
+        It is denoted by K.
+
+        Returns:
+            float: The value of the Khinchin constant K, approximately 2.6854520010653065.
+        """
+        return 2.6854520010653065
+
+    def levys_constant(self):
+            """Levy's constant, also known as the Levy–Khinchin constant, is a mathematical constant that arises in the study of 
+            Levy processes, which are stochastic processes that exhibit properties such as long-range dependence and heavy tails. 
+            It is defined as the limit of the average absolute difference between two random variables divided by their 
+            root-mean-square difference, as the sample size tends to infinity. The value of Levy's constant is approximately 
+            1.3303872425, with high precision being 1.33038724246235217434246.
+            
+            Symbol:
+                γ or K
+                
+            Returns:
+                float: The value of Levy's constant.
+            """
+            return 1.330_387_242_462_352_174_342_46
+
+    def levys_constant_two(self):
+        """Calculate the value of e to the power of Levy's constant.
+
+        Returns:
+            float: The value of e to the power of Levy's constant.
+        """
+        return Algorithm.exp(self.levys_constant)
+
+    def copeland_erdos_constant(self):
+        """Copeland-Erdős constant is the smallest number that is not the sum of 
+        distinct non-negative integer powers of 2.
+        
+        Symbol:
+            C_E
+        
+        Returns:
+            float
+        """
+        n = 1
+        while True:
+            for s in self.subsets(range(n)):
+                if sum([2**i for i in s]) == n:
+                    break
+            else:
+                return n
+            n += 1
+    
+    def gompertz_constant(self):
+        """Gompertz constant is a mathematical constant named after Benjamin Gompertz,
+        it is the limit of the ratio between the life expectancy of a certain age 
+        and the remaining life expectancy.
+        
+        Symbol:
+            γ
+            
+        Returns:
+            float
+        """
+        n = 1
+        limit = self.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
+        while limit == float('inf'):
+            n += 1
+            limit = self.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
+        return limit
+    
+    def de_bruijn_newman_constant(self):
+        """        De Bruijn–Newman constant is the limit of the sequence of coefficients a_n
+        such that the entire function f(z) = Π_(n=1)^∞ [(1 - z/a_n) * exp(z/a_n)] has
+        no zeros in the complex plane.
+
+        Symbol:
+            λ
+
+        Returns:
+            float
+        """
+        smallest_float = 2.0**-1074  # Smallest positive floating-point number
+        machine_eps = 2.0**-52  # Machine epsilon
+        i = 1
+        prev_term = Algorithm.exp(1)
+        term = Algorithm.exp(1)
+        while abs(prev_term - term) > machine_eps:
+            prev_term = term
+            term *= sum([1/i for i in range(1, int(prev_term) + 1)])
+            i += 1
+        return i
+    
+    @staticmethod
+    def van_der_pauw_constant():
+        """
+        The van der Pauw constant is a constant used in measuring resistance of flat samples,
+        and is defined as the ratio of the natural logarithm of the quotient of two measured
+        resistances to the constant π.
+
+        Symbol:
+            K
+
+        Returns:
+            float: The value of the van der Pauw constant to the highest precision.
+        """
+        return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
+
+    
+    @staticmethod
+    def magic_angle():
+        """
+        Magic angle is an angle of rotation for the bilayer graphene where the
+        electronic properties of the material exhibit a number of interesting
+        phenomena.
+
+        Symbol:
+            θ
+
+        Returns:
+            float: The magic angle in radians.
+        """
+        return Constants.arctan(Algorithm.square_root(3))
+    
+    @staticmethod
+    def arctan(x):
+        """
+        Calculates the arctangent of x using a Taylor series approximation.
+
+        Args:
+            x (float): A real number.
+
+        Returns:
+            float: The arctangent of x in radians.
+        """
+        if x == 0:
+            return 0.0
+        elif x < 0:
+            return -Constants.arctan(-x)
+        elif x > 1:
+            return Constants.pi/2 - Constants.arctan(1/x)
+        else:
+            sum = 0.0
+            term = x
+            n = 1
+            while sum != sum + term:
+                sum += term
+                term = -term * x * x * (2*n - 1) / ((2*n) * (2*n + 1))
+                n += 1
+            return sum
+
+    @staticmethod
+    def artins_constant():
+        """
+        The Artin's constant is a number that appears in the formula to calculate the Artin-Mazur zeta function.
+        It is defined as the infinite product of (1 - p^(-s)) where p ranges over all prime numbers and s is the reciprocal
+        of the prime number.
+
+        Returns:
+            float: The value of the Artin's constant to the highest precision.
+        """
+        p = 2
+        prod = 1
+        while True:
+            prod *= 1 - p**(-1/float(p))
+            p = Algorithm.next_prime(p)
+            if p is None:
+                break
+        return prod
+
+    def porters_constant(self):
+        """
+        Porter's constant is a mathematical constant that appears in the field of information theory. It is defined as
+        the limit of the ratio of the maximum number of different words of length n over the number of possible words of
+        length n as n approaches infinity.
+        
+        Symbol:
+
+
+        Returns:
+            float: The value of Porter's constant to the highest precision.
+        """
+        return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
+
+    def euler_mascheroni_constant():
+        """
+        Returns the Euler-Mascheroni constant, a mathematical constant that appears in many areas of mathematics.
+        It is defined as the limit of the difference between the harmonic series and the natural logarithm of n as n approaches infinity.
+        
+        The function calculates the value of the Euler-Mascheroni constant using a sum of the harmonic series and the natural logarithm of n.
+        The sum is taken over a large number of terms to achieve a high degree of accuracy.
+        
+        Note that the function uses the 'math' module to calculate the natural logarithm, so it must be imported before the function can be called.
+        
+        Returns:
+            float: The value of the Euler-Mascheroni constant to a high degree of accuracy.
+        """
+        euler_mascheroni = 0
+        for n in range(1, 100000):
+            euler_mascheroni += 1/n - Algorithm.log((n+1)/n)
+        return euler_mascheroni
+
+
+    def lochs_constant(self):
+        """
+        Lochs' constant is a mathematical constant defined as the limiting ratio of the perimeter of an inscribed regular
+        decagon to its diameter.
+        
+        Symbol:
+
+
+        Returns:
+            float: The value of Lochs' constant to the highest precision.
+        """
+        return Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2)))))
+
+
+    def deviccis_tesseract_constant(self):
+        """
+        The De Vries - De Vos - Barendrecht - De Klerk - Smit - Smit constant (also known as De Vries' tesseract constant)
+        is defined as the number that describes the maximum ratio of the content of a hypercube inscribed in a tesseract to
+        the content of the hypercube circumscribed about the tesseract.
+        
+        Symbol:
+
+
+        Returns:
+            float: The value of De Vries' tesseract constant to the highest precision.
+        """
+        return Algorithm.square_root(2 + Algorithm.square_root(2)) / (2 * Algorithm.square_root(2))
+
+
+    def liebs_square_ice_constant(self):
+        """
+        The Lieb's square ice constant is the infinite sum of alternating sign reciprocals of the squares of odd positive integers.
+        It appears in the square ice problem in statistical mechanics.
+        
+        Symbol:
+
+
+        Returns:
+            float: The value of the Lieb's square ice constant to the highest precision.
+        """
+        return Constants.pi / (Algorithm.square_root(3) * Algorithm.log((3 + Algorithm.square_root(8)) / 2))
+
+    def nivens_constant(self):
+        """
+        Niven's constant is a mathematical constant that is the only known integer x that is divisible by the sum of its digits
+        when written in decimal base. The constant is also related to the convergence of certain infinite series.
+        
+        Symbol:
+
+
+        Returns:
+            int: The value of Niven's constant to the highest precision.
+        """
+        n = 1
+        while True:
+            digits_sum = sum(int(d) for d in str(n))
+            if n % digits_sum == 0:
+                return n
+            n += 1
+
+    
+    def mills_constant(self):
+        """Mills constant is the smallest positive real number A such that the 
+        floor function of the double exponential function is a prime number,
+        where the double exponential function is f(n) = A^(3^n).
+        
+        Symbol:
+            A
+            
+        Returns:
+            float
+        """
+        i = 2
+        while not Algorithm.is_prime(int(self.floor(self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))))): 
+            i += 1
+        return self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))
+#    def artins_constant(self):
+#        pass
+#    
+#    def porters_constant(self):
+#        pass
+    
+#    def lochs_constant(self):
+#        pass
+    
+#    def deviccis_tesseract_constant(self):
+#        pass
+    
+#    def liebs_square_ice_constant(self):
+#        pass
+    
+#    def nivens_constant(self):
+#        pass
+
+#    def stephens_constant(self):
+#        pass
+
+#    def regular_paperfolding_sequence(self):
+#        pass
+
+#    def reciprocal_fibonacci_constant(self):
+#        pass
+
 class MathFunctions:
     """
     A class containing various mathematical functions.
@@ -1317,7 +1909,7 @@ class MathFunctions:
         Returns:
         The logarithm of x to the base.
         """
-        return (Functions.log(x) / Functions.log(base))
+        return (self.Functions.log(x) / self.Functions.log(base))
 
     def log(x):
         """
@@ -1334,7 +1926,7 @@ class MathFunctions:
         elif x == 1:
             return 0.0
         else:
-            return Functions.integrate(1/x, 1, x)
+            return MathFunctions.integrate(1/x, 1, x)
 
     def integrate(f, a, b):
         """
@@ -1415,7 +2007,43 @@ class MathFunctions:
         return sign * (
             x - x ** 3 / 6 + x ** 5 / 120 - x ** 7 / 5040 + x ** 9 / 362880
         )
+        
+    def copysign(self, x, y):
+        """
+        Return a float with the magnitude of x and the sign of y.
+
+        Symbol:
+            None
+
+        Args:
+            x (float): The magnitude of the result.
+            y (float): The sign of the result.
+
+        Returns:
+            float: A float with the magnitude of x and the sign of y.
+        """
+        return abs(x) * (1 if y >= 0 else -1)
+
+
+    def acos(self, x):
+        """
+        Return the arc cosine of x, in radians.
+
+        Symbol:
+            None
+
+        Args:
+            x (float): The value whose arc cosine is to be returned.
+
+        Returns:
+            float: The arc cosine of x, in radians.
+        """
+        if x < -1 or x > 1:
+            raise ValueError("acos(x) is defined only for -1 <= x <= 1")
+        return Constants.pi / 2 - Algorithm.atan(x / Algorithm.square_root(1 - x ** 2))
+
 
 alg = Algorithm()
 con = Constants()
 fun = MathFunctions()
+
