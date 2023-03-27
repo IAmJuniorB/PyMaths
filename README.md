@@ -1951,7 +1951,7 @@ _summary_
 ---
 ### `robbins_constant(self):`
 
-Summary
+Robbins' constant is a mathematical constant that arises in the study of mathematical analysis.
 
 ##### **Symbol:**
         
@@ -1959,7 +1959,7 @@ Summary
 
 ##### **Raises:**
 
-            - ValueError: _description_
+            - ValueError: If the computation of the constant fails.
 
 ##### **Arguments:**
 
@@ -1967,9 +1967,7 @@ Summary
 
 ##### **Returns:**
 
-            - _type_: _description_
-
-            - pass
+            - float: The value of Robbins' constant.
     
 ---
 ### `weierstrass_constant(self):`
@@ -2644,15 +2642,15 @@ The nth harmonic number is the sum of the reciprocals of the first n natural num
 
 ##### **Symbol:**
 
-            - - H_n
+            - H_n
 
 ##### **Arguments:**
 
-            - - n (int): The number of terms to include in the sum.
+            - n (int): The number of terms to include in the sum.
 
 ##### **Returns:**
 
-            - - float: The value of the nth harmonic number.
+            - float: The value of the nth harmonic number.
 
             - return sum(1/i for i in range(1, n+1))
     
@@ -2664,15 +2662,15 @@ which provides an approximate value of pi.
 
 ##### **Symbol:**
 
-            - - G_n
+            - G_n
 
 ##### **Arguments:**
 
-            - - n (int): The index of the Gregory coefficient to be calculated.
+            - n (int): The index of the Gregory coefficient to be calculated.
 
 ##### **Returns:**
 
-            - - float: The value of the nth Gregory coefficient.
+            - float: The value of the nth Gregory coefficient.
 
             if n == 0:
                 return 1
@@ -2689,15 +2687,15 @@ and other areas of mathematics, including algebra and calculus.
 
 ##### **Symbol:**
 
-            - - B_n
+            - B_n
 
 ##### **Arguments:**
 
-            - - n (int): The index of the Bernoulli number to be calculated.
+            - n (int): The index of the Bernoulli number to be calculated.
 
 ##### **Returns:**
 
-            - - float: The value of the nth Bernoulli number.
+            - float: The value of the nth Bernoulli number.
 
             if n == 0:
                 return 1
@@ -3273,7 +3271,7 @@ Initializes a new RealNumber object with the given value.
 
 ##### **Parameters:**
 
-            - - value (float): The value of the real number.
+            - value (float): The value of the real number.
 
 ##### **Returns:**
 
@@ -3310,7 +3308,7 @@ Checks whether the real number is equal to another object.
 
 ##### **Parameters:**
 
-            - - other (object): The object to compare with.
+            - other (object): The object to compare with.
 
 ##### **Returns:**
 
@@ -3330,7 +3328,7 @@ Checks whether the real number is not equal to another object.
 
 ##### **Parameters:**
 
-            - - other (object): The object to compare with.
+            - other (object): The object to compare with.
 
 ##### **Returns:**
 
@@ -3345,7 +3343,7 @@ Checks whether the real number is less than another object.
 
 ##### **Parameters:**
 
-            - - other (object): The object to compare with.
+            - other (object): The object to compare with.
 
 ##### **Returns:**
 
@@ -3365,7 +3363,7 @@ Checks whether the real number is less than or equal to another object.
 
 ##### **Parameters:**
 
-            - - other (object): The object to compare with.
+            - other (object): The object to compare with.
 
 ##### **Returns:**
 
@@ -3385,7 +3383,7 @@ Checks whether the real number is greater than another object.
 
 ##### **Parameters:**
 
-            - - other (object): The object to compare with.
+            - other (object): The object to compare with.
 
 ##### **Returns:**
 
@@ -3978,4 +3976,6 @@ Returns the quotient of this number and `other`.
 ---
 ### `__str__(self):`
 
-return str(self.value)
+##### **Returns:**
+
+      - str(self.value)
