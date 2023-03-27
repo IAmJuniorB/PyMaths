@@ -20,11 +20,11 @@ This is a Python class that implements various algorithms, including finding the
 ### `addition(*args: Union[int, float]) -> Union[int, float]`
 Returns the sum of integers and/or floats.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
 
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The sum of the integers and/or floats in *args
 
@@ -32,11 +32,11 @@ Returns the sum of integers and/or floats.
 ### `subtract(*args: Union[int, float]) -> Union[int, float]`
 Returns integers or float of given numbers after being subtracted.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
 
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The result of subtracting the integers and/or floats in *args from the first argument
 
@@ -44,11 +44,11 @@ Returns integers or float of given numbers after being subtracted.
 ### `multiply(*args: Union[int, float]) -> Union[int, float]`
 Returns an integer or float of given numbers multiplied.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     *args (Union[int, float]): A variable-length argument list of integers and/or floats
     
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The product of the integers and/or floats in *args
 
@@ -56,13 +56,13 @@ Returns an integer or float of given numbers multiplied.
 ### `division_float(dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]`
 Returns a float of dividend divided by divisor.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     dividend (Union[int, float]): The number to be divided (dividend)
 
     divisor (Union[int, float]): The number to divide by (divisor)
     
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The result of dividing the dividend by the divisor, as a float
 
@@ -71,12 +71,12 @@ Returns a float of dividend divided by divisor.
 
 Returns an integer of dividend divided by divisor.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     dividend (Union[int, float]): The number to be divided (dividend)
     divisor (Union[int, float]): The number to divide by (divisor)
 
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The result of dividing the dividend by the divisor, rounded down to the nearest integer
 
@@ -84,12 +84,12 @@ Returns an integer of dividend divided by divisor.
 ### `division_remainder(dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]`
 Returns the remainder of dividend divided by divisor.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     dividend (Union[int, float]): The number to be divided (dividend)
     divisor (Union[int, float]): The number to divide by (divisor)
 
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The remainder of dividing the dividend by the divisor
 
@@ -97,12 +97,12 @@ Returns the remainder of dividend divided by divisor.
 ### `power(base: Union[int, float], exponent: Union[int, float]) -> Union[int, float]`
 Returns base to the power of exponent.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     base (Union[int, float]): The base of the power operation
     exponent (Union[int, float]): The exponent of the power operation
 
-##### **Returns:**
+> ##### **Returns:**
 
     Union[int, float]: The result of raising the base to the power of the exponent
 
@@ -111,12 +111,12 @@ Returns base to the power of exponent.
 
 Returns the logarithm of x with a specified base (default is 10)
 
-##### **Arguments:**
+> ##### **Arguments:**
     
         x (int/float): The value for which to compute the logarithm
         base (int/float, optional): The base of the logarithm. Defaults to 10.
 
-##### **Returns:**
+> ##### **Returns:**
 
         Union[int, float]: The logarithm of x with the specified base
 
@@ -125,11 +125,11 @@ Returns the logarithm of x with a specified base (default is 10)
 
 Returns the natural logarithm of x (base e)
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x (int/float): The value for which to compute the natural logarithm
 
-##### **Returns:**
+> ##### **Returns:**
 
         The natural logarithm of x
 ---
@@ -137,11 +137,11 @@ Returns the natural logarithm of x (base e)
 
 Returns the logarithm of x (base 10)
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x (int/float): The value for which to compute the logarithm
 
-##### **Returns:**
+> ##### **Returns:**
 
         The logarithm of x (base 10)
         
@@ -150,11 +150,11 @@ Returns the logarithm of x (base 10)
 
 Returns the sum of multiple fractions
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         *args (tuples): Multiple fractions represented as tuples of the form (numerator, denominator)
 
-##### **Returns:**
+> ##### **Returns:**
 
         A tuple representing the sum of all fractions in reduced form (numerator, denominator)
         
@@ -163,12 +163,12 @@ Returns the sum of multiple fractions
 
 Finds the greatest common divisor of two numbers using Euclid's algorithm.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         a: An integer
         b: Another integer
 
-##### **Returns:**
+> ##### **Returns:**
 
         The greatest common divisor of a and b
         
@@ -177,11 +177,11 @@ Finds the greatest common divisor of two numbers using Euclid's algorithm.
 
 Returns a dictionary containing the count of each word in the given text.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         text (str): The text to count the words in.
 
-##### **Returns:**
+> ##### **Returns:**
 
         A dictionary where the keys are the unique words in the text and the values are the count of each word.
 
@@ -190,15 +190,15 @@ Returns a dictionary containing the count of each word in the given text.
 
 Returns the product of multiple fractions.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         *args: An arbitrary number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
 
-##### **Returns:**
+> ##### **Returns:**
 
         A tuple containing the numerator and denominator of the product of the fractions.
 
-##### **Raises:**
+> ##### **Raises:**
 
         ValueError: If any of the arguments are not tuples of length 2 or if any of the denominators are 0.
 
@@ -207,15 +207,15 @@ Returns the product of multiple fractions.
 
 Returns the result of dividing one fraction by another.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         *args: Two tuples, each with two values, representing the numerator and denominator of the two fractions.
 
-##### **Returns:**
+> ##### **Returns:**
 
         A tuple containing the numerator and denominator of the quotient of the two fractions.
 
-##### **Raises:**
+> ##### **Raises:**
 
         ValueError: If any of the arguments are not tuples of length 2.
         ZeroDivisionError: If the denominator of the second fraction is zero.
@@ -225,14 +225,14 @@ Returns the result of dividing one fraction by another.
 
 Returns the fourth proportional number given three proportional numbers.
     
-##### **Arguments:**
+> ##### **Arguments:**
 
         a (int): The first proportional number.
         b (int): The second proportional number.
         c (int, optional): The third proportional number. Defaults to None.
         d (int, optional): The fourth proportional number. Defaults to None.
         
-##### **Returns:**
+> ##### **Returns:**
 
         int: The fourth proportional number calculated from the input.
         
@@ -243,11 +243,11 @@ Returns the fourth proportional number given three proportional numbers.
 
 This function converts a percantage `x` to a fraction.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       x (float): percentage
             
-##### **Returns:**
+> ##### **Returns:**
 
       The fraction form of a percentage
 
@@ -256,12 +256,12 @@ This function converts a percantage `x` to a fraction.
 
 This function converts a fraction given by `numerator` and `denominator` to a percentage.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       numerator: The numerator of the fraction.
       denominator: The denominator of the fraction.
 
-##### **Returns:**
+> ##### **Returns:**
 
       The fraction as a percentage.
             
@@ -271,7 +271,7 @@ This function converts a fraction given by `numerator` and `denominator` to a pe
 Searches for the target element in the given list and returns the index if found,
 otherwise returns -1.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     - lst : list
         The list to be searched.
@@ -279,7 +279,7 @@ otherwise returns -1.
     - target : any
         The target element to be searched for in the list.
 
-##### **Returns:**
+> ##### **Returns:**
 
     - int
         If the target is found in the list, the index of the target is returned.
@@ -291,7 +291,7 @@ otherwise returns -1.
 Searches for the target element in the given list using binary search and returns
 the index if found, otherwise returns -1.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - lst : list
             The list to be searched.
@@ -299,7 +299,7 @@ the index if found, otherwise returns -1.
         - target : any
             The target element to be searched for in the list.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - int
             If the target is found in the list, the index of the target is returned.
@@ -310,11 +310,11 @@ the index if found, otherwise returns -1.
 
 Sorts the given list in ascending order using bubble sort and returns the sorted list.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - lst (list): The list to be sorted.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - list: The sorted list in ascending order.
         
@@ -323,11 +323,11 @@ Sorts the given list in ascending order using bubble sort and returns the sorted
 
 Sorts the given list in ascending order using insertion sort and returns the sorted list.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - lst (list): The list to be sorted.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - list: The sorted list in ascending order.
 
@@ -336,11 +336,11 @@ Sorts the given list in ascending order using insertion sort and returns the sor
 
 Sorts the given list in ascending order using merge sort and returns the sorted list.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       - lst (list): The list to be sorted.
 
-##### **Returns:**
+> ##### **Returns:**
 
       - list: The sorted list in ascending order.
 
@@ -349,11 +349,11 @@ Sorts the given list in ascending order using merge sort and returns the sorted 
 
 This function computes the square root of a given number `num` using the Babylonian method.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       num (float): The number to find the square root of.
 
-##### **Returns:**
+> ##### **Returns:**
 
       float: The square root of the given number.
 
@@ -362,11 +362,11 @@ This function computes the square root of a given number `num` using the Babylon
 
 This function computes the factorial of a given number `num`.
 
-##### **Arguments:**
+> ##### **Arguments:**
       
       num (int): The number to find the factorial of.
 
-##### **Returns:**
+> ##### **Returns:**
 
       int: The factorial of the given number.
         
@@ -375,11 +375,11 @@ This function computes the factorial of a given number `num`.
 
 Compute the nth number in the Fibonacci sequence.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     n (int): The index of the desired Fibonacci number.
 
-##### **Returns:**
+> ##### **Returns:**
 
     int: The nth number in the Fibonacci sequence.
     
@@ -388,11 +388,11 @@ Compute the nth number in the Fibonacci sequence.
 
 Check whether a given number is prime.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     num (int): The number to check for primality.
 
-##### **Returns:**
+> ##### **Returns:**
 
     bool: True if the number is prime, False otherwise.
     
@@ -401,11 +401,11 @@ Check whether a given number is prime.
 
 Compute the greatest common divisor of two or more numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     *args (int): Two or more numbers to find the GCD of.
 
-##### **Returns:**
+> ##### **Returns:**
 
     int: The greatest common divisor of the given numbers.
     
@@ -414,11 +414,11 @@ Compute the greatest common divisor of two or more numbers.
 
 Compute the least common multiple of two or more numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     *args (int): Two or more numbers to find the LCM of.
 
-##### **Returns:**
+> ##### **Returns:**
 
     int: The least common multiple of the given numbers.
     
@@ -427,12 +427,12 @@ Compute the least common multiple of two or more numbers.
 
 This function takes a list of numbers and returns a sorted list in ascending or descending order.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     numbers (List[Union[int, float]]): A list of integers or floats to be sorted.
     reverse (bool, optional): If True, returns the list in descending order. Defaults to False.
 
-##### **Returns:**
+> ##### **Returns:**
 
     List[Union[int, float]]: A sorted list in ascending or descending order.
     
@@ -441,12 +441,12 @@ This function takes a list of numbers and returns a sorted list in ascending or 
 
 This function takes a sorted list of numbers and a target number and returns the index of the target number, or -1 if it is not found.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     numbers (List[Union[int, float]]): A sorted list of integers or floats.
     target (Union[int, float]): The number to search for in the list.
 
-##### **Returns:**
+> ##### **Returns:**
 
     int: The index of the target number in the list, or -1 if it is not found.
     
@@ -455,12 +455,12 @@ This function takes a sorted list of numbers and a target number and returns the
 
 Calculates the equation of the line of best fit (y = mx + b) for the given x and y values.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     x (list): A list of x values.
     y (list): A list of corresponding y values.
 
-##### **Returns:**
+> ##### **Returns:**
 
     tuple: A tuple containing the slope (m) and y-intercept (b) of the line of best fit.
     
@@ -469,12 +469,12 @@ Calculates the equation of the line of best fit (y = mx + b) for the given x and
 
 This function takes in two matrices A and B of the same size, and returns their sum.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     A: A list of lists of floats representing the first matrix.
     B: A list of lists of floats representing the second matrix.
 
-##### **Returns:**
+> ##### **Returns:**
 
     A list of lists of floats representing the sum of the matrices.
     
@@ -483,12 +483,12 @@ This function takes in two matrices A and B of the same size, and returns their 
 
 This function multiplies two matrices A and B and returns the resulting matrix.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     A: The first matrix.
     B: The second matrix.
 
-##### **Returns:**
+> ##### **Returns:**
 
     A list of lists of floats representing the product of matrices A and B.
     
@@ -497,11 +497,11 @@ This function multiplies two matrices A and B and returns the resulting matrix.
 
 This function inverts a matrix A and returns the resulting matrix.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
     A: The matrix to be inverted.
 
-##### **Returns:**
+> ##### **Returns:**
 
     A list of lists of floats representing the inverted matrix of A.
     
@@ -510,12 +510,12 @@ This function inverts a matrix A and returns the resulting matrix.
 
 Multiplies two matrices A and B and returns the resulting matrix.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         A (list[list[float]]): The first matrix.
         B (list[list[float]]): The second matrix.
 
-##### **Returns:**
+> ##### **Returns:**
 
         list[list[float]]: The matrix product of A and B.
 
@@ -524,11 +524,11 @@ Multiplies two matrices A and B and returns the resulting matrix.
 
 Inverts a matrix A and returns the resulting matrix.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         A (list[list[float]]): The matrix to be inverted.
 
-##### **Returns:**
+> ##### **Returns:**
 
         list[list[float]]: The inverted matrix of A.
         
@@ -537,14 +537,14 @@ Inverts a matrix A and returns the resulting matrix.
 
 Use Newton's method to find the root of a function f.
 
-##### **Arguments:**
+> ##### **Arguments:**
         
         - f (function): The function for which to find the root.
         - f_prime (function): The derivative of f.
         - x0 (float): The initial guess for the root.
         - epsilon (float): The desired level of accuracy.
 
-##### **Returns:**
+> ##### **Returns:**
         
         - root (float): The estimated root of the function.
         
@@ -553,7 +553,7 @@ Use Newton's method to find the root of a function f.
 
 Use gradient descent to find the minimum of a function f.
 
-##### **Arguments:**
+> ##### **Arguments:**
         
         - f (function): The function to minimize.
         - f_prime (function): The derivative of f.
@@ -561,7 +561,7 @@ Use gradient descent to find the minimum of a function f.
         - alpha (float): The step size.
         - max_iters (int): The maximum number of iterations.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - minimum (float): The estimated minimum of the function.
 
@@ -570,12 +570,12 @@ Use gradient descent to find the minimum of a function f.
 
 Use Monte Carlo simulation to estimate the probability of an event.
 
-##### **Arguments:**
+> ##### **Arguments:**
         
         - n (int): The number of simulations to run.
         - f (function): A function that returns True or False for a given sample.
 
-##### **Returns:**
+> ##### **Returns:**
         
         - probability (float): The estimated probability of the event.
         
@@ -584,16 +584,16 @@ Use Monte Carlo simulation to estimate the probability of an event.
 
 Calculates the Euclidean distance between two points in a two-dimensional space.
 
-##### **Arguments:**
+> ##### **Arguments:**
         
         - point1 (tuple): A tuple containing the coordinates of the first point as (x, y).
         - point2 (tuple): A tuple containing the coordinates of the second point as (x, y).
 
-##### **Returns:**
+> ##### **Returns:**
 
         - float: The Euclidean distance between point1 and point2.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The distance between the two points
         
@@ -602,11 +602,11 @@ Calculates the Euclidean distance between two points in a two-dimensional space.
 
 A simple pseudorandom number generator based on the linear congruential method.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - seed (int): The seed value used to initialize the generator.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - A float between 0 and 1.
         
@@ -615,12 +615,12 @@ A simple pseudorandom number generator based on the linear congruential method.
 
 Use k-means clustering to group data points into k clusters.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - data (list): A list of data points.
         - k (int): The number of clusters to form.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - clusters (list): A list of k clusters, each containing the data points assigned to that cluster.
         
@@ -629,11 +629,11 @@ Use k-means clustering to group data points into k clusters.
 
 Returns the exponential value of a number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - num: a number whose exponential value is to be calculated
 
-##### **Returns:**
+> ##### **Returns:**
 
         The exponential value of the input number
         
@@ -642,11 +642,11 @@ Returns the exponential value of a number.
 
 Returns the absolute value of a number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - num: a number whose absolute value is to be calculated
 
-##### **Returns:**
+> ##### **Returns:**
 
         The absolute value of the input number
         
@@ -655,12 +655,12 @@ Returns the absolute value of a number.
 
 Returns the remainder of dividing the dividend by the divisor.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - dividend: the number to be divided
         - divisor: the number to divide by
 
-##### **Returns:**
+> ##### **Returns:**
         
         The remainder of dividing the dividend by the divisor
         
@@ -669,11 +669,11 @@ Returns the remainder of dividing the dividend by the divisor.
 
 Returns the sine value of a number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - num: a number in radians whose sine value is to be calculated
 
-##### **Returns:**
+> ##### **Returns:**
 
         The sine value of the input number
         
@@ -682,11 +682,11 @@ Returns the sine value of a number.
 
 Returns the cosine value of a number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - num: a number in radians whose cosine value is to be calculated
 
-##### **Returns:**
+> ##### **Returns:**
 
         The cosine value of the input number
 
@@ -695,11 +695,11 @@ Returns the cosine value of a number.
 
 Returns the tangent value of a number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - num: a number in radians whose tangent value is to be calculated
 
-##### **Returns:**
+> ##### **Returns:**
         
         The tangent value of the input number
 
@@ -746,11 +746,11 @@ This is a Python class full of mathematical constants such a Pi or the speed of 
 
 Returns the speed of light in meters per second
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
 
-##### **Returns:**
+> ##### **Returns:**
 
         The speed of light in meters/second at 299_792_458
         
@@ -762,7 +762,7 @@ Returns the Planck constant, denoted as h, in joule-seconds.
 The Planck constant is a physical constant that is fundamental to quantum mechanics.
 It relates the energy of a photon to its frequency and is approximately 6.626 x 10^-34 J*s.
 
-##### **Returns:**
+> ##### **Returns:**
             
             - float: The value of the Planck constant in joule-seconds.
     
@@ -770,11 +770,11 @@ It relates the energy of a photon to its frequency and is approximately 6.626 x 
 
 The ratio of a circle's circumference to its diameter.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         Pi, π, to the 20th decimal
         3.141_592_653_589_793_238_46
         
@@ -785,11 +785,11 @@ the 19th letter of the Greek alphabet,
 representing the voiceless dental or alveolar plosive IPA: [t].
 In the system of Greek numerals, it has a value of 300.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         tau, uppercase Τ, lowercase τ, or τ, to the 20th decimal
         6.283_185_307_179_586_476_92
         
@@ -801,11 +801,11 @@ In mathematics, two quantities are in the golden ratio
 if their ratio is the same as the ratio of their sum
 to the larger of the two quantities.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
 
-##### **Returns:**
+> ##### **Returns:**
 
         Uppercase Φ lowercase φ or ϕ: Value to the 20th decimal
         1.618_033_988_749_894_848_20
@@ -818,11 +818,11 @@ if the ratio of the smaller of those two quantities to the larger quantity
 is the same as the ratio of the larger quantity to the sum of the
 smaller quantity and twice the larger quantity
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
         δS: Value to the 20th decimal
         2.414_213_562_373_095_048_80
@@ -832,11 +832,11 @@ smaller quantity and twice the larger quantity
 
 Returns the mathematical constant psi (the supergolden ratio).
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
 
-##### **Returns:**
+> ##### **Returns:**
         
         ψ to the 25th decimal
         return 1.465_571_231_876_768_026_656_731_2
@@ -846,11 +846,11 @@ Returns the mathematical constant psi (the supergolden ratio).
 
 Returns the connective constant for the hexagonal lattice.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
         μ to the 4th decimal
         1.687_5
@@ -864,11 +864,11 @@ Take a circle of radius 1. Inscribe a regular triangle in this circle.
 Inscribe a circle in this triangle. Inscribe a square in it.
 Inscribe a circle, regular pentagon, circle, regular hexagon and so forth.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
         K': to the 20th decimal
         0.114_942_044_853_296_200_70
@@ -878,11 +878,11 @@ Inscribe a circle, regular pentagon, circle, regular hexagon and so forth.
 
 Returns Wallis's constant.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       Value to the 20th decimal
       2.094_551_481_542_326_591_48
@@ -895,11 +895,11 @@ It is the base of the natural logarithms.
 It is the limit of (1 + 1/n)n as n approaches infinity, an expression that arises in the study of compound interest.
 It can also be calculated as the sum of the infinite series
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       e: Value to the 20th decimal. math.e
       2.718_281_828_459_045_235_36
@@ -909,11 +909,11 @@ It can also be calculated as the sum of the infinite series
 
 Natural logarithm of 2.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       ln 2: Value to the 30th decimal. math.log(2)
       0.693_147_180_559_945_309_417_232_121_458
@@ -923,11 +923,11 @@ Natural logarithm of 2.
 
 The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       ϖ: Value to the 20th decimal. math.sqrt(2)
       2.622_057_554_292_119_810_46 
@@ -938,11 +938,11 @@ The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous 
 Not to be confused with Euler's Number.
 Defined as the limiting difference between the harmonic series and the natural logarithm
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       γ: Value to the 50th decimal
       0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
@@ -952,11 +952,11 @@ Defined as the limiting difference between the harmonic series and the natural l
 
 The sum of the reciprocals of the Mersenne numbers
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       E: Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
       1.606_695_152_415_291_763_78
@@ -966,11 +966,11 @@ The sum of the reciprocals of the Mersenne numbers
 
 Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       Ω: Value to the 30th decimal
       0.567_143_290_409_783_872_999_968_662_210
@@ -980,11 +980,11 @@ Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
 
 The sum of the reciprocals of the positive cubes.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       ζ(3): Value to the 45th decimal
       1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
@@ -994,11 +994,11 @@ The sum of the reciprocals of the positive cubes.
 
 The maximum value of the eccentricity for which a solution to Kepler's equation, in terms of a power series in the eccentricity, converges.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       Value to the 35th decimal
       0.662_743_419_349_181_580_974_742_097_109_252_90
@@ -1008,11 +1008,11 @@ The maximum value of the eccentricity for which a solution to Kepler's equation,
 
 A mathematical constant defined as the unique positive zero of the logarithmic integral function.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       μ ≈: Value to the 45th decimal
       1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
@@ -1023,11 +1023,11 @@ A mathematical constant defined as the unique positive zero of the logarithmic i
 Transcendental mathematical constant that is the ratio of the perimeter of
 Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       G == ϖ /π ≈ 0.8346268: Value to the 7th decimal
       0.834_626_8
@@ -1037,11 +1037,11 @@ Bernoulli's lemniscate to its diameter, analogous to the definition of π for th
 
 _summary_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       γ2 : Value to the 20th decimal
       1.154_700_538_379_251_529_01
@@ -1051,11 +1051,11 @@ _summary_
 A real number x with the property that, for every positive integer n,
 there exists a pair of integers (p,q) with q>1.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       L: Value to the 119th decimal
       0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
@@ -1065,11 +1065,11 @@ there exists a pair of integers (p,q) with q>1.
 
 _summary_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
         
       C_{1}: _description_
       0.697_774_657_964_007_982_01
@@ -1079,11 +1079,11 @@ _summary_
 
 The transcendental number, which is an almost integer, in that it is very close to an integer.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       e**{{\pi {\sqrt {163}}}}: Value to the 18th decimal
       262_537_412_640_768_743.999_999_999_999_250_073
@@ -1093,11 +1093,11 @@ The transcendental number, which is an almost integer, in that it is very close 
 
 A mathematical constant, related to the K-function and the Barnes G-function.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       A: Value to the 20th decimal
       1.282_427_129_100_622_636_87
@@ -1107,15 +1107,15 @@ A mathematical constant, related to the K-function and the Barnes G-function.
 
 Computes the Catalan's constant to the specified number of decimal places using the formula:
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       n (int): The number of terms to sum to approximate the constant.
 
-##### **Returns:**
+> ##### **Returns:**
 
       float: The computed value of the Catalan's constant.
 
-##### **Example:**
+> ##### **Example:**
 
       >>> catalan_constant(1000000)
       0.915965594177219
@@ -1127,15 +1127,15 @@ Calculates the unique real root of the equation cos(x) = x, known as the Dottie 
 
 The Dottie number is a constant that arises in the study of iterative methods and has connections to chaos theory.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
          float: The Dottie number, i.e., the unique real root of the equation cos(x) = x, to the 20th decimal place.
     
-##### **Example:**
+> ##### **Example:**
 
        >>> dottie_number()
        0.73908513321516064165
@@ -1149,16 +1149,16 @@ The Meissel-Mertens constant M is defined as the sum of the reciprocal of the pr
 
 This function uses a precomputed value of M to return the constant to the 40th decimal place.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       M (float): The Meissel-Mertens constant M to the 40th decimal place.
       return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
 
-##### **Example:**
+> ##### **Example:**
 
         meissel_mertens_constant()
         0.2614972128476427837554268386086958590516
@@ -1168,11 +1168,11 @@ This function uses a precomputed value of M to return the constant to the 40th d
 
 The ratio, for any parabola, of the arc length of the parabolic segment formed by the latus rectum to the focal parameter.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       P: Value to the 20th decimal
       2.295_587_149_392_638_074_03
@@ -1182,11 +1182,11 @@ The ratio, for any parabola, of the arc length of the parabolic segment formed b
 
 The value of an infinite series of unit fractions with alternating signs.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - None
         
-##### **Returns:**
+> ##### **Returns:**
 
       C: Value to the 20th decimal
       0.643_410_546_288_338_026_18
@@ -1196,11 +1196,11 @@ The value of an infinite series of unit fractions with alternating signs.
 
 Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Gelfond's Constant, which is approximately 23.1406926327792690057292.
 
             - return self.eulers_constant**self.pi
@@ -1211,11 +1211,11 @@ Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
 Returns the Gelfond-Schneider constant, which is a transcendental number defined as the value of 
 2^(1/2) raised to the power of itself, or approximately 2.6651441426902251886502972498731.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Gelfond-Schneider constant.
 
             - pass
@@ -1226,11 +1226,11 @@ Returns the Gelfond-Schneider constant, which is a transcendental number defined
 Returns the Second Favard constant, which is a mathematical constant defined as the limit of the 
 arithmetic mean of the reciprocal of consecutive odd numbers, or approximately 0.661707182...
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Second Favard constant.
 
             - pass
@@ -1242,11 +1242,11 @@ Returns the golden angle constant, which is the angle subtended by the smaller o
 formed by dividing the circumference of a circle in the golden ratio. It is equal to 
 (3 - sqrt(5)) * 180 degrees / pi, or approximately 137.5077640500378546463487 degrees.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the golden angle constant in degrees.
 
             - pass
@@ -1257,11 +1257,11 @@ formed by dividing the circumference of a circle in the golden ratio. It is equa
 Returns Sierpiński's constant, which is the fractal dimension of the Sierpiński triangle, a 
 self-similar fractal shape. It is equal to log(3)/log(2), or approximately 1.585.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Sierpiński's constant.
 
             - pass
@@ -1273,11 +1273,11 @@ Returns the Landau-Ramanujan constant, which is a mathematical constant that app
 asymptotic expansion of the partition function. It is equal to e^(pi * sqrt(163)), or approximately
 2.2932021438344677e+17.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Landau-Ramanujan constant.
 
             - pass
@@ -1289,11 +1289,11 @@ Returns the First Nielsen-Ramanujan constant, which is a mathematical constant t
 certain partition identities. It is equal to the product of a series involving the gamma function, 
 or approximately 0.866081804933.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the First Nielsen-Ramanujan constant.
 
             - pass
@@ -1304,11 +1304,11 @@ or approximately 0.866081804933.
 Returns Gieseking's constant, which is a mathematical constant that appears in the theory of 
 harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.7511255444649425.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Gieseking's constant.
 
             - pass
@@ -1319,11 +1319,11 @@ harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.751125544464
 Returns Bernstein's constant, which is a mathematical constant that appears in the theory of 
 Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Bernstein's constant.
 
             - pass
@@ -1334,11 +1334,11 @@ Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
 Returns the Tribonacci constant, which is a mathematical constant defined as the unique real root 
 of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Tribonacci constant.
 
             - pass
@@ -1350,11 +1350,11 @@ of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
 Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
 where prime(k) is the kth prime number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Bruns constant, accurate to 42 decimal places.
 
             - pass
@@ -1365,11 +1365,11 @@ where prime(k) is the kth prime number.
 Returns the limiting value of the sequence of twin primes (pairs of prime
 numbers that differ by 2).
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the twin primes constant, accurate to 36 decimal places.
 
             - pass
@@ -1379,11 +1379,11 @@ numbers that differ by 2).
 
 Returns the unique positive real root of x^3 = x + 1.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the plastic number, accurate to 32 decimal places.
 
             - pass
@@ -1394,11 +1394,11 @@ Returns the unique positive real root of x^3 = x + 1.
 Returns the limiting value of the sequence of numbers that represent the
 Bloch wall widths in ferromagnets.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Bloch's constant, accurate to 34 decimal places.
 
             - pass
@@ -1409,11 +1409,11 @@ Bloch wall widths in ferromagnets.
 Returns the value that has 97.5% of the area under a standard normal distribution
 to the left of it.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the z-score at the 97.5th percentile, accurate to 9 decimal places.
 
             - pass
@@ -1425,11 +1425,11 @@ Returns the limiting value of the sequence of numbers that represent the
 probability that a random permutation of n elements will have no cycle of length
 greater than log(n).
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Landau's constant, accurate to 19 decimal places.
 
             - pass
@@ -1441,11 +1441,11 @@ Returns the limiting value of the sequence of numbers that represent the
 probability that a random permutation of n elements will have no cycle of length
 greater than sqrt(n) * log(n).
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of Landau's third constant, accurate to 20 decimal places.
 
             - pass
@@ -1457,11 +1457,11 @@ Returns the limiting value of the sequence of numbers that represent the
 differences in density between the 0's and 1's in the Prouhet-Thue-Morse
 sequence.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Prouhet-Thue-Morse constant, accurate to 20 decimal places.
 
             - pass
@@ -1472,11 +1472,11 @@ sequence.
 The Golomb-Dickman constant represents the limiting distribution of the ratio of the k-th smallest
 number in a sample of n random numbers to n^(1/k) as n approaches infinity. It is denoted by G.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Golomb-Dickman constant G, approximately 0.6243299885435508.
 
             - return 0.6243299885435508
@@ -1487,11 +1487,11 @@ number in a sample of n random numbers to n^(1/k) as n approaches infinity. It i
 The Lebesgue asymptotic behavior constant describes the average size of the level sets
 of a random walk in d dimensions. It is denoted by L(d).
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Lebesgue asymptotic behavior constant L(3), approximately 3.912023005428146.
 
             - return 3.912023005428146
@@ -1502,11 +1502,11 @@ of a random walk in d dimensions. It is denoted by L(d).
 The Feller-Tornier constant is the probability that a random walk on the integers
 returns to the origin infinitely often. It is denoted by F.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Feller-Tornier constant F, approximately 0.259183.
 
             - return 0.259183
@@ -1517,11 +1517,11 @@ returns to the origin infinitely often. It is denoted by F.
 The Champernowne constant is formed by concatenating the base 10 representations of
 successive integers, and is represented by C_10. 
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the base 10 Champernowne constant C_10, approximately 0.12345678910111213...
 
 ---
@@ -1530,11 +1530,11 @@ successive integers, and is represented by C_10.
 The Salem number is a complex number that is a root of a certain polynomial
 with integer coefficients. It is denoted by s.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - complex: The value of the Salem constant s, approximately (1+sqrt(2)) * e^(pi*sqrt(2)/4).
 
             - return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
@@ -1545,11 +1545,11 @@ with integer coefficients. It is denoted by s.
 The Khinchin constant is a number that appears in the theory of continued fractions. 
 It is denoted by K.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The value of the Khinchin constant K, approximately 2.6854520010653065.
 
             - return 2.6854520010653065
@@ -1563,16 +1563,16 @@ It is defined as the limit of the average absolute difference between two random
 root-mean-square difference, as the sample size tends to infinity. The value of Levy's constant is approximately 
 1.3303872425, with high precision being 1.33038724246235217434246.
             
-##### **Symbol:**
+> ##### **Symbol:**
 
             - γ or K
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of Levy's constant.
     
@@ -1583,11 +1583,11 @@ root-mean-square difference, as the sample size tends to infinity. The value of 
 
 Calculate the value of e to the power of Levy's constant.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of e to the power of Levy's constant.
 
@@ -1599,14 +1599,14 @@ Calculate the value of e to the power of Levy's constant.
 Copeland-Erdős constant is the smallest number that is not the sum of 
 distinct non-negative integer powers of 2.
 
-##### **Symbol:**
+> ##### **Symbol:**
             - C_E
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float
     
@@ -1617,14 +1617,14 @@ Gompertz constant is a mathematical constant named after Benjamin Gompertz,
 it is the limit of the ratio between the life expectancy of a certain age 
 and the remaining life expectancy.
 
-##### **Symbol:**
+> ##### **Symbol:**
             - γ
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float
     
@@ -1635,15 +1635,15 @@ De Bruijn–Newman constant is the limit of the sequence of coefficients a_n
 such that the entire function f(z) = Π_(n=1)^∞ [(1 - z/a_n) * exp(z/a_n)] has
 no zeros in the complex plane.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - λ
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float
 
@@ -1654,15 +1654,15 @@ The van der Pauw constant is a constant used in measuring resistance of flat sam
 and is defined as the ratio of the natural logarithm of the quotient of two measured
 resistances to the constant π.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - K
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the van der Pauw constant to the highest precision.
 
@@ -1676,15 +1676,15 @@ resistances to the constant π.
         electronic properties of the material exhibit a number of interesting
         phenomena.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - θ
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The magic angle in radians.
 
@@ -1696,10 +1696,10 @@ resistances to the constant π.
 
 Calculates the arctangent of x using a Taylor series approximation.
 
-##### **Arguments:**
+> ##### **Arguments:**
             x (float): A real number.
 
-##### **Returns:**
+> ##### **Returns:**
             - float: The arctangent of x in radians.
 
 
@@ -1710,11 +1710,11 @@ The Artin's constant is a number that appears in the formula to calculate the Ar
 It is defined as the infinite product of (1 - p^(-s)) where p ranges over all prime numbers and s is the reciprocal
 of the prime number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the Artin's constant to the highest precision.
 
@@ -1725,15 +1725,15 @@ Porter's constant is a mathematical constant that appears in the field of inform
 the limit of the ratio of the maximum number of different words of length n over the number of possible words of
 length n as n approaches infinity.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             -
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of Porter's constant to the highest precision.
 
@@ -1750,11 +1750,11 @@ The sum is taken over a large number of terms to achieve a high degree of accura
         
 Note that the function uses the 'math' module to calculate the natural logarithm, so it must be imported before the function can be called.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the Euler-Mascheroni constant to a high degree of accuracy.
 
@@ -1764,15 +1764,15 @@ Note that the function uses the 'math' module to calculate the natural logarithm
 Lochs' constant is a mathematical constant defined as the limiting ratio of the perimeter of an inscribed regular
 decagon to its diameter.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - 
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of Lochs' constant to the highest precision.
 
@@ -1786,15 +1786,15 @@ The De Vries - De Vos - Barendrecht - De Klerk - Smit - Smit constant (also know
 is defined as the number that describes the maximum ratio of the content of a hypercube inscribed in a tesseract to
 the content of the hypercube circumscribed about the tesseract.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             -
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of De Vries' tesseract constant to the highest precision.
 
@@ -1807,15 +1807,15 @@ the content of the hypercube circumscribed about the tesseract.
 The Lieb's square ice constant is the infinite sum of alternating sign reciprocals of the squares of odd positive integers.
 It appears in the square ice problem in statistical mechanics.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - 
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the Lieb's square ice constant to the highest precision.
 
@@ -1827,15 +1827,15 @@ It appears in the square ice problem in statistical mechanics.
 Niven's constant is a mathematical constant that is the only known integer x that is divisible by the sum of its digits
 when written in decimal base. The constant is also related to the convergence of certain infinite series.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - 
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - int: The value of Niven's constant to the highest precision.
     
@@ -1846,15 +1846,15 @@ Mills constant is the smallest positive real number A such that the
 floor function of the double exponential function is a prime number,
 where the double exponential function is f(n) = A^(3^n).
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - A
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float
 
@@ -1908,7 +1908,7 @@ where the double exponential function is f(n) = A^(3^n).
 
 For the binary alphabet
         
-##### **Symbol:**
+> ##### **Symbol:**
 
             - \gamma _{2}
 
@@ -1919,7 +1919,7 @@ For the binary alphabet
 
 Feigenbaum constant δ
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - \delta
 
@@ -1930,19 +1930,19 @@ Feigenbaum constant δ
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - \Omega 
 
-##### **Raises:**
+> ##### **Raises:**
             
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -1953,19 +1953,19 @@ _summary_
 
 Robbins' constant is a mathematical constant that arises in the study of mathematical analysis.
 
-##### **Symbol:**
+> ##### **Symbol:**
         
             - \Delta (3)
 
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: If the computation of the constant fails.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of Robbins' constant.
     
@@ -1979,19 +1979,19 @@ Robbins' constant is a mathematical constant that arises in the study of mathema
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - F
 
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2002,19 +2002,19 @@ _summary_
 
 feigenbaum constant α
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - \alpha 
 
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2025,19 +2025,19 @@ feigenbaum constant α
 
 Second du Bois-Reymond constant
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - C_{2}
              
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2048,19 +2048,19 @@ Second du Bois-Reymond constant
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - \delta
             
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2071,23 +2071,23 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - \lambda
             
-##### **Arguments:**
+> ##### **Arguments:**
 
             - Self (_type_): _description_
 
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2098,19 +2098,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - \sigma
         
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2121,19 +2121,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - B
             
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2149,18 +2149,18 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             - q
             
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2171,19 +2171,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - {\displaystyle \beta ^{\star }}
             
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2194,19 +2194,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - C
             
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2217,19 +2217,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - S
         
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2240,19 +2240,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - \rho 
         
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2263,19 +2263,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - \sigma
         
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2286,19 +2286,19 @@ _summary_
 
 _summary_
 
-##### **Symbol:**
+> ##### **Symbol:**
             
             - \alpha
         
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2309,15 +2309,15 @@ _summary_
 
 Logarathmic capacity of the unit disk
 
-##### **Raises:**
+> ##### **Raises:**
 
             ValueError: _description_
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - none
 
-##### **Returns:**
+> ##### **Returns:**
 
             - _type_: _description_
 
@@ -2339,11 +2339,11 @@ A class containing various mathematical functions.
 
 Calculates the area of a circle given its radius.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - r: The radius of the circle.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - The area of the circle.
         - return 3.141592653589793238 * r ** 2
@@ -2353,11 +2353,11 @@ Calculates the area of a circle given its radius.
 
 Calculates the volume of a sphere given its radius.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - r: The radius of the sphere.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - The volume of the sphere.
         - return 4 / 3 * 3.141592653589793238 * r ** 3
@@ -2367,12 +2367,12 @@ Calculates the volume of a sphere given its radius.
 
 Calculates the perimeter of a rectangle given its length and breadth.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         - l: The length of the rectangle.
         - b: The breadth of the rectangle.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - The perimeter of the rectangle.
         - return 2 * (l + b)
@@ -2382,12 +2382,12 @@ Calculates the perimeter of a rectangle given its length and breadth.
 
 Calculates the length of the hypotenuse of a right-angled triangle given the lengths of its two other sides.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         a: The length of one of the sides of the triangle.
         b: The length of the other side of the triangle.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The length of the hypotenuse of the triangle.
         return (a ** 2 + b ** 2) ** 0.5
@@ -2397,11 +2397,11 @@ Calculates the length of the hypotenuse of a right-angled triangle given the len
 
 Calculates the square root of a given number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x: The number to take the square root of.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The square root of x.
         return x ** 0.5
@@ -2411,11 +2411,11 @@ Calculates the square root of a given number.
 
 Calculates the factorial of a given number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         n: The number to calculate the factorial of.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The factorial of n.
 
@@ -2429,12 +2429,12 @@ Calculates the factorial of a given number.
 
 Calculates the greatest common divisor of two numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         a: The first number.
         b: The second number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The greatest common divisor of a and b.
         
@@ -2447,12 +2447,12 @@ Calculates the greatest common divisor of two numbers.
 
 Calculates the least common multiple of two numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         a: The first number.
         b: The second number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The least common multiple of a and b.
 
@@ -2463,11 +2463,11 @@ Calculates the least common multiple of two numbers.
 
 Calculates the value of e raised to a given power.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x: The exponent.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The value of e raised to x.
 
@@ -2479,12 +2479,12 @@ Calculates the value of e raised to a given power.
 
 Calculates the logarithm of a given number to a given base.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x: The number to take the logarithm of.
         base: The base of the logarithm.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The logarithm of x to the base.
 
@@ -2495,11 +2495,11 @@ Calculates the logarithm of a given number to a given base.
 
 Calculates the natural logarithm of a given number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x: The number to take the natural logarithm of.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The natural logarithm of x.
 
@@ -2515,13 +2515,13 @@ Calculates the natural logarithm of a given number.
 
 Approximates the definite integral of a function over a given interval using the trapezoidal rule.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         f: The function to integrate.
         a: The lower limit of the interval.
         b: The upper limit of the interval.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The approximate value of the definite integral of f over the interval [a, b].
 
@@ -2536,12 +2536,12 @@ Approximates the definite integral of a function over a given interval using the
 
 Calculates the surface area of a cylinder given its radius and height.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         r: The radius of the cylinder.
         h: The height of the cylinder.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The surface area of the cylinder.
 
@@ -2552,12 +2552,12 @@ Calculates the surface area of a cylinder given its radius and height.
 
 Calculates the volume of a cylinder given its radius and height.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         r: The radius of the cylinder.
         h: The height of the cylinder.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The volume of the cylinder.
 
@@ -2568,12 +2568,12 @@ Calculates the volume of a cylinder given its radius and height.
 
 Calculates the area of a triangle given its base and height.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         b: The base of the triangle.
         h: The height of the triangle.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The area of the triangle.
 
@@ -2584,11 +2584,11 @@ Calculates the area of a triangle given its base and height.
 
 Calculates the sine of a given angle in radians.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
         x: The angle in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
         The sine of the angle.
 
@@ -2606,12 +2606,12 @@ Calculates the sine of a given angle in radians.
 
 Return a float with the magnitude of x and the sign of y.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       - x (float): The magnitude of the result.
       - y (float): The sign of the result.
 
-##### **Returns:**
+> ##### **Returns:**
 
       - float: A float with the magnitude of x and the sign of y.
 
@@ -2622,11 +2622,11 @@ Return a float with the magnitude of x and the sign of y.
 
 Return the arc cosine of x, in radians.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
       - x (float): The value whose arc cosine is to be returned.
 
-##### **Returns:**
+> ##### **Returns:**
 
       - float: The arc cosine of x, in radians.
 
@@ -2640,15 +2640,15 @@ Return the arc cosine of x, in radians.
 
 The nth harmonic number is the sum of the reciprocals of the first n natural numbers.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - H_n
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): The number of terms to include in the sum.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the nth harmonic number.
 
@@ -2660,15 +2660,15 @@ The nth harmonic number is the sum of the reciprocals of the first n natural num
 The nth Gregory coefficient is a coefficient used in the Gregory series formula for pi,
 which provides an approximate value of pi.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - G_n
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): The index of the Gregory coefficient to be calculated.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the nth Gregory coefficient.
 
@@ -2685,15 +2685,15 @@ which provides an approximate value of pi.
 The nth Bernoulli number is a sequence of rational numbers with deep connections to number theory
 and other areas of mathematics, including algebra and calculus.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - B_n
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): The index of the Bernoulli number to be calculated.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the nth Bernoulli number.
 
@@ -2711,15 +2711,15 @@ and other areas of mathematics, including algebra and calculus.
 The nth Hermite constant is a constant that appears in the study of the quantum harmonic oscillator,
 and is related to the normalization of the wave functions of the oscillator.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - H_n
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): The index of the Hermite constant to be calculated.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the nth Hermite constant.
 
@@ -2734,15 +2734,15 @@ and is related to the normalization of the wave functions of the oscillator.
 The nth Hafner-Sarnak-McCurley constant is a constant that appears in the study of prime numbers
 and related topics in number theory.
 
-##### **Symbol:**
+> ##### **Symbol:**
 
             - C_n
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): The index of the Hafner-Sarnak-McCurley constant to be calculated.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The value of the nth Hafner-Sarnak-McCurley constant.
 
@@ -2754,11 +2754,11 @@ and related topics in number theory.
 
 Returns the nth Stieltjes constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Stieltjes constant.
             - if n == 1:
@@ -2774,7 +2774,7 @@ Returns the nth Stieltjes constant.
             else:
                 raise ValueError("The index n should be between 1 and 5.")
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/StieltjesConstants.html
             
@@ -2783,11 +2783,11 @@ Returns the nth Stieltjes constant.
 
 Returns the nth Favard constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Favard constant.
 
@@ -2799,7 +2799,7 @@ Returns the nth Favard constant.
                 return sum([Sequences.favard_constants(self, i) * Sequences.favard_constants(self, n-i) / (i+n-i-1) 
                             for i in range(1, n)])
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/FavardConstants.html
         
@@ -2809,11 +2809,11 @@ Returns the nth Favard constant.
 
 Returns the nth generalized Bruns constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth generalized Bruns constant.
 
@@ -2825,7 +2825,7 @@ Returns the nth generalized Bruns constant.
                 return sum([abs(Sequences.generalized_bruns_constant(self, i) - Sequences.generalized_bruns_constant(self, i-1)) 
                             for i in range(2, n+1)]) + 1
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/GeneralizedBrunsConstant.html
         
@@ -2834,11 +2834,11 @@ Returns the nth generalized Bruns constant.
 
 Returns the nth Champernowne constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Champernowne constant.
 
@@ -2850,7 +2850,7 @@ Returns the nth Champernowne constant.
                 prev = self.champernowne_constants(n-1)
                 return float(str(prev) + str(n+8))
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/ChampernowneConstant.html
 
@@ -2860,11 +2860,11 @@ Returns the nth Champernowne constant.
 
 Returns the nth Lagrange number.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - int: the nth Lagrange number.
 
@@ -2875,7 +2875,7 @@ Returns the nth Lagrange number.
             else:
                 return n * self.lagrange_number(n-1) - (-1)**n
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/LagrangeNumber.html
     
@@ -2884,11 +2884,11 @@ Returns the nth Lagrange number.
 
 Returns the nth Feller's coin-tossing constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Feller's coin-tossing constant.
 
@@ -2897,7 +2897,7 @@ Returns the nth Feller's coin-tossing constant.
                 result += (-1) ** k / (2 ** (2 ** k))
             return result
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/FellersCoin-TossingConstants.html
     
@@ -2906,11 +2906,11 @@ Returns the nth Feller's coin-tossing constant.
 
 Returns the nth Stoneham number.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - int: the nth Stoneham number.
             if n == 0:
@@ -2918,7 +2918,7 @@ Returns the nth Stoneham number.
             else:
                 return (3 * Sequences.stoneham_number(n - 1) + 1) // 2
 
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/StonehamNumber.html
     
@@ -2927,11 +2927,11 @@ Returns the nth Stoneham number.
 
 Returns the nth Beraha constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Beraha constant.
 
@@ -2940,7 +2940,7 @@ Returns the nth Beraha constant.
             else:
                 return 1 + 1 / Sequences.beraha_constants(n - 1)
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/BerahasConstant.html
     
@@ -2949,11 +2949,11 @@ Returns the nth Beraha constant.
 
 Returns the nth Chvátal-Sankoff constant.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
             - n (int): the index of the sequence.
             
-##### **Returns:**
+> ##### **Returns:**
 
             - float: the nth Chvátal-Sankoff constant.
 
@@ -2963,7 +2963,7 @@ Returns the nth Chvátal-Sankoff constant.
                 result += (-1) ** k * binom ** 2
             return result
             
-##### **Reference:**
+> ##### **Reference:**
 
             - https://mathworld.wolfram.com/Chvatal-SankoffConstants.html
     
@@ -2973,12 +2973,12 @@ Returns the nth Chvátal-Sankoff constant.
 Computes the hyperharmonic number H(n,p), which is defined as the sum of the p-th powers of the reciprocals of
         the first n positive integers.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
         - n - (int): The positive integer up to which to compute the sum.
         - p (int): The exponent to which to raise the reciprocals of the integers.
         
-##### **Returns:**
+> ##### **Returns:**
 
         - H - (float): The hyperharmonic number H(n,p).
 
@@ -2987,7 +2987,7 @@ Computes the hyperharmonic number H(n,p), which is defined as the sum of the p-t
             H += 1 / i ** p
         return H
         
-##### **Symbols:**
+> ##### **Symbols:**
 
         - H(n,p): hyperharmonic number of order p and degree n.
 
@@ -2997,11 +2997,11 @@ Computes the hyperharmonic number H(n,p), which is defined as the sum of the p-t
 Computes the nth Gregory number, which is defined as the alternating sum of the reciprocals of the odd
 positive integers, up to the nth term.
         
-##### **Arguments:**
+> ##### **Arguments:**
 
         - n - (int): The positive integer up to which to compute the alternating sum.
         
-##### **Returns:**
+> ##### **Returns:**
 
         - G - (float): The nth Gregory number.
 
@@ -3013,7 +3013,7 @@ positive integers, up to the nth term.
                 G -= 1 / i
         return G
         
-##### **Symbols:**
+> ##### **Symbols:**
 
         - G(n): nth Gregory number.
 
@@ -3023,18 +3023,18 @@ positive integers, up to the nth term.
 
 Computes the value of the metallic mean of x, which is the positive solution to the equation x = 1/(1+x).
         
-##### **Arguments:**
+> ##### **Arguments:**
 
         - x - (float): The value for which to compute the metallic mean.
         
-##### **Returns:**
+> ##### **Returns:**
 
         - mm-  (float): The value of the metallic mean of x.
 
         mm = (1 + Algorithm.square_root(1 + 4*x)) / 2
         return mm
         
-##### **Symbols:**
+> ##### **Symbols:**
 
         - mm(x): metallic mean of x.
 
@@ -3043,7 +3043,7 @@ Computes the value of the metallic mean of x, which is the positive solution to 
 
 A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech, and csch.
 
-##### **References:**
+> ##### **References:**
 
         * Weisstein, E. W. (n.d.). Hyperbolic functions. MathWorld--A Wolfram Web Resource. 
         Retrieved October 11, 2021, from https://mathworld.wolfram.com/HyperbolicFunctions.html
@@ -3053,11 +3053,11 @@ A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech,
 
 Returns the hyperbolic sine of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic sine of x.
 
@@ -3068,11 +3068,11 @@ Returns the hyperbolic sine of x.
 
 Returns the hyperbolic cosine of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic cosine of x.
 
@@ -3083,11 +3083,11 @@ Returns the hyperbolic cosine of x.
 
 Returns the hyperbolic tangent of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic tangent of x.
 
@@ -3098,11 +3098,11 @@ Returns the hyperbolic tangent of x.
 
 Returns the hyperbolic cotangent of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic cotangent of x.
 
@@ -3113,11 +3113,11 @@ Returns the hyperbolic cotangent of x.
 
 Returns the hyperbolic secant of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic secant of x.
 
@@ -3128,11 +3128,11 @@ Returns the hyperbolic secant of x.
 
 Returns the hyperbolic cosecant of x.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - x (float): The input value in radians.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The hyperbolic cosecant of x.
 
@@ -3144,7 +3144,7 @@ Returns the hyperbolic cosecant of x.
 
 A class representing a complex number.
 
-##### **Attributes:**
+> ##### **Attributes:**
 
         - real (float): The real part of the complex number.
         - imag (float): The imaginary part of the complex number.
@@ -3154,7 +3154,7 @@ A class representing a complex number.
 
 Initializes a complex number.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - real (float): The real part of the complex number.
             - imag (float): The imaginary part of the complex number.
@@ -3164,7 +3164,7 @@ Initializes a complex number.
 
 Returns a string representation of the complex number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - str: A string representation of the complex number.
 
@@ -3175,11 +3175,11 @@ Returns a string representation of the complex number.
 
 Adds two complex numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (ComplexNumber): The complex number to add.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - ComplexNumber: The sum of the two complex numbers.
 
@@ -3190,11 +3190,11 @@ Adds two complex numbers.
 
 Subtracts two complex numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (ComplexNumber): The complex number to subtract.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - ComplexNumber: The difference of the two complex numbers.
 
@@ -3205,11 +3205,11 @@ Subtracts two complex numbers.
 
 Multiplies two complex numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (ComplexNumber): The complex number to multiply.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - ComplexNumber: The product of the two complex numbers.
 
@@ -3222,11 +3222,11 @@ Multiplies two complex numbers.
 
 Divides two complex numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (ComplexNumber): The complex number to divide.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - ComplexNumber: The quotient of the two complex numbers.
 
@@ -3240,7 +3240,7 @@ Divides two complex numbers.
 
 Computes the conjugate of the complex number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - ComplexNumber: The conjugate of the complex number.
 
@@ -3251,7 +3251,7 @@ Computes the conjugate of the complex number.
 
 Computes the modulus (magnitude) of the complex number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - float: The modulus of the complex number.
 
@@ -3269,11 +3269,11 @@ A class representing a real number.
 
 Initializes a new RealNumber object with the given value.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - value (float): The value of the real number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object.
 
@@ -3284,7 +3284,7 @@ Initializes a new RealNumber object with the given value.
 
 Returns a string representation of the real number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - str: A string representation of the real number.
 
@@ -3295,7 +3295,7 @@ Returns a string representation of the real number.
 
 Returns a string representation of the real number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - str: A string representation of the real number.
 
@@ -3306,11 +3306,11 @@ Returns a string representation of the real number.
 
 Checks whether the real number is equal to another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is equal to the other object, False otherwise.
 
@@ -3326,11 +3326,11 @@ Checks whether the real number is equal to another object.
 
 Checks whether the real number is not equal to another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is not equal to the other object, False otherwise.
 
@@ -3341,11 +3341,11 @@ Checks whether the real number is not equal to another object.
 
 Checks whether the real number is less than another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is less than the other object, False otherwise.
 
@@ -3361,11 +3361,11 @@ Checks whether the real number is less than another object.
 
 Checks whether the real number is less than or equal to another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is less than or equal to the other object, False otherwise.
 
@@ -3381,11 +3381,11 @@ Checks whether the real number is less than or equal to another object.
 
 Checks whether the real number is greater than another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is greater than the other object, False otherwise.
 
@@ -3401,11 +3401,11 @@ Checks whether the real number is greater than another object.
 
 Checks whether the real number is greater than or equal to another object.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (object): The object to compare with.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - bool: True if the real number is greater than or equal to the other object, False otherwise.
 
@@ -3421,11 +3421,11 @@ Checks whether the real number is greater than or equal to another object.
 
 Adds two RealNumber objects.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (RealNumber or float): The RealNumber object or float to add.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the sum of the two numbers.
 
@@ -3441,11 +3441,11 @@ Adds two RealNumber objects.
 
 Subtracts two RealNumber objects.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (RealNumber or float): The RealNumber object or float to subtract.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the difference of the two numbers.
 
@@ -3461,11 +3461,11 @@ Subtracts two RealNumber objects.
 
 Multiplies two RealNumber objects.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (RealNumber or float): The RealNumber object or float to multiply.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the product of the two numbers.
 
@@ -3481,11 +3481,11 @@ Multiplies two RealNumber objects.
 
 Divides two RealNumber objects.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (RealNumber or float): The RealNumber object or float to divide by.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the quotient of the two numbers.
 
@@ -3501,7 +3501,7 @@ Divides two RealNumber objects.
 
 Returns the absolute value of the RealNumber object.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the absolute value of the number.
 
@@ -3512,7 +3512,7 @@ Returns the absolute value of the RealNumber object.
 
 Returns the negation of the RealNumber object.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the negation of the number.
 
@@ -3523,7 +3523,7 @@ Returns the negation of the RealNumber object.
 
 Returns the square root of the RealNumber object.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the square root of the number.
 
@@ -3534,11 +3534,11 @@ Returns the square root of the RealNumber object.
 
 Computes the power of the real number to the given exponent.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
             - other (float): The exponent.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RealNumber: A new RealNumber object with the result of the power operation.
 
@@ -3550,12 +3550,12 @@ Computes the power of the real number to the given exponent.
 
 A class representing a rational number.
 
-##### **Attributes:**
+> ##### **Attributes:**
 
         - numerator (int): The numerator of the rational number.
         - denominator (int): The denominator of the rational number.
 
-##### **Methods:**
+> ##### **Methods:**
 
         - simplify: Simplifies the rational number.
         - add: Adds two rational numbers.
@@ -3568,12 +3568,12 @@ A class representing a rational number.
 
 Initializes a rational number with the given numerator and denominator.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - numerator (int): The numerator of the rational number.
             - denominator (int): The denominator of the rational number.
 
-##### **Raises:**
+> ##### **Raises:**
 
             - ValueError: If the denominator is zero.
 
@@ -3588,7 +3588,7 @@ Initializes a rational number with the given numerator and denominator.
 
 Returns the string representation of the rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         return f"{self.numerator}/{self.denominator}"
 
@@ -3597,7 +3597,7 @@ Returns the string representation of the rational number.
 
 Simplifies the rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         gcd = self.gcd(self.numerator, self.denominator)
         self.numerator //= gcd
@@ -3608,12 +3608,12 @@ Simplifies the rational number.
 
 Computes the greatest common divisor of two numbers a and b.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - a (int): The first number.
             - b (int): The second number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - int: The greatest common divisor of a and b.
 
@@ -3626,11 +3626,11 @@ Computes the greatest common divisor of two numbers a and b.
 
 Adds two rational numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (RationalNumber): The other rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RationalNumber: The sum of the two rational numbers.
 
@@ -3643,11 +3643,11 @@ Adds two rational numbers.
 
 Subtracts two rational numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (RationalNumber): The other rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RationalNumber: The difference of the two rational numbers.
 
@@ -3660,11 +3660,11 @@ Subtracts two rational numbers.
 
 Multiplies two rational numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (RationalNumber): The other rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RationalNumber: The product of the two rational numbers.
 
@@ -3677,11 +3677,11 @@ Multiplies two rational numbers.
 
 Divides two rational numbers.
 
-##### **Arguments:**
+> ##### **Arguments:**
 
             - other (RationalNumber): The other rational number.
 
-##### **Returns:**
+> ##### **Returns:**
 
             - RationalNumber: The quotient of the two rational numbers.
 
@@ -3695,12 +3695,12 @@ Divides two rational numbers.
 
 A class representing integral numbers.
 
-##### **Attributes**
+> ##### **Attributes**
 
     - value : int
         The value of the integral number.
 
-##### **Methods**
+> ##### **Methods**
 
     __init__(self, value: int) -> None:
         Initializes a new instance of the IntegralNumber class with the specified integer value.
@@ -3726,7 +3726,7 @@ A class representing integral numbers.
     __truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':
         Divides two IntegralNumber objects and returns a new IntegralNumber object.
 
-##### **Raises**
+> ##### **Raises**
 
     - TypeError
         If the argument is not an instance of IntegralNumber.
@@ -3735,7 +3735,7 @@ A class representing integral numbers.
 
         Divides two IntegralNumber objects and returns a new IntegralNumber object.
 
-##### **References**
+> ##### **References**
 
     - https://en.wikipedia.org/wiki/Integer_(computer_science)
     - https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
@@ -3745,7 +3745,7 @@ A class representing integral numbers.
 
 Initializes a new instance of the IntegralNumber class with the specified integer value.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - value : int
             The integer value to initialize the IntegralNumber object with.
@@ -3757,7 +3757,7 @@ Initializes a new instance of the IntegralNumber class with the specified intege
 
 Returns a string representation of the IntegralNumber object.
 
-##### **Returns**
+> ##### **Returns**
 
         - str
             A string representation of the IntegralNumber object.
@@ -3769,12 +3769,12 @@ Returns a string representation of the IntegralNumber object.
 
 Determines if the current IntegralNumber object is equal to another IntegralNumber object.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to compare to.
 
-##### **Returns**
+> ##### **Returns**
 
         - bool
             True if the objects are equal, False otherwise.
@@ -3788,12 +3788,12 @@ Determines if the current IntegralNumber object is equal to another IntegralNumb
 
 Determines if the current IntegralNumber object is less than another IntegralNumber object.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to compare to.
 
-##### **Returns**
+> ##### **Returns**
 
         - bool
             True if the current object is less than the other object, False otherwise.
@@ -3807,17 +3807,17 @@ Determines if the current IntegralNumber object is less than another IntegralNum
 
 Adds two IntegralNumber objects.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to be added to the current object.
 
-##### **Returns**
+> ##### **Returns**
 
         - IntegralNumber
             An IntegralNumber object which is the sum of the current object and the passed object.
 
-##### **Raises**
+> ##### **Raises**
 
         - TypeError
             If the passed object is not an IntegralNumber.
@@ -3832,17 +3832,17 @@ Adds two IntegralNumber objects.
 
 Subtracts two IntegralNumber objects.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to be subtracted from the current object.
 
-##### **Returns**
+> ##### **Returns**
 
         - IntegralNumber
             An IntegralNumber object which is the difference between the current object and the passed object.
 
-##### **Raises**
+> ##### **Raises**
 
         - TypeError
             If the passed object is not an IntegralNumber.
@@ -3856,17 +3856,17 @@ Subtracts two IntegralNumber objects.
 
 Multiplies two IntegralNumber objects.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to be multiplied with the current object.
 
-##### **Returns**
+> ##### **Returns**
 
         - IntegralNumber
             An IntegralNumber object which is the product of the current object and the passed object.
 
-##### **Raises**
+> ##### **Raises**
 
         - TypeError
             If the passed object is not an IntegralNumber.
@@ -3880,17 +3880,17 @@ Multiplies two IntegralNumber objects.
 
 Divides two IntegralNumber objects.
 
-##### **Parameters**
+> ##### **Parameters**
 
         - other : IntegralNumber
             The IntegralNumber object to be used as divisor for the current object.
 
-##### **Returns**
+> ##### **Returns**
 
         - IntegralNumber
             An IntegralNumber object which is the result of dividing the current object by the passed object.
 
-##### **Raises**
+> ##### **Raises**
 
         - TypeError
             If the passed object is not an IntegralNumber.
@@ -3908,12 +3908,12 @@ Divides two IntegralNumber objects.
 
 Returns the sum of this number and `other`.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
         - other : IntegralNumber
             The number to add to this number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - IntegralNumber
             The sum of this number and `other`.
@@ -3925,12 +3925,12 @@ Returns the sum of this number and `other`.
 
 Returns the difference between this number and `other`.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
         - other : IntegralNumber
             The number to subtract from this number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - IntegralNumber
             The difference between this number and `other`.
@@ -3942,12 +3942,12 @@ Returns the difference between this number and `other`.
 
 Returns the product of this number and `other`.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
         - other : IntegralNumber
             The number to multiply with this number.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - IntegralNumber
             The product of this number and `other`.
@@ -3959,12 +3959,12 @@ Returns the product of this number and `other`.
 
 Returns the quotient of this number and `other`.
 
-##### **Parameters:**
+> ##### **Parameters:**
 
         - other : IntegralNumber
             The number to divide this number by.
 
-##### **Returns:**
+> ##### **Returns:**
 
         - Union[IntegralNumber, None]
             The quotient of this number and `other`. Returns None if `other` is zero.
@@ -3976,6 +3976,6 @@ Returns the quotient of this number and `other`.
 ---
 ### `__str__(self):`
 
-##### **Returns:**
+> ##### **Returns:**
 
       - str(self.value)
