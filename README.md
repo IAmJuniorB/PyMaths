@@ -678,6 +678,38 @@ Returns the tangent value of a number.
         The tangent value of the input number
 
 
+### `def next_prime(n):`
+
+Finds the smallest prime number greater than n.
+
+#### **Arguments:**
+      - n (int): A positive integer.
+
+#### **Returns:**
+
+      - int: The smallest prime number greater than n.
+            
+
+### `def atan(x):`
+
+Return the arc tangent of x, in radians.
+
+#### ***Arguments:**
+      - x (float): The value whose arc tangent is to be returned.
+
+#### **Returns:**
+      - float: The arc tangent of x, in radians.
+
+### `def atan_helper(x):`
+
+Helper function for atan. Computes the arc tangent of x in the interval [0, 1].
+
+#### **Arguments:**
+      - x (float): The value whose arc tangent is to be returned.
+
+#### **Returns:**
+      - float: The arc tangent of x, in radians.
+
 
 
 ## **Constants Class**
@@ -1124,8 +1156,1147 @@ The value of an infinite series of unit fractions with alternating signs.
 
       C: Value to the 20th decimal
       0.643_410_546_288_338_026_18
+      
+---
+### `gelfonds_constant(self):`
+
+Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Gelfond's Constant, which is approximately 23.1406926327792690057292.
+
+            - return self.eulers_constant**self.pi
+    
+---
+### `gelfond_schneider_constant(self):`
+
+Returns the Gelfond-Schneider constant, which is a transcendental number defined as the value of 
+2^(1/2) raised to the power of itself, or approximately 2.6651441426902251886502972498731.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Gelfond-Schneider constant.
+
+            - pass
+
+---
+### `second_favard_constant(self):`
+
+Returns the Second Favard constant, which is a mathematical constant defined as the limit of the 
+arithmetic mean of the reciprocal of consecutive odd numbers, or approximately 0.661707182...
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Second Favard constant.
+
+            - pass
+
+---
+### `golden_angle(self):`
+
+Returns the golden angle constant, which is the angle subtended by the smaller of the two angles 
+formed by dividing the circumference of a circle in the golden ratio. It is equal to 
+(3 - sqrt(5)) * 180 degrees / pi, or approximately 137.5077640500378546463487 degrees.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the golden angle constant in degrees.
+
+            - pass
+
+---
+### `sierpinskis_constant(self):`
+
+Returns Sierpiński's constant, which is the fractal dimension of the Sierpiński triangle, a 
+self-similar fractal shape. It is equal to log(3)/log(2), or approximately 1.585.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Sierpiński's constant.
+
+            - pass
+
+---
+### `landau_ramanujan_constant(self):`
+
+Returns the Landau-Ramanujan constant, which is a mathematical constant that appears in the 
+asymptotic expansion of the partition function. It is equal to e^(pi * sqrt(163)), or approximately
+2.2932021438344677e+17.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Landau-Ramanujan constant.
+
+            - pass
+
+---
+### `first_nielsen_ramanujan_constant(self):`
+
+Returns the First Nielsen-Ramanujan constant, which is a mathematical constant that appears in 
+certain partition identities. It is equal to the product of a series involving the gamma function, 
+or approximately 0.866081804933.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the First Nielsen-Ramanujan constant.
+
+            - pass
+
+---
+### `gieseking_constant(self):`
+
+Returns Gieseking's constant, which is a mathematical constant that appears in the theory of 
+harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.7511255444649425.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Gieseking's constant.
+
+            - pass
+
+---
+### `bernsteins_constant(self):`
+
+Returns Bernstein's constant, which is a mathematical constant that appears in the theory of 
+Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Bernstein's constant.
+
+            - pass
+
+---
+### `tribonacci_constant(self):`
+
+Returns the Tribonacci constant, which is a mathematical constant defined as the unique real root 
+of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Tribonacci constant.
+
+            - pass
+
+    
+---
+### `bruns_constant(self):`
+
+Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
+where prime(k) is the kth prime number.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Bruns constant, accurate to 42 decimal places.
+
+            - pass
+
+---
+### `twin_primes_constant(self):`
+
+Returns the limiting value of the sequence of twin primes (pairs of prime
+numbers that differ by 2).
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the twin primes constant, accurate to 36 decimal places.
+
+            - pass
+
+---
+### `plastic_number(self):`
+
+Returns the unique positive real root of x^3 = x + 1.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the plastic number, accurate to 32 decimal places.
+
+            - pass
+
+---
+### `blochs_constant(self):`
+
+Returns the limiting value of the sequence of numbers that represent the
+Bloch wall widths in ferromagnets.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Bloch's constant, accurate to 34 decimal places.
+
+            - pass
+
+---
+### `z_score_975_percentile(self):`
+
+Returns the value that has 97.5% of the area under a standard normal distribution
+to the left of it.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the z-score at the 97.5th percentile, accurate to 9 decimal places.
+
+            - pass
+
+---
+### `landaus_constant(self):`
+
+Returns the limiting value of the sequence of numbers that represent the
+probability that a random permutation of n elements will have no cycle of length
+greater than log(n).
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Landau's constant, accurate to 19 decimal places.
+
+            - pass
+
+---
+### `landaus_third_constant(self):`
+
+Returns the limiting value of the sequence of numbers that represent the
+probability that a random permutation of n elements will have no cycle of length
+greater than sqrt(n) * log(n).
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of Landau's third constant, accurate to 20 decimal places.
+
+            - pass
+
+---
+### `prouhet_thue_morse_constant(self):`
+
+Returns the limiting value of the sequence of numbers that represent the
+differences in density between the 0's and 1's in the Prouhet-Thue-Morse
+sequence.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Prouhet-Thue-Morse constant, accurate to 20 decimal places.
+
+            - pass
+    
+---
+### `golomb_dickman_constant(self):`
+
+The Golomb-Dickman constant represents the limiting distribution of the ratio of the k-th smallest
+number in a sample of n random numbers to n^(1/k) as n approaches infinity. It is denoted by G.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Golomb-Dickman constant G, approximately 0.6243299885435508.
+
+            - return 0.6243299885435508
+
+---
+### `lebesgue_asymptotic_behavior_constant(self):`
+
+The Lebesgue asymptotic behavior constant describes the average size of the level sets
+of a random walk in d dimensions. It is denoted by L(d).
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Lebesgue asymptotic behavior constant L(3), approximately 3.912023005428146.
+
+            - return 3.912023005428146
+
+---
+### `feller_tornier_constant(self):`
+
+The Feller-Tornier constant is the probability that a random walk on the integers
+returns to the origin infinitely often. It is denoted by F.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Feller-Tornier constant F, approximately 0.259183.
+
+            - return 0.259183
+
+---
+### `base_10_champernowne_constant(self):`
+
+The Champernowne constant is formed by concatenating the base 10 representations of
+successive integers, and is represented by C_10. 
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the base 10 Champernowne constant C_10, approximately 0.12345678910111213...
+
+---
+### `salem_constant(self):`
+
+The Salem number is a complex number that is a root of a certain polynomial
+with integer coefficients. It is denoted by s.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - complex: The value of the Salem constant s, approximately (1+sqrt(2)) * e^(pi*sqrt(2)/4).
+
+            - return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
+    
+---
+### `khinchins_constant(self):`
+
+The Khinchin constant is a number that appears in the theory of continued fractions. 
+It is denoted by K.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+            - float: The value of the Khinchin constant K, approximately 2.6854520010653065.
+
+            - return 2.6854520010653065
+
+---
+### `levys_constant(self):`
+
+Levy's constant, also known as the Levy–Khinchin constant, is a mathematical constant that arises in the study of 
+Levy processes, which are stochastic processes that exhibit properties such as long-range dependence and heavy tails. 
+It is defined as the limit of the average absolute difference between two random variables divided by their 
+root-mean-square difference, as the sample size tends to infinity. The value of Levy's constant is approximately 
+1.3303872425, with high precision being 1.33038724246235217434246.
+            
+##### **Symbol:**
+
+            - γ or K
+
+##### **Arguments:**
+
+            - none
 
 
+##### **Returns:**
+
+            - float: The value of Levy's constant.
+    
+            - return 1.330_387_242_462_352_174_342_46
+
+---
+### `levys_constant_two(self):`
+
+Calculate the value of e to the power of Levy's constant.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of e to the power of Levy's constant.
+
+            - return Algorithm.exp(self.levys_constant)
+
+---
+### `copeland_erdos_constant(self):`
+
+Copeland-Erdős constant is the smallest number that is not the sum of 
+distinct non-negative integer powers of 2.
+
+##### **Symbol:**
+            - C_E
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float
+    
+---
+### `gompertz_constant(self):`
+
+Gompertz constant is a mathematical constant named after Benjamin Gompertz,
+it is the limit of the ratio between the life expectancy of a certain age 
+and the remaining life expectancy.
+
+##### **Symbol:**
+            - γ
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float
+    
+---
+### `de_bruijn_newman_constant(self):`
+
+De Bruijn–Newman constant is the limit of the sequence of coefficients a_n
+such that the entire function f(z) = Π_(n=1)^∞ [(1 - z/a_n) * exp(z/a_n)] has
+no zeros in the complex plane.
+
+##### **Symbol:**
+
+            - λ
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float
+
+---
+### `van_der_pauw_constant(self):`
+
+The van der Pauw constant is a constant used in measuring resistance of flat samples,
+and is defined as the ratio of the natural logarithm of the quotient of two measured
+resistances to the constant π.
+
+##### **Symbol:**
+
+            - K
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of the van der Pauw constant to the highest precision.
+
+            - return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
+
+
+---
+### `magic_angle(self):`
+
+        Magic angle is an angle of rotation for the bilayer graphene where the
+        electronic properties of the material exhibit a number of interesting
+        phenomena.
+
+##### **Symbol:**
+
+            - θ
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The magic angle in radians.
+
+            - return Constants.arctan(Algorithm.square_root(3))
+
+
+---
+### `arctan(x):
+
+Calculates the arctangent of x using a Taylor series approximation.
+
+##### **Arguments:**
+            x (float): A real number.
+
+##### **Returns:**
+            - float: The arctangent of x in radians.
+
+
+---
+### `artins_constant(self):`
+
+The Artin's constant is a number that appears in the formula to calculate the Artin-Mazur zeta function.
+It is defined as the infinite product of (1 - p^(-s)) where p ranges over all prime numbers and s is the reciprocal
+of the prime number.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of the Artin's constant to the highest precision.
+
+---
+### `porters_constant(self):`
+
+Porter's constant is a mathematical constant that appears in the field of information theory. It is defined as
+the limit of the ratio of the maximum number of different words of length n over the number of possible words of
+length n as n approaches infinity.
+
+##### **Symbol:**
+
+            -
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of Porter's constant to the highest precision.
+
+            - return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
+
+---
+### `euler_mascheroni_constant(self):`
+
+Returns the Euler-Mascheroni constant, a mathematical constant that appears in many areas of mathematics.
+It is defined as the limit of the difference between the harmonic series and the natural logarithm of n as n approaches infinity.
+        
+The function calculates the value of the Euler-Mascheroni constant using a sum of the harmonic series and the natural logarithm of n.
+The sum is taken over a large number of terms to achieve a high degree of accuracy.
+        
+Note that the function uses the 'math' module to calculate the natural logarithm, so it must be imported before the function can be called.
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of the Euler-Mascheroni constant to a high degree of accuracy.
+
+---
+### `lochs_constant(self):`
+
+Lochs' constant is a mathematical constant defined as the limiting ratio of the perimeter of an inscribed regular
+decagon to its diameter.
+
+##### **Symbol:**
+
+            - 
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of Lochs' constant to the highest precision.
+
+            - return Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2)))))
+
+
+---
+### `deviccis_tesseract_constant(self):`
+
+The De Vries - De Vos - Barendrecht - De Klerk - Smit - Smit constant (also known as De Vries' tesseract constant)
+is defined as the number that describes the maximum ratio of the content of a hypercube inscribed in a tesseract to
+the content of the hypercube circumscribed about the tesseract.
+
+##### **Symbol:**
+
+            -
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of De Vries' tesseract constant to the highest precision.
+
+            - return Algorithm.square_root(2 + Algorithm.square_root(2)) / (2 * Algorithm.square_root(2))
+
+
+---
+### `liebs_square_ice_constant(self):`
+
+The Lieb's square ice constant is the infinite sum of alternating sign reciprocals of the squares of odd positive integers.
+It appears in the square ice problem in statistical mechanics.
+
+##### **Symbol:**
+
+            - 
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float: The value of the Lieb's square ice constant to the highest precision.
+
+            - return Constants.pi / (Algorithm.square_root(3) * Algorithm.log((3 + Algorithm.square_root(8)) / 2))
+
+---
+### `nivens_constant(self):`
+
+Niven's constant is a mathematical constant that is the only known integer x that is divisible by the sum of its digits
+when written in decimal base. The constant is also related to the convergence of certain infinite series.
+
+##### **Symbol:**
+
+            - 
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - int: The value of Niven's constant to the highest precision.
+    
+---
+### `mills_constant(self):`
+
+Mills constant is the smallest positive real number A such that the 
+floor function of the double exponential function is a prime number,
+where the double exponential function is f(n) = A^(3^n).
+
+##### **Symbol:**
+
+            - A
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - float
+
+---
+### `artins_constant(self):`
+
+            - pass
+    
+---
+### `porters_constant(self):`
+
+            - pass
+    
+---
+### `lochs_constant(self):`
+
+            - pass
+    
+---
+### `deviccis_tesseract_constant(self):`
+
+            - pass
+    
+---
+### `liebs_square_ice_constant(self):`
+
+            - pass
+    
+---
+### `nivens_constant(self):`
+
+            - pass
+
+---
+### `stephens_constant(self):`
+
+            - pass
+
+---
+### `regular_paperfolding_sequence(self):`
+
+            - pass
+
+---
+### `reciprocal_fibonacci_constant(self):`
+
+            - pass
+    
+---
+### `chvatal_sankoff_constant(self):`
+
+For the binary alphabet
+        
+##### **Symbol:**
+
+            - \gamma _{2}
+
+            - pass
+    
+---
+### `Feigenbaum_constant(self):`
+
+Feigenbaum constant δ
+
+##### **Symbol:**
+
+            - \delta
+
+            - pass
+    
+---
+### `chaitins_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - \Omega 
+
+##### **Raises:**
+            
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `robbins_constant(self):`
+
+Summary
+
+##### **Symbol:**
+        
+            - \Delta (3)
+
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `weierstrass_constant(self):`
+
+            - pass
+    
+---
+### `fransen_robinson_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - F
+
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `feigenbaum_constant(self):`
+
+feigenbaum constant α
+
+##### **Symbol:**
+            
+            - \alpha 
+
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `second_du_bois_reymond_constant(self):`
+
+Second du Bois-Reymond constant
+
+##### **Symbol:**
+            
+            - C_{2}
+             
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `erdos_tenenbaum_ford_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - \delta
+            
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `conways_constant(Self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - \lambda
+            
+##### **Arguments:**
+
+            - Self (_type_): _description_
+
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `hafner_sarnak_mccurley_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+
+            - \sigma
+        
+##### **Raises:**
+
+            - ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `backhouses_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - B
+            
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `viswanath_constant(self):`
+
+            - pass
+    
+---
+### `komornik_loreti_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            - q
+            
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `embree_trefethen_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+
+            - {\displaystyle \beta ^{\star }}
+            
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `heath_brown_moroz_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+
+            - C
+            
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `mrb_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - S
+        
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `prime_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+
+            - \rho 
+        
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `somos_quadratic_recurrence_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+
+            - \sigma
+        
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `foias_constant(self):`
+
+_summary_
+
+##### **Symbol:**
+            
+            - \alpha
+        
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `logarithmic_capacity(self):`
+
+Logarathmic capacity of the unit disk
+
+##### **Raises:**
+
+            ValueError: _description_
+
+##### **Arguments:**
+
+            - none
+
+##### **Returns:**
+
+            - _type_: _description_
+
+            - pass
+    
+---
+### `taniguchi_constant(self):`
+
+            - pass
+
+---
 
 ## **Functions Class**
 
@@ -1138,12 +2309,12 @@ Calculates the area of a circle given its radius.
 
 ##### **Arguments:**
 
-        r: The radius of the circle.
+        - r: The radius of the circle.
 
 ##### **Returns:**
 
-        The area of the circle.
-        return 3.141592653589793238 * r ** 2
+        - The area of the circle.
+        - return 3.141592653589793238 * r ** 2
 
 ---
 ### `volume_of_sphere(self, r: float) -> float:`
@@ -1152,12 +2323,12 @@ Calculates the volume of a sphere given its radius.
 
 ##### **Arguments:**
 
-        r: The radius of the sphere.
+        - r: The radius of the sphere.
 
 ##### **Returns:**
 
-        The volume of the sphere.
-        return 4 / 3 * 3.141592653589793238 * r ** 3
+        - The volume of the sphere.
+        - return 4 / 3 * 3.141592653589793238 * r ** 3
 
 ---
 ### `perimeter_of_rectangle(self, l: float, b: float) -> float:`
@@ -1166,13 +2337,13 @@ Calculates the perimeter of a rectangle given its length and breadth.
 
 ##### **Arguments:**
 
-        l: The length of the rectangle.
-        b: The breadth of the rectangle.
+        - l: The length of the rectangle.
+        - b: The breadth of the rectangle.
 
 ##### **Returns:**
 
-        The perimeter of the rectangle.
-        return 2 * (l + b)
+        - The perimeter of the rectangle.
+        - return 2 * (l + b)
 
 ---
 ### `pythagoras_theorem_length(self, a: float, b: float) -> float:`
@@ -1398,3 +2569,119 @@ Calculates the sine of a given angle in radians.
         return sign * (
             x - x ** 3 / 6 + x ** 5 / 120 - x ** 7 / 5040 + x ** 9 / 362880
         )
+        
+### `copysign(self, x, y):`
+
+Return a float with the magnitude of x and the sign of y.
+
+##### **Arguments:**
+
+      - x (float): The magnitude of the result.
+      - y (float): The sign of the result.
+
+##### **Returns:**
+
+      - float: A float with the magnitude of x and the sign of y.
+
+
+---
+
+### `acos(self, x):`
+
+Return the arc cosine of x, in radians.
+
+##### **Arguments:**
+
+      - x (float): The value whose arc cosine is to be returned.
+
+##### **Returns:**
+
+      - float: The arc cosine of x, in radians.
+        """
+
+---
+
+## **class Sequences:**
+
+### `harmonic_number(self):`
+
+      pass
+---
+
+### `gregory_coefficients(self):`
+
+      pass
+---
+
+### `bernoulli_number(self):`
+
+      pass
+    
+### `hermite_constants(self):`
+
+      pass
+---
+
+### `hafner_sarnak_mccurley_constant(self):`
+
+      pass
+---
+
+### `stieltjes_constants(self):`
+
+      pass
+---
+
+### `favard_constants(self):`
+
+      pass
+---
+
+### `generalized_bruns_constant(self):`
+
+      pass
+---
+
+### `champernowne_constants(self):`
+
+      pass
+---
+
+### `lagrange_number(self):`
+
+      pass
+---
+
+### `fellers_coin_tossing_constants(self):`
+
+      pass
+---
+
+### `stoneham_number(self):`
+
+      pass
+---
+
+### `beraha_constants(self):`
+
+      pass
+---
+
+### `chvatal_sankoff_constants(self):`
+
+      pass
+---
+
+### `hyperharmonic_number(self):`
+
+      pass
+---
+
+### `gregory_number(self):`
+
+      pass
+---
+
+### `metallic_mean(self):`
+
+      pass
