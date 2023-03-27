@@ -72,7 +72,7 @@ class Algorithm:
         return result
 
     @staticmethod
-    def log(self, x, base=10):
+    def log(x, base=10):
         """
         Returns the logarithm of x with a specified base (default is 10)
 
@@ -92,7 +92,7 @@ class Algorithm:
         return numerator / denominator
 
     @staticmethod
-    def __ln(self, x):
+    def __ln(x):
         """
         Returns the natural logarithm of x (base e)
 
@@ -110,7 +110,7 @@ class Algorithm:
             return 1 + Algorithm.__ln(x/2)
 
     @staticmethod
-    def __log10(self, x):
+    def __log10(x):
         """
         Returns the logarithm of x (base 10)
 
@@ -960,6 +960,34 @@ class Algorithm:
             term = (-1) ** (n - 1) * x ** (2 * n - 1) / (2 * n - 1)
             result += term
         return result
+    
+    @staticmethod
+    def arctan(x):
+        """
+        Calculates the arctangent of x using a Taylor series approximation.
+
+        Args:
+            x (float): A real number.
+
+        Returns:
+            float: The arctangent of x in radians.
+        """
+        if x == 0:
+            return 0.0
+        elif x < 0:
+            return -Algorithm.arctan(-x)
+        elif x > 1:
+            return Constants.pi/2 - Algorithm.arctan(1/x)
+        else:
+            sum = 0.0
+            term = x
+            n = 1
+            while sum != sum + term:
+                sum += term
+                term = -term * x * x * (2*n - 1) / ((2*n) * (2*n + 1))
+                n += 1
+            return sum
+
 
 
 class Constants:
@@ -1588,35 +1616,8 @@ class Constants:
         Returns:
             float: The magic angle in radians.
         """
-        return Constants.arctan(Algorithm.square_root(3))
+        return Algorithm.arctan(Algorithm.square_root(3))
     
-    @staticmethod
-    def arctan(x):
-        """
-        Calculates the arctangent of x using a Taylor series approximation.
-
-        Args:
-            x (float): A real number.
-
-        Returns:
-            float: The arctangent of x in radians.
-        """
-        if x == 0:
-            return 0.0
-        elif x < 0:
-            return -Constants.arctan(-x)
-        elif x > 1:
-            return Constants.pi/2 - Constants.arctan(1/x)
-        else:
-            sum = 0.0
-            term = x
-            n = 1
-            while sum != sum + term:
-                sum += term
-                term = -term * x * x * (2*n - 1) / ((2*n) * (2*n + 1))
-                n += 1
-            return sum
-
     @staticmethod
     def artins_constant():
         """
@@ -1650,7 +1651,7 @@ class Constants:
         """
         return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
 
-    def euler_mascheroni_constant():
+    def euler_mascheroni_constant(self):
         """
         Returns the Euler-Mascheroni constant, a mathematical constant that appears in many areas of mathematics.
         It is defined as the limit of the difference between the harmonic series and the natural logarithm of n as n approaches infinity.
