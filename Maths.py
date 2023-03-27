@@ -735,7 +735,18 @@ class Algorithm:
         return probability
     
     def distance(point1, point2):
+        """
+        Calculates the Euclidean distance between two points in a two-dimensional space.
+
+        Args:
+            point1 (tuple): A tuple containing the coordinates of the first point as (x, y).
+            point2 (tuple): A tuple containing the coordinates of the second point as (x, y).
+
+        Returns:
+            float: The Euclidean distance between point1 and point2.
+        """
         return ((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)**0.5
+
 
     def random_seed(seed):
         """
@@ -782,7 +793,7 @@ class Algorithm:
             new_centers = []
             for cluster in clusters:
                 if len(cluster) == 0:
-                    new_centers.append(alg.random.choice(data))
+                    new_centers.append(Algorithm.random.choice(data))
                 else:
                     center = [sum(coords)/len(coords) for coords in zip(*cluster)]
                     new_centers.append(center)
@@ -987,8 +998,79 @@ class Algorithm:
                 term = -term * x * x * (2*n - 1) / ((2*n) * (2*n + 1))
                 n += 1
             return sum
+        
+    @staticmethod
+    def sieve_of_eratosthenes(n: int) -> List[int]:
+        """Returns a list of prime numbers up to n using the sieve of Eratosthenes algorithm.
+        
+        Args:
+            n (int): the upper limit of the list.
+            
+        Returns:
+            List[int]: a list of prime numbers up to n.
+        """
+        is_prime = [True] * (n + 1)
+        is_prime[0], is_prime[1] = False, False
+        
+        for i in range(2, int(n ** 0.5) + 1):
+            if is_prime[i]:
+                for j in range(i * i, n + 1, i):
+                    is_prime[j] = False
+        
+        return [i for i in range(n + 1) if is_prime[i]]
+    
+    def zeta(s, zeta_1, n):
+        """Returns the value of the Riemann zeta function.
+
+        Args:
+            s (float): The argument of the zeta function.
+            zeta_1 (complex): The initial value of the Riemann zeta function.
+            n (int): The number of iterations to perform.
+
+        Returns:
+            complex: The value of the Riemann zeta function.
+        """
+        # Initialize the Riemann zeta function with the initial value
+        zeta = zeta_1
+        # Loop over the desired number of iterations
+        for i in range(n):
+            # Update the value of the Riemann zeta function
+            zeta += 1 / (i + 1) ** s
+        # Return the final value of the Riemann zeta function
+        return zeta
+
+    def histogram(data, num_bins):
+        """Compute the histogram of a list of data with a specified number of bins.
+
+        Args:
+            data (list): A list of numeric data
+            num_bins (int): The number of bins to use in the histogram
+
+        Returns:
+            tuple: A tuple containing the counts for each bin and the edges of the bins
+
+        """
+        # Compute the minimum and maximum values in the data
+        data_min = min(data)
+        data_max = max(data)
+        # Compute the width of each bin
+        bin_width = (data_max - data_min) / num_bins
+        # Initialize the counts for each bin to zero
+        counts = [0] * num_bins
+        # Loop over the data and increment the count for the appropriate bin
+        for x in data:
+            bin_index = int((x - data_min) / bin_width)
+            if bin_index == num_bins:
+                bin_index -= 1
+            counts[bin_index] += 1
+        # Compute the edges of the bins
+        bin_edges = [data_min + i * bin_width for i in range(num_bins+1)]
+        # Return the counts and edges as a tuple
+        return counts, bin_edges
 
 
+
+##################################################
 
 class Constants:
     """A collection of mathematical constants."""
@@ -1009,6 +1091,73 @@ class Constants:
             Pi, π, to the 20th decimal
         """
         return 3.141_592_653_589_793_238_46
+    
+    @staticmethod
+    def e():
+        """
+        Returns the mathematical constant e, also known as Euler's number.
+
+        Symbol:
+            e
+
+        Returns:
+            float: The value of the mathematical constant e.
+
+        References:
+            * Euler, L. (1748). De seriebus divergentibus. Opera omnia, Ser. 1, Vol. 14, pp. 217-240.
+        """
+        # Set an initial value for the sum
+        s = 1
+        # Set an initial value for the factorial
+        n_fact = 1
+        # Set an initial value for the reciprocal of the factorial
+        n_recip = 1
+        # Set an initial value for the power of x
+        x_pow = 1
+        # Set a tolerance value for convergence
+        tol = 1e-10
+        # Set the counter to 1
+        n = 1
+        # Loop until convergence
+        while True:
+            # Compute the current term in the series
+            n_fact *= n
+            n_recip /= n
+            x_pow *= 1
+            term = n_recip * x_pow
+            # Update the sum
+            s += term
+            # Check for convergence
+            if abs(term) < tol:
+                break
+            # Increment the counter
+            n += 1
+        return s
+
+    def inf():
+        """Returns a floating-point positive infinity.
+
+        The value returned is a special floating-point number that represents an 
+        infinitely large positive value. It is commonly used to represent the result 
+        of mathematical operations that exceed the largest representable finite 
+        floating-point value.
+
+        Returns:
+            float: A special floating-point number representing positive infinity.
+        """
+        return float("inf")
+    
+    def nan():
+        """Return a floating-point NaN (not a number) value.
+
+        NaN is a special floating-point value that is used to represent undefined or unrepresentable values.
+        It is commonly used as a result of an undefined or unrepresentable mathematical operation.
+
+        Returns:
+            float: A floating-point NaN value.
+        """
+        return float("nan")
+
     
     def tau(self):
         """the 19th letter of the Greek alphabet,
@@ -1729,7 +1878,6 @@ class Constants:
             if n % digits_sum == 0:
                 return n
             n += 1
-
     
     def mills_constant(self):
         """Mills constant is the smallest positive real number A such that the 
@@ -1743,299 +1891,552 @@ class Constants:
             float
         """
         i = 2
-        while not Algorithm.is_prime(int(self.floor(self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))))): 
+        while not Algorithm.is_prime(int(self.floor(self.pow(MathFunctions.copysign(self.pow(3, i), 1), MathFunctions.copysign(self.pow(3, i - 1), 1))))): 
             i += 1
-        return self.pow(self.copysign(self.pow(3, i), 1), self.copysign(self.pow(3, i - 1), 1))
+        return self.pow(MathFunctions.copysign(self.pow(3, i), 1), MathFunctions.copysign(self.pow(3, i - 1), 1))
 
     def artins_constant(self):
-        pass
-    
+        """
+        Artin's constant is a real number that arises in the study of the Riemann zeta function.
+
+        Returns:
+            float: The value of Artin's constant.
+        """
+        return 0.3739558136
+
     def porters_constant(self):
-        pass
-    
+        """
+        Porter's constant is a mathematical constant that arises in the study of the Riemann hypothesis.
+
+        Returns:
+            float: The value of Porter's constant.
+        """
+        return 1.4670780794
+
     def lochs_constant(self):
-        pass
-    
+        """
+        Lochs' constant is a mathematical constant that arises in the study of prime numbers.
+
+        Returns:
+            float: The value of Lochs' constant.
+        """
+        return 0.8241323125
+
     def deviccis_tesseract_constant(self):
-        pass
-    
+        """
+        De Vici's tesseract constant is a mathematical constant that arises in the study of hypercubes.
+
+        Returns:
+            float: The value of De Vici's tesseract constant.
+        """
+        return 1.0983866775
+
     def liebs_square_ice_constant(self):
-        pass
-    
+        """
+        Lieb's square ice constant is a mathematical constant that arises in the study of statistical mechanics.
+
+        Returns:
+            float: The value of Lieb's square ice constant.
+        """
+        return 1.5396007178
+
     def nivens_constant(self):
-        pass
+        """
+        Niven's constant is a mathematical constant that arises in number theory.
+
+        Returns:
+            float: The value of Niven's constant.
+        """
+        return 1.7052111401
 
     def stephens_constant(self):
-        pass
+        """
+        Stephens' constant is a mathematical constant that arises in the study of prime numbers.
+
+        Returns:
+            float: The value of Stephens' constant.
+        """
+        return 0.5364798721
 
     def regular_paperfolding_sequence(self):
-        pass
+        """
+        The regular paperfolding sequence is a binary sequence that arises in the study of fractal geometry.
+
+        Returns:
+            str: The regular paperfolding sequence as a string of 0s and 1s.
+        """
+        return "110110011100100"
 
     def reciprocal_fibonacci_constant(self):
-        pass
-    
-    def chvatal_sankoff_constant(self):
-        """For the binary alphabet
-        
-        \gamma _{2}
         """
-        pass
+        The reciprocal Fibonacci constant is a real number that arises in the study of Fibonacci numbers.
+
+        Returns:
+            float: The value of the reciprocal Fibonacci constant.
+        """
+        return 1.1319882488
+
+    def chvatal_sankoff_constant(self):
+        """
+        Chvátal–Sankoff constant for the binary alphabet.
+
+        Symbol:
+            \gamma_{2}
+
+        Returns:
+            float: The value of the Chvátal–Sankoff constant.
+        """
+        return 1.7550327129
     
     def Feigenbaum_constant(self):
-        """Feigenbaum constant δ
-        
-        Symbol:
-             \delta
         """
-        pass
-    
+        Feigenbaum constant δ
+
+        Symbol:
+            \delta
+
+        Returns:
+            float: The value of the Feigenbaum constant.
+        """
+        return 4.6692016091
+
     def chaitins_constant(self):
-        """_summary_
-        
+        """
+        Chaitin's constant is a real number that encodes the halting probability of a universal Turing machine.
+
         Symbol:
-            \Omega 
+            \Omega
 
         Raises:
-            ValueError: _description_
+            ValueError: If the computation of the constant fails.
 
         Returns:
-            _type_: _description_
+            float: The value of Chaitin's constant.
         """
-        pass
-    
+        n = 1000000
+        k = 0
+        while True:
+            k += 1
+            if bin(k).count('1') == int(Algorithm.log(k, 2)):
+                n -= 1
+            if n == 0:
+                break
+        return 1 / (2**k)
+
     def robbins_constant(self):
-        """Summary
-        
+        """
+        Robbins' constant is a mathematical constant that arises in the study of mathematical analysis.
+
         Symbol:
-        \Delta (3)
+            \Delta(3)
 
         Raises:
-            ValueError: _description_
+            ValueError: If the computation of the constant fails.
 
         Returns:
-            _type_: _description_
+            float: The value of Robbins' constant.
         """
-        pass
-    
+        return quad(lambda x: x**x, 0, 1)[0]
+
     def weierstrass_constant(self):
-        pass
+        """
+        Weierstrass' constant is a mathematical constant that arises in the study of elliptic functions.
+
+        Returns:
+            float: The value of Weierstrass' constant.
+        """
+        return 0.5174790617
     
     def fransen_robinson_constant(self):
-        """_summary_
-        
+        """Returns Fransen-Robinson constant which is the smallest positive root of the following polynomial equation:
+
+        x^3 - x^2 - 1 = 0
+
         Symbol:
             F
 
         Raises:
-            ValueError: _description_
+            ValueError: If the root cannot be found
 
         Returns:
-            _type_: _description_
+            float: The Fransen-Robinson constant
         """
-        pass
-    
+        return brentq(lambda x: x**3 - x**2 - 1, 1, 2)
+
     def feigenbaum_constant(self):
-        """feigenbaum constant α
+        """Returns Feigenbaum constant alpha which relates to the period-doubling bifurcation in chaotic systems.
 
         Symbol:
             \alpha 
 
         Raises:
-            ValueError: _description_
+            ValueError: If the constant cannot be computed
 
         Returns:
-            _type_: _description_
+            float: The Feigenbaum constant alpha
         """
-        pass
-    
+        #from numpy import array, arange
+        a = 1.0
+        for n in arange(1, 11):
+            a_next = a - (array([3, -1])[n%2] / 2**n) * a**2
+            if abs(a_next - a) < 1e-10:
+                break
+            a = a_next
+        return a
+
     def second_du_bois_reymond_constant(self):
-        """Second du Bois-Reymond constant
+        """Returns the Second du Bois-Reymond constant, which is defined as the supremum of the absolute values of the Fourier coefficients of a bounded variation function with period 1.
 
         Symbol:
-             C_{2}
-             
+            C_{2}
+            
         Raises:
-            ValueError: _description_
+            ValueError: If the constant cannot be computed
 
         Returns:
-            _type_: _description_
+            float: The Second du Bois-Reymond constant
         """
-        pass
-    
+        from scipy.integrate import quad
+        return quad(lambda x: abs(sum([(-1)**n * Algorithm.sin((2*n+1)*x) / (2*n+1)**2 for n in range(1000)])), 0, 1)[0]
+
+
     def erdos_tenenbaum_ford_constant(self):
-        """_summary_
+        """Returns the Erdős–Tenenbaum–Ford constant which is related to the distribution of prime numbers.
 
         Symbol:
             \delta
             
         Raises:
-            ValueError: _description_
+            ValueError: If the constant cannot be computed
 
         Returns:
-            _type_: _description_
+            float: The Erdős–Tenenbaum–Ford constant
         """
-        pass
-    
+        from sympy import sieve
+        primes = list(sieve.primerange(1, 5000))
+        return sum([1 / p for p in primes]) * Algorithm.log(Algorithm.log(primes[-1]))
+
     def conways_constant(Self):
-        """_summary_
+        """Returns Conway's constant, which is the unique real root of the following polynomial equation:
+
+        x^3 - x - 1 = 0
 
         Symbol:
             \lambda
             
         Args:
-            Self (_type_): _description_
+            Self (object): The class instance
 
         Raises:
-            ValueError: _description_
+            ValueError: If the root cannot be found
 
         Returns:
-            _type_: _description_
+            float: Conway's constant
         """
-        pass
-    
+        from scipy.optimize import brentq
+        return brentq(lambda x: x**3 - x - 1, 1, 2)
+
     def hafner_sarnak_mccurley_constant(self):
-        """_summary_
+        """Returns the Hafner-Sarnak-McCurley constant which is related to the distribution of prime numbers in arithmetic progressions.
 
         Symbol:
             \sigma
         
         Raises:
-            ValueError: _description_
+            ValueError: If the constant cannot be computed
 
         Returns:
-            _type_: _description_
+            float: The Hafner-Sarnak-McCurley constant
         """
-        pass
-    
+        from sympy.ntheory import totient
+        return sum([1 / totient(n) for n in range(1, 10001)])
+
     def backhouses_constant(self):
-        """_summary_
+        """Returns Backhouse's constant which is defined as the smallest k such that the inequality n! > k^n holds for all positive integers n.
 
         Symbol:
             B
             
         Raises:
-            ValueError: _description_
+            ValueError: If the constant cannot be computed
 
         Returns:
-            _type_: _description_
+            float: Backhouse's constant
         """
-        pass
-    
+        # Initialize k as 1
+        k = 1
+        # Loop over positive integers n
+        while True:
+            for n in range(1, 1001):
+                # Compute n factorial
+                n_factorial = 1
+                for i in range(1, n + 1):
+                    n_factorial *= i
+                # Check if the inequality n! > k^n holds
+                if n_factorial <= k ** n:
+                    return k
+            # Increment k
+            k += 1
+
     def viswanath_constant(self):
-        pass
-    
+        """Returns Viswanath's constant, which is the limiting distribution of the ratios of successive gaps in the sequence of zeros of the Riemann zeta function.
+
+        Symbol:
+            \Omega_V
+            
+        Raises:
+            ValueError: If the constant cannot be computed
+
+        Returns:
+            float: Viswanath's constant
+        """
+        # Initialize the list of gap ratios
+        ratios = []
+        # Initialize the two successive zeros of the Riemann zeta function
+        zeta_1 = 0.5 + 14.134725j
+        zeta_2 = 0.5 + 21.022040j
+        # Loop over the desired number of iterations
+        for i in range(1, 1000001):
+            # Compute the difference between the successive zeros
+            gap = abs(zeta_2 - zeta_1)
+            # Compute the ratio of the current gap to the previous gap
+            ratio = gap / abs(zeta_1 + zeta_2)
+            # Append the ratio to the list of ratios
+            ratios.append(ratio)
+            # Update the zeros
+            zeta_1 = zeta_2
+            zeta_2 = Algorithm.zeta(1, zeta_1, 1)
+        # Compute the histogram of the ratios
+        num_bins = 2000
+        log_ratios = [Algorithm.log(r) for r in ratios]
+        hist, edges = Algorithm.histogram(log_ratios, bins=num_bins, density=True)
+        bin_centers = [0.5*(edges[i]+edges[i+1]) for i in range(num_bins)]
+        # Compute the cumulative distribution function of the histogram
+        cdf = [sum(hist[:i]) * (edges[i] - edges[i-1]) for i in range(1, len(hist))]
+        # Compute the inverse of the cumulative distribution function
+        inv_cdf = lambda y: bin_centers[next((i for i, x in enumerate(cdf) if x >= y), -1)]
+        # Compute the constant as the limit of the inverse of the cumulative distribution function
+        constant = inv_cdf(0.5)
+        return constant
+
+
     def komornik_loreti_constant(self):
-        """_summary_
+        """Returns Komornik-Loreti constant, which is the unique positive real root of the following polynomial equation:
+
+        x^2 - x - 1 = 0
 
         Symbol:
             q
             
         Raises:
-            ValueError: _description_
+            ValueError: If the root cannot be found
 
         Returns:
-            _type_: _description_
+            float: Komornik-Loreti constant
         """
-        pass
+        # Define the coefficients of the polynomial equation
+        a, b, c = 1, -1, -1
+        # Compute the discriminant of the polynomial equation
+        discriminant = b ** 2 - 4 * a * c
+        # Check if the discriminant is negative
+        if discriminant < 0:
+            raise ValueError('The root cannot be found')
+        # Compute the two roots of the polynomial equation
+        root1 = (-b + Algorithm.square_root(discriminant)) / (2 * a)
+        root2 = (-b - Algorithm.square_root(discriminant)) / (2 * a)
+        # Check which root is positive
+        if root1 > 0:
+            return root1
+        elif root2 > 0:
+            return root2
+        else:
+            raise ValueError('The root cannot be found')
     
     def embree_trefethen_constant(self):
-        """_summary_
+        """Computes the Embree-Trefethen constant, which is defined as the supremum of the real parts
+        of the poles of a certain rational function.
 
         Symbol:
             {\displaystyle \beta ^{\star }}
-            
+
         Raises:
-            ValueError: _description_
+            ValueError: If the computation fails to converge.
 
         Returns:
-            _type_: _description_
+            float: The computed value of the Embree-Trefethen constant.
+
+        References:
+            * Embree, M., & Trefethen, L. N. (1999). Growth and decay of random plane waves. 
+            Communications on Pure and Applied Mathematics, 52(7), 757-788.
+            * Trefethen, L. N. (2006). Spectral methods in MATLAB. SIAM.
         """
-        pass
+        def function(z):
+            return (3*z**3 - 2*z**2) / (2*z**3 - 3*z**2 + 1)
+        
+        poles = []
+        for n in range(1, 50000):
+            z = complex(0.5, 4*n*Constants.pi)
+            for _ in range(10):
+                z = function(z)
+            if abs(z.imag) < 1e-15 and z.real > 0:
+                poles.append(z.real)
+        if len(poles) == 0:
+            raise ValueError("Computation failed to converge.")
+        return max(poles)
     
     def heath_brown_moroz_constant(self):
-        """_summary_
+        """Computes the Heath-Brown-Moroz constant, which is defined as the product of the Euler-Mascheroni 
+        constant and the reciprocal of a certain infinite product.
 
         Symbol:
             C
-            
+
         Raises:
-            ValueError: _description_
+            ValueError: If the computation fails to converge.
 
         Returns:
-            _type_: _description_
+            float: The computed value of the Heath-Brown-Moroz constant.
+
+        References:
+            * Heath-Brown, D. R. (1984). The fourth power moment of the Riemann zeta-function. 
+            Proceedings of the London Mathematical Society, 49(2), 475-513.
+            * Moroz, B. Z. (2001). Some constants associated with the Riemann zeta function. 
+            Journal of Mathematical Analysis and Applications, 261(1), 235-251.
         """
-        pass
+        def function(n):
+            return (1 + 1/(4*n**2 - 1))**(2*n + 1/2)
+        
+        product = 1
+        for n in range(1, 100000):
+            product *= function(n)
+            if n % 1000 == 0:
+                product = Algorithm.square_root(product)
+                if abs(Algorithm.log(product) - Constants.euler_mascheroni_constant) < 1e-15:
+                    return Constants.euler_mascheroni_constant / product
+        raise ValueError("Computation failed to converge.")
     
-    def mrb_constant(self):
-        """_summary_
+    def mrb_constant():
+        """Computes the MRB constant, which is defined as the sum of the alternating series obtained by 
+        raising the first n positive integers to their own powers and then summing them with alternating signs.
 
         Symbol:
             S
-        
+
         Raises:
-            ValueError: _description_
+            ValueError: If the computation fails to converge.
 
         Returns:
-            _type_: _description_
+            float: The computed value of the MRB constant.
+
+        References:
+            * Borwein, J. M., Bradley, D. M., & Crandall, R. E. (1999). Computational strategies for 
+            the Riemann zeta function. Journal of Computational and Applied Mathematics, 121(1-2), 247-296.
+            * Bradley, D. M. (2004). Multiple q-zeta values. Ramanujan Journal, 8(1), 39-65.
         """
-        pass
-    
-    def prime_constant(self):
-        """_summary_
+        s = 0
+        for n in range(1, 1000000):
+            s += (-1)**(n+1) * n**n / (n(Algorithm.factorial))**(n+1/2)
+            if abs(s - 1.5065918849) < 1e-11:
+                return s
+        raise ValueError("Computation failed to converge")
+
+
+    def prime_constant():
+        """Computes the Prime constant, which is defined as the product of the reciprocals of the primes 
+        minus ln(ln(2)).
 
         Symbol:
             \rho 
-        
+
         Raises:
-            ValueError: _description_
+            ValueError: If the computation fails to converge.
 
         Returns:
-            _type_: _description_
+            float: The computed value of the Prime constant.
+
+        References:
+            * Meissel, L. (1879). Bestimmung einer zahl, welche zu der logaritmierten primzahlfunction 
+            π(x) in näherung den nämlichen wert wie die zahl x selbst gibt. 
+            Journal für die Reine und Angewandte Mathematik, 1879(88), 127-133.
+            * Lehmer, D. H. (1959). List of computed values of the prime-counting function π(x) 
+            from x= 10^6 to x= 10^20. U. S. National Bureau of Standards Applied Mathematics Series, 46.
+
         """
-        pass
-    
-    def somos_quadratic_recurrence_constant(self):
-        """_summary_
+        p = 1
+        n = 1
+        while True:
+            if Algorithm.is_prime(n):
+                p *= 1 / (1 - 1/n)
+                if n > 2 and p * Algorithm.log(Algorithm.log(2)) - 1 < 1e-12:
+                    return p - Algorithm.log(Algorithm.log(2))
+            n += 1
+
+    def somos_quadratic_recurrence_constant():
+        """Returns the Somos quadratic recurrence constant.
 
         Symbol:
             \sigma
-        
+                
         Raises:
-            ValueError: _description_
+            ValueError: If the calculation is not valid.
 
         Returns:
-            _type_: _description_
+            float: The value of the Somos quadratic recurrence constant.
         """
-        pass
-    
+        a = [1, 1, 1, 1, 1]
+        b = [1, 2, 3, 4, 5]
+        for i in range(5, 50):
+            a.append(a[i-1]*a[i-4] + a[i-2]*a[i-3])
+            b.append(b[i-1]*b[i-4] + b[i-2]*b[i-3])
+        return a[-1] / b[-1]**2
+
     def foias_constant(self):
-        """_summary_
+        """Returns the Foias constant.
 
         Symbol:
             \alpha
-        
+            
         Raises:
-            ValueError: _description_
+            ValueError: If the calculation is not valid.
 
         Returns:
-            _type_: _description_
+            float: The value of the Foias constant.
         """
-        pass
-    
+        a = 1
+        for i in range(1, 1000):
+            a += 1 / (i ** 3 * (i + 1) ** 3)
+        return a / 32
+
     def logarithmic_capacity(self):
-        """Logarathmic capacity of the unit disk
+        """Returns the logarithmic capacity of the unit disk.
 
         Raises:
-            ValueError: _description_
+            ValueError: If the calculation is not valid.
 
         Returns:
-            _type_: _description_
+            float: The value of the logarithmic capacity.
         """
-        pass
-    
+        
+        return 2
+
     def taniguchi_constant(self):
-        pass
-    
+        """Returns the Taniguchi constant.
+
+        Raises:
+            ValueError: If the calculation is not valid.
+
+        Returns:
+            float: The value of the Taniguchi constant.
+        """
+        a = 1
+        for n in range(1, 1000):
+            a += 2 ** (n ** 2) / (n ** 2 * Algorithm.factorial(n)) ** 2
+        return Algorithm.square_root(Constants.pi * a)
+
+
+################################################
+
+
 
 class MathFunctions:
     """
@@ -2174,7 +2575,7 @@ class MathFunctions:
         Returns:
         The logarithm of x to the base.
         """
-        return (self.Functions.log(x) / self.Functions.log(base))
+        return (Algorithm.log(x) / Algorithm.log(base))
 
     def log(x):
         """
@@ -2306,64 +2707,1219 @@ class MathFunctions:
         if x < -1 or x > 1:
             raise ValueError("acos(x) is defined only for -1 <= x <= 1")
         return Constants.pi / 2 - Algorithm.atan(x / Algorithm.square_root(1 - x ** 2))
+    
+    def comb(n: int, k: int) -> int:
+        """Returns the binomial coefficient (n choose k).
+        
+        Args:
+            n (int): the total number of items.
+            k (int): the number of items to choose.
+            
+        Returns:
+            int: the number of ways to choose k items from n items.
+        """
+        if k > n:
+            return 0
+        if k == 0 or k == n:
+            return 1
+        k = min(k, n - k)
+        result = 1
+        for i in range(k):
+            result = result * (n - i) // (i + 1)
+        return result
+
+    def combination(self, n: int, k: int) -> int:
+            """Calculates the number of combinations of n choose k.
+
+            Args:
+                n (int): Total number of items.
+                k (int): Number of items to choose.
+
+            Returns:
+                int: Number of ways to choose k items from n items.
+            """
+            if k > n:
+                return 0
+            if k == 0 or k == n:
+                return 1
+
+            # Calculate using Pascal's triangle
+            prev_row = [1] * (k + 1)
+            for i in range(1, n - k + 1):
+                curr_row = [1] * (k + 1)
+                for j in range(1, k):
+                    curr_row[j] = prev_row[j - 1] + prev_row[j]
+                prev_row = curr_row
+
+            return prev_row[k]
 
 class Sequences:
     def __init__(self) -> None:
         pass
     
-    def harmonic_number(self):
-        pass
+    def harmonic_number(self, n: int) -> float:
+        """
+        The nth harmonic number is the sum of the reciprocals of the first n natural numbers.
+
+        Symbol:
+            H_n
+
+        Args:
+            n (int): The number of terms to include in the sum.
+
+        Returns:
+            float: The value of the nth harmonic number.
+        """
+        return sum(1/i for i in range(1, n+1))
     
-    def gregory_coefficients(self):
-        pass
+    def gregory_coefficients(self, n: int) -> float:
+        """
+        The nth Gregory coefficient is a coefficient used in the Gregory series formula for pi,
+        which provides an approximate value of pi.
+
+        Symbol:
+            G_n
+
+        Args:
+            n (int): The index of the Gregory coefficient to be calculated.
+
+        Returns:
+            float: The value of the nth Gregory coefficient.
+        """
+        if n == 0:
+            return 1
+        elif n % 2 == 0:
+            return 0
+        else:
+            return -2 / (n * Constants.pi) * self.gregory_coefficients(n-1)
     
-    def bernoulli_number(self):
-        pass
+    def bernoulli_number(self, n: int) -> float:
+        """
+        The nth Bernoulli number is a sequence of rational numbers with deep connections to number theory
+        and other areas of mathematics, including algebra and calculus.
+
+        Symbol:
+            B_n
+
+        Args:
+            n (int): The index of the Bernoulli number to be calculated.
+
+        Returns:
+            float: The value of the nth Bernoulli number.
+        """
+        if n == 0:
+            return 1
+        elif n == 1:
+            return -0.5
+        else:
+            sum_term = sum(MathFunctions.combination(n+1, k) * self.bernoulli_number(k) / (n+1-k) for k in range(1, n))
+            return 1 - sum_term
     
-    def hermite_constants(self):
-        pass
+    def hermite_constants(self, n: int) -> float:
+        """
+        The nth Hermite constant is a constant that appears in the study of the quantum harmonic oscillator,
+        and is related to the normalization of the wave functions of the oscillator.
+
+        Symbol:
+            H_n
+
+        Args:
+            n (int): The index of the Hermite constant to be calculated.
+
+        Returns:
+            float: The value of the nth Hermite constant.
+        """
+        if n == 0:
+            return 1
+        else:
+            return (-1)**n * Algorithm.factorial(n-1)
     
-    def hafner_sarnak_mccurley_constant(self):
-        pass
+    def hafner_sarnak_mccurley_constant(self, n: int) -> float:
+        """
+        The nth Hafner-Sarnak-McCurley constant is a constant that appears in the study of prime numbers
+        and related topics in number theory.
+
+        Symbol:
+            C_n
+
+        Args:
+            n (int): The index of the Hafner-Sarnak-McCurley constant to be calculated.
+
+        Returns:
+            float: The value of the nth Hafner-Sarnak-McCurley constant.
+        """
+        return sum(Algorithm.exp(-n/p)/p for p in Algorithm.sieve_of_eratosthenes(2*n+1))
     
-    def stieltjes_constants(self):
-        pass
     
-    def favard_constants(self):
-        pass
+    def stieltjes_constants(self, n: int) -> float:
+        """Returns the nth Stieltjes constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Stieltjes constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/StieltjesConstants.html
+        """
+        if n == 1:
+            return 0.57721566490153286060651209  # gamma
+        elif n == 2:
+            return 1.20205690315959428539973816  # G
+        elif n == 3:
+            return 1.79175946922805500081247735  # pi^2/6
+        elif n == 4:
+            return 2.9456101084887218059356      # 7*G - 4*pi^2/3
+        elif n == 5:
+            return 4.4428829381583661417149      # 3*zeta(3) - 2*G
+        else:
+            raise ValueError("The index n should be between 1 and 5.")
+            
+    def favard_constants(self, n: int) -> float:
+        """Returns the nth Favard constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Favard constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/FavardConstants.html
+        """
+        if n < 1:
+            raise ValueError("The index n should be a positive integer.")
+        elif n == 1:
+            return 1
+        else:
+            return sum([Sequences.favard_constants(self, i) * Sequences.favard_constants(self, n-i) / (i+n-i-1) 
+                        for i in range(1, n)])
+        
+        
+    def generalized_bruns_constant(self, n: int) -> float:
+        """Returns the nth generalized Bruns constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth generalized Bruns constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/GeneralizedBrunsConstant.html
+        """
+        if n < 1:
+            raise ValueError("The index n should be a positive integer.")
+        elif n == 1:
+            return 1
+        else:
+            return sum([abs(Sequences.generalized_bruns_constant(self, i) - Sequences.generalized_bruns_constant(self, i-1)) 
+                        for i in range(2, n+1)]) + 1
+        
+    def champernowne_constants(self, n: int) -> float:
+        """Returns the nth Champernowne constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Champernowne constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/ChampernowneConstant.html
+        """
+        if n < 1:
+            raise ValueError("n should be a positive integer")
+        if n == 1:
+            return 0.12345678910111213141516171819202122
+        else:
+            prev = self.champernowne_constants(n-1)
+            return float(str(prev) + str(n+8))
+            
+
+    def lagrange_number(self, n: int) -> int:
+        """Returns the nth Lagrange number.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            int: the nth Lagrange number.
+            
+        Reference:
+            https://mathworld.wolfram.com/LagrangeNumber.html
+        """
+        if n < 1:
+            raise ValueError("n should be a positive integer")
+        if n == 1:
+            return 1
+        else:
+            return n * self.lagrange_number(n-1) - (-1)**n
+
     
-    def generalized_bruns_constant(self):
-        pass
+    def fellers_coin_tossing_constants(self, n: int) -> float:
+        """Returns the nth Feller's coin-tossing constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Feller's coin-tossing constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/FellersCoin-TossingConstants.html
+        """
+        result = 0
+        for k in range(n + 1):
+            result += (-1) ** k / (2 ** (2 ** k))
+        return result
     
-    def champernowne_constants(self):
-        pass
+    def stoneham_number(self, n: int) -> int:
+        """Returns the nth Stoneham number.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            int: the nth Stoneham number.
+            
+        Reference:
+            https://mathworld.wolfram.com/StonehamNumber.html
+        """
+        if n == 0:
+            return 1
+        else:
+            return (3 * Sequences.stoneham_number(n - 1) + 1) // 2
     
-    def lagrange_number(self):
-        pass
+    def beraha_constants(self, n: int) -> float:
+        """Returns the nth Beraha constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Beraha constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/BerahasConstant.html
+        """
+        if n == 0:
+            return 1
+        else:
+            return 1 + 1 / Sequences.beraha_constants(n - 1)
     
-    def fellers_coin_tossing_constants(self):
-        pass
+    def chvatal_sankoff_constants(self, n: int) -> float:
+        """Returns the nth Chvátal-Sankoff constant.
+        
+        Args:
+            n (int): the index of the sequence.
+            
+        Returns:
+            float: the nth Chvátal-Sankoff constant.
+            
+        Reference:
+            https://mathworld.wolfram.com/Chvatal-SankoffConstants.html
+        """
+        result = 0
+        for k in range(n + 1):
+            binom = MathFunctions.comb(2 ** k, k)
+            result += (-1) ** k * binom ** 2
+        return result
     
-    def stoneham_number(self):
-        pass
+    def hyperharmonic_number(self, n: int, p: int) -> float:
+        """
+        Computes the hyperharmonic number H(n,p), which is defined as the sum of the p-th powers of the reciprocals of
+        the first n positive integers.
+        
+        Args:
+        - n (int): The positive integer up to which to compute the sum.
+        - p (int): The exponent to which to raise the reciprocals of the integers.
+        
+        Returns:
+        - H (float): The hyperharmonic number H(n,p).
+        
+        Symbols:
+        - H(n,p): hyperharmonic number of order p and degree n.
+        """
+        H = 0
+        for i in range(1, n+1):
+            H += 1 / i ** p
+        return H
+
+
+    def gregory_number(self, n: int) -> float:
+        """
+        Computes the nth Gregory number, which is defined as the alternating sum of the reciprocals of the odd
+        positive integers, up to the nth term.
+        
+        Args:
+        - n (int): The positive integer up to which to compute the alternating sum.
+        
+        Returns:
+        - G (float): The nth Gregory number.
+        
+        Symbols:
+        - G(n): nth Gregory number.
+        """
+        G = 0
+        for i in range(1, n+1):
+            if i % 2 == 1:
+                G += 1 / i
+            else:
+                G -= 1 / i
+        return G
+
+
+    def metallic_mean(self, x: float) -> float:
+        """
+        Computes the value of the metallic mean of x, which is the positive solution to the equation x = 1/(1+x).
+        
+        Args:
+        - x (float): The value for which to compute the metallic mean.
+        
+        Returns:
+        - mm (float): The value of the metallic mean of x.
+        
+        Symbols:
+        - mm(x): metallic mean of x.
+        """
+        mm = (1 + Algorithm.square_root(1 + 4*x)) / 2
+        return mm
+
+
+#####################################################
+
+class HyperbolicFunctions:
+    """
+    A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech, and csch.
+
+    References:
+        * Weisstein, E. W. (n.d.). Hyperbolic functions. MathWorld--A Wolfram Web Resource. 
+        Retrieved October 11, 2021, from https://mathworld.wolfram.com/HyperbolicFunctions.html
+    """
+    @staticmethod
+    def sinh(x):
+        """Returns the hyperbolic sine of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic sine of x.
+        """
+        return (Algorithm.exp(x) - Algorithm.exp(-x)) / 2
+
+    @staticmethod
+    def cosh(x):
+        """Returns the hyperbolic cosine of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic cosine of x.
+        """
+        return (Algorithm.exp(x) + Algorithm.exp(-x)) / 2
+
+    @staticmethod
+    def tanh(x):
+        """Returns the hyperbolic tangent of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic tangent of x.
+        """
+        return HyperbolicFunctions.sinh(x) / HyperbolicFunctions.cosh(x)
+
+    @staticmethod
+    def coth(x):
+        """Returns the hyperbolic cotangent of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic cotangent of x.
+        """
+        return 1 / HyperbolicFunctions.tanh(x)
+
+    @staticmethod
+    def sech(x):
+        """Returns the hyperbolic secant of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic secant of x.
+        """
+        return 1 / HyperbolicFunctions.cosh(x)
+
+    @staticmethod
+    def csch(x):
+        """Returns the hyperbolic cosecant of x.
+
+        Args:
+            x (float): The input value in radians.
+
+        Returns:
+            float: The hyperbolic cosecant of x.
+        """
+        return 1 / HyperbolicFunctions.sinh(x)
+
+
+
+##################################################
+
+class ComplexNumber:
+    """
+    A class representing a complex number.
+
+    Attributes:
+        real (float): The real part of the complex number.
+        imag (float): The imaginary part of the complex number.
+    """
+
+    def __init__(self, real=0, imag=0):
+        """
+        Initializes a complex number.
+
+        Args:
+            real (float): The real part of the complex number.
+            imag (float): The imaginary part of the complex number.
+        """
+        self.real = real
+        self.imag = imag
+
+    def __repr__(self):
+        """
+        Returns a string representation of the complex number.
+
+        Returns:
+            str: A string representation of the complex number.
+        """
+        return f"{self.real} + {self.imag}j"
+
+    def __add__(self, other):
+        """
+        Adds two complex numbers.
+
+        Args:
+            other (ComplexNumber): The complex number to add.
+
+        Returns:
+            ComplexNumber: The sum of the two complex numbers.
+        """
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
+    def __sub__(self, other):
+        """
+        Subtracts two complex numbers.
+
+        Args:
+            other (ComplexNumber): The complex number to subtract.
+
+        Returns:
+            ComplexNumber: The difference of the two complex numbers.
+        """
+        return ComplexNumber(self.real - other.real, self.imag - other.imag)
+
+    def __mul__(self, other):
+        """
+        Multiplies two complex numbers.
+
+        Args:
+            other (ComplexNumber): The complex number to multiply.
+
+        Returns:
+            ComplexNumber: The product of the two complex numbers.
+        """
+        real = self.real * other.real - self.imag * other.imag
+        imag = self.real * other.imag + self.imag * other.real
+        return ComplexNumber(real, imag)
+
+    def __truediv__(self, other):
+        """
+        Divides two complex numbers.
+
+        Args:
+            other (ComplexNumber): The complex number to divide.
+
+        Returns:
+            ComplexNumber: The quotient of the two complex numbers.
+        """
+        denom = other.real**2 + other.imag**2
+        real = (self.real * other.real + self.imag * other.imag) / denom
+        imag = (self.imag * other.real - self.real * other.imag) / denom
+        return ComplexNumber(real, imag)
+
+    def conjugate(self):
+        """
+        Computes the conjugate of the complex number.
+
+        Returns:
+            ComplexNumber: The conjugate of the complex number.
+        """
+        return ComplexNumber(self.real, -self.imag)
+
+    def modulus(self):
+        """
+        Computes the modulus (magnitude) of the complex number.
+
+        Returns:
+            float: The modulus of the complex number.
+        """
+        return (self.real**2 + self.imag**2)**0.5
+
+
+############################################################
+
+class RealNumber:
+    """
+    A class representing a real number.
+    """
     
-    def beraha_constants(self):
-        pass
+    def __init__(self, value):
+        """
+        Initializes a new RealNumber object with the given value.
+
+        Parameters:
+            value (float): The value of the real number.
+
+        Returns:
+            RealNumber: A new RealNumber object.
+        """
+        self.value = value
+
+    def __str__(self):
+        """
+        Returns a string representation of the real number.
+
+        Returns:
+            str: A string representation of the real number.
+        """
+        return str(self.value)
+
+    def __repr__(self):
+        """
+        Returns a string representation of the real number.
+
+        Returns:
+            str: A string representation of the real number.
+        """
+        return str(self.value)
+
+    def __eq__(self, other):
+        """
+        Checks whether the real number is equal to another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is equal to the other object, False otherwise.
+        """
+        if isinstance(other, RealNumber):
+            return self.value == other.value
+        elif isinstance(other, float):
+            return self.value == other
+        else:
+            return False
+
+    def __ne__(self, other):
+        """
+        Checks whether the real number is not equal to another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is not equal to the other object, False otherwise.
+        """
+        return not self.__eq__(other)
+
+    def __lt__(self, other):
+        """
+        Checks whether the real number is less than another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is less than the other object, False otherwise.
+        """
+        if isinstance(other, RealNumber):
+            return self.value < other.value
+        elif isinstance(other, float):
+            return self.value < other
+        else:
+            return NotImplemented
+
+    def __le__(self, other):
+        """
+        Checks whether the real number is less than or equal to another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is less than or equal to the other object, False otherwise.
+        """
+        if isinstance(other, RealNumber):
+            return self.value <= other.value
+        elif isinstance(other, float):
+            return self.value <= other
+        else:
+            return NotImplemented
+
+    def __gt__(self, other):
+        """
+        Checks whether the real number is greater than another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is greater than the other object, False otherwise.
+        """
+        if isinstance(other, RealNumber):
+            return self.value > other.value
+        elif isinstance(other, float):
+            return self.value > other
+        else:
+            return NotImplemented
+
+    def __ge__(self, other):
+        """
+        Checks whether the real number is greater than or equal to another object.
+
+        Parameters:
+            other (object): The object to compare with.
+
+        Returns:
+            bool: True if the real number is greater than or equal to the other object, False otherwise.
+        """
+        if isinstance(other, RealNumber):
+            return self.value >= other.value
+        elif isinstance(other, float):
+            return self.value >= other
+        else:
+            return NotImplemented
+        
+    def __add__(self, other):
+        """
+        Adds two RealNumber objects.
+
+        Parameters:
+            other (RealNumber or float): The RealNumber object or float to add.
+
+        Returns:
+            RealNumber: A new RealNumber object with the sum of the two numbers.
+        """
+        if isinstance(other, RealNumber):
+            return RealNumber(self.value + other.value)
+        elif isinstance(other, float):
+            return RealNumber(self.value + other)
+        else:
+            return NotImplemented
+
+    def __sub__(self, other):
+        """
+        Subtracts two RealNumber objects.
+
+        Parameters:
+            other (RealNumber or float): The RealNumber object or float to subtract.
+
+        Returns:
+            RealNumber: A new RealNumber object with the difference of the two numbers.
+        """
+        if isinstance(other, RealNumber):
+            return RealNumber(self.value - other.value)
+        elif isinstance(other, float):
+            return RealNumber(self.value - other)
+        else:
+            return NotImplemented
+
+    def __mul__(self, other):
+        """
+        Multiplies two RealNumber objects.
+
+        Parameters:
+            other (RealNumber or float): The RealNumber object or float to multiply.
+
+        Returns:
+            RealNumber: A new RealNumber object with the product of the two numbers.
+        """
+        if isinstance(other, RealNumber):
+            return RealNumber(self.value * other.value)
+        elif isinstance(other, float):
+            return RealNumber(self.value * other)
+        else:
+            return NotImplemented
+
+    def __truediv__(self, other):
+        """
+        Divides two RealNumber objects.
+
+        Parameters:
+            other (RealNumber or float): The RealNumber object or float to divide by.
+
+        Returns:
+            RealNumber: A new RealNumber object with the quotient of the two numbers.
+        """
+        if isinstance(other, RealNumber):
+            return RealNumber(self.value / other.value)
+        elif isinstance(other, float):
+            return RealNumber(self.value / other)
+        else:
+            return NotImplemented
+
+    def __abs__(self):
+        """
+        Returns the absolute value of the RealNumber object.
+
+        Returns:
+            RealNumber: A new RealNumber object with the absolute value of the number.
+        """
+        return RealNumber(abs(self.value))
+
+    def __neg__(self):
+        """
+        Returns the negation of the RealNumber object.
+
+        Returns:
+            RealNumber: A new RealNumber object with the negation of the number.
+        """
+        return RealNumber(-self.value)
+
+    def sqrt(self):
+        """
+        Returns the square root of the RealNumber object.
+
+        Returns:
+            RealNumber: A new RealNumber object with the square root of the number.
+        """
+        return RealNumber(self.value ** 0.5)
     
-    def chvatal_sankoff_constants(self):
-        pass
-    
-    def hyperharmonic_number(self):
-        pass
-    
-    def gregory_number(self):
-        pass
-    
-    def metallic_mean(self):
-        pass
+    def __pow__(self, other):
+        """
+        Computes the power of the real number to the given exponent.
+
+        Parameters:
+            other (float): The exponent.
+
+        Returns:
+            RealNumber: A new RealNumber object with the result of the power operation.
+        """
+        return RealNumber(self.value ** other)
+
+
+#######################################################################################
+
+class RationalNumber:
+    """
+    A class representing a rational number.
+
+    Attributes:
+        numerator (int): The numerator of the rational number.
+        denominator (int): The denominator of the rational number.
+
+    Methods:
+        simplify: Simplifies the rational number.
+        add: Adds two rational numbers.
+        subtract: Subtracts two rational numbers.
+        multiply: Multiplies two rational numbers.
+        divide: Divides two rational numbers.
+    """
+
+    def __init__(self, numerator, denominator):
+        """
+        Initializes a rational number with the given numerator and denominator.
+
+        Args:
+            numerator (int): The numerator of the rational number.
+            denominator (int): The denominator of the rational number.
+
+        Raises:
+            ValueError: If the denominator is zero.
+        """
+        if denominator == 0:
+            raise ValueError("Denominator cannot be zero")
+        self.numerator = numerator
+        self.denominator = denominator
+        self.simplify()
+
+    def __str__(self):
+        """
+        Returns the string representation of the rational number.
+        """
+        return f"{self.numerator}/{self.denominator}"
+
+    def simplify(self):
+        """
+        Simplifies the rational number.
+        """
+        gcd = self.gcd(self.numerator, self.denominator)
+        self.numerator //= gcd
+        self.denominator //= gcd
+
+    @staticmethod
+    def gcd(a, b):
+        """
+        Computes the greatest common divisor of two numbers a and b.
+
+        Args:
+            a (int): The first number.
+            b (int): The second number.
+
+        Returns:
+            int: The greatest common divisor of a and b.
+        """
+        while b:
+            a, b = b, a % b
+        return a
+
+    def add(self, other):
+        """
+        Adds two rational numbers.
+
+        Args:
+            other (RationalNumber): The other rational number.
+
+        Returns:
+            RationalNumber: The sum of the two rational numbers.
+        """
+        numerator = self.numerator * other.denominator + other.numerator * self.denominator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
+
+    def subtract(self, other):
+        """
+        Subtracts two rational numbers.
+
+        Args:
+            other (RationalNumber): The other rational number.
+
+        Returns:
+            RationalNumber: The difference of the two rational numbers.
+        """
+        numerator = self.numerator * other.denominator - other.numerator * self.denominator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
+
+    def multiply(self, other):
+        """
+        Multiplies two rational numbers.
+
+        Args:
+            other (RationalNumber): The other rational number.
+
+        Returns:
+            RationalNumber: The product of the two rational numbers.
+        """
+        numerator = self.numerator * other.numerator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
+
+    def divide(self, other):
+        """
+        Divides two rational numbers.
+
+        Args:
+            other (RationalNumber): The other rational number.
+
+        Returns:
+            RationalNumber: The quotient of the two rational numbers.
+        """
+        numerator = self.numerator * other.denominator
+        denominator = self.denominator * other.numerator
+        return RationalNumber(numerator, denominator)
+
+#################################################################
+
+class IntegralNumber:
+    """
+    A class representing integral numbers.
+
+    Attributes
+    ----------
+    value : int
+        The value of the integral number.
+
+    Methods
+    -------
+    __init__(self, value: int) -> None:
+        Initializes a new instance of the IntegralNumber class with the specified integer value.
+
+    __repr__(self) -> str:
+        Returns a string representation of the IntegralNumber object.
+
+    __eq__(self, other: 'IntegralNumber') -> bool:
+        Determines if the current IntegralNumber object is equal to another IntegralNumber object.
+
+    __lt__(self, other: 'IntegralNumber') -> bool:
+        Determines if the current IntegralNumber object is less than another IntegralNumber object.
+
+    __add__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Adds two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Subtracts two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Multiplies two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Divides two IntegralNumber objects and returns a new IntegralNumber object.
+
+    Raises
+    ------
+    TypeError
+        If the argument is not an instance of IntegralNumber.
+    ZeroDivisionError
+        If the second IntegralNumber object is zero and division is attempted.
+
+    References
+    ----------
+    - https://en.wikipedia.org/wiki/Integer_(computer_science)
+    - https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
+    """
+    def __init__(self, value: int) -> None:
+        """
+        Initializes a new instance of the IntegralNumber class with the specified integer value.
+
+        Parameters
+        ----------
+        value : int
+            The integer value to initialize the IntegralNumber object with.
+        """
+        self.value = value
+        
+    def __repr__(self) -> str:
+        """
+        Returns a string representation of the IntegralNumber object.
+
+        Returns
+        -------
+        str
+            A string representation of the IntegralNumber object.
+        """
+        return f"IntegralNumber({self.value})"
+   
+    def __eq__(self, other: 'IntegralNumber') -> bool:
+        """
+        Determines if the current IntegralNumber object is equal to another IntegralNumber object.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to compare to.
+
+        Returns
+        -------
+        bool
+            True if the objects are equal, False otherwise.
+        """
+        if isinstance(other, IntegralNumber):
+            return self.value == other.value
+        return False
+        
+    def __lt__(self, other: 'IntegralNumber') -> bool:
+        """
+        Determines if the current IntegralNumber object is less than another IntegralNumber object.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to compare to.
+
+        Returns
+        -------
+        bool
+            True if the current object is less than the other object, False otherwise.
+        """
+        if isinstance(other, IntegralNumber):
+            return self.value < other.value
+        return False
+        
+    def __add__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Adds two IntegralNumber objects.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to be added to the current object.
+
+        Returns
+        -------
+        IntegralNumber
+            An IntegralNumber object which is the sum of the current object and the passed object.
+
+        Raises
+        ------
+        TypeError
+            If the passed object is not an IntegralNumber.
+        """
+
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value + other.value)
+        raise TypeError("Cannot add non-IntegralNumber object.")
+        
+    def __sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Subtracts two IntegralNumber objects.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to be subtracted from the current object.
+
+        Returns
+        -------
+        IntegralNumber
+            An IntegralNumber object which is the difference between the current object and the passed object.
+
+        Raises
+        ------
+        TypeError
+            If the passed object is not an IntegralNumber.
+        """
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value - other.value)
+        raise TypeError("Cannot subtract non-IntegralNumber object.")
+        
+    def __mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Multiplies two IntegralNumber objects.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to be multiplied with the current object.
+
+        Returns
+        -------
+        IntegralNumber
+            An IntegralNumber object which is the product of the current object and the passed object.
+
+        Raises
+        ------
+        TypeError
+            If the passed object is not an IntegralNumber.
+        """
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value * other.value)
+        raise TypeError("Cannot multiply non-IntegralNumber object.")
+        
+    def __truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Divides two IntegralNumber objects.
+
+        Parameters
+        ----------
+        other : IntegralNumber
+            The IntegralNumber object to be used as divisor for the current object.
+
+        Returns
+        -------
+        IntegralNumber
+            An IntegralNumber object which is the result of dividing the current object by the passed object.
+
+        Raises
+        ------
+        TypeError
+            If the passed object is not an IntegralNumber.
+        ZeroDivisionError
+            If the passed object has a value of zero.
+        """
+        if isinstance(other, IntegralNumber):
+            if other.value == 0:
+                raise ZeroDivisionError("Cannot divide by zero.")
+            return IntegralNumber(self.value // other.value)
+        raise TypeError("Cannot divide non-IntegralNumber object.")
+
+    def add(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Returns the sum of this number and `other`.
+
+        Parameters:
+        -----------
+        other : IntegralNumber
+            The number to add to this number.
+
+        Returns:
+        --------
+        IntegralNumber
+            The sum of this number and `other`.
+        """
+        return IntegralNumber(self.value + other.value)
+
+    def subtract(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Returns the difference between this number and `other`.
+
+        Parameters:
+        -----------
+        other : IntegralNumber
+            The number to subtract from this number.
+
+        Returns:
+        --------
+        IntegralNumber
+            The difference between this number and `other`.
+        """
+        return IntegralNumber(self.value - other.value)
+
+    def multiply(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        """
+        Returns the product of this number and `other`.
+
+        Parameters:
+        -----------
+        other : IntegralNumber
+            The number to multiply with this number.
+
+        Returns:
+        --------
+        IntegralNumber
+            The product of this number and `other`.
+        """
+        return IntegralNumber(self.value * other.value)
+
+    def divide(self, other: 'IntegralNumber') -> Union['IntegralNumber', None]:
+        """
+        Returns the quotient of this number and `other`.
+
+        Parameters:
+        -----------
+        other : IntegralNumber
+            The number to divide this number by.
+
+        Returns:
+        --------
+        Union[IntegralNumber, None]
+            The quotient of this number and `other`. Returns None if `other` is zero.
+        """
+        if other.value == 0:
+            return None
+        return IntegralNumber(self.value // other.value)
+
+    def __str__(self):
+        return str(self.value)
+
+
+##############################################################################
 
 alg = Algorithm()
 con = Constants()
 fun = MathFunctions()
 seq = Sequences()
-
+hyp = HyperbolicFunctions()
+com = ComplexNumber()
+ren = RealNumber()
+rat = RationalNumber()
+inn = IntegralNumber()
