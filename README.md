@@ -6,6 +6,12 @@ A work in progress, incomplete, library full of mathematical algorithms, constan
 - [Algorithms](#algorithm-class)
 - [Constants](#constants-class)
 - [Functions](#functions-class)
+- [Sequences](#sequences-class)
+- [Hyperbolic Functions](#hyperbolicfunctions-class)
+- [Complex Number](#complexnumber-class)
+- [Real Number](#realnumber-class)
+- [Rational Number](#rationalnumber-class)
+- [Integral Number](#integralnumber-class)
 
 
 ## **Algorithm Class**
@@ -562,10 +568,16 @@ Use Monte Carlo simulation to estimate the probability of an event.
 ---
 ### `distance(point1, point2):`
 
+Calculates the Euclidean distance between two points in a two-dimensional space.
+
 ##### **Arguments:**
         
-        - point1 (int/float): The position of point 1
-        - point2 (int/float): The position of point 2
+        - point1 (tuple): A tuple containing the coordinates of the first point as (x, y).
+        - point2 (tuple): A tuple containing the coordinates of the second point as (x, y).
+
+##### **Returns:**
+
+        - float: The Euclidean distance between point1 and point2.
 
 ##### **Returns:**
 
@@ -2597,91 +2609,1351 @@ Return the arc cosine of x, in radians.
 ##### **Returns:**
 
       - float: The arc cosine of x, in radians.
-        """
+
 
 ---
 
-## **class Sequences:**
-
-### `harmonic_number(self):`
-
-      pass
----
-
-### `gregory_coefficients(self):`
-
-      pass
----
-
-### `bernoulli_number(self):`
-
-      pass
+## **Sequences class:**
     
-### `hermite_constants(self):`
-
-      pass
 ---
+### `harmonic_number(self, n: int) -> float:`
 
-### `hafner_sarnak_mccurley_constant(self):`
+The nth harmonic number is the sum of the reciprocals of the first n natural numbers.
 
-      pass
+##### **Symbol:**
+
+            - - H_n
+
+##### **Arguments:**
+
+            - - n (int): The number of terms to include in the sum.
+
+##### **Returns:**
+
+            - - float: The value of the nth harmonic number.
+
+            - return sum(1/i for i in range(1, n+1))
+    
 ---
+### `gregory_coefficients(self, n: int) -> float:`
 
-### `stieltjes_constants(self):`
+The nth Gregory coefficient is a coefficient used in the Gregory series formula for pi,
+which provides an approximate value of pi.
 
-      pass
+##### **Symbol:**
+
+            - - G_n
+
+##### **Arguments:**
+
+            - - n (int): The index of the Gregory coefficient to be calculated.
+
+##### **Returns:**
+
+            - - float: The value of the nth Gregory coefficient.
+
+            if n == 0:
+                return 1
+            elif n % 2 == 0:
+                return 0
+            else:
+                return -2 / (n * Constants.pi) * self.gregory_coefficients(n-1)
+    
 ---
+### `bernoulli_number(self, n: int) -> float:`
 
-### `favard_constants(self):`
+The nth Bernoulli number is a sequence of rational numbers with deep connections to number theory
+and other areas of mathematics, including algebra and calculus.
 
-      pass
+##### **Symbol:**
+
+            - - B_n
+
+##### **Arguments:**
+
+            - - n (int): The index of the Bernoulli number to be calculated.
+
+##### **Returns:**
+
+            - - float: The value of the nth Bernoulli number.
+
+            if n == 0:
+                return 1
+            elif n == 1:
+                return -0.5
+            else:
+                sum_term = sum(MathFunctions.combination(n+1, k) * self.bernoulli_number(k) / (n+1-k) for k in range(1, n))
+                return 1 - sum_term
+    
 ---
+### `hermite_constants(self, n: int) -> float:`
 
-### `generalized_bruns_constant(self):`
+The nth Hermite constant is a constant that appears in the study of the quantum harmonic oscillator,
+and is related to the normalization of the wave functions of the oscillator.
 
-      pass
+##### **Symbol:**
+
+            - H_n
+
+##### **Arguments:**
+
+            - n (int): The index of the Hermite constant to be calculated.
+
+##### **Returns:**
+
+            - float: The value of the nth Hermite constant.
+
+            if n == 0:
+                return 1
+            else:
+                return (-1)**n * Algorithm.factorial(n-1)
+    
 ---
+### `hafner_sarnak_mccurley_constant(self, n: int) -> float:`
 
-### `champernowne_constants(self):`
+The nth Hafner-Sarnak-McCurley constant is a constant that appears in the study of prime numbers
+and related topics in number theory.
 
-      pass
+##### **Symbol:**
+
+            - C_n
+
+##### **Arguments:**
+
+            - n (int): The index of the Hafner-Sarnak-McCurley constant to be calculated.
+
+##### **Returns:**
+
+            - float: The value of the nth Hafner-Sarnak-McCurley constant.
+
+            - return sum(Algorithm.exp(-n/p)/p for p in Algorithm.sieve_of_eratosthenes(2*n+1))
+    
+    
 ---
+### `stieltjes_constants(self, n: int) -> float:`
 
-### `lagrange_number(self):`
+Returns the nth Stieltjes constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Stieltjes constant.
+            - if n == 1:
+                return 0.57721566490153286060651209  # gamma
+            elif n == 2:
+                return 1.20205690315959428539973816  # G
+            elif n == 3:
+                return 1.79175946922805500081247735  # pi^2/6
+            elif n == 4:
+                return 2.9456101084887218059356      # 7*G - 4*pi^2/3
+            elif n == 5:
+                return 4.4428829381583661417149      # 3*zeta(3) - 2*G
+            else:
+                raise ValueError("The index n should be between 1 and 5.")
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/StieltjesConstants.html
+            
 ---
+### `favard_constants(self, n: int) -> float:`
 
-### `fellers_coin_tossing_constants(self):`
+Returns the nth Favard constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Favard constant.
+
+            if n < 1:
+                raise ValueError("The index n should be a positive integer.")
+            elif n == 1:
+                return 1
+            else:
+                return sum([Sequences.favard_constants(self, i) * Sequences.favard_constants(self, n-i) / (i+n-i-1) 
+                            for i in range(1, n)])
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/FavardConstants.html
+        
+        
 ---
+### `generalized_bruns_constant(self, n: int) -> float:`
 
-### `stoneham_number(self):`
+Returns the nth generalized Bruns constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth generalized Bruns constant.
+
+            if n < 1:
+                raise ValueError("The index n should be a positive integer.")
+            elif n == 1:
+                return 1
+            else:
+                return sum([abs(Sequences.generalized_bruns_constant(self, i) - Sequences.generalized_bruns_constant(self, i-1)) 
+                            for i in range(2, n+1)]) + 1
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/GeneralizedBrunsConstant.html
+        
 ---
+### `champernowne_constants(self, n: int) -> float:`
 
-### `beraha_constants(self):`
+Returns the nth Champernowne constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Champernowne constant.
+
+            if n < 1:
+                raise ValueError("n should be a positive integer")
+            if n == 1:
+                return 0.12345678910111213141516171819202122
+            else:
+                prev = self.champernowne_constants(n-1)
+                return float(str(prev) + str(n+8))
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/ChampernowneConstant.html
+
+
 ---
+### `lagrange_number(self, n: int) -> int:`
 
-### `chvatal_sankoff_constants(self):`
+Returns the nth Lagrange number.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - int: the nth Lagrange number.
+
+            if n < 1:
+                raise ValueError("n should be a positive integer")
+            if n == 1:
+                return 1
+            else:
+                return n * self.lagrange_number(n-1) - (-1)**n
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/LagrangeNumber.html
+    
 ---
+### `fellers_coin_tossing_constants(self, n: int) -> float:`
 
-### `hyperharmonic_number(self):`
+Returns the nth Feller's coin-tossing constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Feller's coin-tossing constant.
+
+            result = 0
+            for k in range(n + 1):
+                result += (-1) ** k / (2 ** (2 ** k))
+            return result
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/FellersCoin-TossingConstants.html
+    
 ---
+### `stoneham_number(self, n: int) -> int:`
 
-### `gregory_number(self):`
+Returns the nth Stoneham number.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - int: the nth Stoneham number.
+            if n == 0:
+                return 1
+            else:
+                return (3 * Sequences.stoneham_number(n - 1) + 1) // 2
+
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/StonehamNumber.html
+    
 ---
+### `beraha_constants(self, n: int) -> float:`
 
-### `metallic_mean(self):`
+Returns the nth Beraha constant.
+        
+##### **Arguments:**
 
-      pass
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Beraha constant.
+
+            if n == 0:
+                return 1
+            else:
+                return 1 + 1 / Sequences.beraha_constants(n - 1)
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/BerahasConstant.html
+    
+---
+### `chvatal_sankoff_constants(self, n: int) -> float:`
+
+Returns the nth Chvátal-Sankoff constant.
+        
+##### **Arguments:**
+
+            - n (int): the index of the sequence.
+            
+##### **Returns:**
+
+            - float: the nth Chvátal-Sankoff constant.
+
+            result = 0
+            for k in range(n + 1):
+                binom = MathFunctions.comb(2 ** k, k)
+                result += (-1) ** k * binom ** 2
+            return result
+            
+##### **Reference:**
+
+            - https://mathworld.wolfram.com/Chvatal-SankoffConstants.html
+    
+---
+### `hyperharmonic_number(self, n: int, p: int) -> float:`
+
+Computes the hyperharmonic number H(n,p), which is defined as the sum of the p-th powers of the reciprocals of
+        the first n positive integers.
+        
+##### **Arguments:**
+
+        - n - (int): The positive integer up to which to compute the sum.
+        - p (int): The exponent to which to raise the reciprocals of the integers.
+        
+##### **Returns:**
+
+        - H - (float): The hyperharmonic number H(n,p).
+
+        H = 0
+        for i in range(1, n+1):
+            H += 1 / i ** p
+        return H
+        
+##### **Symbols:**
+
+        - H(n,p): hyperharmonic number of order p and degree n.
+
+---
+### `gregory_number(self, n: int) -> float:`
+
+Computes the nth Gregory number, which is defined as the alternating sum of the reciprocals of the odd
+positive integers, up to the nth term.
+        
+##### **Arguments:**
+
+        - n - (int): The positive integer up to which to compute the alternating sum.
+        
+##### **Returns:**
+
+        - G - (float): The nth Gregory number.
+
+        G = 0
+        for i in range(1, n+1):
+            if i % 2 == 1:
+                G += 1 / i
+            else:
+                G -= 1 / i
+        return G
+        
+##### **Symbols:**
+
+        - G(n): nth Gregory number.
+
+
+---
+### `metallic_mean(self, x: float) -> float:`
+
+Computes the value of the metallic mean of x, which is the positive solution to the equation x = 1/(1+x).
+        
+##### **Arguments:**
+
+        - x - (float): The value for which to compute the metallic mean.
+        
+##### **Returns:**
+
+        - mm-  (float): The value of the metallic mean of x.
+
+        mm = (1 + Algorithm.square_root(1 + 4*x)) / 2
+        return mm
+        
+##### **Symbols:**
+
+        - mm(x): metallic mean of x.
+
+
+## **HyperbolicFunctions class:**
+
+A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech, and csch.
+
+##### **References:**
+
+        * Weisstein, E. W. (n.d.). Hyperbolic functions. MathWorld--A Wolfram Web Resource. 
+        Retrieved October 11, 2021, from https://mathworld.wolfram.com/HyperbolicFunctions.html
+
+---
+### `sinh(x):`
+
+Returns the hyperbolic sine of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic sine of x.
+
+            return (Algorithm.exp(x) - Algorithm.exp(-x)) / 2
+
+---
+### `cosh(x):`
+
+Returns the hyperbolic cosine of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic cosine of x.
+
+            return (Algorithm.exp(x) + Algorithm.exp(-x)) / 2
+
+---
+### `tanh(x):`
+
+Returns the hyperbolic tangent of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic tangent of x.
+
+            return HyperbolicFunctions.sinh(x) / HyperbolicFunctions.cosh(x)
+
+---
+### `coth(x):`
+
+Returns the hyperbolic cotangent of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic cotangent of x.
+
+            return 1 / HyperbolicFunctions.tanh(x)
+
+---
+### `sech(x):`
+
+Returns the hyperbolic secant of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic secant of x.
+
+            return 1 / HyperbolicFunctions.cosh(x)
+
+---
+### `csch(x):`
+
+Returns the hyperbolic cosecant of x.
+
+##### **Arguments:**
+
+            - x (float): The input value in radians.
+
+##### **Returns:**
+
+            - float: The hyperbolic cosecant of x.
+
+            return 1 / HyperbolicFunctions.sinh(x)
+
+
+
+## **ComplexNumber class:**
+
+A class representing a complex number.
+
+##### **Attributes:**
+
+        - real (float): The real part of the complex number.
+        - imag (float): The imaginary part of the complex number.
+
+---
+### `__init__(self, real=0, imag=0):`
+
+Initializes a complex number.
+
+##### **Arguments:**
+
+            - real (float): The real part of the complex number.
+            - imag (float): The imaginary part of the complex number.
+
+---
+### `__repr__(self):`
+
+Returns a string representation of the complex number.
+
+##### **Returns:**
+
+            - str: A string representation of the complex number.
+
+            return f"{self.real} + {self.imag}j"
+
+---
+### `__add__(self, other):`
+
+Adds two complex numbers.
+
+##### **Arguments:**
+
+            - other (ComplexNumber): The complex number to add.
+
+##### **Returns:**
+
+            - ComplexNumber: The sum of the two complex numbers.
+
+            return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
+---
+### `__sub__(self, other):`
+
+Subtracts two complex numbers.
+
+##### **Arguments:**
+
+            - other (ComplexNumber): The complex number to subtract.
+
+##### **Returns:**
+
+            - ComplexNumber: The difference of the two complex numbers.
+
+            return ComplexNumber(self.real - other.real, self.imag - other.imag)
+
+---
+### `__mul__(self, other):`
+
+Multiplies two complex numbers.
+
+##### **Arguments:**
+
+            - other (ComplexNumber): The complex number to multiply.
+
+##### **Returns:**
+
+            - ComplexNumber: The product of the two complex numbers.
+
+            real = self.real * other.real - self.imag * other.imag
+            imag = self.real * other.imag + self.imag * other.real
+            return ComplexNumber(real, imag)
+
+---
+### `__truediv__(self, other):`
+
+Divides two complex numbers.
+
+##### **Arguments:**
+
+            - other (ComplexNumber): The complex number to divide.
+
+##### **Returns:**
+
+            - ComplexNumber: The quotient of the two complex numbers.
+
+            denom = other.real**2 + other.imag**2
+            real = (self.real * other.real + self.imag * other.imag) / denom
+            imag = (self.imag * other.real - self.real * other.imag) / denom
+            return ComplexNumber(real, imag)
+
+---
+### `conjugate(self):`
+
+Computes the conjugate of the complex number.
+
+##### **Returns:**
+
+            - ComplexNumber: The conjugate of the complex number.
+
+            return ComplexNumber(self.real, -self.imag)
+
+---
+### `modulus(self):`
+
+Computes the modulus (magnitude) of the complex number.
+
+##### **Returns:**
+
+            - float: The modulus of the complex number.
+
+            return (self.real**2 + self.imag**2)**0.5
+
+
+##################
+
+## **RealNumber class:**
+
+A class representing a real number.
+    
+---
+### `__init__(self, value):`
+
+Initializes a new RealNumber object with the given value.
+
+##### **Parameters:**
+
+            - - value (float): The value of the real number.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object.
+
+            self.value = value
+
+---
+### `__str__(self):`
+
+Returns a string representation of the real number.
+
+##### **Returns:**
+
+            - str: A string representation of the real number.
+
+            return str(self.value)
+
+---
+### `__repr__(self):`
+
+Returns a string representation of the real number.
+
+##### **Returns:**
+
+            - str: A string representation of the real number.
+
+            return str(self.value)
+
+---
+### `__eq__(self, other):`
+
+Checks whether the real number is equal to another object.
+
+##### **Parameters:**
+
+            - - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is equal to the other object, False otherwise.
+
+            if isinstance(other, RealNumber):
+                return self.value == other.value
+            elif isinstance(other, float):
+                return self.value == other
+            else:
+                return False
+
+---
+### `__ne__(self, other):`
+
+Checks whether the real number is not equal to another object.
+
+##### **Parameters:**
+
+            - - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is not equal to the other object, False otherwise.
+
+            return not self.__eq__(other)
+
+---
+### `__lt__(self, other):`
+
+Checks whether the real number is less than another object.
+
+##### **Parameters:**
+
+            - - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is less than the other object, False otherwise.
+
+            if isinstance(other, RealNumber):
+                return self.value < other.value
+            elif isinstance(other, float):
+                return self.value < other
+            else:
+                return NotImplemented
+
+---
+### `__le__(self, other):`
+
+Checks whether the real number is less than or equal to another object.
+
+##### **Parameters:**
+
+            - - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is less than or equal to the other object, False otherwise.
+
+            if isinstance(other, RealNumber):
+                return self.value <= other.value
+            elif isinstance(other, float):
+                return self.value <= other
+            else:
+                return NotImplemented
+
+---
+### `__gt__(self, other):`
+
+Checks whether the real number is greater than another object.
+
+##### **Parameters:**
+
+            - - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is greater than the other object, False otherwise.
+
+            if isinstance(other, RealNumber):
+                return self.value > other.value
+            elif isinstance(other, float):
+                return self.value > other
+            else:
+                return NotImplemented
+
+---
+### `__ge__(self, other):`
+
+Checks whether the real number is greater than or equal to another object.
+
+##### **Parameters:**
+
+            - other (object): The object to compare with.
+
+##### **Returns:**
+
+            - bool: True if the real number is greater than or equal to the other object, False otherwise.
+
+            if isinstance(other, RealNumber):
+                return self.value >= other.value
+            elif isinstance(other, float):
+                return self.value >= other
+            else:
+                return NotImplemented
+        
+---
+### `__add__(self, other):`
+
+Adds two RealNumber objects.
+
+##### **Parameters:**
+
+            - other (RealNumber or float): The RealNumber object or float to add.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the sum of the two numbers.
+
+            if isinstance(other, RealNumber):
+                return RealNumber(self.value + other.value)
+            elif isinstance(other, float):
+                return RealNumber(self.value + other)
+            else:
+                return NotImplemented
+
+---
+### `__sub__(self, other):`
+
+Subtracts two RealNumber objects.
+
+##### **Parameters:**
+
+            - other (RealNumber or float): The RealNumber object or float to subtract.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the difference of the two numbers.
+
+            if isinstance(other, RealNumber):
+                return RealNumber(self.value - other.value)
+            elif isinstance(other, float):
+                return RealNumber(self.value - other)
+            else:
+                return NotImplemented
+
+---
+### `__mul__(self, other):`
+
+Multiplies two RealNumber objects.
+
+##### **Parameters:**
+
+            - other (RealNumber or float): The RealNumber object or float to multiply.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the product of the two numbers.
+
+            if isinstance(other, RealNumber):
+                return RealNumber(self.value * other.value)
+            elif isinstance(other, float):
+                return RealNumber(self.value * other)
+            else:
+                return NotImplemented
+
+---
+### `__truediv__(self, other):`
+
+Divides two RealNumber objects.
+
+##### **Parameters:**
+
+            - other (RealNumber or float): The RealNumber object or float to divide by.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the quotient of the two numbers.
+
+            if isinstance(other, RealNumber):
+                return RealNumber(self.value / other.value)
+            elif isinstance(other, float):
+                return RealNumber(self.value / other)
+            else:
+                return NotImplemented
+
+---
+### `__abs__(self):`
+
+Returns the absolute value of the RealNumber object.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the absolute value of the number.
+
+            return RealNumber(abs(self.value))
+
+---
+### `__neg__(self):`
+
+Returns the negation of the RealNumber object.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the negation of the number.
+
+            return RealNumber(-self.value)
+
+---
+### `sqrt(self):`
+
+Returns the square root of the RealNumber object.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the square root of the number.
+
+            return RealNumber(self.value ** 0.5)
+    
+---
+### `__pow__(self, other):`
+
+Computes the power of the real number to the given exponent.
+
+##### **Parameters:**
+
+            - other (float): The exponent.
+
+##### **Returns:**
+
+            - RealNumber: A new RealNumber object with the result of the power operation.
+
+            return RealNumber(self.value ** other)
+
+
+
+## **RationalNumber class:**
+
+A class representing a rational number.
+
+##### **Attributes:**
+
+        - numerator (int): The numerator of the rational number.
+        - denominator (int): The denominator of the rational number.
+
+##### **Methods:**
+
+        - simplify: Simplifies the rational number.
+        - add: Adds two rational numbers.
+        - subtract: Subtracts two rational numbers.
+        - multiply: Multiplies two rational numbers.
+        - divide: Divides two rational numbers.
+
+---
+### `__init__(self, numerator, denominator):`
+
+Initializes a rational number with the given numerator and denominator.
+
+##### **Arguments:**
+
+            - numerator (int): The numerator of the rational number.
+            - denominator (int): The denominator of the rational number.
+
+##### **Raises:**
+
+            - ValueError: If the denominator is zero.
+
+            if denominator == 0:
+                raise ValueError("Denominator cannot be zero")
+            self.numerator = numerator
+            self.denominator = denominator
+            self.simplify()
+
+---
+### `__str__(self):`
+
+Returns the string representation of the rational number.
+
+##### **Returns:**
+
+        return f"{self.numerator}/{self.denominator}"
+
+---
+### `simplify(self):`
+
+Simplifies the rational number.
+
+##### **Returns:**
+
+        gcd = self.gcd(self.numerator, self.denominator)
+        self.numerator //= gcd
+        self.denominator //= gcd
+
+---
+### `gcd(a, b):`
+
+Computes the greatest common divisor of two numbers a and b.
+
+##### **Arguments:**
+
+            - a (int): The first number.
+            - b (int): The second number.
+
+##### **Returns:**
+
+            - int: The greatest common divisor of a and b.
+
+            while b:
+                a, b = b, a % b
+            return a
+
+---
+### `add(self, other):`
+
+Adds two rational numbers.
+
+##### **Arguments:**
+
+            - other (RationalNumber): The other rational number.
+
+##### **Returns:**
+
+            - RationalNumber: The sum of the two rational numbers.
+
+            numerator = self.numerator * other.denominator + other.numerator * self.denominator
+            denominator = self.denominator * other.denominator
+            return RationalNumber(numerator, denominator)
+
+---
+### `subtract(self, other):`
+
+Subtracts two rational numbers.
+
+##### **Arguments:**
+
+            - other (RationalNumber): The other rational number.
+
+##### **Returns:**
+
+            - RationalNumber: The difference of the two rational numbers.
+
+            numerator = self.numerator * other.denominator - other.numerator * self.denominator
+            denominator = self.denominator * other.denominator
+            return RationalNumber(numerator, denominator)
+
+---
+### `multiply(self, other):`
+
+Multiplies two rational numbers.
+
+##### **Arguments:**
+
+            - other (RationalNumber): The other rational number.
+
+##### **Returns:**
+
+            - RationalNumber: The product of the two rational numbers.
+
+            numerator = self.numerator * other.numerator
+            denominator = self.denominator * other.denominator
+            return RationalNumber(numerator, denominator)
+
+---
+### `divide(self, other):`
+
+Divides two rational numbers.
+
+##### **Arguments:**
+
+            - other (RationalNumber): The other rational number.
+
+##### **Returns:**
+
+            - RationalNumber: The quotient of the two rational numbers.
+
+            numerator = self.numerator * other.denominator
+            denominator = self.denominator * other.numerator
+            return RationalNumber(numerator, denominator)
+
+##
+
+## **IntegralNumber class:**
+
+A class representing integral numbers.
+
+##### **Attributes**
+
+    - value : int
+        The value of the integral number.
+
+##### **Methods**
+
+    __init__(self, value: int) -> None:
+        Initializes a new instance of the IntegralNumber class with the specified integer value.
+
+    __repr__(self) -> str:
+        Returns a string representation of the IntegralNumber object.
+
+    __eq__(self, other: 'IntegralNumber') -> bool:
+        Determines if the current IntegralNumber object is equal to another IntegralNumber object.
+
+    __lt__(self, other: 'IntegralNumber') -> bool:
+        Determines if the current IntegralNumber object is less than another IntegralNumber object.
+
+    __add__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Adds two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Subtracts two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Multiplies two IntegralNumber objects and returns a new IntegralNumber object.
+
+    __truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+        Divides two IntegralNumber objects and returns a new IntegralNumber object.
+
+##### **Raises**
+
+    - TypeError
+        If the argument is not an instance of IntegralNumber.
+    - ZeroDivisionError
+        If the second IntegralNumber object is zero and division is attempted.
+
+        Divides two IntegralNumber objects and returns a new IntegralNumber object.
+
+##### **References**
+
+    - https://en.wikipedia.org/wiki/Integer_(computer_science)
+    - https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
+
+---
+### `__init__(self, value: int) -> None:`
+
+Initializes a new instance of the IntegralNumber class with the specified integer value.
+
+##### **Parameters**
+
+        - value : int
+            The integer value to initialize the IntegralNumber object with.
+
+        self.value = value
+        
+---
+### `__repr__(self) -> str:`
+
+Returns a string representation of the IntegralNumber object.
+
+##### **Returns**
+
+        - str
+            A string representation of the IntegralNumber object.
+
+        return f"IntegralNumber({self.value})"
+   
+---
+### `__eq__(self, other: 'IntegralNumber') -> bool:`
+
+Determines if the current IntegralNumber object is equal to another IntegralNumber object.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to compare to.
+
+##### **Returns**
+
+        - bool
+            True if the objects are equal, False otherwise.
+
+        if isinstance(other, IntegralNumber):
+            return self.value == other.value
+        return False
+        
+---
+### `__lt__(self, other: 'IntegralNumber') -> bool:`
+
+Determines if the current IntegralNumber object is less than another IntegralNumber object.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to compare to.
+
+##### **Returns**
+
+        - bool
+            True if the current object is less than the other object, False otherwise.
+
+        if isinstance(other, IntegralNumber):
+            return self.value < other.value
+        return False
+        
+---
+### `__add__(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Adds two IntegralNumber objects.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to be added to the current object.
+
+##### **Returns**
+
+        - IntegralNumber
+            An IntegralNumber object which is the sum of the current object and the passed object.
+
+##### **Raises**
+
+        - TypeError
+            If the passed object is not an IntegralNumber.
+
+
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value + other.value)
+        raise TypeError("Cannot add non-IntegralNumber object.")
+        
+---
+### `__sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Subtracts two IntegralNumber objects.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to be subtracted from the current object.
+
+##### **Returns**
+
+        - IntegralNumber
+            An IntegralNumber object which is the difference between the current object and the passed object.
+
+##### **Raises**
+
+        - TypeError
+            If the passed object is not an IntegralNumber.
+
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value - other.value)
+        raise TypeError("Cannot subtract non-IntegralNumber object.")
+        
+---
+### `__mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Multiplies two IntegralNumber objects.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to be multiplied with the current object.
+
+##### **Returns**
+
+        - IntegralNumber
+            An IntegralNumber object which is the product of the current object and the passed object.
+
+##### **Raises**
+
+        - TypeError
+            If the passed object is not an IntegralNumber.
+
+        if isinstance(other, IntegralNumber):
+            return IntegralNumber(self.value * other.value)
+        raise TypeError("Cannot multiply non-IntegralNumber object.")
+        
+---
+### `__truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Divides two IntegralNumber objects.
+
+##### **Parameters**
+
+        - other : IntegralNumber
+            The IntegralNumber object to be used as divisor for the current object.
+
+##### **Returns**
+
+        - IntegralNumber
+            An IntegralNumber object which is the result of dividing the current object by the passed object.
+
+##### **Raises**
+
+        - TypeError
+            If the passed object is not an IntegralNumber.
+        ZeroDivisionError
+            If the passed object has a value of zero.
+
+        if isinstance(other, IntegralNumber):
+            if other.value == 0:
+                raise ZeroDivisionError("Cannot divide by zero.")
+            return IntegralNumber(self.value // other.value)
+        raise TypeError("Cannot divide non-IntegralNumber object.")
+
+---
+### `add(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Returns the sum of this number and `other`.
+
+##### **Parameters:**
+
+        - other : IntegralNumber
+            The number to add to this number.
+
+##### **Returns:**
+
+        - IntegralNumber
+            The sum of this number and `other`.
+
+        return IntegralNumber(self.value + other.value)
+
+---
+### `subtract(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Returns the difference between this number and `other`.
+
+##### **Parameters:**
+
+        - other : IntegralNumber
+            The number to subtract from this number.
+
+##### **Returns:**
+
+        - IntegralNumber
+            The difference between this number and `other`.
+
+        return IntegralNumber(self.value - other.value)
+
+---
+### `multiply(self, other: 'IntegralNumber') -> 'IntegralNumber':`
+
+Returns the product of this number and `other`.
+
+##### **Parameters:**
+
+        - other : IntegralNumber
+            The number to multiply with this number.
+
+##### **Returns:**
+
+        - IntegralNumber
+            The product of this number and `other`.
+
+        return IntegralNumber(self.value * other.value)
+
+---
+### `divide(self, other: 'IntegralNumber') -> Union['IntegralNumber', None]:`
+
+Returns the quotient of this number and `other`.
+
+##### **Parameters:**
+
+        - other : IntegralNumber
+            The number to divide this number by.
+
+##### **Returns:**
+
+        - Union[IntegralNumber, None]
+            The quotient of this number and `other`. Returns None if `other` is zero.
+
+        if other.value == 0:
+            return None
+        return IntegralNumber(self.value // other.value)
+
+---
+### `__str__(self):`
+
+return str(self.value)
