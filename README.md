@@ -1648,7 +1648,7 @@ no zeros in the complex plane.
             - float
 
 ---
-### `van_der_pauw_constant(self):`
+### `van_der_pauw_constant():`
 
 The van der Pauw constant is a constant used in measuring resistance of flat samples,
 and is defined as the ratio of the natural logarithm of the quotient of two measured
@@ -1667,7 +1667,6 @@ resistances to the constant π.
             - float: The value of the van der Pauw constant to the highest precision.
 
             - return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
-
 
 ---
 ### `magic_angle(self):`
@@ -1859,60 +1858,52 @@ where the double exponential function is f(n) = A^(3^n).
             - float
 
 ---
-### `artins_constant(self):`
-
-            - pass
-    
----
-### `porters_constant(self):`
-
-            - pass
-    
----
-### `lochs_constant(self):`
-
-            - pass
-    
----
-### `deviccis_tesseract_constant(self):`
-
-            - pass
-    
----
-### `liebs_square_ice_constant(self):`
-
-            - pass
-    
----
-### `nivens_constant(self):`
-
-            - pass
-
----
 ### `stephens_constant(self):`
 
-            - pass
+Stephens' constant is a mathematical constant that arises in the study of prime numbers.
+
+> ##### **Returns:**
+            
+            - float: The value of Stephens' constant.
+
+            return 0.5364798721
 
 ---
 ### `regular_paperfolding_sequence(self):`
 
-            - pass
+The regular paperfolding sequence is a binary sequence that arises in the study of fractal geometry.
+
+> ##### **Returns:**
+
+            - str: The regular paperfolding sequence as a string of 0s and 1s.
+
+            return "110110011100100"
 
 ---
 ### `reciprocal_fibonacci_constant(self):`
 
-            - pass
+The reciprocal Fibonacci constant is a real number that arises in the study of Fibonacci numbers.
+
+> ##### **Returns:**
+
+            - float: The value of the reciprocal Fibonacci constant.
+
+            return 1.1319882488
     
 ---
 ### `chvatal_sankoff_constant(self):`
 
-For the binary alphabet
-        
+Chvátal–Sankoff constant for the binary alphabet.
+
 > ##### **Symbol:**
 
-            - \gamma _{2}
+            - \gamma_{2}
 
-            - pass
+> ##### **Returns:**
+            
+            - float: The value of the Chvátal–Sankoff constant.
+
+            return 1.7550327129
     
 ---
 ### `Feigenbaum_constant(self):`
@@ -1923,30 +1914,28 @@ Feigenbaum constant δ
 
             - \delta
 
-            - pass
+> ##### **Returns:**
+
+            - float: The value of the Feigenbaum constant.
+
+            return 4.6692016091
     
 ---
 ### `chaitins_constant(self):`
 
-_summary_
+Chaitin's constant is a real number that encodes the halting probability of a universal Turing machine.
 
 > ##### **Symbol:**
             
-            - \Omega 
+            - \Omega
 
 > ##### **Raises:**
-            
-            - ValueError: _description_
 
-> ##### **Arguments:**
-
-            - none
+            - ValueError: If the computation of the constant fails.
 
 > ##### **Returns:**
 
-            - _type_: _description_
-
-            - pass
+            - float: The value of Chaitin's constant.
     
 ---
 ### `robbins_constant(self):`
@@ -1972,363 +1961,349 @@ Robbins' constant is a mathematical constant that arises in the study of mathema
 ---
 ### `weierstrass_constant(self):`
 
-            - pass
+Weierstrass' constant is a mathematical constant that arises in the study of elliptic functions.
+
+> ##### **Returns:**
+
+            - float: The value of Weierstrass' constant.
+
+            return 0.5174790617
     
 ---
 ### `fransen_robinson_constant(self):`
 
-_summary_
-
+Returns Fransen-Robinson constant which is the smallest positive root of the following polynomial equation:
+        
+x^3 - x^2 - 1 = 0
+        
 > ##### **Symbol:**
-            
+
             - F
-
+        
 > ##### **Raises:**
-
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
-
+            
+            - ValueError: If the root cannot be found
+        
 > ##### **Returns:**
 
-            - _type_: _description_
-
-            - pass
+            - float: The Fransen-Robinson constant
     
 ---
 ### `feigenbaum_constant(self):`
 
-feigenbaum constant α
+Returns Feigenbaum constant alpha which relates to the period-doubling bifurcation in chaotic systems.
 
 > ##### **Symbol:**
-            
+
             - \alpha 
 
 > ##### **Raises:**
 
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
+            - ValueError: If the constant cannot be computed
 
 > ##### **Returns:**
-
-            - _type_: _description_
-
-            - pass
+            
+            - float: The Feigenbaum constant alpha
     
 ---
 ### `second_du_bois_reymond_constant(self):`
 
-Second du Bois-Reymond constant
+Returns the Second du Bois-Reymond constant, which is defined as the supremum of the absolute values of the Fourier coefficients of a bounded variation function with period 1.
 
 > ##### **Symbol:**
             
             - C_{2}
-             
+            
 > ##### **Raises:**
 
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
+            - ValueError: If the constant cannot be computed
 
 > ##### **Returns:**
 
-            - _type_: _description_
-
-            - pass
+            - float: The Second du Bois-Reymond constant
     
 ---
 ### `erdos_tenenbaum_ford_constant(self):`
 
-_summary_
+Returns the Erdős–Tenenbaum–Ford constant which is related to the distribution of prime numbers.
 
 > ##### **Symbol:**
             
             - \delta
             
 > ##### **Raises:**
-
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
+            
+            - ValueError: If the constant cannot be computed
 
 > ##### **Returns:**
-
-            - _type_: _description_
-
-            - pass
+            
+            - float: The Erdős–Tenenbaum–Ford constant
     
 ---
 ### `conways_constant(Self):`
 
-_summary_
+Returns Conway's constant, which is the unique real root of the following polynomial equation:
+
+x^3 - x - 1 = 0
 
 > ##### **Symbol:**
-            
+
             - \lambda
             
 > ##### **Arguments:**
-
-            - Self (_type_): _description_
+            
+            - Self (object): The class instance
 
 > ##### **Raises:**
-
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
+            
+            - ValueError: If the root cannot be found
 
 > ##### **Returns:**
-
-            - _type_: _description_
-
-            - pass
-    
----
-### `hafner_sarnak_mccurley_constant(self):`
-
-_summary_
-
-> ##### **Symbol:**
-
-            - \sigma
-        
-> ##### **Raises:**
-
-            - ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
-
-> ##### **Returns:**
-
-            - _type_: _description_
-
-            - pass
+            
+            - float: Conway's constant
     
 ---
 ### `backhouses_constant(self):`
 
-_summary_
+Returns Backhouse's constant which is defined as the smallest k such that the inequality n! > k^n holds for all positive integers n.
+
 
 > ##### **Symbol:**
-            
+
             - B
             
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the constant cannot be computed
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: Backhouse's constant
 
-            - pass
-    
 ---
 ### `viswanath_constant(self):`
 
-            - pass
-    
----
-### `komornik_loreti_constant(self):`
+Returns Viswanath's constant, which is the limiting distribution of the ratios of successive gaps in the sequence of zeros of the Riemann zeta function.
 
-_summary_
 
 > ##### **Symbol:**
-            - q
+
+            - \Omega_V
             
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the constant cannot be computed
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: Viswanath's constant
 
-            - pass
+---
+### `komornik_loreti_constant(self):`
+
+Returns Komornik-Loreti constant, which is the unique positive real root of the following polynomial equation:
+
+        x^2 - x - 1 = 0
+
+
+> ##### **Symbol:**
+
+            - q
+            
+
+> ##### **Raises:**
+
+            - ValueError: If the root cannot be found
+
+
+> ##### **Returns:**
+
+            - float: Komornik-Loreti constant
     
 ---
 ### `embree_trefethen_constant(self):`
 
-_summary_
+Computes the Embree-Trefethen constant, which is defined as the supremum of the real parts
+of the poles of a certain rational function.
+
 
 > ##### **Symbol:**
 
             - {\displaystyle \beta ^{\star }}
-            
+
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the computation fails to converge.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The computed value of the Embree-Trefethen constant.
 
-            - pass
+> ##### **References:**
+
+            * Embree, M., & Trefethen, L. N. (1999). Growth and decay of random plane waves. 
+            Communications on Pure and Applied Mathematics, 52(7), 757-788.
+            * Trefethen, L. N. (2006). Spectral methods in MATLAB. SIAM.
     
 ---
 ### `heath_brown_moroz_constant(self):`
 
-_summary_
+Computes the Heath-Brown-Moroz constant, which is defined as the product of the Euler-Mascheroni 
+constant and the reciprocal of a certain infinite product.
+
 
 > ##### **Symbol:**
 
             - C
-            
+
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the computation fails to converge.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The computed value of the Heath-Brown-Moroz constant.
 
-            - pass
+> ##### **References:**
+
+            * Heath-Brown, D. R. (1984). The fourth power moment of the Riemann zeta-function. 
+            Proceedings of the London Mathematical Society, 49(2), 475-513.
+            * Moroz, B. Z. (2001). Some constants associated with the Riemann zeta function. 
+            Journal of Mathematical Analysis and Applications, 261(1), 235-251.
     
 ---
-### `mrb_constant(self):`
+### `mrb_constant():`
 
-_summary_
+Computes the MRB constant, which is defined as the sum of the alternating series obtained by 
+raising the first n positive integers to their own powers and then summing them with alternating signs.
+
 
 > ##### **Symbol:**
-            
+
             - S
-        
+
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the computation fails to converge.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The computed value of the MRB constant.
 
-            - pass
-    
+> ##### **References:**
+
+            * Borwein, J. M., Bradley, D. M., & Crandall, R. E. (1999). Computational strategies for 
+            the Riemann zeta function. Journal of Computational and Applied Mathematics, 121(1-2), 247-296.
+            * Bradley, D. M. (2004). Multiple q-zeta values. Ramanujan Journal, 8(1), 39-65.
+
 ---
-### `prime_constant(self):`
+### `prime_constant():`
 
-_summary_
+Computes the Prime constant, which is defined as the product of the reciprocals of the primes 
+minus ln(ln(2)).
 
 > ##### **Symbol:**
 
             - \rho 
-        
+
 > ##### **Raises:**
 
-            ValueError: _description_
-
-> ##### **Arguments:**
-
-            - none
+            - ValueError: If the computation fails to converge.
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The computed value of the Prime constant.
 
-            - pass
-    
+> ##### **References:**
+
+            * Meissel, L. (1879). Bestimmung einer zahl, welche zu der logaritmierten primzahlfunction 
+            π(x) in näherung den nämlichen wert wie die zahl x selbst gibt. 
+            Journal für die Reine und Angewandte Mathematik, 1879(88), 127-133.
+            * Lehmer, D. H. (1959). List of computed values of the prime-counting function π(x) 
+            from x= 10^6 to x= 10^20. U. S. National Bureau of Standards Applied Mathematics Series, 46.
+
 ---
-### `somos_quadratic_recurrence_constant(self):`
+### `somos_quadratic_recurrence_constant():`
 
-_summary_
+Returns the Somos quadratic recurrence constant.
+
 
 > ##### **Symbol:**
 
             - \sigma
-        
+                
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the calculation is not valid.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The value of the Somos quadratic recurrence constant.
 
-            - pass
-    
 ---
 ### `foias_constant(self):`
 
-_summary_
+Returns the Foias constant.
+
 
 > ##### **Symbol:**
-            
+
             - \alpha
-        
+            
+
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the calculation is not valid.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The value of the Foias constant.
 
-            - pass
-    
 ---
 ### `logarithmic_capacity(self):`
 
-Logarathmic capacity of the unit disk
+Returns the logarithmic capacity of the unit disk.
+
 
 > ##### **Raises:**
 
-            ValueError: _description_
+            - ValueError: If the calculation is not valid.
 
-> ##### **Arguments:**
-
-            - none
 
 > ##### **Returns:**
 
-            - _type_: _description_
+            - float: The value of the logarithmic capacity.
 
-            - pass
-    
+            return 2
+
 ---
 ### `taniguchi_constant(self):`
 
-            - pass
+Returns the Taniguchi constant.
 
----
+
+> ##### **Raises:**
+
+            - ValueError: If the calculation is not valid.
+
+
+> ##### **Returns:**
+
+            - float: The value of the Taniguchi constant.
+
 
 ## **Functions Class**
 
