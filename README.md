@@ -268,67 +268,81 @@ This function converts a fraction given by `numerator` and `denominator` to a pe
 ---
 ### `linear_search(lst, target)`
 
-This function searches for the `target` element in the given list `lst` and returns the index if found, otherwise returns -1.
+Searches for the target element in the given list and returns the index if found,
+otherwise returns -1.
 
 ##### **Arguments:**
 
-        - None
+    - lst : list
+        The list to be searched.
+
+    - target : any
+        The target element to be searched for in the list.
 
 ##### **Returns:**
 
-        - Index of target element or -1
+    - int
+        If the target is found in the list, the index of the target is returned.
+        Otherwise, -1 is returned.
 
 ---
 ### `binary_search(lst, target)`
 
-This function searches for the `target` element in the given list `lst` using binary search and returns the index if found, otherwise returns -1.
+Searches for the target element in the given list using binary search and returns
+the index if found, otherwise returns -1.
 
 ##### **Arguments:**
 
-        - None
+        - lst : list
+            The list to be searched.
+
+        - target : any
+            The target element to be searched for in the list.
 
 ##### **Returns:**
 
-        - Index of target element
+        - int
+            If the target is found in the list, the index of the target is returned.
+            Otherwise, -1 is returned.
 
 ---
 ### `bubble_sort(lst)`
 
-This function sorts the given list `lst` in ascending order using bubble sort and returns the sorted list.
+Sorts the given list in ascending order using bubble sort and returns the sorted list.
 
 ##### **Arguments:**
 
-        - None
+        - lst (list): The list to be sorted.
 
 ##### **Returns:**
 
-        - Sorted list
+        - list: The sorted list in ascending order.
         
 ---
 ### `insertion_sort(lst)`
 
-This function sorts the given list `lst` in ascending order using insertion sort and returns the sorted list.
+Sorts the given list in ascending order using insertion sort and returns the sorted list.
 
 ##### **Arguments:**
 
-        - None
+        - lst (list): The list to be sorted.
 
 ##### **Returns:**
 
-        - Sorted list using insertion point
+        - list: The sorted list in ascending order.
 
 ---
 ### `merge_sort(lst)`
 
-This function sorts the given list `lst` in ascending order using merge sort and returns the sorted list.
+Sorts the given list in ascending order using merge sort and returns the sorted list.
 
 ##### **Arguments:**
 
-        - None
+      - lst (list): The list to be sorted.
 
 ##### **Returns:**
 
-        - Sorted list
+      - list: The sorted list in ascending order.
 
 ---
 ### `square_root(num)`
@@ -742,7 +756,15 @@ Returns the speed of light in meters per second
         
 ---
 ### `planck_constant(self):`
-        pass
+
+Returns the Planck constant, denoted as h, in joule-seconds.
+
+The Planck constant is a physical constant that is fundamental to quantum mechanics.
+It relates the energy of a photon to its frequency and is approximately 6.626 x 10^-34 J*s.
+
+##### **Returns:**
+            
+            - float: The value of the Planck constant in joule-seconds.
     
 ### `pi(self):`
 
