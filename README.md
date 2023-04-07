@@ -13,11 +13,11 @@ A work in progress, incomplete, library full of mathematical algorithms, constan
 - [Rational Number](#rationalnumber-class)
 - [Integral Number](#integralnumber-class)
 
-
+---
 ## **Algorithm Class**
 This is a Python class that implements various algorithms, including finding the greatest common divisor using Euclid's algorithm, computing logarithms with a specified base, counting the occurrences of words in a text, and performing operations with fractions.
 
-### `addition(*args: Union[int, float]) -> Union[int, float]`
+### `addition#### **arguments:** Union[int, - loat]) -> Union[int, float]`
 Returns the sum of integers and/or floats.
 
 > ##### **Arguments:**
@@ -29,7 +29,7 @@ Returns the sum of integers and/or floats.
     Union[int, float]: The sum of the integers and/or floats in *args
 
 ---
-### `subtract(*args: Union[int, float]) -> Union[int, float]`
+### `subtract#### **arguments:** Union[int, - loat]) -> Union[int, float]`
 Returns integers or float of given numbers after being subtracted.
 
 > ##### **Arguments:**
@@ -41,7 +41,7 @@ Returns integers or float of given numbers after being subtracted.
     Union[int, float]: The result of subtracting the integers and/or floats in *args from the first argument
 
 ---
-### `multiply(*args: Union[int, float]) -> Union[int, float]`
+### `multiply#### **arguments:** Union[int, - loat]) -> Union[int, float]`
 Returns an integer or float of given numbers multiplied.
 
 > ##### **Arguments:**
@@ -192,7 +192,7 @@ Returns the product of multiple fractions.
 
 > ##### **Arguments:**
 
-        *args: An arbitrary number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
+    #### **arguments:** An arbitrar-  number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
 
 > ##### **Returns:**
 
@@ -203,13 +203,13 @@ Returns the product of multiple fractions.
         ValueError: If any of the arguments are not tuples of length 2 or if any of the denominators are 0.
 
 ---
-### `divide_fractions(self, *args: tuple[int, int]) -> tuple[int, int]`
+### `divide_fractions(self,#### **arguments:** tuple[int, - nt]) -> tuple[int, int]`
 
 Returns the result of dividing one fraction by another.
 
 > ##### **Arguments:**
 
-        *args: Two tuples, each with two values, representing the numerator and denominator of the two fractions.
+    #### **arguments:** Two tuples,- each with two values, representing the numerator and denominator of the two fractions.
 
 > ##### **Returns:**
 
@@ -708,10 +708,10 @@ Returns the tangent value of a number.
 
 Finds the smallest prime number greater than n.
 
-#### **Arguments:**
+> #### **Arguments:**
       - n (int): A positive integer.
 
-#### **Returns:**
+> #### **Returns:**
 
       - int: The smallest prime number greater than n.
             
@@ -720,24 +720,112 @@ Finds the smallest prime number greater than n.
 
 Return the arc tangent of x, in radians.
 
-#### ***Arguments:**
+> #### ***Arguments:**
+
       - x (float): The value whose arc tangent is to be returned.
 
-#### **Returns:**
+> #### **Returns:**
+
       - float: The arc tangent of x, in radians.
 
 ### `def atan_helper(x):`
 
 Helper function for atan. Computes the arc tangent of x in the interval [0, 1].
 
-#### **Arguments:**
+> #### **Arguments:**
+
       - x (float): The value whose arc tangent is to be returned.
 
-#### **Returns:**
+> #### **Returns:**
+
       - float: The arc tangent of x, in radians.
 
 
+### `def arctan(x):`
 
+Calculates the arctangent of x using a Taylor series approximation.
+
+> #### **Arguments:**
+
+        - x (float): A real number.
+
+> #### **Returns:**
+
+        - float: The arctangent of x in radians.
+
+        
+### `def sieve_of_eratosthenes(n: int) -> List[int]:`
+
+Returns a list of prime numbers up to n using the sieve of Eratosthenes algorithm.
+        
+> #### **Arguments:**
+
+        - n (int): the upper limit of the list.
+            
+> #### **Returns:**
+
+        - List[int]: a list of prime numbers up to n.
+
+    
+### `def zeta(s, zeta_1, n):`
+
+Returns the value of the Riemann zeta function.
+
+> #### **Arguments:**
+
+        - s (float): The argument of the zeta function.
+        - zeta_1 (complex): The initial value of the Riemann zeta function.
+        - n (int): The number of iterations to perform.
+
+> #### **Returns:**
+
+        - complex: The value of the Riemann zeta function.
+        
+
+### `def histogram(data, num_bins):`
+
+Compute the histogram of a list of data with a specified number of bins.
+
+> #### **Arguments:**
+
+        - data (list): A list of numeric data
+        - num_bins (int): The number of bins to use in the histogram
+
+> #### **Returns:**
+
+        - tuple: A tuple containing the counts for each bin and the edges of the bins
+
+
+### `def islice(iterable, start, stop, step=1):`
+
+Returns an iterator that produces a slice of elements from the given iterable.
+
+> #### **Arguments:**
+
+        - iterable (iterable): The iterable to slice.
+        - start (int): The index at which to start the slice.
+        - stop (int): The index at which to stop the slice.
+        - step (int, optional): The step size between slice elements. Defaults to 1.
+
+> #### **Returns:**
+
+        - iterator: An iterator that produces the slice of elements.
+
+### `def normal_distribution_cdf(x):`
+
+Calculates the cumulative distribution function (CDF) of a standard normal distribution at a given value.
+
+> #### **Arguments:**
+
+        - x (float): The value at which to calculate the CDF.
+
+> #### **Returns:**
+
+        - float: The CDF of the standard normal distribution at x, accurate to 10 decimal places.
+
+
+
+---
 ## **Constants Class**
 
 This is a Python class full of mathematical constants such a Pi or the speed of light.
@@ -775,6 +863,7 @@ The ratio of a circle's circumference to its diameter.
         - None
         
 > ##### **Returns:**
+
         Pi, π, to the 20th decimal
         3.141_592_653_589_793_238_46
         
@@ -790,6 +879,7 @@ In the system of Greek numerals, it has a value of 300.
         - None
         
 > ##### **Returns:**
+
         tau, uppercase Τ, lowercase τ, or τ, to the 20th decimal
         6.283_185_307_179_586_476_92
         
@@ -2304,11 +2394,31 @@ Returns the Taniguchi constant.
 
             - float: The value of the Taniguchi constant.
 
-
+---
 ## **Functions Class**
 
 A class containing various mathematical functions.
 
+### `gamma(self, x):`
+
+Compute the value of the gamma function at the given value of x.
+
+        Args:
+            x (float): The value at which the gamma function is to be evaluated.
+
+> ##### **Returns:**
+        
+        - float: The value of the gamma function at the given value of x.
+
+> ##### **Raises:**
+        
+        - ValueError: If x is negative and not an integer.
+
+> ##### **Notes:**
+
+            The gamma function is defined as the integral from zero to infinity of t^(x-1) * exp(-t) dt.
+            For positive integers, the gamma function can be computed recursively as (n-1)!.
+            For x <= 0, the gamma function is undefined, but we return NaN to avoid raising an error.
 
 ### `area_of_circle(self, r: float) -> float:`
 
@@ -2607,7 +2717,7 @@ Return the arc cosine of x, in radians.
 
 
 ---
-
+---
 ## **Sequences class:**
     
 ---
@@ -3013,7 +3123,7 @@ Computes the value of the metallic mean of x, which is the positive solution to 
 
         - mm(x): metallic mean of x.
 
-
+---
 ## **HyperbolicFunctions class:**
 
 A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech, and csch.
@@ -3114,7 +3224,7 @@ Returns the hyperbolic cosecant of x.
             return 1 / HyperbolicFunctions.sinh(x)
 
 
-
+---
 ## **ComplexNumber class:**
 
 A class representing a complex number.
@@ -3234,7 +3344,7 @@ Computes the modulus (magnitude) of the complex number.
 
 
 ##################
-
+---
 ## **RealNumber class:**
 
 A class representing a real number.
@@ -3520,7 +3630,7 @@ Computes the power of the real number to the given exponent.
             return RealNumber(self.value ** other)
 
 
-
+---
 ## **RationalNumber class:**
 
 A class representing a rational number.
@@ -3665,7 +3775,7 @@ Divides two rational numbers.
             return RationalNumber(numerator, denominator)
 
 ##
-
+---
 ## **IntegralNumber class:**
 
 A class representing integral numbers.
