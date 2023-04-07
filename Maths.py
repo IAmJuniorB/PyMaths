@@ -7,7 +7,7 @@ class Algorithm:
     def __init__(self):
         pass
 
-    def addition(self, *args: Union[int, float]) -> Union[int, float]:
+    def addition(self, *args: int | float) -> int | float:
         """Returns the sum of integers and/or floats"""
         try:
             total = sum(args)
@@ -15,7 +15,7 @@ class Algorithm:
             raise TypeError("Input must be numbers")
         return total
 
-    def subtract(self, *args: Union[int, float]) -> Union[int, float]:
+    def subtract(self, *args: int | float) -> int | float:
         """Returns integers or float of given numbers after being subtracted"""
         try:
             total = args[0] - sum(args[1:])
@@ -23,7 +23,7 @@ class Algorithm:
             raise TypeError("Input must be numbers")
         return total
 
-    def multiply(self, *args: Union[int, float]) -> Union[int, float]:
+    def multiply(self, *args: int | float) -> int | float:
         """Returns an integer or float of given numbers multiplied"""
         try:
             total = 1
@@ -33,7 +33,7 @@ class Algorithm:
             raise TypeError("Input must be numbers")
         return total
 
-    def division_float(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:
+    def division_float(self, dividend: int | float, divisor: int | float) -> int | float:
         """Returns a float of dividend divided by divisor"""
         try:
             result = dividend / divisor
@@ -43,7 +43,7 @@ class Algorithm:
             raise TypeError("Input must be a number")
         return result
 
-    def division_int(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:
+    def division_int(self, dividend: int | float, divisor: int | float) -> int | float:
         """Returns an integer of dividend divided by divisor"""
         try:
             result = dividend // divisor
@@ -53,7 +53,7 @@ class Algorithm:
             raise TypeError("Input must be a number")
         return result
 
-    def division_remainder(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:
+    def division_remainder(self, dividend: int | float, divisor: int | float) -> int | float:
         """Returns the remainder of dividend divided by divisor"""
         try:
             result = dividend % divisor
@@ -63,7 +63,7 @@ class Algorithm:
             raise TypeError("Input must be a number")
         return result
 
-    def power(self, base: Union[int, float], exponent: Union[int, float]) -> Union[int, float]:
+    def power(self, base: int | float, exponent: int | float) -> int | float:
         """Returns base to the power of exponent"""
         try:
             result = base ** exponent
@@ -490,16 +490,16 @@ class Algorithm:
             result = result * num // Algorithm.gcd(result, num)
         return result
 
-    def sort_numbers(numbers: List[Union[int, float]], reverse: bool = False) -> List[Union[int, float]]:
+    def sort_numbers(numbers: List[int | float], reverse: bool = False) -> List[int | float]:
         """
         This function takes a list of numbers and returns a sorted list in ascending or descending order.
 
         Parameters:
-        numbers (List[Union[int, float]]): A list of integers or floats to be sorted.
+        numbers (List[int | float]): A list of integers or floats to be sorted.
         reverse (bool, optional): If True, returns the list in descending order. Defaults to False.
 
         Returns:
-        List[Union[int, float]]: A sorted list in ascending or descending order.
+        List[int | float]: A sorted list in ascending or descending order.
 
         Example:
         >>> sort_numbers([5, 2, 9, 1, 5.5])
@@ -517,14 +517,14 @@ class Algorithm:
                         numbers[j], numbers[i] = numbers[i], numbers[j]
         return numbers
 
-    def binary_search(numbers: List[Union[int, float]], target: Union[int, float]) -> int:
+    def binary_search(numbers: List[int | float], target: int | float) -> int:
         """
         This function takes a sorted list of numbers and a target number and returns the index of the target number,
         or -1 if it is not found.
 
         Parameters:
-        numbers (List[Union[int, float]]): A sorted list of integers or floats.
-        target (Union[int, float]): The number to search for in the list.
+        numbers (List[int | float]): A sorted list of integers or floats.
+        target (int | float): The number to search for in the list.
 
         Returns:
         int: The index of the target number in the list, or -1 if it is not found.
@@ -807,7 +807,7 @@ class Algorithm:
         return clusters
 
    
-    def exp(self, num: Union[int, float]) -> Union[int, float]:
+    def exp(self, num: int | float) -> int | float:
         """
         Returns the exponential value of a number.
 
@@ -822,7 +822,7 @@ class Algorithm:
             result *= 2.71828
         return result
 
-    def absolute(self, num: Union[int, float]) -> Union[int, float]:
+    def absolute(self, num: int | float) -> int | float:
         """
         Returns the absolute value of a number.
 
@@ -838,7 +838,7 @@ class Algorithm:
             return num
 
 
-    def modulo(self, dividend: Union[int, float], divisor: Union[int, float]) -> Union[int, float]:
+    def modulo(self, dividend: int | float, divisor: int | float) -> int | float:
         """
         Returns the remainder of dividing the dividend by the divisor.
 
@@ -852,7 +852,7 @@ class Algorithm:
         return dividend % divisor
 
 
-    def sin(self, num: Union[int, float]) -> Union[int, float]:
+    def sin(self, num: int | float) -> int | float:
         """
         Returns the sine value of a number.
 
@@ -871,7 +871,7 @@ class Algorithm:
         return result
 
 
-    def cos(self, num: Union[int, float]) -> Union[int, float]:
+    def cos(self, num: int | float) -> int | float:
         """
         Returns the cosine value of a number.
 
@@ -890,7 +890,7 @@ class Algorithm:
         return result
 
 
-    def tan(self, num: Union[int, float]) -> Union[int, float]:
+    def tan(self, num: int | float) -> int | float:
         """
         Returns the tangent value of a number.
 
@@ -1068,7 +1068,48 @@ class Algorithm:
         # Return the counts and edges as a tuple
         return counts, bin_edges
 
+    def islice(iterable, start, stop, step=1):
+        """
+        Returns an iterator that produces a slice of elements from the given iterable.
 
+        Args:
+            iterable (iterable): The iterable to slice.
+            start (int): The index at which to start the slice.
+            stop (int): The index at which to stop the slice.
+            step (int, optional): The step size between slice elements. Defaults to 1.
+
+        Returns:
+            iterator: An iterator that produces the slice of elements.
+        """
+        for i, x in enumerate(iterable):
+            if i >= stop:
+                break
+            if i >= start and (i - start) % step == 0:
+                yield x
+
+    def normal_distribution_cdf(x):
+        """
+        Calculates the cumulative distribution function (CDF) of a standard normal distribution at a given value.
+
+        Args:
+            x (float): The value at which to calculate the CDF.
+
+        Returns:
+            float: The CDF of the standard normal distribution at x, accurate to 10 decimal places.
+        """
+        if x < -7:
+            return 0.0
+        elif x > 7:
+            return 1.0
+        else:
+            term = x
+            total = term
+            i = 1
+            while abs(term) > 0.0000000001:
+                term *= -x * x / (2 * i + 1)
+                total += term
+                i += 1
+            return round((total + 1) / 2, 10)
 
 ##################################################
 
@@ -1083,7 +1124,11 @@ class Constants:
         return 299_792_458
     
     def planck_constant(self):
-        pass
+        """
+        Returns the Planck constant in joule-seconds.
+        """
+        h = 6.62607015e-34  # Planck constant in joule-seconds
+        return h
     
     def pi(self):
         """The ratio of a circle's circumference to its diameter.
@@ -1435,8 +1480,8 @@ class Constants:
         Returns:
             float: The value of the Gelfond-Schneider constant.
         """
-        pass
-
+        return 2**(2**(1/2))
+    
     def second_favard_constant(self):
         """
         Returns the Second Favard constant, which is a mathematical constant defined as the limit of the 
@@ -1445,8 +1490,15 @@ class Constants:
         Returns:
             float: The value of the Second Favard constant.
         """
-        pass
-
+        n = 1
+        s = 0
+        while True:
+            s += 1/(2*n - 1) - 1/(2*n + 1)
+            n += 1
+            if n > 10_000:
+                break
+        return s
+    
     def golden_angle(self):
         """
         Returns the golden angle constant, which is the angle subtended by the smaller of the two angles 
@@ -1456,8 +1508,8 @@ class Constants:
         Returns:
             float: The value of the golden angle constant in degrees.
         """
-        pass
-
+        return (3 - MathFunctions.square_root(5)) * 180 / Constants.pi
+    
     def sierpinskis_constant(self):
         """
         Returns Sierpiński's constant, which is the fractal dimension of the Sierpiński triangle, a 
@@ -1466,7 +1518,7 @@ class Constants:
         Returns:
             float: The value of Sierpiński's constant.
         """
-        pass
+        return MathFunctions.log(3)/MathFunctions.log(2)
 
     def landau_ramanujan_constant(self):
         """
@@ -1477,7 +1529,7 @@ class Constants:
         Returns:
             float: The value of the Landau-Ramanujan constant.
         """
-        pass
+        return Algorithm.exp(Constants.pi * MathFunctions.square_root(163))
 
     def first_nielsen_ramanujan_constant(self):
         """
@@ -1488,7 +1540,7 @@ class Constants:
         Returns:
             float: The value of the First Nielsen-Ramanujan constant.
         """
-        pass
+        return 2 * MathFunctions.square_root(2) / MathFunctions.square_root(Constants.pi) * MathFunctions.prod([MathFunctions.gamma((n+1)/4)/((n/2)**((n+1)/4)) for n in range(1, 6)])
 
     def gieseking_constant(self):
         """
@@ -1498,7 +1550,7 @@ class Constants:
         Returns:
             float: The value of Gieseking's constant.
         """
-        pass
+        return (2*Constants.pi)**(-3/4)
 
     def bernsteins_constant(self):
         """
@@ -1508,7 +1560,7 @@ class Constants:
         Returns:
             float: The value of Bernstein's constant.
         """
-        pass
+        return Constants.pi/MathFunctions.square_root(2)
 
     def tribonacci_constant(self):
         """
@@ -1518,43 +1570,80 @@ class Constants:
         Returns:
             float: The value of the Tribonacci constant.
         """
-        pass
+        def f(x):
+            return x**3 - x**2 - x - 1
+        a, b = 1, 2
+        while abs(a-b) > 1e-10:
+            a, b = b, b - f(b)/(f(b)-f(a)) * (b-a)
+        return b
 
     
     def bruns_constant(self):
-        """Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
+        """
+        Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
         where prime(k) is the kth prime number.
 
         Returns:
             float: The value of Bruns constant, accurate to 42 decimal places.
         """
-        pass
+        primes = []
+        n = 2
+        while len(primes) < 100000:
+            if all(n % p != 0 for p in primes):
+                primes.append(n)
+            n += 1
+        return round(sum(1/p for p in primes), 42)
+
 
     def twin_primes_constant(self):
-        """Returns the limiting value of the sequence of twin primes (pairs of prime
+        """
+        Returns the limiting value of the sequence of twin primes (pairs of prime
         numbers that differ by 2).
 
         Returns:
             float: The value of the twin primes constant, accurate to 36 decimal places.
         """
-        pass
+        primes = []
+        n = 2
+        while len(primes) < 2000000:
+            if all(n % p != 0 for p in primes):
+                primes.append(n)
+            n += 1
+        twin_primes = [p for p in primes if p + 2 in primes]
+        return round(len(twin_primes) / len(primes), 36)
+
 
     def plastic_number(self):
-        """Returns the unique positive real root of x^3 = x + 1.
+        """
+        Returns the unique positive real root of x^3 = x + 1.
 
         Returns:
             float: The value of the plastic number, accurate to 32 decimal places.
         """
-        pass
+        x0 = 1.324717957244745
+        while True:
+            x1 = (1 + x0 + x0**2) / (3 * x0**2)
+            if abs(x1 - x0) < 1e-32:
+                return round(x1, 32)
+            x0 = x1
+
 
     def blochs_constant(self):
-        """Returns the limiting value of the sequence of numbers that represent the
+        """
+        Returns the limiting value of the sequence of numbers that represent the
         Bloch wall widths in ferromagnets.
 
         Returns:
             float: The value of Bloch's constant, accurate to 34 decimal places.
         """
-        pass
+        a = 1
+        b = 1
+        while True:
+            a, b = b, a + b
+            yield a / b**2
+
+            return round(sum(Algorithm.islice(self.blochs_constant(self), 100000)), 34)
+
 
     def z_score_975_percentile(self):
         """Returns the value that has 97.5% of the area under a standard normal distribution
@@ -1563,7 +1652,11 @@ class Constants:
         Returns:
             float: The value of the z-score at the 97.5th percentile, accurate to 9 decimal places.
         """
-        pass
+        n = 0.5
+        while True:
+            if Algorithm.normal_distribution_cdf(n) > 0.975:
+                return round(n, 9)
+            n += 0.000001
 
     def landaus_constant(self):
         """Returns the limiting value of the sequence of numbers that represent the
@@ -1573,7 +1666,12 @@ class Constants:
         Returns:
             float: The value of Landau's constant, accurate to 19 decimal places.
         """
-        pass
+        a = 1
+        b = 1
+        c = 1
+        for n in range(1, 10000):
+            a, b, c = b, c, (n - 1) * (a + b) - (n - 3) * c
+        return round(a / b, 19)
 
     def landaus_third_constant(self):
         """Returns the limiting value of the sequence of numbers that represent the
@@ -1583,7 +1681,12 @@ class Constants:
         Returns:
             float: The value of Landau's third constant, accurate to 20 decimal places.
         """
-        pass
+        a = 1
+        b = 1
+        c = 1
+        for n in range(1, 10000):
+            a, b, c = b, c, (n - 1) * (a + b) - (n - 3) * c
+        return round(a / b / (MathFunctions.square_root(2) * Algorithm.exp(1) * Algorithm.log(b)), 20)
 
     def prouhet_thue_morse_constant(self):
         """Returns the limiting value of the sequence of numbers that represent the
@@ -1593,7 +1696,16 @@ class Constants:
         Returns:
             float: The value of the Prouhet-Thue-Morse constant, accurate to 20 decimal places.
         """
-        pass
+        s = [1]
+        while True:
+            t = [1 - x for x in s]
+            s.extend(t)
+            if len(s) > 10000:
+                break
+        ones = sum(s)
+        zeros = len(s) - ones
+        return round(abs(ones - zeros) / len(s), 20)
+
     
     def golomb_dickman_constant(self):
         """The Golomb-Dickman constant represents the limiting distribution of the ratio of the k-th smallest
@@ -2437,7 +2549,6 @@ class Constants:
 ################################################
 
 
-
 class MathFunctions:
     """
     A class containing various mathematical functions.
@@ -2445,6 +2556,54 @@ class MathFunctions:
     
     def __init__(self):
         pass
+    
+    def gamma(self, x):
+        """
+        Compute the value of the gamma function at the given value of x.
+
+        Args:
+            x (float): The value at which the gamma function is to be evaluated.
+
+        Returns:
+            float: The value of the gamma function at the given value of x.
+
+        Raises:
+            ValueError: If x is negative and not an integer.
+
+        Notes:
+            The gamma function is defined as the integral from zero to infinity of t^(x-1) * exp(-t) dt.
+            For positive integers, the gamma function can be computed recursively as (n-1)!.
+            For x <= 0, the gamma function is undefined, but we return NaN to avoid raising an error.
+        """
+        if x.is_integer() and x <= 0:
+            return float('nan')
+        elif x == 1:
+            return 1
+        elif x < 1:
+            return self.gamma(x + 1) / x
+        else:
+            y = (2 * x - 1) / 2
+            result = 1
+            while y > 1:
+                result *= y
+                y -= 1
+            return result * MathFunctions.square_root(Constants.pi) / 2 ** x
+        
+    def prod(iterable):
+        """
+        Returns the product of all the elements in the given iterable.
+
+        Args:
+            iterable: An iterable of numeric values.
+
+        Returns:
+            The product of all the elements in the iterable. If the iterable is empty,
+            returns 1.
+        """
+        result = 1
+        for x in iterable:
+            result *= x
+        return result
 
     def area_of_circle(self, r: float) -> float:
         """
@@ -3890,7 +4049,7 @@ class IntegralNumber:
         """
         return IntegralNumber(self.value * other.value)
 
-    def divide(self, other: 'IntegralNumber') -> Union['IntegralNumber', None]:
+    def divide(self, other: 'IntegralNumber') -> 'IntegralNumber' | None:
         """
         Returns the quotient of this number and `other`.
 
@@ -3901,7 +4060,7 @@ class IntegralNumber:
 
         Returns:
         --------
-        Union[IntegralNumber, None]
+        IntegralNumber | None
             The quotient of this number and `other`. Returns None if `other` is zero.
         """
         if other.value == 0:
