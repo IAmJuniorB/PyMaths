@@ -17,7 +17,7 @@ A work in progress, incomplete, library full of mathematical algorithms, constan
 ## **Algorithm Class**
 This is a Python class that implements various algorithms, including finding the greatest common divisor using Euclid's algorithm, computing logarithms with a specified base, counting the occurrences of words in a text, and performing operations with fractions.
 
-### `addition#### **arguments:** Union[int, - loat]) -> Union[int, float]`
+### `addition Union[int, - loat]) -> Union[int, float]`
 Returns the sum of integers and/or floats.
 
 > ##### **Arguments:**
@@ -29,7 +29,7 @@ Returns the sum of integers and/or floats.
     Union[int, float]: The sum of the integers and/or floats in *args
 
 ---
-### `subtract#### **arguments:** Union[int, - loat]) -> Union[int, float]`
+### `subtract(int | float) -> int | float`
 Returns integers or float of given numbers after being subtracted.
 
 > ##### **Arguments:**
@@ -41,7 +41,7 @@ Returns integers or float of given numbers after being subtracted.
     Union[int, float]: The result of subtracting the integers and/or floats in *args from the first argument
 
 ---
-### `multiply#### **arguments:** Union[int, - loat]) -> Union[int, float]`
+### `multiply(int | float) -> int | float`
 Returns an integer or float of given numbers multiplied.
 
 > ##### **Arguments:**
