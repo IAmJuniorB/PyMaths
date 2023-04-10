@@ -1,4 +1,4 @@
-# **&Popf;yMaths Module**
+# **&Popf;&yopf;&Mopf;&aopf;&topf;&hopf;&sopf;**
 ══════════════════════
 > A work in progress, incomplete, library full of mathematical algorithms, constants, and functions.
 
