@@ -1,4 +1,4 @@
-# **PyMaths Module**
+# **&Popf;yMaths Module**
 ══════════════════════
 > A work in progress, incomplete, library full of mathematical algorithms, constants, and functions.
 
