@@ -1,4 +1,4 @@
-from Maths import *
+from src.utils.Algorithm import Algorithm
 
 
 class HyperbolicFunctions:

@@ -1,5 +1,5 @@
 from Algorithm import Algorithm
-from functions.MathFunctions import MathFunctions
+from src.functions.MathFunctions import MathFunctions
 
 from numpy import array, arange
 from scipy.integrate import quad
