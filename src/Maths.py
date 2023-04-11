@@ -1,7 +1,4 @@
-import functions
-import numbers
-import utils
-
+from src import functions, numbers, utils
 
 alg = utils.Algorithm()
 con = utils.Constants()

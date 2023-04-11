@@ -1,6 +1,6 @@
 from Algorithm import Algorithm
 from Constants import Constants
-from functions.MathFunctions import MathFunctions
+from src.functions.MathFunctions import MathFunctions
 
 
 class Sequences:
