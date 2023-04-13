@@ -1,6 +1,7 @@
 # **&Popf;&yopf;&Mopf;&aopf;&topf;&hopf;&sopf;**
-══════════════════════
-> A work in progress, incomplete, library full of mathematical algorithms, constants, and functions.
+
+═════════════
+> A forever work in progress library full of mathematical equations, constants, and algorithms.
 
 ## Table of Contents
 
