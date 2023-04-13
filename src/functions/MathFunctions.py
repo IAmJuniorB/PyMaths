@@ -1,4 +1,4 @@
-from Maths import *
+from src.utils import Algorithm, Constants
 
 
 class MathFunctions:

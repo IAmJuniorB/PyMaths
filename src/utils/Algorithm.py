@@ -143,7 +143,8 @@ class Algorithm:
         gcd = Algorithm.find_gcd(numerator, denominator)
         return (numerator // gcd, denominator // gcd)
 
-    def find_gcd(self, a, b):
+    @staticmethod
+    def find_gcd(a, b):
         """
         Finds the greatest common divisor of two numbers using Euclid's algorithm.
 
