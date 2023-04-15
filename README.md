@@ -26,13 +26,13 @@ Returns the sum of integers and/or floats.
 
 > ##### **Arguments:**
 
-    - *args [int | float]:
-        A variable-length argument list of integers and/or floats
+        - *args [int | float]:
+                A variable-length argument list of integers and/or floats
 
 > ##### **Returns:**
 
-    - [int | float]:
-        The sum of the integers and/or floats in *args
+        - [int | float]:
+                The sum of the integers and/or floats in *args
 
 ---
 ### `subtract(int | float) -> int | float`
@@ -41,13 +41,13 @@ Returns integers or float of given numbers after being subtracted.
 
 > ##### **Arguments:**
 
-    - *args ([int | float]):
-        A variable-length argument list of integers and/or floats
+        - *args ([int | float]):
+                A variable-length argument list of integers and/or floats
 
 > ##### **Returns:**
 
-    - [int | float]:
-        The result of subtracting the integers and/or floats in *args from the first argument
+        - [int | float]:
+                The result of subtracting the integers and/or floats in *args from the first argument
 
 ---
 ### `multiply(int | float) -> int | float`
@@ -56,13 +56,13 @@ Returns an integer or float of given numbers multiplied.
 
 > ##### **Arguments:**
 
-    - *args ([int | float]):
-        A variable-length argument list of integers and/or floats
+        - *args ([int | float]):
+                A variable-length argument list of integers and/or floats
     
 > ##### **Returns:**
 
-    - [int | float]:
-        The product of the integers and/or floats in *args
+        - [int | float]:
+                The product of the integers and/or floats in *args
 
 ---
 ### `division_float(dividend: [int | float], divisor: [int | float]) -> [int | float]`
@@ -71,16 +71,16 @@ Returns a float of dividend divided by divisor.
 
 > ##### **Arguments:**
 
-    - dividend ([int | float]):
-        The number to be divided (dividend)
+        - dividend ([int | float]):
+                The number to be divided (dividend)
 
-    - divisor ([int | float]):
-        The number to divide by (divisor)
+        - divisor ([int | float]):
+                The number to divide by (divisor)
     
 > ##### **Returns:**
 
-    - [int | float]:
-        The result of dividing the dividend by the divisor, as a float
+        - [int | float]:
+                The result of dividing the dividend by the divisor, as a float
 
 ---
 ### `division_int(dividend: [int | float], divisor: [int | float]) -> [int | float]`
@@ -89,16 +89,16 @@ Returns an integer of dividend divided by divisor.
 
 > ##### **Arguments:**
 
-    - dividend ([int | float]):
-        The number to be divided (dividend)
+        - dividend ([int | float]):
+                The number to be divided (dividend)
     
-    - divisor ([int | float]):
-        The number to divide by (divisor)
+        - divisor ([int | float]):
+                The number to divide by (divisor)
 
 > ##### **Returns:**
 
-    - [int | float]:
-        The result of dividing the dividend by the divisor, rounded down to the nearest integer
+        - [int | float]:
+                The result of dividing the dividend by the divisor, rounded down to the nearest integer
 
 ---
 ### `division_remainder(dividend: [int | float], divisor: [int | float]) -> [int | float]`
@@ -107,16 +107,16 @@ Returns the remainder of dividend divided by divisor.
 
 > ##### **Arguments:**
 
-    - dividend ([int | float]):
-        The number to be divided (dividend)
+        - dividend ([int | float]):
+                The number to be divided (dividend)
 
-    - divisor ([int | float]):
-        The number to divide by (divisor)
+        - divisor ([int | float]):
+                The number to divide by (divisor)
 
 > ##### **Returns:**
 
-    - [int | float]:
-        The remainder of dividing the dividend by the divisor
+        - [int | float]:
+                The remainder of dividing the dividend by the divisor
 
 ---
 ### `power(base: [int | float], exponent: [int | float]) -> [int | float]`
@@ -125,16 +125,16 @@ Returns base to the power of exponent.
 
 > ##### **Arguments:**
 
-    - base ([int | float]):
-        The base of the power operation
+        - base ([int | float]):
+                The base of the power operation
 
-    - exponent ([int | float]):
-        The exponent of the power operation
+        - exponent ([int | float]):
+                The exponent of the power operation
 
 > ##### **Returns:**
 
-    - [int | float]:
-        The result of raising the base to the power of the exponent
+        - [int | float]:
+                The result of raising the base to the power of the exponent
 
 ---
 ### `log(self, x, base=10)`
@@ -233,7 +233,7 @@ Returns the product of multiple fractions.
 
 > ##### **Arguments:**
 
-    - An arbitrary number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
+        - An arbitrary number of arguments. Each argument must be a tuple with two values, the numerator and denominator of a fraction.
 
 > ##### **Returns:**
 
@@ -251,7 +251,7 @@ Returns the result of dividing one fraction by another.
 
 > ##### **Arguments:**
 
-    - Two tuples, each with two values, representing the numerator and denominator of the two fractions.
+        - Two tuples, each with two values, representing the numerator and denominator of the two fractions.
 
 > ##### **Returns:**
 
@@ -298,12 +298,12 @@ This function converts a percantage `x` to a fraction.
 
 > ##### **Arguments:**
 
-      - x (float):
-        percentage
+        - x (float):
+                percentage
             
 > ##### **Returns:**
 
-      The fraction form of a percentage
+        The fraction form of a percentage
 
 ---
 ### `fraction_to_percentage(numerator: int, denominator: int) -> float`
@@ -312,35 +312,34 @@ This function converts a fraction given by `numerator` and `denominator` to a pe
 
 > ##### **Arguments:**
 
-      - numerator:
-        The numerator of the fraction.
+        - numerator:
+                The numerator of the fraction.
       
-      - denominator:
-        The denominator of the fraction.
+        - denominator:
+                The denominator of the fraction.
 
 > ##### **Returns:**
 
-      The fraction as a percentage.
+        The fraction as a percentage.
             
 ---
 ### `linear_search(lst, target)`
 
-Searches for the target element in the given list and returns the index if found,
-otherwise returns -1.
+Searches for the target element in the given list and returns the index if found, otherwise returns -1.
 
 > ##### **Arguments:**
 
-    - lst : list
-        The list to be searched.
+        - lst : list
+                The list to be searched.
 
-    - target : any
-        The target element to be searched for in the list.
+        - target : any
+                The target element to be searched for in the list.
 
 > ##### **Returns:**
 
-    - int
-        If the target is found in the list, the index of the target is returned.
-        Otherwise, -1 is returned.
+        - int
+                If the target is found in the list, the index of the target is returned.
+                Otherwise, -1 is returned.
 
 ---
 ### `binary_search(lst, target)`
@@ -351,16 +350,16 @@ the index if found, otherwise returns -1.
 > ##### **Arguments:**
 
         - lst : list
-            The list to be searched.
+                The list to be searched.
 
         - target : any
-            The target element to be searched for in the list.
+                The target element to be searched for in the list.
 
 > ##### **Returns:**
 
         - int
-            If the target is found in the list, the index of the target is returned.
-            Otherwise, -1 is returned.
+                If the target is found in the list, the index of the target is returned.
+                Otherwise, -1 is returned.
 
 ---
 ### `bubble_sort(lst)`
@@ -399,13 +398,13 @@ Sorts the given list in ascending order using merge sort and returns the sorted 
 
 > ##### **Arguments:**
 
-      - lst (list):
-        The list to be sorted.
+        - lst (list):
+                The list to be sorted.
 
 > ##### **Returns:**
 
-      - list:
-        The sorted list in ascending order.
+        - list:
+                The sorted list in ascending order.
 
 ---
 ### `square_root(num)`
@@ -414,13 +413,13 @@ This function computes the square root of a given number `num` using the Babylon
 
 > ##### **Arguments:**
 
-      - num (float):
-        The number to find the square root of.
+        - num (float):
+                The number to find the square root of.
 
 > ##### **Returns:**
 
-      - float:
-        The square root of the given number.
+        - float:
+                The square root of the given number.
 
 ---
 ### `factorial(num)`
@@ -429,13 +428,13 @@ This function computes the factorial of a given number `num`.
 
 > ##### **Arguments:**
       
-    - num (int):
-        The number to find the factorial of.
+        - num (int):
+                The number to find the factorial of.
 
 > ##### **Returns:**
 
-      - int:
-        The factorial of the given number.
+        - int:
+                The factorial of the given number.
         
 ---
 ### `fibonacci(n)`
@@ -444,13 +443,13 @@ Compute the nth number in the Fibonacci sequence.
 
 > ##### **Arguments:**
 
-    - n (int):
-        The index of the desired Fibonacci number.
+        - n (int):
+                The index of the desired Fibonacci number.
 
 > ##### **Returns:**
 
-    - int:
-        The nth number in the Fibonacci sequence.
+        - int:
+                The nth number in the Fibonacci sequence.
     
 ---
 ### `is_prime(num)`
@@ -459,13 +458,13 @@ Check whether a given number is prime.
 
 > ##### **Arguments:**
 
-    - num (int):
-        The number to check for primality.
+        - num (int):
+                The number to check for primality.
 
 > ##### **Returns:**
 
-    - bool:
-        True if the number is prime, False otherwise.
+        - bool:
+                True if the number is prime, False otherwise.
     
 ---
 ### `gcd(*args)`
@@ -474,13 +473,13 @@ Compute the greatest common divisor of two or more numbers.
 
 > ##### **Arguments:**
 
-    - *args (int):
-        Two or more numbers to find the GCD of.
+        - *args (int):
+                Two or more numbers to find the GCD of.
 
 > ##### **Returns:**
 
-    - int:
-        The greatest common divisor of the given numbers.
+        - int:
+                The greatest common divisor of the given numbers.
     
 ---
 ### `lcm(*args)`
@@ -489,13 +488,13 @@ Compute the least common multiple of two or more numbers.
 
 > ##### **Arguments:**
 
-    - *args (int):
-        Two or more numbers to find the LCM of.
+        - *args (int):
+                Two or more numbers to find the LCM of.
 
 > ##### **Returns:**
 
-    - int:
-        The least common multiple of the given numbers.
+        - int:
+                The least common multiple of the given numbers.
     
 ---
 ### `sort_numbers(numbers: List[[int | float]], reverse: bool = False) -> List[[int | float]]`
@@ -504,16 +503,16 @@ This function takes a list of numbers and returns a sorted list in ascending or 
 
 > ##### **Arguments:**
 
-    - numbers (List[[int | float]]):
-        A list of integers or floats to be sorted.
+        - numbers (List[[int | float]]):
+                A list of integers or floats to be sorted.
 
-    - reverse (bool, optional):
-        If True, returns the list in descending order. Defaults to False.
+        - reverse (bool, optional):
+                If True, returns the list in descending order. Defaults to False.
 
 > ##### **Returns:**
 
-    - List[[int | float]]:
-        A sorted list in ascending or descending order.
+        - List[[int | float]]:
+                A sorted list in ascending or descending order.
     
 ---
 ### `binary_search(numbers: List[[int | float]], target: [int | float]) -> int`
@@ -522,16 +521,16 @@ This function takes a sorted list of numbers and a target number and returns the
 
 > ##### **Arguments:**
 
-    - numbers (List[[int | float]]):
-        A sorted list of integers or floats.
+        - numbers (List[[int | float]]):
+                A sorted list of integers or floats.
     
-    - target ([int | float]):
-        The number to search for in the list.
+        - target ([int | float]):
+                The number to search for in the list.
 
 > ##### **Returns:**
 
-    - int:
-        The index of the target number in the list, or -1 if it is not found.
+        - int:
+                The index of the target number in the list, or -1 if it is not found.
     
 ---
 ### `linear_regression(x, y)`
@@ -540,16 +539,16 @@ Calculates the equation of the line of best fit (y = mx + b) for the given x and
 
 > ##### **Arguments:**
 
-    - x (list):
-        A list of x values.
+        - x (list):
+                A list of x values.
 
-    - y (list):
-        A list of corresponding y values.
+        - y (list):
+                A list of corresponding y values.
 
 > ##### **Returns:**
 
-    - tuple:
-        A tuple containing the slope (m) and y-intercept (b) of the line of best fit.
+        - tuple:
+                A tuple containing the slope (m) and y-intercept (b) of the line of best fit.
     
 ---    
 ### `matrix_addition`
@@ -558,15 +557,15 @@ This function takes in two matrices A and B of the same size, and returns their 
 
 > ##### **Arguments:**
 
-    - A:
-        A list of lists of floats representing the first matrix.
+        - A:
+                A list of lists of floats representing the first matrix.
     
-    - B:A
-         list of lists of floats representing the second matrix.
+        - B:
+                 list of lists of floats representing the second matrix.
 
 > ##### **Returns:**
 
-    A list of lists of floats representing the sum of the matrices.
+        A list of lists of floats representing the sum of the matrices.
     
 ---
 ### `matrix_multiplication`
@@ -575,14 +574,14 @@ This function multiplies two matrices A and B and returns the resulting matrix.
 
 > ##### **Arguments:**
 
-    - A:
-        The first matrix.
-    - B:
-        The second matrix.
+        - A:
+                The first matrix.
+        - B:
+                The second matrix.
 
 > ##### **Returns:**
 
-    A list of lists of floats representing the product of matrices A and B.
+        A list of lists of floats representing the product of matrices A and B.
     
 ---
 ### `matrix_inversion`
@@ -591,12 +590,12 @@ This function inverts a matrix A and returns the resulting matrix.
 
 > ##### **Arguments:**
 
-    - A:
-        The matrix to be inverted.
+        - A:
+                The matrix to be inverted.
 
 > ##### **Returns:**
 
-    A list of lists of floats representing the inverted matrix of A.
+        A list of lists of floats representing the inverted matrix of A.
     
 ---
 ### `matrix_multiplication(A, B):`
@@ -613,7 +612,7 @@ Multiplies two matrices A and B and returns the resulting matrix.
 
 > ##### **Returns:**
 
-        list[list[float]]:
+        - list[list[float]]:
                 The matrix product of A and B.
 
 ---
@@ -623,12 +622,12 @@ Inverts a matrix A and returns the resulting matrix.
 
 > ##### **Arguments:**
 
-        A (list[list[float]]):
+        - A (list[list[float]]):
                 The matrix to be inverted.
 
 > ##### **Returns:**
 
-        list[list[float]]:
+        - list[list[float]]:
                 The inverted matrix of A.
         
 ---        
@@ -847,13 +846,13 @@ Finds the smallest prime number greater than n.
 
 > #### **Arguments:**
 
-      - n (int):
-        A positive integer.
+        - n (int):
+                A positive integer.
 
 > #### **Returns:**
 
-      - int:
-        The smallest prime number greater than n.
+        - int:
+                The smallest prime number greater than n.
             
 
 ### `def atan(x):`
@@ -862,13 +861,13 @@ Return the arc tangent of x, in radians.
 
 > #### ***Arguments:**
 
-      - x (float):
-        The value whose arc tangent is to be returned.
+        - x (float):
+                The value whose arc tangent is to be returned.
 
 > #### **Returns:**
 
-      - float
-        The arc tangent of x, in radians.
+        - float
+                The arc tangent of x, in radians.
 
 ### `def atan_helper(x):`
 
@@ -876,13 +875,13 @@ Helper function for atan. Computes the arc tangent of x in the interval [0, 1].
 
 > #### **Arguments:**
 
-      - x (float):
-        The value whose arc tangent is to be returned.
+        - x (float):
+                The value whose arc tangent is to be returned.
 
 > #### **Returns:**
 
-      - float
-        The arc tangent of x, in radians.
+        - float
+                The arc tangent of x, in radians.
 
 
 ### `def arctan(x):`
@@ -1020,7 +1019,7 @@ It relates the energy of a photon to its frequency and is approximately 6.626 x 
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 The value of the Planck constant in joule-seconds.
     
 ### `pi(self):`
@@ -1175,8 +1174,8 @@ It can also be calculated as the sum of the infinite series
         
 > ##### **Returns:**
 
-      - e:
-        Value to the 20th decimal. math.e
+        - e:
+                Value to the 20th decimal. math.e
       
       2.718_281_828_459_045_235_36
       
@@ -1191,8 +1190,8 @@ Natural logarithm of 2.
         
 > ##### **Returns:**
         
-      - ln 2:
-        Value to the 30th decimal. math.log(2)
+        - ln 2:
+                Value to the 30th decimal. math.log(2)
       
       0.693_147_180_559_945_309_417_232_121_458
       
@@ -1207,8 +1206,8 @@ The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous 
         
 > ##### **Returns:**
         
-      - ϖ:
-        Value to the 20th decimal. math.sqrt(2)
+        - ϖ:
+                Value to the 20th decimal. math.sqrt(2)
       
       2.622_057_554_292_119_810_46 
       
@@ -1224,10 +1223,10 @@ Defined as the limiting difference between the harmonic series and the natural l
         
 > ##### **Returns:**
 
-      - γ:
-        Value to the 50th decimal
+        - γ:
+                Value to the 50th decimal
       
-      0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
+        0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
       
 ---
 ### `Erdős_Borwein_constant(self):`
@@ -1240,10 +1239,10 @@ The sum of the reciprocals of the Mersenne numbers
         
 > ##### **Returns:**
         
-      - E:
-        Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
+        - E:
+                Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
       
-      1.606_695_152_415_291_763_78
+        1.606_695_152_415_291_763_78
       
 ---
 ### `omega_constant(self):`
@@ -1256,10 +1255,10 @@ Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
         
 > ##### **Returns:**
         
-      - Ω:
-        Value to the 30th decimal
+        - Ω:
+                Value to the 30th decimal
       
-      0.567_143_290_409_783_872_999_968_662_210
+        0.567_143_290_409_783_872_999_968_662_210
       
 ---
 ### `Apérys_constant(self):`
@@ -1272,10 +1271,10 @@ The sum of the reciprocals of the positive cubes.
         
 > ##### **Returns:**
         
-      - ζ(3):
-        Value to the 45th decimal
+        - ζ(3):
+                Value to the 45th decimal
       
-      1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
+        1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
       
 ---
 ### `laplace_limit(self):`
@@ -1288,9 +1287,9 @@ The maximum value of the eccentricity for which a solution to Kepler's equation,
         
 > ##### **Returns:**
 
-      Value to the 35th decimal
+        Value to the 35th decimal
       
-      0.662_743_419_349_181_580_974_742_097_109_252_90
+        0.662_743_419_349_181_580_974_742_097_109_252_90
       
 ---
 ### `ramanujan_soldner_constant(self):`
@@ -1303,10 +1302,10 @@ A mathematical constant defined as the unique positive zero of the logarithmic i
         
 > ##### **Returns:**
 
-      - μ ≈:
-        Value to the 45th decimal
+        - μ ≈:
+                Value to the 45th decimal
       
-      1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
+        1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
       
 ---
 ### `gauss_constant(self):`
@@ -1320,10 +1319,10 @@ Bernoulli's lemniscate to its diameter, analogous to the definition of π for th
         
 > ##### **Returns:**
         
-      - G == ϖ /π ≈ 0.8346268:
-        Value to the 7th decimal
+        - G == ϖ /π ≈ 0.8346268:
+                Value to the 7th decimal
       
-      0.834_626_8
+        0.834_626_8
       
 ---
 ### `second_hermite_constant(self):`
@@ -1336,10 +1335,10 @@ _summary_
         
 > ##### **Returns:**
         
-      - γ2 :
-        Value to the 20th decimal
+        - γ2 :
+                Value to the 20th decimal
       
-      1.154_700_538_379_251_529_01
+        1.154_700_538_379_251_529_01
 ---
 ### `liouvilles_constant(self):`
 
@@ -1352,10 +1351,10 @@ there exists a pair of integers (p,q) with q>1.
         
 > ##### **Returns:**
 
-      - L:
-        Value to the 119th decimal
+        - L:
+                Value to the 119th decimal
       
-      0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
+        0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
 
 ---
 ### `first_continued_fraction(self):`
@@ -1368,10 +1367,10 @@ _summary_
         
 > ##### **Returns:**
         
-      - C_{1}:
-        _description_
+        - C_{1}:
+                _description_
       
-      0.697_774_657_964_007_982_01
+        0.697_774_657_964_007_982_01
       
 ---
 ### `ramanujans_constant(self):`
@@ -1384,10 +1383,10 @@ The transcendental number, which is an almost integer, in that it is very close 
         
 > ##### **Returns:**
 
-      - e**{{\pi {\sqrt {163}}}}:
-        Value to the 18th decimal
+        - e**{{\pi {\sqrt {163}}}}:
+                Value to the 18th decimal
       
-      262_537_412_640_768_743.999_999_999_999_250_073
+        262_537_412_640_768_743.999_999_999_999_250_073
       
 ---
 ### `glaisher_kinkelin_constant(self):`
@@ -1400,10 +1399,10 @@ A mathematical constant, related to the K-function and the Barnes G-function.
         
 > ##### **Returns:**
 
-      - A:
-        Value to the 20th decimal
+        - A:
+                Value to the 20th decimal
       
-      1.282_427_129_100_622_636_87
+        1.282_427_129_100_622_636_87
       
 ---
 ### `catalans_constant(self):`
@@ -1412,18 +1411,18 @@ Computes the Catalan's constant to the specified number of decimal places using 
 
 > ##### **Arguments:**
 
-      - n (int):
-        The number of terms to sum to approximate the constant.
+        - n (int):
+                The number of terms to sum to approximate the constant.
 
 > ##### **Returns:**
 
-      - float:
-        The computed value of the Catalan's constant.
+        - float:
+                The computed value of the Catalan's constant.
 
 > ##### **Example:**
 
-      >>> catalan_constant(1000000)
-      0.915965594177219
+        >>> catalan_constant(1000000)
+        0.915965594177219
 
 ---
 ### `dottie_number(self):`
@@ -1443,8 +1442,8 @@ The Dottie number is a constant that arises in the study of iterative methods an
     
 > ##### **Example:**
 
-       >>> dottie_number()
-       0.73908513321516064165
+        >>> dottie_number()
+        0.73908513321516064165
 
 ---
 ### `meissel_mertens_constant(self):`
@@ -1461,10 +1460,10 @@ This function uses a precomputed value of M to return the constant to the 40th d
         
 > ##### **Returns:**
 
-      - M (float):
-        The Meissel-Mertens constant M to the 40th decimal place.
+        - M (float):
+                The Meissel-Mertens constant M to the 40th decimal place.
       
-      return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
+        return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
 
 > ##### **Example:**
 
@@ -1482,10 +1481,10 @@ The ratio, for any parabola, of the arc length of the parabolic segment formed b
         
 > ##### **Returns:**
 
-      - P:
-        Value to the 20th decimal
+        - P:
+                Value to the 20th decimal
       
-      2.295_587_149_392_638_074_03
+        2.295_587_149_392_638_074_03
       
 ---
 ### `cahens_constant(self):`
@@ -1510,14 +1509,14 @@ Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Gelfond's Constant, which is approximately 23.1406926327792690057292.
 
-            return self.eulers_constant**self.pi
+        return self.eulers_constant**self.pi
     
 ---
 ### `gelfond_schneider_constant(self):`
@@ -1527,14 +1526,14 @@ Returns the Gelfond-Schneider constant, which is a transcendental number defined
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Gelfond-Schneider constant.
 
-            pass
+        pass
 
 ---
 ### `second_favard_constant(self):`
@@ -1544,14 +1543,14 @@ arithmetic mean of the reciprocal of consecutive odd numbers, or approximately 0
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Second Favard constant.
 
-            pass
+        pass
 
 ---
 ### `golden_angle(self):`
@@ -1562,14 +1561,14 @@ formed by dividing the circumference of a circle in the golden ratio. It is equa
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the golden angle constant in degrees.
 
-            pass
+        pass
 
 ---
 ### `sierpinskis_constant(self):`
@@ -1579,14 +1578,14 @@ self-similar fractal shape. It is equal to log(3)/log(2), or approximately 1.585
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Sierpiński's constant.
 
-            pass
+        pass
 
 ---
 ### `landau_ramanujan_constant(self):`
@@ -1597,14 +1596,14 @@ asymptotic expansion of the partition function. It is equal to e^(pi * sqrt(163)
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Landau-Ramanujan constant.
 
-            pass
+        pass
 
 ---
 ### `first_nielsen_ramanujan_constant(self):`
@@ -1615,14 +1614,14 @@ or approximately 0.866081804933.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the First Nielsen-Ramanujan constant.
 
-            pass
+        pass
 
 ---
 ### `gieseking_constant(self):`
@@ -1632,14 +1631,14 @@ harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.751125544464
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Gieseking's constant.
 
-            pass
+        pass
 
 ---
 ### `bernsteins_constant(self):`
@@ -1649,14 +1648,14 @@ Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Bernstein's constant.
 
-            pass
+        pass
 
 ---
 ### `tribonacci_constant(self):`
@@ -1666,14 +1665,14 @@ of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        float:
                 The value of the Tribonacci constant.
 
-            pass
+        pass
 
     
 ---
@@ -1684,14 +1683,14 @@ where prime(k) is the kth prime number.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Bruns constant, accurate to 42 decimal places.
 
-            pass
+        pass
 
 ---
 ### `twin_primes_constant(self):`
@@ -1701,14 +1700,14 @@ numbers that differ by 2).
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the twin primes constant, accurate to 36 decimal places.
 
-            pass
+        pass
 
 ---
 ### `plastic_number(self):`
@@ -1717,14 +1716,14 @@ Returns the unique positive real root of x^3 = x + 1.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the plastic number, accurate to 32 decimal places.
 
-            pass
+        pass
 
 ---
 ### `blochs_constant(self):`
@@ -1734,14 +1733,14 @@ Bloch wall widths in ferromagnets.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Bloch's constant, accurate to 34 decimal places.
 
-            pass
+        pass
 
 ---
 ### `z_score_975_percentile(self):`
@@ -1751,14 +1750,14 @@ to the left of it.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the z-score at the 97.5th percentile, accurate to 9 decimal places.
 
-            pass
+        pass
 
 ---
 ### `landaus_constant(self):`
@@ -1769,14 +1768,14 @@ greater than log(n).
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Landau's constant, accurate to 19 decimal places.
 
-            pass
+        pass
 
 ---
 ### `landaus_third_constant(self):`
@@ -1787,14 +1786,14 @@ greater than sqrt(n) * log(n).
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Landau's third constant, accurate to 20 decimal places.
 
-            pass
+        pass
 
 ---
 ### `prouhet_thue_morse_constant(self):`
@@ -1805,14 +1804,14 @@ sequence.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Prouhet-Thue-Morse constant, accurate to 20 decimal places.
 
-            pass
+        pass
     
 ---
 ### `golomb_dickman_constant(self):`
@@ -1822,14 +1821,14 @@ number in a sample of n random numbers to n^(1/k) as n approaches infinity. It i
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Golomb-Dickman constant G, approximately 0.6243299885435508.
 
-            return 0.6243299885435508
+        return 0.6243299885435508
 
 ---
 ### `lebesgue_asymptotic_behavior_constant(self):`
@@ -1839,14 +1838,14 @@ of a random walk in d dimensions. It is denoted by L(d).
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Lebesgue asymptotic behavior constant L(3), approximately 3.912023005428146.
 
-            return 3.912023005428146
+        return 3.912023005428146
 
 ---
 ### `feller_tornier_constant(self):`
@@ -1856,14 +1855,14 @@ returns to the origin infinitely often. It is denoted by F.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Feller-Tornier constant F, approximately 0.259183.
 
-            return 0.259183
+        return 0.259183
 
 ---
 ### `base_10_champernowne_constant(self):`
@@ -1873,11 +1872,11 @@ successive integers, and is represented by C_10.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the base 10 Champernowne constant C_10, approximately 0.12345678910111213...
 
 ---
@@ -1888,14 +1887,14 @@ with integer coefficients. It is denoted by s.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - complex:
+        - complex:
                 The value of the Salem constant s, approximately (1+sqrt(2)) * e^(pi*sqrt(2)/4).
 
-            return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
+        return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
     
 ---
 ### `khinchins_constant(self):`
@@ -1905,14 +1904,14 @@ It is denoted by K.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Khinchin constant K, approximately 2.6854520010653065.
 
-            return 2.6854520010653065
+        return 2.6854520010653065
 
 ---
 ### `levys_constant(self):`
@@ -1925,19 +1924,19 @@ root-mean-square difference, as the sample size tends to infinity. The value of 
             
 > ##### **Symbol:**
 
-            - γ or K
+        - γ or K
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Levy's constant.
     
-            return 1.330_387_242_462_352_174_342_46
+        return 1.330_387_242_462_352_174_342_46
 
 ---
 ### `levys_constant_two(self):`
@@ -1946,14 +1945,14 @@ Calculate the value of e to the power of Levy's constant.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of e to the power of Levy's constant.
 
-            return Algorithm.exp(self.levys_constant)
+        return Algorithm.exp(self.levys_constant)
 
 ---
 ### `copeland_erdos_constant(self):`
@@ -1962,15 +1961,15 @@ Copeland-Erdős constant is the smallest number that is not the sum of
 distinct non-negative integer powers of 2.
 
 > ##### **Symbol:**
-            - C_E
+        - C_E
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float
+        - float
     
 ---
 ### `gompertz_constant(self):`
@@ -1980,15 +1979,15 @@ it is the limit of the ratio between the life expectancy of a certain age
 and the remaining life expectancy.
 
 > ##### **Symbol:**
-            - γ
+        - γ
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float
+        - float
     
 ---
 ### `de_bruijn_newman_constant(self):`
@@ -1999,15 +1998,15 @@ no zeros in the complex plane.
 
 > ##### **Symbol:**
 
-            - λ
+        - λ
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float
+        - float
 
 ---
 ### `van_der_pauw_constant():`
@@ -2018,18 +2017,18 @@ resistances to the constant π.
 
 > ##### **Symbol:**
 
-            - K
+        - K
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the van der Pauw constant to the highest precision.
 
-            return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
+        return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
 
 ---
 ### `magic_angle(self):`
@@ -2040,18 +2039,18 @@ phenomena.
 
 > ##### **Symbol:**
 
-            - θ
+        - θ
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The magic angle in radians.
 
-            return Constants.arctan(Algorithm.square_root(3))
+        return Constants.arctan(Algorithm.square_root(3))
 
 
 ---
@@ -2060,11 +2059,11 @@ phenomena.
 Calculates the arctangent of x using a Taylor series approximation.
 
 > ##### **Arguments:**
-            - x (float): A real number.
+        - x (float): A real number.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The arctangent of x in radians.
 
 
@@ -2077,11 +2076,11 @@ of the prime number.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Artin's constant to the highest precision.
 
 ---
@@ -2093,18 +2092,18 @@ length n as n approaches infinity.
 
 > ##### **Symbol:**
 
-            -
+        -
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Porter's constant to the highest precision.
 
-            return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
+        return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
 
 ---
 ### `euler_mascheroni_constant(self):`
@@ -2119,11 +2118,11 @@ Note that the function uses the 'math' module to calculate the natural logarithm
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Euler-Mascheroni constant to a high degree of accuracy.
 
 ---
@@ -2134,18 +2133,18 @@ decagon to its diameter.
 
 > ##### **Symbol:**
 
-            - 
+        - 
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Lochs' constant to the highest precision.
 
-            return Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2)))))
+        return Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2)))))
 
 
 ---
@@ -2157,18 +2156,18 @@ the content of the hypercube circumscribed about the tesseract.
 
 > ##### **Symbol:**
 
-            -
+        -
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of De Vries' tesseract constant to the highest precision.
 
-            return Algorithm.square_root(2 + Algorithm.square_root(2)) / (2 * Algorithm.square_root(2))
+        return Algorithm.square_root(2 + Algorithm.square_root(2)) / (2 * Algorithm.square_root(2))
 
 
 ---
@@ -2179,18 +2178,18 @@ It appears in the square ice problem in statistical mechanics.
 
 > ##### **Symbol:**
 
-            - 
+        - 
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Lieb's square ice constant to the highest precision.
 
-            return Constants.pi / (Algorithm.square_root(3) * Algorithm.log((3 + Algorithm.square_root(8)) / 2))
+        return Constants.pi / (Algorithm.square_root(3) * Algorithm.log((3 + Algorithm.square_root(8)) / 2))
 
 ---
 ### `nivens_constant(self):`
@@ -2200,15 +2199,15 @@ when written in decimal base. The constant is also related to the convergence of
 
 > ##### **Symbol:**
 
-            - 
+        - 
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - int:
+        - int:
                 The value of Niven's constant to the highest precision.
     
 ---
@@ -2220,15 +2219,15 @@ where the double exponential function is f(n) = A^(3^n).
 
 > ##### **Symbol:**
 
-            - A
+        - A
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float
+        - float
 
 ---
 ### `stephens_constant(self):`
@@ -2237,10 +2236,10 @@ Stephens' constant is a mathematical constant that arises in the study of prime 
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 The value of Stephens' constant.
 
-            return 0.5364798721
+        return 0.5364798721
 
 ---
 ### `regular_paperfolding_sequence(self):`
@@ -2249,10 +2248,10 @@ The regular paperfolding sequence is a binary sequence that arises in the study 
 
 > ##### **Returns:**
 
-            - str:
+        - str:
                 The regular paperfolding sequence as a string of 0s and 1s.
 
-            return "110110011100100"
+        return "110110011100100"
 
 ---
 ### `reciprocal_fibonacci_constant(self):`
@@ -2261,10 +2260,10 @@ The reciprocal Fibonacci constant is a real number that arises in the study of F
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the reciprocal Fibonacci constant.
 
-            return 1.1319882488
+        return 1.1319882488
     
 ---
 ### `chvatal_sankoff_constant(self):`
@@ -2273,14 +2272,14 @@ Chvátal–Sankoff constant for the binary alphabet.
 
 > ##### **Symbol:**
 
-            - \gamma_{2}
+        - \gamma_{2}
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 The value of the Chvátal–Sankoff constant.
 
-            return 1.7550327129
+        return 1.7550327129
     
 ---
 ### `Feigenbaum_constant(self):`
@@ -2289,14 +2288,14 @@ Feigenbaum constant δ
 
 > ##### **Symbol:**
 
-            - \delta
+        - \delta
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Feigenbaum constant.
 
-            return 4.6692016091
+        return 4.6692016091
     
 ---
 ### `chaitins_constant(self):`
@@ -2305,16 +2304,16 @@ Chaitin's constant is a real number that encodes the halting probability of a un
 
 > ##### **Symbol:**
             
-            - \Omega
+        - \Omega
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation of the constant fails.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Chaitin's constant.
     
 ---
@@ -2324,20 +2323,20 @@ Robbins' constant is a mathematical constant that arises in the study of mathema
 
 > ##### **Symbol:**
         
-            - \Delta (3)
+        - \Delta (3)
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation of the constant fails.
 
 > ##### **Arguments:**
 
-            - none
+        - none
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Robbins' constant.
     
 ---
@@ -2347,10 +2346,10 @@ Weierstrass' constant is a mathematical constant that arises in the study of ell
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of Weierstrass' constant.
 
-            return 0.5174790617
+        return 0.5174790617
     
 ---
 ### `fransen_robinson_constant(self):`
@@ -2361,16 +2360,16 @@ x^3 - x^2 - 1 = 0
         
 > ##### **Symbol:**
 
-            - F
+        - F
         
 > ##### **Raises:**
             
-            - ValueError:
+        - ValueError:
                 If the root cannot be found
         
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The Fransen-Robinson constant
     
 ---
@@ -2380,16 +2379,16 @@ Returns Feigenbaum constant alpha which relates to the period-doubling bifurcati
 
 > ##### **Symbol:**
 
-            - \alpha 
+        - \alpha 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the constant cannot be computed
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 The Feigenbaum constant alpha
     
 ---
@@ -2399,16 +2398,16 @@ Returns the Second du Bois-Reymond constant, which is defined as the supremum of
 
 > ##### **Symbol:**
             
-            - C_{2}
+        - C_{2}
             
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the constant cannot be computed
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The Second du Bois-Reymond constant
     
 ---
@@ -2418,16 +2417,16 @@ Returns the Erdős–Tenenbaum–Ford constant which is related to the distribut
 
 > ##### **Symbol:**
             
-            - \delta
+        - \delta
             
 > ##### **Raises:**
             
-            - ValueError:
+        - ValueError:
                 If the constant cannot be computed
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 The Erdős–Tenenbaum–Ford constant
     
 ---
@@ -2439,20 +2438,20 @@ x^3 - x - 1 = 0
 
 > ##### **Symbol:**
 
-            - \lambda
+        - \lambda
             
 > ##### **Arguments:**
             
-            - Self (object): The class instance
+        - Self (object): The class instance
 
 > ##### **Raises:**
             
-            - ValueError:
+        - ValueError:
                 If the root cannot be found
 
 > ##### **Returns:**
             
-            - float:
+        - float:
                 Conway's constant
     
 ---
@@ -2463,18 +2462,18 @@ Returns Backhouse's constant which is defined as the smallest k such that the in
 
 > ##### **Symbol:**
 
-            - B
+        - B
             
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the constant cannot be computed
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 Backhouse's constant
 
 ---
@@ -2485,18 +2484,18 @@ Returns Viswanath's constant, which is the limiting distribution of the ratios o
 
 > ##### **Symbol:**
 
-            - \Omega_V
+        - \Omega_V
             
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the constant cannot be computed
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 Viswanath's constant
 
 ---
@@ -2509,18 +2508,18 @@ Returns Komornik-Loreti constant, which is the unique positive real root of the 
 
 > ##### **Symbol:**
 
-            - q
+        - q
             
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the root cannot be found
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 Komornik-Loreti constant
     
 ---
@@ -2532,25 +2531,25 @@ of the poles of a certain rational function.
 
 > ##### **Symbol:**
 
-            - {\displaystyle \beta ^{\star }}
+        - {\displaystyle \beta ^{\star }}
 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation fails to converge.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The computed value of the Embree-Trefethen constant.
 
 > ##### **References:**
 
-            * Embree, M., & Trefethen, L. N. (1999). Growth and decay of random plane waves. 
-            Communications on Pure and Applied Mathematics, 52(7), 757-788.
-            * Trefethen, L. N. (2006). Spectral methods in MATLAB. SIAM.
+        - * Embree, M., & Trefethen, L. N. (1999). Growth and decay of random plane waves. 
+        - Communications on Pure and Applied Mathematics, 52(7), 757-788.
+        - * Trefethen, L. N. (2006). Spectral methods in MATLAB. SIAM.
     
 ---
 ### `heath_brown_moroz_constant(self):`
@@ -2561,26 +2560,26 @@ constant and the reciprocal of a certain infinite product.
 
 > ##### **Symbol:**
 
-            - C
+        - C
 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation fails to converge.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The computed value of the Heath-Brown-Moroz constant.
 
 > ##### **References:**
 
-            * Heath-Brown, D. R. (1984). The fourth power moment of the Riemann zeta-function. 
-            Proceedings of the London Mathematical Society, 49(2), 475-513.
-            * Moroz, B. Z. (2001). Some constants associated with the Riemann zeta function. 
-            Journal of Mathematical Analysis and Applications, 261(1), 235-251.
+        - * Heath-Brown, D. R. (1984). The fourth power moment of the Riemann zeta-function. 
+        - Proceedings of the London Mathematical Society, 49(2), 475-513.
+        - * Moroz, B. Z. (2001). Some constants associated with the Riemann zeta function. 
+        - Journal of Mathematical Analysis and Applications, 261(1), 235-251.
     
 ---
 ### `mrb_constant():`
@@ -2591,25 +2590,25 @@ raising the first n positive integers to their own powers and then summing them 
 
 > ##### **Symbol:**
 
-            - S
+        - S
 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation fails to converge.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The computed value of the MRB constant.
 
 > ##### **References:**
 
-            * Borwein, J. M., Bradley, D. M., & Crandall, R. E. (1999). Computational strategies for 
-            the Riemann zeta function. Journal of Computational and Applied Mathematics, 121(1-2), 247-296.
-            * Bradley, D. M. (2004). Multiple q-zeta values. Ramanujan Journal, 8(1), 39-65.
+        - * Borwein, J. M., Bradley, D. M., & Crandall, R. E. (1999). Computational strategies for 
+        - the Riemann zeta function. Journal of Computational and Applied Mathematics, 121(1-2), 247-296.
+        - * Bradley, D. M. (2004). Multiple q-zeta values. Ramanujan Journal, 8(1), 39-65.
 
 ---
 ### `prime_constant():`
@@ -2619,25 +2618,25 @@ minus ln(ln(2)).
 
 > ##### **Symbol:**
 
-            - \rho 
+        - \rho 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the computation fails to converge.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The computed value of the Prime constant.
 
 > ##### **References:**
 
-            * Meissel, L. (1879). Bestimmung einer zahl, welche zu der logaritmierten primzahlfunction 
-            π(x) in näherung den nämlichen wert wie die zahl x selbst gibt. 
-            Journal für die Reine und Angewandte Mathematik, 1879(88), 127-133.
-            * Lehmer, D. H. (1959). List of computed values of the prime-counting function π(x) 
-            from x= 10^6 to x= 10^20. U. S. National Bureau of Standards Applied Mathematics Series, 46.
+        - * Meissel, L. (1879). Bestimmung einer zahl, welche zu der logaritmierten primzahlfunction 
+        - π(x) in näherung den nämlichen wert wie die zahl x selbst gibt. 
+        - Journal für die Reine und Angewandte Mathematik, 1879(88), 127-133.
+        - * Lehmer, D. H. (1959). List of computed values of the prime-counting function π(x) 
+        - from x= 10^6 to x= 10^20. U. S. National Bureau of Standards Applied Mathematics Series, 46.
 
 ---
 ### `somos_quadratic_recurrence_constant():`
@@ -2647,18 +2646,18 @@ Returns the Somos quadratic recurrence constant.
 
 > ##### **Symbol:**
 
-            - \sigma
+        - \sigma
                 
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the calculation is not valid.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Somos quadratic recurrence constant.
 
 ---
@@ -2669,18 +2668,18 @@ Returns the Foias constant.
 
 > ##### **Symbol:**
 
-            - \alpha
+        - \alpha
             
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the calculation is not valid.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Foias constant.
 
 ---
@@ -2691,16 +2690,16 @@ Returns the logarithmic capacity of the unit disk.
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the calculation is not valid.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the logarithmic capacity.
 
-            return 2
+        return 2
 
 ---
 ### `taniguchi_constant(self):`
@@ -2710,13 +2709,13 @@ Returns the Taniguchi constant.
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the calculation is not valid.
 
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the Taniguchi constant.
 
 ---
@@ -2743,9 +2742,9 @@ Compute the value of the gamma function at the given value of x.
 
 > ##### **Notes:**
 
-            The gamma function is defined as the integral from zero to infinity of t^(x-1) * exp(-t) dt.
-            For positive integers, the gamma function can be computed recursively as (n-1)!.
-            For x <= 0, the gamma function is undefined, but we return NaN to avoid raising an error.
+        - The gamma function is defined as the integral from zero to infinity of t^(x-1) * exp(-t) dt.
+        - For positive integers, the gamma function can be computed recursively as (n-1)!.
+        - For x <= 0, the gamma function is undefined, but we return NaN to avoid raising an error.
 
 ### `area_of_circle(self, r: float) -> float:`
 
@@ -2845,7 +2844,8 @@ Calculates the factorial of a given number.
 
 > ##### **Returns:**
 
-        The factorial of n.
+        - int:
+                The factorial of n.
 
         fact = 1
         for i in range(1, n+1):
@@ -2889,7 +2889,8 @@ Calculates the least common multiple of two numbers.
 
 > ##### **Returns:**
 
-        The least common multiple of a and b.
+        - int:
+                The least common multiple of a and b.
 
         return a * b // self.gcd(a, b)
 
@@ -2944,11 +2945,11 @@ Calculates the natural logarithm of a given number.
         The natural logarithm of x.
 
         if x <= 0:
-            return float('nan')
+        return float('nan')
         elif x == 1:
-            return 0.0
+        return 0.0
         else:
-            return Functions.integrate(1/x, 1, x)
+        return Functions.integrate(1/x, 1, x)
 
 ---
 ### `integrate(f, a, b):`
@@ -3009,7 +3010,8 @@ Calculates the volume of a cylinder given its radius and height.
 
 > ##### **Returns:**
 
-        The volume of the cylinder.
+        - float:
+                The volume of the cylinder.
 
         return 3.14159265358979323846 * r ** 2 * h
 
@@ -3063,14 +3065,16 @@ Return a float with the magnitude of x and the sign of y.
 
 > ##### **Arguments:**
 
-      - x (float):
-        The magnitude of the result.
-      - y (float): The sign of the result.
+        - x (float):
+                The magnitude of the result.
+        
+        - y (float):
+                The sign of the result.
 
 > ##### **Returns:**
 
-      - float
-        A float with the magnitude of x and the sign of y.
+        - float
+                A float with the magnitude of x and the sign of y.
 
 
 ---
@@ -3081,16 +3085,15 @@ Return the arc cosine of x, in radians.
 
 > ##### **Arguments:**
 
-      - x (float):
-        The value whose arc cosine is to be returned.
+        - x (float):
+                The value whose arc cosine is to be returned.
 
 > ##### **Returns:**
 
-      - floa
-        The arc cosine of x, in radians.
+        - float
+                The arc cosine of x, in radians.
 
 
----
 ---
 ## **Sequences class:**
     
@@ -3101,19 +3104,19 @@ The nth harmonic number is the sum of the reciprocals of the first n natural num
 
 > ##### **Symbol:**
 
-            - H_n
+        - H_n
 
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 The number of terms to include in the sum.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the nth harmonic number.
 
-            return sum(1/i for i in range(1, n+1))
+        return sum(1/i for i in range(1, n+1))
     
 ---
 ### `gregory_coefficients(self, n: int) -> float:`
@@ -3123,23 +3126,23 @@ which provides an approximate value of pi.
 
 > ##### **Symbol:**
 
-            - G_n
+        - G_n
 
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 The index of the Gregory coefficient to be calculated.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the nth Gregory coefficient.
 
-            if n == 0:
+        if n == 0:
                 return 1
-            elif n % 2 == 0:
+        elif n % 2 == 0:
                 return 0
-            else:
+        else:
                 return -2 / (n * Constants.pi) * self.gregory_coefficients(n-1)
     
 ---
@@ -3150,25 +3153,25 @@ and other areas of mathematics, including algebra and calculus.
 
 > ##### **Symbol:**
 
-            - B_n
+        - B_n
 
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 The index of the Bernoulli number to be calculated.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the nth Bernoulli number.
 
-            if n == 0:
+        if n == 0:
                 return 1
-            elif n == 1:
+        elif n == 1:
                 return -0.5
-            else:
+        else:
                 sum_term = sum(MathFunctions.combination(n+1, k) * self.bernoulli_number(k) / (n+1-k) for k in range(1, n))
-                return 1 - sum_term
+        return 1 - sum_term
     
 ---
 ### `hermite_constants(self, n: int) -> float:`
@@ -3178,21 +3181,21 @@ and is related to the normalization of the wave functions of the oscillator.
 
 > ##### **Symbol:**
 
-            - H_n
+        - H_n
 
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 The index of the Hermite constant to be calculated.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the nth Hermite constant.
 
-            if n == 0:
+        if n == 0:
                 return 1
-            else:
+        else:
                 return (-1)**n * Algorithm.factorial(n-1)
     
 ---
@@ -3203,19 +3206,19 @@ and related topics in number theory.
 
 > ##### **Symbol:**
 
-            - C_n
+        - C_n
 
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 The index of the Hafner-Sarnak-McCurley constant to be calculated.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The value of the nth Hafner-Sarnak-McCurley constant.
 
-            return sum(Algorithm.exp(-n/p)/p for p in Algorithm.sieve_of_eratosthenes(2*n+1))
+        return sum(Algorithm.exp(-n/p)/p for p in Algorithm.sieve_of_eratosthenes(2*n+1))
     
     
 ---
@@ -3225,30 +3228,30 @@ Returns the nth Stieltjes constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Stieltjes constant.
             
-            if n == 1:
+        if n == 1:
                 return 0.57721566490153286060651209  # gamma
-            elif n == 2:
+        elif n == 2:
                 return 1.20205690315959428539973816  # G
-            elif n == 3:
+        elif n == 3:
                 return 1.79175946922805500081247735  # pi^2/6
-            elif n == 4:
+        elif n == 4:
                 return 2.9456101084887218059356      # 7*G - 4*pi^2/3
-            elif n == 5:
+        elif n == 5:
                 return 4.4428829381583661417149      # 3*zeta(3) - 2*G
-            else:
+        else:
                 raise ValueError("The index n should be between 1 and 5.")
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/StieltjesConstants.html
+        - https://mathworld.wolfram.com/StieltjesConstants.html
             
 ---
 ### `favard_constants(self, n: int) -> float:`
@@ -3257,25 +3260,25 @@ Returns the nth Favard constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Favard constant.
 
-            if n < 1:
+        if n < 1:
                 raise ValueError("The index n should be a positive integer.")
-            elif n == 1:
+        elif n == 1:
                 return 1
-            else:
+        else:
                 return sum([Sequences.favard_constants(self, i) * Sequences.favard_constants(self, n-i) / (i+n-i-1) 
                             for i in range(1, n)])
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/FavardConstants.html
+        - https://mathworld.wolfram.com/FavardConstants.html
         
         
 ---
@@ -3285,25 +3288,25 @@ Returns the nth generalized Bruns constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth generalized Bruns constant.
 
-            if n < 1:
+        if n < 1:
                 raise ValueError("The index n should be a positive integer.")
-            elif n == 1:
+        elif n == 1:
                 return 1
-            else:
+        else:
                 return sum([abs(Sequences.generalized_bruns_constant(self, i) - Sequences.generalized_bruns_constant(self, i-1)) 
                             for i in range(2, n+1)]) + 1
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/GeneralizedBrunsConstant.html
+        - https://mathworld.wolfram.com/GeneralizedBrunsConstant.html
         
 ---
 ### `champernowne_constants(self, n: int) -> float:`
@@ -3312,25 +3315,25 @@ Returns the nth Champernowne constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Champernowne constant.
 
-            if n < 1:
+        if n < 1:
                 raise ValueError("n should be a positive integer")
-            if n == 1:
-                return 0.12345678910111213141516171819202122
-            else:
+        if n == 1:
+        return 0.12345678910111213141516171819202122
+        else:
                 prev = self.champernowne_constants(n-1)
-                return float(str(prev) + str(n+8))
+        return float(str(prev) + str(n+8))
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/ChampernowneConstant.html
+        - https://mathworld.wolfram.com/ChampernowneConstant.html
 
 
 ---
@@ -3340,24 +3343,24 @@ Returns the nth Lagrange number.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - int:
+        - int:
                 the nth Lagrange number.
 
-            if n < 1:
+        if n < 1:
                 raise ValueError("n should be a positive integer")
-            if n == 1:
+        if n == 1:
                 return 1
-            else:
+        else:
                 return n * self.lagrange_number(n-1) - (-1)**n
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/LagrangeNumber.html
+        - https://mathworld.wolfram.com/LagrangeNumber.html
     
 ---
 ### `fellers_coin_tossing_constants(self, n: int) -> float:`
@@ -3366,22 +3369,22 @@ Returns the nth Feller's coin-tossing constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Feller's coin-tossing constant.
 
-            result = 0
-            for k in range(n + 1):
+        result = 0
+        for k in range(n + 1):
                 result += (-1) ** k / (2 ** (2 ** k))
-            return result
+        return result
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/FellersCoin-TossingConstants.html
+        - https://mathworld.wolfram.com/FellersCoin-TossingConstants.html
     
 ---
 ### `stoneham_number(self, n: int) -> int:`
@@ -3390,22 +3393,22 @@ Returns the nth Stoneham number.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - int:
+        - int:
                 the nth Stoneham number.
             
-            if n == 0:
+        if n == 0:
                 return 1
-            else:
+        else:
                 return (3 * Sequences.stoneham_number(n - 1) + 1) // 2
 
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/StonehamNumber.html
+        - https://mathworld.wolfram.com/StonehamNumber.html
     
 ---
 ### `beraha_constants(self, n: int) -> float:`
@@ -3414,22 +3417,22 @@ Returns the nth Beraha constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Beraha constant.
 
-            if n == 0:
+        if n == 0:
                 return 1
-            else:
+        else:
                 return 1 + 1 / Sequences.beraha_constants(n - 1)
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/BerahasConstant.html
+        - https://mathworld.wolfram.com/BerahasConstant.html
     
 ---
 ### `chvatal_sankoff_constants(self, n: int) -> float:`
@@ -3438,23 +3441,23 @@ Returns the nth Chvátal-Sankoff constant.
         
 > ##### **Arguments:**
 
-            - n (int):
+        - n (int):
                 the index of the sequence.
             
 > ##### **Returns:**
 
-            - float:
+        - float:
                 the nth Chvátal-Sankoff constant.
 
-            result = 0
-            for k in range(n + 1):
+        result = 0
+        for k in range(n + 1):
                 binom = MathFunctions.comb(2 ** k, k)
                 result += (-1) ** k * binom ** 2
-            return result
+        return result
             
 > ##### **Reference:**
 
-            - https://mathworld.wolfram.com/Chvatal-SankoffConstants.html
+        - https://mathworld.wolfram.com/Chvatal-SankoffConstants.html
     
 ---
 ### `hyperharmonic_number(self, n: int, p: int) -> float:`
@@ -3522,7 +3525,7 @@ Computes the value of the metallic mean of x, which is the positive solution to 
         
 > ##### **Arguments:**
 
-        - x - (float):
+        - x(float):
                 The value for which to compute the metallic mean.
         
 > ##### **Returns:**
@@ -3545,8 +3548,8 @@ A class representing the six hyperbolic functions: sinh, cosh, tanh, coth, sech,
 
 > ##### **References:**
 
-        * Weisstein, E. W. (n.d.). Hyperbolic functions. MathWorld--A Wolfram Web Resource. 
-        Retrieved October 11, 2021, from https://mathworld.wolfram.com/HyperbolicFunctions.html
+        - * Weisstein, E. W. (n.d.). Hyperbolic functions. MathWorld--A Wolfram Web Resource.
+        - Retrieved October 11, 2021, from https://mathworld.wolfram.com/HyperbolicFunctions.html
 
 ---
 ### `sinh(x):`
@@ -3555,15 +3558,15 @@ Returns the hyperbolic sine of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x (float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic sine of x.
 
-            return (Algorithm.exp(x) - Algorithm.exp(-x)) / 2
+        return (Algorithm.exp(x) - Algorithm.exp(-x)) / 2
 
 ---
 ### `cosh(x):`
@@ -3572,15 +3575,15 @@ Returns the hyperbolic cosine of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x (float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic cosine of x.
 
-            return (Algorithm.exp(x) + Algorithm.exp(-x)) / 2
+        return (Algorithm.exp(x) + Algorithm.exp(-x)) / 2
 
 ---
 ### `tanh(x):`
@@ -3589,15 +3592,15 @@ Returns the hyperbolic tangent of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x (float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic tangent of x.
 
-            return HyperbolicFunctions.sinh(x) / HyperbolicFunctions.cosh(x)
+        return HyperbolicFunctions.sinh(x) / HyperbolicFunctions.cosh(x)
 
 ---
 ### `coth(x):`
@@ -3606,15 +3609,15 @@ Returns the hyperbolic cotangent of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x (float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic cotangent of x.
 
-            return 1 / HyperbolicFunctions.tanh(x)
+        return 1 / HyperbolicFunctions.tanh(x)
 
 ---
 ### `sech(x):`
@@ -3623,15 +3626,15 @@ Returns the hyperbolic secant of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x (float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic secant of x.
 
-            return 1 / HyperbolicFunctions.cosh(x)
+        return 1 / HyperbolicFunctions.cosh(x)
 
 ---
 ### `csch(x):`
@@ -3640,15 +3643,15 @@ Returns the hyperbolic cosecant of x.
 
 > ##### **Arguments:**
 
-            - x (float):
+        - x(float):
                 The input value in radians.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The hyperbolic cosecant of x.
 
-            return 1 / HyperbolicFunctions.sinh(x)
+        return 1 / HyperbolicFunctions.sinh(x)
 
 
 ---
@@ -3659,6 +3662,7 @@ A class representing a complex number.
 > ##### **Attributes:**
 
         - real (float): The real part of the complex number.
+
         - imag (float): The imaginary part of the complex number.
 
 ---
@@ -3668,8 +3672,9 @@ Initializes a complex number.
 
 > ##### **Arguments:**
 
-            - real (float): The real part of the complex number.
-            - imag (float): The imaginary part of the complex number.
+        - real (float): The real part of the complex number.
+
+        - imag (float): The imaginary part of the complex number.
 
 ---
 ### `__repr__(self):`
@@ -3678,10 +3683,10 @@ Returns a string representation of the complex number.
 
 > ##### **Returns:**
 
-            - str:
+        - str:
                 A string representation of the complex number.
 
-            return f"{self.real} + {self.imag}j"
+        return f"{self.real} + {self.imag}j"
 
 ---
 ### `__add__(self, other):`
@@ -3690,13 +3695,13 @@ Adds two complex numbers.
 
 > ##### **Arguments:**
 
-            - other (ComplexNumber): The complex number to add.
+        - other (ComplexNumber): The complex number to add.
 
 > ##### **Returns:**
 
-            - ComplexNumber: The sum of the two complex numbers.
+        - ComplexNumber: The sum of the two complex numbers.
 
-            return ComplexNumber(self.real + other.real, self.imag + other.imag)
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
 
 ---
 ### `__sub__(self, other):`
@@ -3705,13 +3710,13 @@ Subtracts two complex numbers.
 
 > ##### **Arguments:**
 
-            - other (ComplexNumber): The complex number to subtract.
+        - other (ComplexNumber): The complex number to subtract.
 
 > ##### **Returns:**
 
-            - ComplexNumber: The difference of the two complex numbers.
+        - ComplexNumber: The difference of the two complex numbers.
 
-            return ComplexNumber(self.real - other.real, self.imag - other.imag)
+        return ComplexNumber(self.real - other.real, self.imag - other.imag)
 
 ---
 ### `__mul__(self, other):`
@@ -3720,15 +3725,15 @@ Multiplies two complex numbers.
 
 > ##### **Arguments:**
 
-            - other (ComplexNumber): The complex number to multiply.
+        - other (ComplexNumber): The complex number to multiply.
 
 > ##### **Returns:**
 
-            - ComplexNumber: The product of the two complex numbers.
+        - ComplexNumber: The product of the two complex numbers.
 
-            real = self.real * other.real - self.imag * other.imag
-            imag = self.real * other.imag + self.imag * other.real
-            return ComplexNumber(real, imag)
+        real = self.real * other.real - self.imag * other.imag
+        imag = self.real * other.imag + self.imag * other.real
+        return ComplexNumber(real, imag)
 
 ---
 ### `__truediv__(self, other):`
@@ -3737,16 +3742,16 @@ Divides two complex numbers.
 
 > ##### **Arguments:**
 
-            - other (ComplexNumber): The complex number to divide.
+        - other (ComplexNumber): The complex number to divide.
 
 > ##### **Returns:**
 
-            - ComplexNumber: The quotient of the two complex numbers.
+        - ComplexNumber: The quotient of the two complex numbers.
 
-            denom = other.real**2 + other.imag**2
-            real = (self.real * other.real + self.imag * other.imag) / denom
-            imag = (self.imag * other.real - self.real * other.imag) / denom
-            return ComplexNumber(real, imag)
+        denom = other.real**2 + other.imag**2
+        real = (self.real * other.real + self.imag * other.imag) / denom
+        imag = (self.imag * other.real - self.real * other.imag) / denom
+        return ComplexNumber(real, imag)
 
 ---
 ### `conjugate(self):`
@@ -3755,9 +3760,9 @@ Computes the conjugate of the complex number.
 
 > ##### **Returns:**
 
-            - ComplexNumber: The conjugate of the complex number.
+        - ComplexNumber: The conjugate of the complex number.
 
-            return ComplexNumber(self.real, -self.imag)
+        return ComplexNumber(self.real, -self.imag)
 
 ---
 ### `modulus(self):`
@@ -3766,13 +3771,12 @@ Computes the modulus (magnitude) of the complex number.
 
 > ##### **Returns:**
 
-            - float:
+        - float:
                 The modulus of the complex number.
 
-            return (self.real**2 + self.imag**2)**0.5
+        return (self.real**2 + self.imag**2)**0.5
 
 
-##################
 ---
 ## **RealNumber class:**
 
@@ -3785,12 +3789,12 @@ Initializes a new RealNumber object with the given value.
 
 > ##### **Parameters:**
 
-            - value (float):
+        - value (float):
                 The value of the real number.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object.
 
             self.value = value
@@ -3802,10 +3806,10 @@ Returns a string representation of the real number.
 
 > ##### **Returns:**
 
-            - str:
+        - str:
                 A string representation of the real number.
 
-            return str(self.value)
+        return str(self.value)
 
 ---
 ### `__repr__(self):`
@@ -3814,10 +3818,10 @@ Returns a string representation of the real number.
 
 > ##### **Returns:**
 
-            - str:
+        - str:
                 A string representation of the real number.
 
-            return str(self.value)
+        return str(self.value)
 
 ---
 ### `__eq__(self, other):`
@@ -3826,19 +3830,19 @@ Checks whether the real number is equal to another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is equal to the other object, False otherwise.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return self.value == other.value
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return self.value == other
-            else:
+        else:
                 return False
 
 ---
@@ -3848,15 +3852,15 @@ Checks whether the real number is not equal to another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is not equal to the other object, False otherwise.
 
-            return not self.__eq__(other)
+        return not self.__eq__(other)
 
 ---
 ### `__lt__(self, other):`
@@ -3865,19 +3869,19 @@ Checks whether the real number is less than another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is less than the other object, False otherwise.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return self.value < other.value
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return self.value < other
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -3887,19 +3891,19 @@ Checks whether the real number is less than or equal to another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is less than or equal to the other object, False otherwise.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return self.value <= other.value
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return self.value <= other
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -3909,19 +3913,19 @@ Checks whether the real number is greater than another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is greater than the other object, False otherwise.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return self.value > other.value
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return self.value > other
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -3931,19 +3935,19 @@ Checks whether the real number is greater than or equal to another object.
 
 > ##### **Parameters:**
 
-            - other (object):
+        - other (object):
                 The object to compare with.
 
 > ##### **Returns:**
 
-            - bool:
+        - bool:
                 True if the real number is greater than or equal to the other object, False otherwise.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return self.value >= other.value
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return self.value >= other
-            else:
+        else:
                 return NotImplemented
         
 ---
@@ -3953,19 +3957,19 @@ Adds two RealNumber objects.
 
 > ##### **Parameters:**
 
-            - other (RealNumber or float):
+        - other (RealNumber or float):
                 The RealNumber object or float to add.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object with the sum of the two numbers.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return RealNumber(self.value + other.value)
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return RealNumber(self.value + other)
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -3975,19 +3979,19 @@ Subtracts two RealNumber objects.
 
 > ##### **Parameters:**
 
-            - other (RealNumber or float):
+        - other (RealNumber or float):
                 The RealNumber object or float to subtract.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object with the difference of the two numbers.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return RealNumber(self.value - other.value)
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return RealNumber(self.value - other)
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -3997,19 +4001,19 @@ Multiplies two RealNumber objects.
 
 > ##### **Parameters:**
 
-            - other (RealNumber or float):
+        - other (RealNumber or float):
                 The RealNumber object or float to multiply.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object with the product of the two numbers.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return RealNumber(self.value * other.value)
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return RealNumber(self.value * other)
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -4019,19 +4023,19 @@ Divides two RealNumber objects.
 
 > ##### **Parameters:**
 
-            - other (RealNumber or float):
+        - other (RealNumber or float):
                 The RealNumber object or float to divide by.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object with the quotient of the two numbers.
 
-            if isinstance(other, RealNumber):
+        if isinstance(other, RealNumber):
                 return RealNumber(self.value / other.value)
-            elif isinstance(other, float):
+        elif isinstance(other, float):
                 return RealNumber(self.value / other)
-            else:
+        else:
                 return NotImplemented
 
 ---
@@ -4041,10 +4045,10 @@ Returns the absolute value of the RealNumber object.
 
 > ##### **Returns:**
 
-            - RealNumber: 
+        - RealNumber: 
                 A new RealNumber object with the absolute value of the number.
 
-            return RealNumber(abs(self.value))
+        return RealNumber(abs(self.value))
 
 ---
 ### `__neg__(self):`
@@ -4053,10 +4057,10 @@ Returns the negation of the RealNumber object.
 
 > ##### **Returns:**
 
-            - RealNumber:
+        - RealNumber:
                 A new RealNumber object with the negation of the number.
 
-            return RealNumber(-self.value)
+        return RealNumber(-self.value)
 
 ---
 ### `sqrt(self):`
@@ -4065,10 +4069,10 @@ Returns the square root of the RealNumber object.
 
 > ##### **Returns:**
 
-            - RealNumber:
+        - RealNumber:
                 A new RealNumber object with the square root of the number.
 
-            return RealNumber(self.value ** 0.5)
+        return RealNumber(self.value ** 0.5)
     
 ---
 ### `__pow__(self, other):`
@@ -4077,15 +4081,15 @@ Computes the power of the real number to the given exponent.
 
 > ##### **Parameters:**
 
-            - other (float):
+        - other (float):
                 The exponent.
 
 > ##### **Returns:**
 
-            - RealNumber:
+        - RealNumber:
                 A new RealNumber object with the result of the power operation.
 
-            return RealNumber(self.value ** other)
+        return RealNumber(self.value ** other)
 
 
 ---
@@ -4126,22 +4130,22 @@ Initializes a rational number with the given numerator and denominator.
 
 > ##### **Arguments:**
 
-            - numerator (int):
+        - numerator (int):
                 The numerator of the rational number.
 
-            - denominator (int):
+        - denominator (int):
                 The denominator of the rational number.
 
 > ##### **Raises:**
 
-            - ValueError:
+        - ValueError:
                 If the denominator is zero.
 
-            if denominator == 0:
+        if denominator == 0:
                 raise ValueError("Denominator cannot be zero")
-            self.numerator = numerator
-            self.denominator = denominator
-            self.simplify()
+        self.numerator = numerator
+        self.denominator = denominator
+        self.simplify()
 
 ---
 ### `__str__(self):`
@@ -4170,17 +4174,17 @@ Computes the greatest common divisor of two numbers a and b.
 
 > ##### **Arguments:**
 
-            - a (int): The first number.
-            - b (int): The second number.
+        - a (int): The first number.
+        - b (int): The second number.
 
 > ##### **Returns:**
 
-            - int:
+        - int:
                 The greatest common divisor of a and b.
 
-            while b:
+        while b:
                 a, b = b, a % b
-            return a
+        return a
 
 ---
 ### `add(self, other):`
@@ -4189,15 +4193,15 @@ Adds two rational numbers.
 
 > ##### **Arguments:**
 
-            - other (RationalNumber): The other rational number.
+        - other (RationalNumber): The other rational number.
 
 > ##### **Returns:**
 
-            - RationalNumber: The sum of the two rational numbers.
+        - RationalNumber: The sum of the two rational numbers.
 
-            numerator = self.numerator * other.denominator + other.numerator * self.denominator
-            denominator = self.denominator * other.denominator
-            return RationalNumber(numerator, denominator)
+        numerator = self.numerator * other.denominator + other.numerator * self.denominator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
 
 ---
 ### `subtract(self, other):`
@@ -4206,15 +4210,15 @@ Subtracts two rational numbers.
 
 > ##### **Arguments:**
 
-            - other (RationalNumber): The other rational number.
+        - other (RationalNumber): The other rational number.
 
 > ##### **Returns:**
 
-            - RationalNumber: The difference of the two rational numbers.
+        - RationalNumber: The difference of the two rational numbers.
 
-            numerator = self.numerator * other.denominator - other.numerator * self.denominator
-            denominator = self.denominator * other.denominator
-            return RationalNumber(numerator, denominator)
+        numerator = self.numerator * other.denominator - other.numerator * self.denominator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
 
 ---
 ### `multiply(self, other):`
@@ -4223,15 +4227,15 @@ Multiplies two rational numbers.
 
 > ##### **Arguments:**
 
-            - other (RationalNumber): The other rational number.
+        - other (RationalNumber): The other rational number.
 
 > ##### **Returns:**
 
-            - RationalNumber: The product of the two rational numbers.
+        - RationalNumber: The product of the two rational numbers.
 
-            numerator = self.numerator * other.numerator
-            denominator = self.denominator * other.denominator
-            return RationalNumber(numerator, denominator)
+        numerator = self.numerator * other.numerator
+        denominator = self.denominator * other.denominator
+        return RationalNumber(numerator, denominator)
 
 ---
 ### `divide(self, other):`
@@ -4240,15 +4244,15 @@ Divides two rational numbers.
 
 > ##### **Arguments:**
 
-            - other (RationalNumber): The other rational number.
+        - other (RationalNumber): The other rational number.
 
 > ##### **Returns:**
 
-            - RationalNumber: The quotient of the two rational numbers.
+        - RationalNumber: The quotient of the two rational numbers.
 
-            numerator = self.numerator * other.denominator
-            denominator = self.denominator * other.numerator
-            return RationalNumber(numerator, denominator)
+        numerator = self.numerator * other.denominator
+        denominator = self.denominator * other.numerator
+        return RationalNumber(numerator, denominator)
 
 ##
 ---
@@ -4258,49 +4262,50 @@ A class representing integral numbers.
 
 > ##### **Attributes**
 
-    - value: int
-        The value of the integral number.
+        - value: int
+                The value of the integral number.
 
 > ##### **Methods**
 
-    __init__(self, value: int) -> None:
-        Initializes a new instance of the IntegralNumber class with the specified integer value.
+        __init__(self, value: int) -> None:
+                Initializes a new instance of the IntegralNumber class with the specified integer value.
 
-    __repr__(self) -> str:
-        Returns a string representation of the IntegralNumber object.
+        __repr__(self) -> str:
+                Returns a string representation of the IntegralNumber object.
 
-    __eq__(self, other: 'IntegralNumber') -> bool:
-        Determines if the current IntegralNumber object is equal to another IntegralNumber object.
+        __eq__(self, other: 'IntegralNumber') -> bool:
+                Determines if the current IntegralNumber object is equal to another IntegralNumber object.
 
-    __lt__(self, other: 'IntegralNumber') -> bool:
-        Determines if the current IntegralNumber object is less than another IntegralNumber object.
+        __lt__(self, other: 'IntegralNumber') -> bool:
+                Determines if the current IntegralNumber object is less than another IntegralNumber object.
 
-    __add__(self, other: 'IntegralNumber') -> 'IntegralNumber':
-        Adds two IntegralNumber objects and returns a new IntegralNumber object.
+        __add__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+                Adds two IntegralNumber objects and returns a new IntegralNumber object.
 
-    __sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':
-        Subtracts two IntegralNumber objects and returns a new IntegralNumber object.
+        __sub__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+                Subtracts two IntegralNumber objects and returns a new IntegralNumber object.
 
-    __mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':
-        Multiplies two IntegralNumber objects and returns a new IntegralNumber object.
+        __mul__(self, other: 'IntegralNumber') -> 'IntegralNumber':
+                Multiplies two IntegralNumber objects and returns a new IntegralNumber object.
 
-    __truediv__(self, other: 'IntegralNumber') -> 'IntegralNumber':
-        Divides two IntegralNumber objects and returns a new IntegralNumber object.
+        __truediv__(self, other: 'IntegralNumber') ->
+                'IntegralNumber':
+                        Divides two IntegralNumber objects and returns a new IntegralNumber object.
 
 > ##### **Raises**
 
-    - TypeError:
-        If the argument is not an instance of IntegralNumber.
+        - TypeError:
+                If the argument is not an instance of IntegralNumber.
 
-    - ZeroDivisionError:
-        If the second IntegralNumber object is zero and division is attempted.
+        - ZeroDivisionError:
+                If the second IntegralNumber object is zero and division is attempted.
 
         Divides two IntegralNumber objects and returns a new IntegralNumber object.
 
 > ##### **References**
 
-    - https://en.wikipedia.org/wiki/Integer_(computer_science)
-    - https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
+        - https://en.wikipedia.org/wiki/Integer_(computer_science)
+        - https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
 
 ---
 ### `__init__(self, value: int) -> None:`
@@ -4342,7 +4347,7 @@ Determines if the current IntegralNumber object is equal to another IntegralNumb
             True if the objects are equal, False otherwise.
 
         if isinstance(other, IntegralNumber):
-            return self.value == other.value
+                return self.value == other.value
         return False
         
 ---
@@ -4361,7 +4366,7 @@ Determines if the current IntegralNumber object is less than another IntegralNum
             True if the current object is less than the other object, False otherwise.
 
         if isinstance(other, IntegralNumber):
-            return self.value < other.value
+                return self.value < other.value
         return False
         
 ---
@@ -4386,7 +4391,7 @@ Adds two IntegralNumber objects.
 
 
         if isinstance(other, IntegralNumber):
-            return IntegralNumber(self.value + other.value)
+                return IntegralNumber(self.value + other.value)
         raise TypeError("Cannot add non-IntegralNumber object.")
         
 ---
@@ -4410,7 +4415,7 @@ Subtracts two IntegralNumber objects.
             If the passed object is not an IntegralNumber.
 
         if isinstance(other, IntegralNumber):
-            return IntegralNumber(self.value - other.value)
+                return IntegralNumber(self.value - other.value)
         raise TypeError("Cannot subtract non-IntegralNumber object.")
         
 ---
@@ -4434,7 +4439,7 @@ Multiplies two IntegralNumber objects.
             If the passed object is not an IntegralNumber.
 
         if isinstance(other, IntegralNumber):
-            return IntegralNumber(self.value * other.value)
+                return IntegralNumber(self.value * other.value)
         raise TypeError("Cannot multiply non-IntegralNumber object.")
         
 ---
@@ -4462,7 +4467,7 @@ Divides two IntegralNumber objects.
         if isinstance(other, IntegralNumber):
             if other.value == 0:
                 raise ZeroDivisionError("Cannot divide by zero.")
-            return IntegralNumber(self.value // other.value)
+                return IntegralNumber(self.value // other.value)
         raise TypeError("Cannot divide non-IntegralNumber object.")
 
 ---
@@ -4532,7 +4537,7 @@ Returns the quotient of this number and `other`.
             The quotient of this number and `other`. Returns None if `other` is zero.
 
         if other.value == 0:
-            return None
+                return None
         return IntegralNumber(self.value // other.value)
 
 ---
