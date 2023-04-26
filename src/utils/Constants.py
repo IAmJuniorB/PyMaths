@@ -1,38 +1,32 @@
 from Algorithm import Algorithm
 from src.functions.MathFunctions import MathFunctions
 
-from numpy import array, arange
-from scipy.integrate import quad
-from scipy.optimize import brentq
-from sympy.ntheory import totient
-from sympy import sieve
-
 
 class Constants:
     """A collection of mathematical constants."""
-    
-    def __init__(self):
-        pass
-    
-    def speed_of_light(self):
+
+    @staticmethod
+    def speed_of_light():
         """Returns the speed of light in meters per second."""
         return 299_792_458
-    
-    def planck_constant(self):
+
+    @staticmethod    
+    def planck_constant():
         """
         Returns the Planck constant in joule-seconds.
         """
-        h = 6.62607015e-34  # Planck constant in joule-seconds
+        h = 6.62607015e-34
         return h
-    
-    def pi(self):
+
+    @staticmethod    
+    def pi():
         """The ratio of a circle's circumference to its diameter.
         Returns:
             Pi, π, to the 20th decimal
         """
         return 3.141_592_653_589_793_238_46
-    
-    @staticmethod
+
+    @staticmethod    
     def e():
         """
         Returns the mathematical constant e, also known as Euler's number.
@@ -46,34 +40,26 @@ class Constants:
         References:
             * Euler, L. (1748). De seriebus divergentibus. Opera omnia, Ser. 1, Vol. 14, pp. 217-240.
         """
-        # Set an initial value for the sum
+        # initial values
         s = 1
-        # Set an initial value for the factorial
         n_fact = 1
-        # Set an initial value for the reciprocal of the factorial
         n_recip = 1
-        # Set an initial value for the power of x
         x_pow = 1
-        # Set a tolerance value for convergence
+
         tol = 1e-10
-        # Set the counter to 1
         n = 1
-        # Loop until convergence
         while True:
-            # Compute the current term in the series
             n_fact *= n
             n_recip /= n
             x_pow *= 1
             term = n_recip * x_pow
-            # Update the sum
             s += term
-            # Check for convergence
             if abs(term) < tol:
                 break
-            # Increment the counter
             n += 1
         return s
 
+    @staticmethod
     def inf():
         """Returns a floating-point positive infinity.
 
@@ -86,7 +72,8 @@ class Constants:
             float: A special floating-point number representing positive infinity.
         """
         return float("inf")
-    
+
+    @staticmethod    
     def nan():
         """Return a floating-point NaN (not a number) value.
 
@@ -98,8 +85,8 @@ class Constants:
         """
         return float("nan")
 
-    
-    def tau(self):
+    @staticmethod
+    def tau():
         """the 19th letter of the Greek alphabet,
         representing the voiceless dental or alveolar plosive IPA: [t].
         In the system of Greek numerals, it has a value of 300.
@@ -108,8 +95,9 @@ class Constants:
             tau, uppercase Τ, lowercase τ, or τ, to the 20th decimal
         """
         return 6.283_185_307_179_586_476_92
-    
-    def phi(self):
+
+    @staticmethod    
+    def phi():
         """\"The Golden Ratio\".
         In mathematics, two quantities are in the golden ratio
         if their ratio is the same as the ratio of their sum
@@ -119,8 +107,9 @@ class Constants:
             Uppercase Φ lowercase φ or ϕ: Value to the 20th decimal
         """
         return 1.618_033_988_749_894_848_20
-    
-    def silver_ratio(self):
+
+    @staticmethod    
+    def silver_ratio():
         """\"The Silver Ratio\". Two quantities are in the silver ratio (or silver mean)
         if the ratio of the smaller of those two quantities to the larger quantity
         is the same as the ratio of the larger quantity to the sum of the
@@ -130,24 +119,27 @@ class Constants:
             δS: Value to the 20th decimal
         """
         return 2.414_213_562_373_095_048_80
-    
-    def supergolden_ratio(self):
+
+    @staticmethod    
+    def supergolden_ratio():
         """Returns the mathematical constant psi (the supergolden ratio).
         
         Returns:
             ψ to the 25th decimal
         """
         return 1.465_571_231_876_768_026_656_731_2
-    
-    def connective_constant(self):
+
+    @staticmethod    
+    def connective_constant():
         """Returns the connective constant for the hexagonal lattice.
 
         Returns:
             μ to the 4th decimal
         """
         return 1.687_5
-    
-    def kepler_bouwkamp_constant(self):
+
+    @staticmethod    
+    def kepler_bouwkamp_constant():
         """In plane geometry, the Kepler–Bouwkamp constant (or polygon inscribing constant)
         is obtained as a limit of the following sequence.
         Take a circle of radius 1. Inscribe a regular triangle in this circle.
@@ -157,16 +149,18 @@ class Constants:
             K': to the 20th decimal
         """
         return 0.114_942_044_853_296_200_70
-    
-    def wallis_constant(self):
+
+    @staticmethod    
+    def wallis_constant():
         """Returns Wallis's constant.
         
         Returns:
             Value to the 20th decimal
         """
         return 2.094_551_481_542_326_591_48
-    
-    def eulers_number(self):
+
+    @staticmethod    
+    def eulers_constant():
         """a mathematical constant approximately equal to 2.71828 that can be characterized in many ways.
         It is the base of the natural logarithms.
         It is the limit of (1 + 1/n)n as n approaches infinity, an expression that arises in the study of compound interest.
@@ -176,24 +170,27 @@ class Constants:
             e: Value to the 20th decimal. math.e
         """
         return 2.718_281_828_459_045_235_36
-    
-    def natural_log(self):
+
+    @staticmethod    
+    def natural_log():
         """Natural logarithm of 2.
 
         Returns:
             ln 2: Value to the 30th decimal. math.log(2)
         """
         return 0.693_147_180_559_945_309_417_232_121_458
-    
-    def lemniscate_constant(self):
+
+    @staticmethod    
+    def lemniscate_constant():
         """The ratio of the perimeter of Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
         Returns:
             ϖ: Value to the 20th decimal. math.sqrt(2)
         """
         return 2.622_057_554_292_119_810_46 
-    
-    def eulers_constant(self):
+
+    @staticmethod    
+    def eulers_constant():
         """Not to be confused with Euler's Number.
         Defined as the limiting difference between the harmonic series and the natural logarithm
 
@@ -201,48 +198,54 @@ class Constants:
             γ: Value to the 50th decimal
         """
         return 0.577_215_664_901_532_860_606_512_090_082_402_431_042_159_335_939_92
-    
-    def Erdős_Borwein_constant(self):
+
+    @staticmethod    
+    def Erdős_Borwein_constant():
         """The sum of the reciprocals of the Mersenne numbers
 
         Returns:
             E: Value to the 20th decimal. sum([1 / 2 ** (2 ** i) for i in range(40)])
         """
         return 1.606_695_152_415_291_763_78
-    
-    def omega_constant(self):
+
+    @staticmethod    
+    def omega_constant():
         """Defined as the unique real number that satisfies the equation Ωe**Ω = 1.
 
         Returns:
             Ω: Value to the 30th decimal
         """
         return 0.567_143_290_409_783_872_999_968_662_210
-    
-    def Apérys_constant(self):
+
+    @staticmethod    
+    def Apérys_constant():
         """The sum of the reciprocals of the positive cubes.
 
         Returns:
             ζ(3): Value to the 45th decimal
         """
         return 1.202_056_903_159_594_285_399_738_161_511_449_990_764_986_292
-    
-    def laplace_limit(self):
+
+    @staticmethod    
+    def laplace_limit():
         """The maximum value of the eccentricity for which a solution to Kepler's equation, in terms of a power series in the eccentricity, converges.
 
         Returns:
             Value to the 35th decimal
         """
         return 0.662_743_419_349_181_580_974_742_097_109_252_90
-    
-    def ramanujan_soldner_constant(self):
+
+    @staticmethod    
+    def ramanujan_soldner_constant():
         """A mathematical constant defined as the unique positive zero of the logarithmic integral function.
 
         Returns:
             μ ≈: Value to the 45th decimal
         """
         return 1.451_369_234_883_381_050_283_968_485_892_027_449_493_032_28
-        
-    def gauss_constant(self):
+
+    @staticmethod        
+    def gauss_constant():
         """transcendental mathematical constant that is the ratio of the perimeter of
         Bernoulli's lemniscate to its diameter, analogous to the definition of π for the circle.
 
@@ -250,16 +253,18 @@ class Constants:
             G == ϖ /π ≈ 0.8346268: Value to the 7th decimal
         """
         return 0.834_626_8
-    
-    def second_hermite_constant(self):
+
+    @staticmethod    
+    def second_hermite_constant():
         """_summary_
 
         Returns:
             γ2 : Value to the 20th decimal
         """
         return  1.154_700_538_379_251_529_01
-    
-    def liouvilles_constant(self):
+
+    @staticmethod    
+    def liouvilles_constant():
         """A real number x with the property that, for every positive integer n,
         there exists a pair of integers (p,q) with q>1.
 
@@ -267,31 +272,35 @@ class Constants:
             L: Value to the 119th decimal
         """
         return 0.110_001_000_000_000_000_000_001_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_01
-    
-    def first_continued_fraction(self):
+
+    @staticmethod    
+    def first_continued_fraction():
         """_summary_
 
         Returns:
             C_{1}: _description_
         """
         return 0.697_774_657_964_007_982_01
-    
-    def ramanujans_constant(self):
+
+    @staticmethod    
+    def ramanujans_constant():
         """The transcendental number, which is an almost integer, in that it is very close to an integer.
 
         Returns:
             e**{{\pi {\sqrt {163}}}}: Value to the 18th decimal
         """
         return  262_537_412_640_768_743.999_999_999_999_250_073
-        
-    def glaisher_kinkelin_constant(self):
+
+    @staticmethod        
+    def glaisher_kinkelin_constant():
         """A mathematical constant, related to the K-function and the Barnes G-function.
 
         Returns:
             A: Value to the 20th decimal
         """
         return 1.282_427_129_100_622_636_87
-    
+
+    @staticmethod    
     def catalan_constant(n: int) -> float:
         """
         Computes the Catalan's constant to the specified number of decimal places using the formula:
@@ -314,8 +323,9 @@ class Constants:
         # return 0.915_965_594_177_219_015_054_603_514_932_384_110_774
         constant = sum((-1)**k / (2*k + 1)**2 for k in range(n)) * 8 / 3
         return constant
-    
-    def dottie_number(self):
+
+    @staticmethod    
+    def dottie_number():
         """
             Calculates the unique real root of the equation cos(x) = x, known as the Dottie number, to the 20th decimal place.
 
@@ -332,16 +342,18 @@ class Constants:
             None
         """
         return 0.739_085_133_215_160_641_65
-    
-    def meissel_mertens_constant(self):
+
+    @staticmethod    
+    def meissel_mertens_constant():
         """_summary_
 
         Returns:
             M: Value to the 40th value
         """
         return 0.261_497_212_847_642_783_755_426_838_608_695_859_051_6
-    
-    def universal_parabolic_constant(self):
+
+    @staticmethod    
+    def universal_parabolic_constant():
         """The ratio, for any parabola, of the arc length of the parabolic segment
         formed by the latus rectum to the focal parameter.
 
@@ -349,8 +361,9 @@ class Constants:
             P: Value to the 20th decimal
         """
         return  2.295_587_149_392_638_074_03
-    
-    def cahens_constant(self):
+
+    @staticmethod    
+    def cahens_constant():
         """The value of an infinite series of unit fractions with alternating signs.
 
         Returns:
@@ -358,16 +371,18 @@ class Constants:
         """
         return  0.643_410_546_288_338_026_18
 
-# Everything below needs to be updated in Markdown    
-    def gelfonds_constant(self):
+
+    @staticmethod# Everything below needs to be updated in Markdown    
+    def gelfonds_constant():
         """Calculates Gelfond's Constant, which is defined as e raised to the power of pi.
 
         Returns:
             float: The value of Gelfond's Constant, which is approximately 23.1406926327792690057292.
         """
-        return self.eulers_constant**self.pi
-    
-    def gelfond_schneider_constant(self):
+        return Constants.eulers_constant**Constants.pi
+
+    @staticmethod    
+    def gelfond_schneider_constant():
         """
         Returns the Gelfond-Schneider constant, which is a transcendental number defined as the value of 
         2^(1/2) raised to the power of itself, or approximately 2.6651441426902251886502972498731.
@@ -376,8 +391,9 @@ class Constants:
             float: The value of the Gelfond-Schneider constant.
         """
         return 2**(2**(1/2))
-    
-    def second_favard_constant(self):
+
+    @staticmethod    
+    def second_favard_constant():
         """
         Returns the Second Favard constant, which is a mathematical constant defined as the limit of the 
         arithmetic mean of the reciprocal of consecutive odd numbers, or approximately 0.661707182...
@@ -393,8 +409,9 @@ class Constants:
             if n > 10_000:
                 break
         return s
-    
-    def golden_angle(self):
+
+    @staticmethod    
+    def golden_angle():
         """
         Returns the golden angle constant, which is the angle subtended by the smaller of the two angles 
         formed by dividing the circumference of a circle in the golden ratio. It is equal to 
@@ -404,8 +421,9 @@ class Constants:
             float: The value of the golden angle constant in degrees.
         """
         return (3 - MathFunctions.square_root(5)) * 180 / Constants.pi
-    
-    def sierpinskis_constant(self):
+
+    @staticmethod    
+    def sierpinskis_constant():
         """
         Returns Sierpiński's constant, which is the fractal dimension of the Sierpiński triangle, a 
         self-similar fractal shape. It is equal to log(3)/log(2), or approximately 1.585.
@@ -415,7 +433,8 @@ class Constants:
         """
         return MathFunctions.log(3)/MathFunctions.log(2)
 
-    def landau_ramanujan_constant(self):
+    @staticmethod
+    def landau_ramanujan_constant():
         """
         Returns the Landau-Ramanujan constant, which is a mathematical constant that appears in the 
         asymptotic expansion of the partition function. It is equal to e^(pi * sqrt(163)), or approximately
@@ -426,7 +445,8 @@ class Constants:
         """
         return Algorithm.exp(Constants.pi * MathFunctions.square_root(163))
 
-    def first_nielsen_ramanujan_constant(self):
+    @staticmethod
+    def first_nielsen_ramanujan_constant():
         """
         Returns the First Nielsen-Ramanujan constant, which is a mathematical constant that appears in 
         certain partition identities. It is equal to the product of a series involving the gamma function, 
@@ -437,7 +457,8 @@ class Constants:
         """
         return 2 * MathFunctions.square_root(2) / MathFunctions.square_root(Constants.pi) * MathFunctions.prod([MathFunctions.gamma((n+1)/4)/((n/2)**((n+1)/4)) for n in range(1, 6)])
 
-    def gieseking_constant(self):
+    @staticmethod
+    def gieseking_constant():
         """
         Returns Gieseking's constant, which is a mathematical constant that appears in the theory of 
         harmonic analysis. It is equal to (2*pi)^(-3/4), or approximately 0.7511255444649425.
@@ -447,7 +468,8 @@ class Constants:
         """
         return (2*Constants.pi)**(-3/4)
 
-    def bernsteins_constant(self):
+    @staticmethod
+    def bernsteins_constant():
         """
         Returns Bernstein's constant, which is a mathematical constant that appears in the theory of 
         Fourier analysis. It is equal to pi/sqrt(2), or approximately 2.221441469079183.
@@ -457,14 +479,16 @@ class Constants:
         """
         return Constants.pi/MathFunctions.square_root(2)
 
-    def tribonacci_constant(self):
+    @staticmethod
+    def tribonacci_constant():
         """
         Returns the Tribonacci constant, which is a mathematical constant defined as the unique real root 
         of the polynomial x^3 - x^2 - x - 1, or approximately 1.8392867552141612.
 
         Returns:
             float: The value of the Tribonacci constant.
-        """
+    
+        @staticmethod    """
         def f(x):
             return x**3 - x**2 - x - 1
         a, b = 1, 2
@@ -472,8 +496,9 @@ class Constants:
             a, b = b, b - f(b)/(f(b)-f(a)) * (b-a)
         return b
 
-    
-    def bruns_constant(self):
+
+    @staticmethod    
+    def bruns_constant():
         """
         Returns the limiting value of the sequence a(n) = sum(k=1 to n) 1/prime(k),
         where prime(k) is the kth prime number.
@@ -490,7 +515,8 @@ class Constants:
         return round(sum(1/p for p in primes), 42)
 
 
-    def twin_primes_constant(self):
+    @staticmethod
+    def twin_primes_constant():
         """
         Returns the limiting value of the sequence of twin primes (pairs of prime
         numbers that differ by 2).
@@ -508,7 +534,8 @@ class Constants:
         return round(len(twin_primes) / len(primes), 36)
 
 
-    def plastic_number(self):
+    @staticmethod
+    def plastic_number():
         """
         Returns the unique positive real root of x^3 = x + 1.
 
@@ -523,7 +550,8 @@ class Constants:
             x0 = x1
 
 
-    def blochs_constant(self):
+    @staticmethod
+    def blochs_constant():
         """
         Returns the limiting value of the sequence of numbers that represent the
         Bloch wall widths in ferromagnets.
@@ -537,10 +565,11 @@ class Constants:
             a, b = b, a + b
             yield a / b**2
 
-            return round(sum(Algorithm.islice(self.blochs_constant(self), 100000)), 34)
+            return round(sum(Algorithm.islice(Constants.blochs_constant(), 100000)), 34)
 
 
-    def z_score_975_percentile(self):
+    @staticmethod
+    def z_score_975_percentile():
         """Returns the value that has 97.5% of the area under a standard normal distribution
         to the left of it.
 
@@ -553,7 +582,8 @@ class Constants:
                 return round(n, 9)
             n += 0.000001
 
-    def landaus_constant(self):
+    @staticmethod
+    def landaus_constant():
         """Returns the limiting value of the sequence of numbers that represent the
         probability that a random permutation of n elements will have no cycle of length
         greater than log(n).
@@ -568,7 +598,8 @@ class Constants:
             a, b, c = b, c, (n - 1) * (a + b) - (n - 3) * c
         return round(a / b, 19)
 
-    def landaus_third_constant(self):
+    @staticmethod
+    def landaus_third_constant():
         """Returns the limiting value of the sequence of numbers that represent the
         probability that a random permutation of n elements will have no cycle of length
         greater than sqrt(n) * log(n).
@@ -583,7 +614,8 @@ class Constants:
             a, b, c = b, c, (n - 1) * (a + b) - (n - 3) * c
         return round(a / b / (MathFunctions.square_root(2) * Algorithm.exp(1) * Algorithm.log(b)), 20)
 
-    def prouhet_thue_morse_constant(self):
+    @staticmethod
+    def prouhet_thue_morse_constant():
         """Returns the limiting value of the sequence of numbers that represent the
         differences in density between the 0's and 1's in the Prouhet-Thue-Morse
         sequence.
@@ -601,8 +633,9 @@ class Constants:
         zeros = len(s) - ones
         return round(abs(ones - zeros) / len(s), 20)
 
-    
-    def golomb_dickman_constant(self):
+
+    @staticmethod    
+    def golomb_dickman_constant():
         """The Golomb-Dickman constant represents the limiting distribution of the ratio of the k-th smallest
         number in a sample of n random numbers to n^(1/k) as n approaches infinity. It is denoted by G.
 
@@ -611,7 +644,8 @@ class Constants:
         """
         return 0.6243299885435508
 
-    def lebesgue_asymptotic_behavior_constant(self):
+    @staticmethod
+    def lebesgue_asymptotic_behavior_constant():
         """The Lebesgue asymptotic behavior constant describes the average size of the level sets
         of a random walk in d dimensions. It is denoted by L(d).
 
@@ -620,7 +654,8 @@ class Constants:
         """
         return 3.912023005428146
 
-    def feller_tornier_constant(self):
+    @staticmethod
+    def feller_tornier_constant():
         """The Feller-Tornier constant is the probability that a random walk on the integers
         returns to the origin infinitely often. It is denoted by F.
 
@@ -629,7 +664,8 @@ class Constants:
         """
         return 0.259183
 
-    def base_10_champernowne_constant(self):
+    @staticmethod
+    def base_10_champernowne_constant():
         """The Champernowne constant is formed by concatenating the base 10 representations of
         successive integers, and is represented by C_10. 
 
@@ -643,7 +679,8 @@ class Constants:
             n += 1
         return float(s[0] + '.' + s[1:])
 
-    def salem_constant(self):
+    @staticmethod
+    def salem_constant():
         """The Salem number is a complex number that is a root of a certain polynomial
         with integer coefficients. It is denoted by s.
 
@@ -651,8 +688,9 @@ class Constants:
             complex: The value of the Salem constant s, approximately (1+sqrt(2)) * e^(pi*sqrt(2)/4).
         """
         return (1 + 2 ** 0.5) * Algorithm.exp(Constants.pi * 2 ** 0.5 / 4)
-    
-    def khinchins_constant(self):
+
+    @staticmethod    
+    def khinchins_constant():
         """The Khinchin constant is a number that appears in the theory of continued fractions. 
         It is denoted by K.
 
@@ -661,7 +699,8 @@ class Constants:
         """
         return 2.6854520010653065
 
-    def levys_constant(self):
+    @staticmethod
+    def levys_constant():
             """Levy's constant, also known as the Levy–Khinchin constant, is a mathematical constant that arises in the study of 
             Levy processes, which are stochastic processes that exhibit properties such as long-range dependence and heavy tails. 
             It is defined as the limit of the average absolute difference between two random variables divided by their 
@@ -676,15 +715,17 @@ class Constants:
             """
             return 1.330_387_242_462_352_174_342_46
 
-    def levys_constant_two(self):
+    @staticmethod
+    def levys_constant_two():
         """Calculate the value of e to the power of Levy's constant.
 
         Returns:
             float: The value of e to the power of Levy's constant.
         """
-        return Algorithm.exp(self.levys_constant)
+        return Algorithm.exp(Constants.levys_constant)
 
-    def copeland_erdos_constant(self):
+    @staticmethod
+    def copeland_erdos_constant():
         """Copeland-Erdős constant is the smallest number that is not the sum of 
         distinct non-negative integer powers of 2.
         
@@ -696,14 +737,15 @@ class Constants:
         """
         n = 1
         while True:
-            for s in self.subsets(range(n)):
+            for s in MathFunctions.subsets(range(n)):
                 if sum([2**i for i in s]) == n:
                     break
             else:
                 return n
             n += 1
-    
-    def gompertz_constant(self):
+
+    @staticmethod    
+    def gompertz_constant():
         """Gompertz constant is a mathematical constant named after Benjamin Gompertz,
         it is the limit of the ratio between the life expectancy of a certain age 
         and the remaining life expectancy.
@@ -715,14 +757,16 @@ class Constants:
             float
         """
         n = 1
-        limit = self.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
+        limit = MathFunctions.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
         while limit == float('inf'):
             n += 1
-            limit = self.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
+            limit = MathFunctions.limit(lambda x: (Algorithm.exp(1)**(1/x))/x, n)
         return limit
-    
-    def de_bruijn_newman_constant(self):
-        """        De Bruijn–Newman constant is the limit of the sequence of coefficients a_n
+
+    @staticmethod    
+    def de_bruijn_newman_constant():
+        """
+        De Bruijn–Newman constant is the limit of the sequence of coefficients a_n
         such that the entire function f(z) = Π_(n=1)^∞ [(1 - z/a_n) * exp(z/a_n)] has
         no zeros in the complex plane.
 
@@ -742,8 +786,8 @@ class Constants:
             term *= sum([1/i for i in range(1, int(prev_term) + 1)])
             i += 1
         return i
-    
-    @staticmethod
+
+    @staticmethod    
     def van_der_pauw_constant():
         """
         The van der Pauw constant is a constant used in measuring resistance of flat samples,
@@ -758,8 +802,8 @@ class Constants:
         """
         return Algorithm.exp(Constants.pi * MathFunctions.copysign(1, MathFunctions.acos(1/Constants.pi)))
 
-    
-    @staticmethod
+
+    @staticmethod    
     def magic_angle():
         """
         Magic angle is an angle of rotation for the bilayer graphene where the
@@ -773,8 +817,8 @@ class Constants:
             float: The magic angle in radians.
         """
         return Algorithm.arctan(Algorithm.square_root(3))
-    
-    @staticmethod
+
+    @staticmethod    
     def artins_constant():
         """
         The Artin's constant is a number that appears in the formula to calculate the Artin-Mazur zeta function.
@@ -793,7 +837,8 @@ class Constants:
                 break
         return prod
 
-    def porters_constant(self):
+    @staticmethod
+    def porters_constant():
         """
         Porter's constant is a mathematical constant that appears in the field of information theory. It is defined as
         the limit of the ratio of the maximum number of different words of length n over the number of possible words of
@@ -807,7 +852,8 @@ class Constants:
         """
         return Algorithm.exp**(1/Constants.euler_mascheroni_constant)
 
-    def euler_mascheroni_constant(self):
+    @staticmethod
+    def euler_mascheroni_constant():
         """
         Returns the Euler-Mascheroni constant, a mathematical constant that appears in many areas of mathematics.
         It is defined as the limit of the difference between the harmonic series and the natural logarithm of n as n approaches infinity.
@@ -826,7 +872,8 @@ class Constants:
         return euler_mascheroni
 
 
-    def lochs_constant(self):
+    @staticmethod
+    def lochs_constant():
         """
         Lochs' constant is a mathematical constant defined as the limiting ratio of the perimeter of an inscribed regular
         decagon to its diameter.
@@ -840,7 +887,8 @@ class Constants:
         return Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2 + Algorithm.square_root(2)))))
 
 
-    def deviccis_tesseract_constant(self):
+    @staticmethod
+    def deviccis_tesseract_constant():
         """
         The De Vries - De Vos - Barendrecht - De Klerk - Smit - Smit constant (also known as De Vries' tesseract constant)
         is defined as the number that describes the maximum ratio of the content of a hypercube inscribed in a tesseract to
@@ -855,7 +903,8 @@ class Constants:
         return Algorithm.square_root(2 + Algorithm.square_root(2)) / (2 * Algorithm.square_root(2))
 
 
-    def liebs_square_ice_constant(self):
+    @staticmethod
+    def liebs_square_ice_constant():
         """
         The Lieb's square ice constant is the infinite sum of alternating sign reciprocals of the squares of odd positive integers.
         It appears in the square ice problem in statistical mechanics.
@@ -868,7 +917,8 @@ class Constants:
         """
         return Constants.pi / (Algorithm.square_root(3) * Algorithm.log((3 + Algorithm.square_root(8)) / 2))
 
-    def nivens_constant(self):
+    @staticmethod
+    def nivens_constant():
         """
         Niven's constant is a mathematical constant that is the only known integer x that is divisible by the sum of its digits
         when written in decimal base. The constant is also related to the convergence of certain infinite series.
@@ -885,8 +935,9 @@ class Constants:
             if n % digits_sum == 0:
                 return n
             n += 1
-    
-    def mills_constant(self):
+
+    @staticmethod    
+    def mills_constant():
         """Mills constant is the smallest positive real number A such that the 
         floor function of the double exponential function is a prime number,
         where the double exponential function is f(n) = A^(3^n).
@@ -898,11 +949,12 @@ class Constants:
             float
         """
         i = 2
-        while not Algorithm.is_prime(int(self.floor(self.pow(MathFunctions.copysign(self.pow(3, i), 1), MathFunctions.copysign(self.pow(3, i - 1), 1))))): 
+        while not Algorithm.is_prime(int(MathFunctions.floor(Algorithm.power(MathFunctions.copysign(Algorithm.power(3, i), 1), MathFunctions.copysign(Algorithm.power(3, i - 1), 1))))): 
             i += 1
-        return self.pow(MathFunctions.copysign(self.pow(3, i), 1), MathFunctions.copysign(self.pow(3, i - 1), 1))
+        return Algorithm.power(MathFunctions.copysign(Algorithm.power(3, i), 1), MathFunctions.copysign(Algorithm.power(3, i - 1), 1))
 
-    def artins_constant(self):
+    @staticmethod
+    def artins_constant():
         """
         Artin's constant is a real number that arises in the study of the Riemann zeta function.
 
@@ -911,7 +963,8 @@ class Constants:
         """
         return 0.3739558136
 
-    def porters_constant(self):
+    @staticmethod
+    def porters_constant():
         """
         Porter's constant is a mathematical constant that arises in the study of the Riemann hypothesis.
 
@@ -920,7 +973,8 @@ class Constants:
         """
         return 1.4670780794
 
-    def lochs_constant(self):
+    @staticmethod
+    def lochs_constant():
         """
         Lochs' constant is a mathematical constant that arises in the study of prime numbers.
 
@@ -929,7 +983,8 @@ class Constants:
         """
         return 0.8241323125
 
-    def deviccis_tesseract_constant(self):
+    @staticmethod
+    def deviccis_tesseract_constant():
         """
         De Vici's tesseract constant is a mathematical constant that arises in the study of hypercubes.
 
@@ -938,7 +993,8 @@ class Constants:
         """
         return 1.0983866775
 
-    def liebs_square_ice_constant(self):
+    @staticmethod
+    def liebs_square_ice_constant():
         """
         Lieb's square ice constant is a mathematical constant that arises in the study of statistical mechanics.
 
@@ -947,7 +1003,8 @@ class Constants:
         """
         return 1.5396007178
 
-    def nivens_constant(self):
+    @staticmethod
+    def nivens_constant():
         """
         Niven's constant is a mathematical constant that arises in number theory.
 
@@ -956,7 +1013,8 @@ class Constants:
         """
         return 1.7052111401
 
-    def stephens_constant(self):
+    @staticmethod
+    def stephens_constant():
         """
         Stephens' constant is a mathematical constant that arises in the study of prime numbers.
 
@@ -965,7 +1023,8 @@ class Constants:
         """
         return 0.5364798721
 
-    def regular_paperfolding_sequence(self):
+    @staticmethod
+    def regular_paperfolding_sequence():
         """
         The regular paperfolding sequence is a binary sequence that arises in the study of fractal geometry.
 
@@ -974,7 +1033,8 @@ class Constants:
         """
         return "110110011100100"
 
-    def reciprocal_fibonacci_constant(self):
+    @staticmethod
+    def reciprocal_fibonacci_constant():
         """
         The reciprocal Fibonacci constant is a real number that arises in the study of Fibonacci numbers.
 
@@ -983,7 +1043,8 @@ class Constants:
         """
         return 1.1319882488
 
-    def chvatal_sankoff_constant(self):
+    @staticmethod
+    def chvatal_sankoff_constant():
         """
         Chvátal–Sankoff constant for the binary alphabet.
 
@@ -994,8 +1055,9 @@ class Constants:
             float: The value of the Chvátal–Sankoff constant.
         """
         return 1.7550327129
-    
-    def Feigenbaum_constant(self):
+
+    @staticmethod    
+    def Feigenbaum_constant():
         """
         Feigenbaum constant δ
 
@@ -1007,7 +1069,8 @@ class Constants:
         """
         return 4.6692016091
 
-    def chaitins_constant(self):
+    @staticmethod
+    def chaitins_constant():
         """
         Chaitin's constant is a real number that encodes the halting probability of a universal Turing machine.
 
@@ -1030,7 +1093,8 @@ class Constants:
                 break
         return 1 / (2**k)
 
-    def robbins_constant(self):
+    @staticmethod
+    def robbins_constant():
         """
         Robbins' constant is a mathematical constant that arises in the study of mathematical analysis.
 
@@ -1043,9 +1107,10 @@ class Constants:
         Returns:
             float: The value of Robbins' constant.
         """
-        return quad(lambda x: x**x, 0, 1)[0]
+        return MathFunctions.quad(lambda x: x**x, 0, 1)[0]
 
-    def weierstrass_constant(self):
+    @staticmethod
+    def weierstrass_constant():
         """
         Weierstrass' constant is a mathematical constant that arises in the study of elliptic functions.
 
@@ -1053,8 +1118,9 @@ class Constants:
             float: The value of Weierstrass' constant.
         """
         return 0.5174790617
-    
-    def fransen_robinson_constant(self):
+
+    @staticmethod
+    def fransen_robinson_constant():
         """Returns Fransen-Robinson constant which is the smallest positive root of the following polynomial equation:
 
         x^3 - x^2 - 1 = 0
@@ -1068,9 +1134,18 @@ class Constants:
         Returns:
             float: The Fransen-Robinson constant
         """
-        return brentq(lambda x: x**3 - x**2 - 1, 1, 2)
+        a, b = 1, 2
+        while True:
+            c = (a + b) / 2
+            if abs(c ** 3 - c ** 2 - 1) < 1e-10:
+                return c
+            elif (c ** 3 - c ** 2 - 1) * (a ** 3 - a ** 2 - 1) < 0:
+                b = c
+            else:
+                a = c
 
-    def feigenbaum_constant(self):
+    @staticmethod
+    def feigenbaum_constant():
         """Returns Feigenbaum constant alpha which relates to the period-doubling bifurcation in chaotic systems.
 
         Symbol:
@@ -1083,14 +1158,21 @@ class Constants:
             float: The Feigenbaum constant alpha
         """
         a = 1.0
-        for n in arange(1, 11):
-            a_next = a - (array([3, -1])[n%2] / 2**n) * a**2
+        for n in range(1, 11):
+            if n % 2 == 1:
+                c = 3
+            else:
+                c = -1
+            a_next = a - (c / 2**n) * a**2
             if abs(a_next - a) < 1e-10:
                 break
             a = a_next
+        else:
+            raise ValueError("Failed to converge")
         return a
 
-    def second_du_bois_reymond_constant(self):
+    @staticmethod
+    def second_du_bois_reymond_constant():
         """Returns the Second du Bois-Reymond constant, which is defined as the supremum of the absolute values of the Fourier coefficients of a bounded variation function with period 1.
 
         Symbol:
@@ -1103,10 +1185,11 @@ class Constants:
             float: The Second du Bois-Reymond constant
         """
 
-        return quad(lambda x: abs(sum([(-1)**n * Algorithm.sin((2*n+1)*x) / (2*n+1)**2 for n in range(1000)])), 0, 1)[0]
+        return MathFunctions.quad(lambda x: abs(sum([(-1)**n * Algorithm.sin((2*n+1)*x) / (2*n+1)**2 for n in range(1000)])), 0, 1)[0]
 
 
-    def erdos_tenenbaum_ford_constant(self):
+    @staticmethod
+    def erdos_tenenbaum_ford_constant():
         """Returns the Erdős–Tenenbaum–Ford constant which is related to the distribution of prime numbers.
 
         Symbol:
@@ -1122,7 +1205,8 @@ class Constants:
         primes = list(sieve.primerange(1, 5000))
         return sum([1 / p for p in primes]) * Algorithm.log(Algorithm.log(primes[-1]))
 
-    def conways_constant(Self):
+    @staticmethod
+    def conways_constant():
         """Returns Conway's constant, which is the unique real root of the following polynomial equation:
 
         x^3 - x - 1 = 0
@@ -1140,9 +1224,10 @@ class Constants:
             float: Conway's constant
         """
 
-        return brentq(lambda x: x**3 - x - 1, 1, 2)
+        return self.brentq(lambda x: x**3 - x - 1, 1, 2)
 
-    def hafner_sarnak_mccurley_constant(self):
+    @staticmethod
+    def hafner_sarnak_mccurley_constant():
         """Returns the Hafner-Sarnak-McCurley constant which is related to the distribution of prime numbers in arithmetic progressions.
 
         Symbol:
@@ -1157,7 +1242,8 @@ class Constants:
 
         return sum([1 / totient(n) for n in range(1, 10001)])
 
-    def backhouses_constant(self):
+    @staticmethod
+    def backhouses_constant():
         """Returns Backhouse's constant which is defined as the smallest k such that the inequality n! > k^n holds for all positive integers n.
 
         Symbol:
@@ -1184,7 +1270,8 @@ class Constants:
             # Increment k
             k += 1
 
-    def viswanath_constant(self):
+    @staticmethod
+    def viswanath_constant():
         """Returns Viswanath's constant, which is the limiting distribution of the ratios of successive gaps in the sequence of zeros of the Riemann zeta function.
 
         Symbol:
@@ -1225,7 +1312,8 @@ class Constants:
         constant = inv_cdf(0.5)
         return constant
 
-    def komornik_loreti_constant(self):
+    @staticmethod
+    def komornik_loreti_constant():
         """Returns Komornik-Loreti constant, which is the unique positive real root of the following polynomial equation:
 
         x^2 - x - 1 = 0
@@ -1256,8 +1344,9 @@ class Constants:
             return root2
         else:
             raise ValueError('The root cannot be found')
-    
-    def embree_trefethen_constant(self):
+
+    @staticmethod    
+    def embree_trefethen_constant():
         """Computes the Embree-Trefethen constant, which is defined as the supremum of the real parts
         of the poles of a certain rational function.
 
@@ -1274,7 +1363,8 @@ class Constants:
             * Embree, M., & Trefethen, L. N. (1999). Growth and decay of random plane waves. 
             Communications on Pure and Applied Mathematics, 52(7), 757-788.
             * Trefethen, L. N. (2006). Spectral methods in MATLAB. SIAM.
-        """
+    
+        @staticmethod    """
         def function(z):
             return (3*z**3 - 2*z**2) / (2*z**3 - 3*z**2 + 1)
         
@@ -1288,8 +1378,9 @@ class Constants:
         if len(poles) == 0:
             raise ValueError("Computation failed to converge.")
         return max(poles)
-    
-    def heath_brown_moroz_constant(self):
+
+    @staticmethod    
+    def heath_brown_moroz_constant():
         """Computes the Heath-Brown-Moroz constant, which is defined as the product of the Euler-Mascheroni 
         constant and the reciprocal of a certain infinite product.
 
@@ -1307,7 +1398,8 @@ class Constants:
             Proceedings of the London Mathematical Society, 49(2), 475-513.
             * Moroz, B. Z. (2001). Some constants associated with the Riemann zeta function. 
             Journal of Mathematical Analysis and Applications, 261(1), 235-251.
-        """
+    
+        @staticmethod    """
         def function(n):
             return (1 + 1/(4*n**2 - 1))**(2*n + 1/2)
         
@@ -1415,7 +1507,8 @@ class Constants:
             a += 1 / (i ** 3 * (i + 1) ** 3)
         return a / 32
 
-    def logarithmic_capacity(self):
+    @staticmethod
+    def logarithmic_capacity():
         """Returns the logarithmic capacity of the unit disk.
 
         Raises:
@@ -1427,7 +1520,8 @@ class Constants:
         
         return 2
 
-    def taniguchi_constant(self):
+    @staticmethod
+    def taniguchi_constant():
         """Returns the Taniguchi constant.
 
         Raises:
@@ -1440,3 +1534,4 @@ class Constants:
         for n in range(1, 1000):
             a += 2 ** (n ** 2) / (n ** 2 * Algorithm.factorial(n)) ** 2
         return Algorithm.square_root(Constants.pi * a)
+
