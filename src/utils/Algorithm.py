@@ -84,8 +84,12 @@ class Algorithm:
         Returns:
             The logarithm of x with the specified base
         """
-        if x <= 0 or base <= 0 or base == 1:
-            raise ValueError("Invalid input. x must be a positive number and base must be greater than 0 and not equal to 1.")
+        if not isinstance(x, (int, float)) or not isinstance(base, (int, float)):
+            raise TypeError("Invalid input. x and base must be integers or floats.")
+        if x <= 0:
+            raise ValueError("Invalid input. x must be a positive number.")
+        if base <= 0 or base == 1:
+            raise ValueError("Invalid input. base must be greater than 0 and not equal to 1.")
         
         # Compute the logarithm using the change-of-base formula
         numerator = Algorithm.__ln(x)
@@ -123,25 +127,29 @@ class Algorithm:
         """
         return Algorithm.log(x, 10)
 
-    def adding_fractions(self, *args):
+    def add_fractions(*args):
         """
-        Returns the sum of multiple fractions
+        Returns the sum of multiple fractions.
 
         Args:
-            *args (tuples): Multiple fractions represented as tuples of the form (numerator, denominator)
+            *args (tuples): Multiple fractions represented as tuples of the form (numerator, denominator).
 
         Returns:
-            A tuple representing the sum of all fractions in reduced form (numerator, denominator)
+            A tuple representing the sum of all fractions in reduced form (numerator, denominator).
         """
         numerator = 0
         denominator = 1
         for fraction in args:
             if not isinstance(fraction, tuple) or len(fraction) != 2:
-                raise ValueError("All arguments must be tuples of length 2.")
+                raise ValueError("Invalid input. Expected tuples of length 2.")
+            if fraction[1] == 0:
+                raise ValueError("Invalid input. Denominator cannot be zero.")
             numerator = numerator * fraction[1] + fraction[0] * denominator
             denominator = denominator * fraction[1]
         gcd = Algorithm.find_gcd(numerator, denominator)
-        return (numerator // gcd, denominator // gcd)
+        numerator //= gcd
+        denominator //= gcd
+        return (numerator, denominator)
 
     @staticmethod
     def find_gcd(a, b):
@@ -159,29 +167,30 @@ class Algorithm:
             a, b = b, a % b
         return a
 
+    @staticmethod
     def count_words(text):
         """
-        Returns a dictionary containing the count of each word in the given text.
+        Returns a dictionary of word frequencies in the input text.
 
         Args:
-            text (str): The text to count the words in.
+            text (str): The text to analyze.
 
         Returns:
-            A dictionary where the keys are the unique words in the text and the values are the count of each word.
+            A dictionary where the keys are the words in the text and the values are the number of times each word appears.
         """
-        # Convert text to lowercase and split into words
+        if not isinstance(text, str):
+            raise TypeError("Invalid input. text must be a string.")
+        
         words = text.lower().split()
-
-        # Create an empty dictionary to store the word counts
+        
         word_counts = {}
-
-        # Iterate over the words and update the word counts
+        
         for word in words:
             if word in word_counts:
                 word_counts[word] += 1
             else:
                 word_counts[word] = 1
-
+        
         return word_counts
 
     def multiplying_fractions(self, *args):
@@ -332,6 +341,10 @@ class Algorithm:
             if not swapped:
                 break
         return lst
+
+#############################################################
+
+
     
     def insertion_sort(self, lst):
         """
@@ -576,29 +589,6 @@ class Algorithm:
 
     def matrix_addition(A: List[List[float]], B: List[List[float]]) -> List[List[float]]:
         """
-        This function takes in two matrices A and B of the same size, and returns their sum.
-
-        Args:
-        A: A list of lists of floats representing the first matrix.
-        B: A list of lists of floats representing the second matrix.
-
-        Returns:
-        A list of lists of floats representing the sum of the matrices.
-        """
-
-        n_rows = len(A)
-        n_cols = len(A[0])
-        C = [[0 for j in range(n_cols)] for i in range(n_rows)]
-
-        for i in range(n_rows):
-            for j in range(n_cols):
-                C[i][j] = A[i][j] + B[i][j]
-
-        return C
-
-
-    def matrix_addition(A, B):
-        """
         Adds two matrices A and B of the same size element-wise and returns the resulting matrix.
 
         Args:
@@ -617,7 +607,6 @@ class Algorithm:
                 row.append(A[i][j] + B[i][j])
             result.append(row)
         return result
-
 
     def matrix_multiplication(A, B):
         """
@@ -642,7 +631,6 @@ class Algorithm:
                 row.append(element)
             result.append(row)
         return result
-
 
     def matrix_inversion(A):
         """
@@ -749,6 +737,7 @@ class Algorithm:
         """
         return ((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)**0.5
 
+############################################################################
 
     def random_seed(seed):
         """
@@ -807,7 +796,6 @@ class Algorithm:
                 centers = new_centers
 
         return clusters
-
    
     def exp(self, num: int | float) -> int | float:
         """
@@ -820,8 +808,10 @@ class Algorithm:
         The exponential value of the input number
         """
         result = 1
-        for i in range(num):
-            result *= 2.71828
+        term = 1
+        for i in range(1, 100):
+            term *= num / i
+            result += term
         return result
 
     def absolute(self, num: int | float) -> int | float:
@@ -834,10 +824,7 @@ class Algorithm:
         Returns:
         The absolute value of the input number
         """
-        if num < 0:
-            return -num
-        else:
-            return num
+        return num if num >= 0 else -num
 
 
     def modulo(self, dividend: int | float, divisor: int | float) -> int | float:
@@ -851,7 +838,8 @@ class Algorithm:
         Returns:
         The remainder of dividing the dividend by the divisor
         """
-        return dividend % divisor
+        quotient = int(dividend / divisor)
+        return dividend - (quotient * divisor)
 
 
     def sin(self, num: int | float) -> int | float:
@@ -864,11 +852,11 @@ class Algorithm:
         Returns:
         The sine value of the input number
         """
-        n = 10  # number of terms to calculate in Taylor series
-        x = num % (2*Constants.pi)  # reduce to the range [0, 2*pi)
+        n = 10
+        x = num % (2*Constants.pi)
         result = 0
         for i in range(n):
-            term = (-1)**i * x**(2*i+1) / Algorithm.factorial(2*i+1)
+            term = (-1)**i * x**(2*i+1) / self.factorial(2*i+1)
             result += term
         return result
 
@@ -883,14 +871,13 @@ class Algorithm:
         Returns:
         The cosine value of the input number
         """
-        n = 10  # number of terms to calculate in Taylor series
-        x = num % (2*Constants.pi)  # reduce to the range [0, 2*pi)
+        n = 10
+        x = num % (2*Constants.pi)
         result = 0
         for i in range(n):
-            term = (-1)**i * x**(2*i) / Algorithm.factorial(2*i)
+            term = (-1)**i * x**(2*i) / self.factorial(2*i)
             result += term
         return result
-
 
     def tan(self, num: int | float) -> int | float:
         """
@@ -904,6 +891,8 @@ class Algorithm:
         """
         sin_val = self.sin(num)
         cos_val = self.cos(num)
+        if cos_val == 0:
+            return None
         return sin_val / cos_val
 
     @staticmethod
@@ -919,16 +908,16 @@ class Algorithm:
         """
         if n < 2:
             return 2
-        i = n + 1
+        candidate = n + 1
         while True:
             is_prime = True
-            for j in range(2, int(i**0.5) + 1):
-                if i % j == 0:
+            for j in range(2, int(candidate**0.5) + 1):
+                if candidate % j == 0:
                     is_prime = False
                     break
             if is_prime:
-                return i
-            i += 1
+                return candidate
+            candidate += 1
             
     @staticmethod
     def atan(x):
@@ -992,14 +981,15 @@ class Algorithm:
         elif x > 1:
             return Constants.pi/2 - Algorithm.arctan(1/x)
         else:
-            sum = 0.0
+            result = 0.0
             term = x
-            n = 1
-            while sum != sum + term:
-                sum += term
-                term = -term * x * x * (2*n - 1) / ((2*n) * (2*n + 1))
-                n += 1
-            return sum
+            term_index = 1
+            epsilon = 1e-10
+            while abs(term) > epsilon:
+                result += term
+                term_index += 1
+                term = -term * x * x * (2*term_index - 1) / ((2*term_index) * (2*term_index + 1))
+            return result
         
     @staticmethod
     def sieve_of_eratosthenes(n: int) -> List[int]:
@@ -1069,7 +1059,7 @@ class Algorithm:
         bin_edges = [data_min + i * bin_width for i in range(num_bins+1)]
         # Return the counts and edges as a tuple
         return counts, bin_edges
-
+                
     def islice(iterable, start, stop, step=1):
         """
         Returns an iterator that produces a slice of elements from the given iterable.
@@ -1083,11 +1073,18 @@ class Algorithm:
         Returns:
             iterator: An iterator that produces the slice of elements.
         """
+        if start < 0:
+            # If start is negative, convert it to a positive index
+            start = len(iterable) + start
+        if start >= stop:
+            # If start is greater than or equal to stop, return an empty iterator
+            return iter(())
         for i, x in enumerate(iterable):
             if i >= stop:
                 break
             if i >= start and (i - start) % step == 0:
                 yield x
+
 
     def normal_distribution_cdf(x):
         """
