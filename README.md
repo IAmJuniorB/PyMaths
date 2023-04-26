@@ -3092,7 +3092,101 @@ Return the arc cosine of x, in radians.
 
         - float
                 The arc cosine of x, in radians.
+---
+### `quad(func, a, b, eps=1e-7, maxiter=50):
 
+Approximates the definite integral of a function using the adaptive quadrature method.
+
+> ##### **Parameters:**
+
+        func (callable): A function to integrate.
+        a (float): Lower limit of integration.
+        b (float): Upper limit of integration.
+        eps (float): Desired accuracy.
+        maxiter (int): Maximum number of iterations.
+
+> ##### **Returns:**
+
+        float: The definite integral of the function over the interval [a, b].
+
+    adaptivesimpson(a, b, eps, fa, fb, fc, level):
+        c = (a + b) / 2
+        h = b - a
+        d = (a + c) / 2
+        e = (c + b) / 2
+        fd = func(d)
+        fe = func(e)
+        Sleft = h * (fa + 4 * fd + fc) / 6
+        Sright = h * (fc + 4 * fe + fb) / 6
+        S2 = Sleft + Sright
+        if level >= maxiter or abs(S2 - Sleft - Sright) <= 15 * eps:
+            return S2 + (S2 - Sleft - Sright) / 15
+        return adaptivesimpson(a, c, eps / 2, fa, fc, fd, level + 1) + adaptivesimpson(c, b, eps / 2, fc, fb, fe, level + 1)
+
+        fa = func(a)
+        fb = func(b)
+        fc = func((a + b) / 2)
+        return adaptivesimpson(a, b, eps, fa, fb, fc, 0)
+    
+---
+### `subsets(s):
+
+Generates all possible non-empty subsets of a given iterable.
+        
+> ##### **Parameters:**
+
+        s (iterable): The iterable for which subsets are generated.
+
+> ##### **Returns:**
+
+        generator: A generator that yields each subset as a tuple.
+
+        s = list(s)
+        n = len(s)
+        for i in range(1, 2**n):
+            subset = tuple(s[j] for j in range(n) if (i >> j) & 1)
+            yield subset
+
+---
+### `limit(func, x0, h=1e-8, max_iterations=1000, tol=1e-8):`
+
+Approximates the limit of a function f(x) as x approaches x0.
+
+> ##### **Arguments:**
+
+        func (function): A function of one variable.
+        x0 (float): The value of x that x approaches.
+        h (float, optional): Step size for computing the numerical derivative. Defaults to 1e-8.
+        max_iterations (int, optional): Maximum number of iterations for the numerical approximation. Defaults to 1000.
+        tol (float, optional): Tolerance level for stopping iterations. Defaults to 1e-8.
+
+> ##### **Returns:**
+
+        float: The numerical approximation of the limit.
+
+        f = func
+        x = x0
+        for i in range(max_iterations):
+            f_x = f(x)
+            f_x_plus_h = f(x + h)
+            derivative = (f_x_plus_h - f_x) / h
+            x -= f_x / derivative
+            if abs(f(x)) < tol:
+                return f(x)
+        raise ValueError(f"Failed to converge to a limit within {max_iterations} iterations.")
+
+---
+### `floor(x):`
+
+        Returns the greatest integer less than or equal to x.
+
+> ##### **Arguments:**
+
+            x (float): A floating-point number.
+> ##### **Returns:**
+            int: The greatest integer less than or equal to x.
+
+        return int(x) if x >= 0 else int(x) - 1
 
 ---
 ## **Sequences class:**
