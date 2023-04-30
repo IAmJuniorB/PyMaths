@@ -513,3 +513,28 @@ class MathFunctions:
         
         raise ValueError("Failed to converge after %d iterations" % maxiter)
 
+    @staticmethod
+    def totient(n: int) -> int:
+        """Returns the Euler's totient function for the given integer 'n',
+        which counts the number of positive integers up to 'n' that are
+        relatively prime to 'n'.
+
+        Args:
+            n (int): The integer to compute the totient function for
+
+        Returns:
+            int: The value of Euler's totient function for 'n'
+        """
+        if n == 1:
+            return 1
+        tot = n
+        p = 2
+        while p*p <= n:
+            if n % p == 0:
+                tot -= tot // p
+                while n % p == 0:
+                    n //= p
+            p += 1
+        if n > 1:
+            tot -= tot // n
+        return tot
