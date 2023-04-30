@@ -3182,11 +3182,27 @@ Approximates the limit of a function f(x) as x approaches x0.
 
 > ##### **Arguments:**
 
-            x (float): A floating-point number.
+        x (float): A floating-point number.
+        
 > ##### **Returns:**
-            int: The greatest integer less than or equal to x.
+        int: The greatest integer less than or equal to x.
 
         return int(x) if x >= 0 else int(x) - 1
+
+### `brentq(f, a, b, maxiter=100):`
+Find a root of a function in the interval [a, b] using Brent's method.
+        
+> ##### **Arguments:**
+        f (callable): The function to find the root of.
+        a (float): The left endpoint of the interval.
+        b (float): The right endpoint of the interval.
+        maxiter (int, optional): The maximum number of iterations to perform. Defaults to 100.
+            
+> ##### **Returns:**
+        float: The root of the function.
+            
+> ##### **Raises:**
+        ValueError: If the root cannot be found within the maximum number of iterations.
 
 ---
 ## **Sequences class:**
