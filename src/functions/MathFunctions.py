@@ -450,3 +450,66 @@ class MathFunctions:
             int: The greatest integer less than or equal to x.
         """
         return int(x) if x >= 0 else int(x) - 1
+
+    @staticmethod
+    def brentq(f, a, b, maxiter=100):
+        """Find a root of a function in the interval [a, b] using Brent's method.
+        
+        Args:
+            f (callable): The function to find the root of.
+            a (float): The left endpoint of the interval.
+            b (float): The right endpoint of the interval.
+            maxiter (int, optional): The maximum number of iterations to perform. Defaults to 100.
+            
+        Returns:
+            float: The root of the function.
+            
+        Raises:
+            ValueError: If the root cannot be found within the maximum number of iterations.
+        """
+        eps = 1e-12
+        tol = 1e-12
+        
+        fa = f(a)
+        fb = f(b)
+        
+        if fa * fb > 0:
+            raise ValueError("Root not bracketed in the interval [%f, %f]" % (a, b))
+        
+        if abs(fa) < abs(fb):
+            a, b = b, a
+            fa, fb = fb, fa
+        
+        c = a
+        fc = fa
+        d = 0
+        e = 0
+        
+        for i in range(maxiter):
+            if fa != fc and fb != fc:
+                s = (a*fb*fc)/((fa - fb)*(fa - fc)) + (b*fa*fc)/((fb - fa)*(fb - fc)) + (c*fa*fb)/((fc - fa)*(fc - fb))
+            else:
+                s = b - fb*(b - a)/(fb - fa)
+            
+            if s < (3*a + b)/4 or s > b or (e != 0 and abs(s - d) >= abs(e/2)):
+                s = (a + b)/2
+                e = d = b - a
+            
+            fs = f(s)
+            d = e
+            e = b - a
+            
+            if abs(fs) < abs(fb):
+                a = b
+                b = s
+                fa = fb
+                fb = fs
+            else:
+                a = s
+                fa = fs
+            
+            if abs(fb) < tol or abs(b - a) < eps:
+                return b
+        
+        raise ValueError("Failed to converge after %d iterations" % maxiter)
+
