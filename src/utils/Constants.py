@@ -1194,7 +1194,7 @@ class Constants:
 
         Symbol:
             \delta
-            
+
         Raises:
             ValueError: If the constant cannot be computed
 
@@ -1202,7 +1202,7 @@ class Constants:
             float: The Erdős–Tenenbaum–Ford constant
         """
 
-        primes = list(sieve.primerange(1, 5000))
+        primes = Algorithm.sieve_of_eratosthenes(5000)
         return sum([1 / p for p in primes]) * Algorithm.log(Algorithm.log(primes[-1]))
 
     @staticmethod
