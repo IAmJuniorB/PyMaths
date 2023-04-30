@@ -1240,7 +1240,7 @@ class Constants:
             float: The Hafner-Sarnak-McCurley constant
         """
 
-        return sum([1 / totient(n) for n in range(1, 10001)])
+        return sum([1 / MathFunctions.totient(n) for n in range(1, 10001)])
 
     @staticmethod
     def backhouses_constant():
