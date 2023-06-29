@@ -3093,7 +3093,7 @@ Return the arc cosine of x, in radians.
         - float
                 The arc cosine of x, in radians.
 ---
-### `quad(func, a, b, eps=1e-7, maxiter=50):
+### `quad(func, a, b, eps=1e-7, maxiter=50):`
 
 Approximates the definite integral of a function using the adaptive quadrature method.
 
@@ -3129,7 +3129,7 @@ Approximates the definite integral of a function using the adaptive quadrature m
         return adaptivesimpson(a, b, eps, fa, fb, fc, 0)
     
 ---
-### `subsets(s):
+### `subsets(s):`
 
 Generates all possible non-empty subsets of a given iterable.
         
