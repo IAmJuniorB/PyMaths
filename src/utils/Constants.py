@@ -1,5 +1,6 @@
 from Algorithm import Algorithm
 from src.functions.MathFunctions import MathFunctions
+from functions.MathFunctions import brentq
 
 
 class Constants:
@@ -1224,7 +1225,7 @@ class Constants:
             float: Conway's constant
         """
 
-        return self.brentq(lambda x: x**3 - x - 1, 1, 2)
+        return brentq(lambda x: x**3 - x - 1, 1, 2)
 
     @staticmethod
     def hafner_sarnak_mccurley_constant():
